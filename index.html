@@ -1,90 +1,96 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Korlin (Shortlang) — Lengua construida</title>
+  <title>Korlin (Shortlang) — Constructed Language</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
+    <div class="lang-selector">
+      <button class="lang active" data-lang="en" title="English">🇬🇧</button>
+      <button class="lang" data-lang="es" title="Español">🇪🇸</button>
+      <button class="lang" data-lang="fr" title="Français">🇫🇷</button>
+      <button class="lang" data-lang="zh" title="中文">🇨🇳</button>
+      <button class="lang" data-lang="ja" title="日本語">🇯🇵</button>
+    </div>
     <div class="brand">
       <h1>Korlin</h1>
       <span class="sub">/ˈkoɾlin/ · Shortlang</span>
     </div>
-    <p class="tagline">A short, honest, modern constructed language · Una lengua corta, honesta y moderna</p>
+    <p class="tagline" data-i18n="tagline">A short, honest, modern constructed language</p>
     <nav>
-      <button class="tab active" data-tab="inicio">🏠 Inicio</button>
-      <button class="tab" data-tab="diccionario">📖 Diccionario</button>
-      <button class="tab" data-tab="flashcards">🎴 Flashcards</button>
-      <button class="tab" data-tab="traductor">🔄 Traductor</button>
+      <button class="tab active" data-tab="inicio" data-i18n="tab_inicio">🏠 Home</button>
+      <button class="tab" data-tab="diccionario" data-i18n="tab_diccionario">📖 Dictionary</button>
+      <button class="tab" data-tab="flashcards" data-i18n="tab_flashcards">🎴 Flashcards</button>
+      <button class="tab" data-tab="traductor" data-i18n="tab_traductor">🔄 Translator</button>
     </nav>
   </header>
 
   <main>
-    <!-- INICIO -->
+    <!-- HOME -->
     <section id="inicio" class="panel active">
-      <h2>Bienvenido a Korlin 🗣️</h2>
-      <p>Korlin es una lengua construida diseñada para ser <strong>corta</strong>, <strong>honesta</strong> y <strong>moderna</strong> — sucesora del Dutton Speedwords y un Esperanto mejorado.</p>
+      <h2 data-i18n="inicio_titulo">Welcome to Korlin 🗣️</h2>
+      <p data-i18n="inicio_desc">Korlin is a constructed language designed to be <strong>short</strong>, <strong>honest</strong> and <strong>modern</strong> — a spiritual successor to Dutton Speedwords and a better Esperanto.</p>
       <div class="cards">
         <div class="card">
-          <h3>✂️ Corta</h3>
-          <p>Palabras de 1–2 sílabas condensan conceptos. ~40% más corta que el Esperanto.</p>
+          <h3 data-i18n="card_corta_t">✂️ Short</h3>
+          <p data-i18n="card_corta_d">Words of 1–2 syllables condense concepts. ~40% shorter than Esperanto.</p>
         </div>
         <div class="card">
-          <h3>🛡️ Honesta</h3>
-          <p>Evidencialidad obligatoria: toda afirmación declara su fuente. Mentir es costoso y detectable.</p>
+          <h3 data-i18n="card_honesta_t">🛡️ Honest</h3>
+          <p data-i18n="card_honesta_d">Mandatory evidentiality: every statement declares its source. Lying is costly and detectable.</p>
         </div>
         <div class="card">
-          <h3>📱 Moderna</h3>
-          <p>20 letras, sin tildes, partículas emoji, y lista para IA.</p>
+          <h3 data-i18n="card_moderna_t">📱 Modern</h3>
+          <p data-i18n="card_moderna_d">20 letters, no diacritics, emoji particles, and AI-ready.</p>
         </div>
       </div>
       <div class="example">
-        <h3>Ejemplo</h3>
+        <h3 data-i18n="ejemplo_titulo">Example</h3>
         <p class="korlin">Na-toro na-kan-sa vi i mi.</p>
-        <p class="gloss">"La mentira no puede vivir en mí." · <code>na-toro</code> = mentira (<code>na-</code> no + <code>toro</code> verdad)</p>
+        <p class="gloss" data-i18n="ejemplo_gloss">"The lie cannot live in me." · <code>na-toro</code> = lie (<code>na-</code> not + <code>toro</code> truth)</p>
       </div>
     </section>
 
-    <!-- DICCIONARIO -->
+    <!-- DICTIONARY -->
     <section id="diccionario" class="panel">
-      <h2>Diccionario 📖</h2>
-      <input type="text" id="busqueda" placeholder="Busca en Korlin, español o inglés… (ej: go, comer, water)">
+      <h2 data-i18n="diccionario_titulo">Dictionary 📖</h2>
+      <input type="text" id="busqueda" data-i18n-ph="busqueda_ph" placeholder="Search in Korlin, Spanish or English… (e.g. go, comer, water)">
       <p id="resultado-count"></p>
       <div id="resultados" class="resultados"></div>
     </section>
 
     <!-- FLASHCARDS -->
     <section id="flashcards" class="panel">
-      <h2>Flashcards 🎴</h2>
-      <p>Adivina el significado. Haz clic en la tarjeta para revelar.</p>
+      <h2 data-i18n="flashcards_titulo">Flashcards 🎴</h2>
+      <p data-i18n="flashcards_desc">Guess the meaning. Click the card to reveal.</p>
       <div id="flashcard" class="flashcard" onclick="revelar()">
         <p id="flash-palabra" class="korlin"></p>
         <p id="flash-significado" class="hidden"></p>
       </div>
       <div class="flash-buttons">
-        <button onclick="siguiente('no')">🙈 No la sabía</button>
-        <button onclick="siguiente('si')">✅ La sabía</button>
+        <button data-i18n="flash_no" onclick="siguiente('no')">🙈 Didn't know it</button>
+        <button data-i18n="flash_si" onclick="siguiente('si')">✅ Knew it</button>
       </div>
-      <p id="flash-score">Aciertos: 0 / 0</p>
+      <p id="flash-score"></p>
     </section>
 
-    <!-- TRADUCTOR -->
+    <!-- TRANSLATOR -->
     <section id="traductor" class="panel">
-      <h2>Traductor (palabra por palabra) 🔄</h2>
-      <p>Traduce Korlin → Español / Inglés palabra por palabra (demo).</p>
-      <textarea id="texto-origen" placeholder="Escribe en Korlin… ej: mi go a le ho"></textarea>
+      <h2 data-i18n="traductor_titulo">Translator (word by word) 🔄</h2>
+      <p data-i18n="traductor_desc">Translates Korlin → selected language, word by word (demo).</p>
+      <textarea id="texto-origen" data-i18n-ph="traductor_ph" placeholder="Type in Korlin… e.g. mi go a le ho"></textarea>
       <div class="traductor-controles">
-        <button onclick="traducir('es')">→ Español</button>
-        <button onclick="traducir('en')">→ English</button>
+        <button onclick="traducir()" data-i18n="btn_traducir">Translate →</button>
       </div>
       <div id="traduccion" class="traduccion"></div>
     </section>
   </main>
 
   <footer>
-    <p>Korlin (Shortlang) · <a href="https://github.com/nachofigx/korlin" target="_blank">github.com/nachofigx/korlin</a> · Licencia CC BY-SA 4.0 (idioma) / MIT (código)</p>
+    <p>Korlin (Shortlang) · <a href="https://github.com/nachofigx/korlin" target="_blank">github.com/nachofigx/korlin</a> · CC BY-SA 4.0 (language) / MIT (code)</p>
   </footer>
 
   <script src="lexico.js"></script>

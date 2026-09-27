@@ -331,8 +331,16 @@ def generar_manual_ia(lexico, afijos):
     return "\n".join(lineas)
 
 
-def generar_lexico_js(lexico):
-    data = [{"f": p["forma"], "a": p["afi"], "c": p["categoria"], "es": p["es"], "en": p["en"]} for p in lexico["palabras"]]
+def generar_lexico_js(lexico, traducciones):
+    data = []
+    for p in lexico["palabras"]:
+        f = p["forma"]
+        item = {"f": f, "a": p["afi"], "c": p["categoria"], "es": p["es"], "en": p["en"]}
+        for lang in ("fr", "zh", "ja"):
+            trad = traducciones.get(lang, {}).get(f)
+            if trad:
+                item[lang] = trad
+        data.append(item)
     return "window.KORLIN_LEXICO = " + json.dumps(data, ensure_ascii=False, indent=2) + ";\n"
 
 
@@ -350,7 +358,7 @@ def main():
         (docs / f"manual-{idioma}.md").write_text(manual, encoding="utf-8")
 
     (docs / "manual-ia.md").write_text(generar_manual_ia(lexico, afijos), encoding="utf-8")
-    (ROOT / "lexico.js").write_text(generar_lexico_js(lexico), encoding="utf-8")
+    (ROOT / "lexico.js").write_text(generar_lexico_js(lexico, traducciones), encoding="utf-8")
 
     n_pal = len(lexico["palabras"])
     print(f"✓ {n_pal} palabras →")
