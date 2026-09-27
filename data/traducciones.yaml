@@ -1,0 +1,368 @@
+# Traducciones adicionales de Korlin (francés, chino, japonés)
+# Complementa data/lexico.yaml (que tiene es/en).
+
+fr:
+  e: être
+  a: à, vers
+  i: dans
+  o: ou
+  u: un, une
+  ka: et
+  ba: mais
+  ki: que, quoi
+  si: si
+  so: alors, donc
+  na: non, ne…pas
+  ya: oui
+  de: de
+  kon: avec
+  po: pour, par
+  mo: particule interrogative
+  halo: bonjour
+  mi: je
+  tu: tu
+  li: il, elle
+  wi: nous
+  yu: vous
+  lis: ils, elles
+  le: le, la
+  se: ce, cette
+  te: ce…-là
+  ke: ce…-là-bas
+  go: aller
+  ven: venir
+  ve: voir
+  di: dire
+  pa: parler
+  fa: faire
+  ha: avoir
+  vo: vouloir
+  kan: pouvoir
+  mus: devoir
+  sa: savoir
+  da: donner
+  ta: prendre
+  pen: penser
+  sen: ressentir
+  man: manger
+  bi: boire
+  do: dormir
+  vi: vivre
+  mu: mourir
+  pe: personne
+  re: chose
+  wa: eau
+  fo: feu
+  ga: terre
+  su: soleil
+  lu: lune
+  jo: jour
+  no: nuit
+  tem: temps
+  lo: lieu
+  ho: maison
+  ma: main
+  ye: œil
+  he: tête
+  wo: mot
+  nom: nom
+  kin: machine
+  toro: vérité
+  gu: bon
+  fe: mauvais
+  me: grand
+  pi: petit
+  ne: nouveau
+  an: vieux
+  ra: rapide
+  len: lent
+  hi: haut
+  bo: bas
+  tom: chaud
+  ge: froid
+  ko: court
+  ru: rouge
+  gi: vert
+  ro: rose
+  lumi: blanc
+  noi: noir
+  sui: jaune
+  wai: bleu
+  gai: brun
+  lui: violet
+  somi: gris
+  ru-sui: orange
+  sum: additionner (+)
+  min: soustraire (−)
+  fan: multiplier (×)
+  fen: diviser (÷)
+  kilo: mille (×1000)
+  mega: million (×10⁶)
+  giga: milliard (×10⁹)
+  mili: millième (÷1000)
+  miko: micro
+  nano: nano
+  ban: construire
+  men: mesure, volume
+  pis: étage
+  ren: règle, loi
+  som: ombre
+  lum: lumière
+  gan: protéger
+  pon: poser
+  num: calculer
+  sim: simuler
+  ken: acheter
+  plan: plan, dessin
+  Mekiko: Mexique
+  Espan: Espagne
+  Kina: Chine
+  Frans: France
+  Brasil: Brésil
+  Yapan: Japon
+  gu-gu: génial
+  me-ku: pas question
+
+zh:
+  e: 是
+  a: 向, 到
+  i: 在…内
+  o: 或
+  u: 一, 一个
+  ka: 和
+  ba: 但是
+  ki: 那, 什么
+  si: 如果
+  so: 那么, 所以
+  na: 不
+  ya: 是, 对
+  de: 的, 从
+  kon: 和…一起
+  po: 为了, 由
+  mo: 疑问助词
+  halo: 你好
+  mi: 我
+  tu: 你
+  li: 他, 她
+  wi: 我们
+  yu: 你们
+  lis: 他们, 她们
+  le: （定冠词）
+  se: 这
+  te: 那
+  ke: 那（远处）
+  go: 去
+  ven: 来
+  ve: 看
+  di: 说
+  pa: 说话
+  fa: 做
+  ha: 有
+  vo: 想要
+  kan: 能
+  mus: 必须
+  sa: 知道
+  da: 给
+  ta: 拿, 取
+  pen: 想, 思考
+  sen: 感觉
+  man: 吃
+  bi: 喝
+  do: 睡觉
+  vi: 生活
+  mu: 死
+  pe: 人
+  re: 东西, 物
+  wa: 水
+  fo: 火
+  ga: 土地
+  su: 太阳
+  lu: 月亮
+  jo: 白天
+  no: 夜晚
+  tem: 时间
+  lo: 地方
+  ho: 房子, 家
+  ma: 手
+  ye: 眼睛
+  he: 头
+  wo: 词
+  nom: 名字
+  kin: 机器
+  toro: 真相, 真理
+  gu: 好
+  fe: 坏
+  me: 大
+  pi: 小
+  ne: 新
+  an: 旧
+  ra: 快
+  len: 慢
+  hi: 高
+  bo: 低
+  tom: 热
+  ge: 冷
+  ko: 短
+  ru: 红
+  gi: 绿
+  ro: 粉红
+  lumi: 白
+  noi: 黑
+  sui: 黄
+  wai: 蓝
+  gai: 棕
+  lui: 紫
+  somi: 灰
+  ru-sui: 橙
+  sum: 加 (+)
+  min: 减 (−)
+  fan: 乘 (×)
+  fen: 除 (÷)
+  kilo: 千 (×1000)
+  mega: 百万 (×10⁶)
+  giga: 十亿 (×10⁹)
+  mili: 千分之一 (÷1000)
+  miko: 微
+  nano: 纳
+  ban: 建造
+  men: 测量, 体积
+  pis: 楼层
+  ren: 规则, 法律
+  som: 阴影
+  lum: 光
+  gan: 保护
+  pon: 放置
+  num: 计算
+  sim: 模拟
+  ken: 购买
+  plan: 平面图, 设计
+  Mekiko: 墨西哥
+  Espan: 西班牙
+  Kina: 中国
+  Frans: 法国
+  Brasil: 巴西
+  Yapan: 日本
+  gu-gu: 酷
+  me-ku: 没门
+
+ja:
+  e: である, です
+  a: へ, に
+  i: 中に
+  o: または
+  u: 一つの
+  ka: と
+  ba: しかし
+  ki: こと, 何
+  si: もし
+  so: それで
+  na: いいえ, ない
+  ya: はい
+  de: の
+  kon: と一緒に
+  po: ために
+  mo: 疑問助詞
+  halo: こんにちは
+  mi: 私
+  tu: あなた
+  li: 彼, 彼女
+  wi: 私たち
+  yu: あなたたち
+  lis: 彼ら
+  le: （定冠詞）
+  se: これ
+  te: それ
+  ke: あれ
+  go: 行く
+  ven: 来る
+  ve: 見る
+  di: 言う
+  pa: 話す
+  fa: する
+  ha: 持つ
+  vo: 欲しい
+  kan: できる
+  mus: べき
+  sa: 知る
+  da: 与える
+  ta: 取る
+  pen: 考える
+  sen: 感じる
+  man: 食べる
+  bi: 飲む
+  do: 寝る
+  vi: 生きる
+  mu: 死ぬ
+  pe: 人
+  re: 物
+  wa: 水
+  fo: 火
+  ga: 土地
+  su: 太陽
+  lu: 月
+  jo: 昼
+  no: 夜
+  tem: 時間
+  lo: 場所
+  ho: 家
+  ma: 手
+  ye: 目
+  he: 頭
+  wo: 言葉
+  nom: 名前
+  kin: 機械
+  toro: 真実
+  gu: 良い
+  fe: 悪い
+  me: 大きい
+  pi: 小さい
+  ne: 新しい
+  an: 古い
+  ra: 速い
+  len: 遅い
+  hi: 高い
+  bo: 低い
+  tom: 熱い
+  ge: 冷たい
+  ko: 短い
+  ru: 赤
+  gi: 緑
+  ro: ピンク
+  lumi: 白
+  noi: 黒
+  sui: 黄
+  wai: 青
+  gai: 茶色
+  lui: 紫
+  somi: 灰色
+  ru-sui: オレンジ
+  sum: 足す (+)
+  min: 引く (−)
+  fan: 掛ける (×)
+  fen: 割る (÷)
+  kilo: キロ (×1000)
+  mega: メガ (×10⁶)
+  giga: ギガ (×10⁹)
+  mili: ミリ (÷1000)
+  miko: マイクロ
+  nano: ナノ
+  ban: 建てる
+  men: 測定, 体積
+  pis: 階
+  ren: 規則, 法律
+  som: 影
+  lum: 光
+  gan: 守る
+  pon: 置く
+  num: 計算する
+  sim: シミュレートする
+  ken: 買う
+  plan: 平面図, デザイン
+  Mekiko: メキシコ
+  Espan: スペイン
+  Kina: 中国
+  Frans: フランス
+  Brasil: ブラジル
+  Yapan: 日本
+  gu-gu: 最高
+  me-ku: まさか

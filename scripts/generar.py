@@ -1,14 +1,9 @@
 #!/usr/bin/env python3
 """
-Generador de documentación de Korlin (Shortlang).
+Generador de documentación de Korlin (multi-idioma: es, en, fr, zh, ja).
 
-Lee la fuente de verdad única (data/lexico.yaml, data/afijos.yaml) y genera:
-  - docs/manual-es.md      → manual en español
-  - docs/manual-en.md      → manual en inglés
-  - docs/manual-ia.md      → manual para agentes de IA
-  - web/lexico.js          → datos para el sitio web interactivo
-
-Un cambio en data/ se refleja automáticamente en los 4 archivos al re-ejecutar.
+Lee la fuente de verdad única (data/lexico.yaml, data/afijos.yaml,
+data/traducciones.yaml) y genera manuales en 5 idiomas + manual IA + datos web.
 """
 
 import json
@@ -26,16 +21,26 @@ def cargar(nombre: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Contenido fijo (gramática / pronunciación) — también editable aquí.
-# En una iteración futura puede moverse a data/gramatica.yaml.
+# Metadatos por idioma
 # ---------------------------------------------------------------------------
+IDIOMAS = {
+    "es": {"titulo": "Manual de Korlin (español)", "tagline": "**Korlin** (/ˈkoɾlin/) es una lengua construida *corta, honesta y moderna*."},
+    "en": {"titulo": "Korlin Manual (English)", "tagline": "**Korlin** (/ˈkoɾlin/) is a constructed language: *short, honest and modern*."},
+    "fr": {"titulo": "Manuel de Korlin (français)", "tagline": "**Korlin** (/ˈkoɾlin/) est une langue construite *courte, honnête et moderne*."},
+    "zh": {"titulo": "Korlin 手册（中文）", "tagline": "**Korlin**（/ˈkoɾlin/）是一种*简短、诚实、现代*的人造语言。"},
+    "ja": {"titulo": "Korlin マニュアル（日本語）", "tagline": "**Korlin**（/ˈkoɾlin/）は*短く、誠実で、現代的*な人工言語です。"},
+}
 
+
+# ---------------------------------------------------------------------------
+# Pronunciación por idioma
+# ---------------------------------------------------------------------------
 PRONUNCIACION = {
     "es": """## Pronunciación
 
 20 sonidos, 20 letras. **Una letra = un sonido, siempre.**
 
-| Letra | Sonido (AFI) | Como en español |
+| Letra | AFI | Como en español |
 |---|---|---|
 | a | /a/ | c**a**sa |
 | e | /e/ | m**e**sa |
@@ -58,17 +63,17 @@ PRONUNCIACION = {
 | w | /w/ | **w**ater (inglesa) |
 | y | /j/ | **y**o |
 
-**Reglas de oro**: vocales puras · p/t/k sin soplo · r siempre suave · s siempre [s] · h siempre sonora.""",
+**Reglas de oro**: vocales puras · p/t/k sin soplo · r suave · s siempre [s] · h siempre sonora.""",
     "en": """## Pronunciation
 
 20 sounds, 20 letters. **One letter = one sound, always.**
 
-| Letter | Sound (IPA) | Like in English |
+| Letter | IPA | Like in English |
 |---|---|---|
 | a | /a/ | f**a**ther |
 | e | /e/ | b**e**d |
 | i | /i/ | s**ee** |
-| o | /o/ | g**o** (pure, no glide) |
+| o | /o/ | g**o** (pure) |
 | u | /u/ | f**oo**d |
 | p | /p/ | s**p**in (no puff) |
 | b | /b/ | **b**ed |
@@ -79,140 +84,247 @@ PRONUNCIACION = {
 | m | /m/ | **m**an |
 | n | /n/ | **n**o |
 | f | /f/ | **f**an |
-| s | /s/ | **s**ee (always /s/) |
+| s | /s/ | **s**ee |
 | h | /h/ | **h**ouse |
 | l | /l/ | **l**ow |
-| r | /ɾ/ | Spanish "pe**r**o" (tapped) |
+| r | /ɾ/ | Spanish "pe**r**o" |
 | w | /w/ | **w**ater |
 | y | /j/ | **y**es |
 
-**Golden rules**: pure vowels · no aspiration on p/t/k · r always tapped · s always /s/ · h always voiced.""",
+**Golden rules**: pure vowels · no aspiration · r tapped · s always /s/ · h voiced.""",
+    "fr": """## Prononciation
+
+20 sons, 20 lettres. **Une lettre = un son, toujours.**
+
+| Lettre | API | Comme en français |
+|---|---|---|
+| a | /a/ | p**a**tte |
+| e | /e/ | bl**é** |
+| i | /i/ | s**i** |
+| o | /o/ | m**o**t |
+| u | /u/ | f**ou** |
+| p | /p/ | **p**as (sans souffle) |
+| b | /b/ | **b**as |
+| t | /t/ | **t**as (sans souffle) |
+| d | /d/ | **d**as |
+| k | /k/ | **k**as (sans souffle) |
+| g | /g/ | **g**are |
+| m | /m/ | **m**ain |
+| n | /n/ | **n**on |
+| f | /f/ | **f**ou |
+| s | /s/ | **s**ol (jamais [z]) |
+| h | /h/ | **h**ouse (anglais) |
+| l | /l/ | **l**ait |
+| r | /ɾ/ | «r» de pe**r**o (espagnol) |
+| w | /w/ | **w**att |
+| y | /j/ | **y**eux |
+
+**Règles d'or** : voyelles pures · pas d'aspiration · r battu · s toujours [s] · h sonore.""",
+    "zh": """## 发音
+
+20 个音，20 个字母。**一个字母 = 一个音，永远如此。**
+
+| 字母 | 国际音标 | 近似发音（中文） |
+|---|---|---|
+| a | /a/ | 啊 |
+| e | /e/ | 诶 |
+| i | /i/ | 衣 |
+| o | /o/ | 哦 |
+| u | /u/ | 乌 |
+| p | /p/ | 巴（不送气） |
+| b | /b/ | 吧（浊音） |
+| t | /t/ | 达（不送气） |
+| d | /d/ | 大（浊音） |
+| k | /k/ | 嘎（不送气） |
+| g | /g/ | 嘎（浊音） |
+| m | /m/ | 妈 |
+| n | /n/ | 拿 |
+| f | /f/ | 发 |
+| s | /s/ | 撒 |
+| h | /h/ | 哈（声门音） |
+| l | /l/ | 拉 |
+| r | /ɾ/ | 闪音（如日语「ら」） |
+| w | /w/ | 哇 |
+| y | /j/ | 呀 |
+
+**黄金法则**：元音纯正 · p/t/k 不送气 · r 为闪音 · s 始终 [s] · h 始终有声。""",
+    "ja": """## 発音
+
+20 の音、20 の文字。**一文字 = 一音、常に。**
+
+| 文字 | IPA | 日本語の近似 |
+|---|---|---|
+| a | /a/ | あ |
+| e | /e/ | え |
+| i | /i/ | い |
+| o | /o/ | お |
+| u | /u/ | う |
+| p | /p/ | ぱ（気音なし） |
+| b | /b/ | ば |
+| t | /t/ | た（気音なし） |
+| d | /d/ | だ |
+| k | /k/ | か（気音なし） |
+| g | /g/ | が |
+| m | /m/ | ま |
+| n | /n/ | な |
+| f | /f/ | ふぁ |
+| s | /s/ | さ |
+| h | /h/ | は |
+| l | /l/ | ら（舌端音） |
+| r | /ɾ/ | ら（はじき音） |
+| w | /w/ | わ |
+| y | /j/ | や |
+
+**黄金律**：純粋な母音 · 気音なし · r ははじき音 · s は常に [s] · h は常に有声音。""",
 }
 
+
+# ---------------------------------------------------------------------------
+# Gramática por idioma
+# ---------------------------------------------------------------------------
 GRAMATICA = {
     "es": """## Gramática esencial
 
 - **Orden**: Sujeto-Verbo-Objeto (SVO). `mi go a le ho` = "voy a la casa".
 - **Modificador antes del núcleo**: `me ho` = "casa grande".
-- **Plural**: sufijo `-s`. `li` → `lis` (él → ellos).
-- **Tiempos**: prefijos `an-` (pasado) y `ne-` (futuro); presente sin marca.
-- **Evidencialidad (obligatoria)**: sufijos `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (asumido). Toda afirmación declara su fuente.
-- **Modalidad epistémica**: partículas `to` (cierto), `be` (probable), `os` (posible), `ku` (dudoso).
-- **Negación**: `na` antes del verbo. `mi na sa` = "no sé".
-- **Pregunta sí/no**: partícula `mo` al final. `tu go mo?` = "¿vas?".
-- **Posesión**: `de`. `le ho de mi` = "mi casa".
-- **Subordinación**: `ki`. Cada cláusula lleva su propio evidencial.""",
+- **Plural**: sufijo `-s`. `li` → `lis`.
+- **Tiempos**: `an-` (pasado), `ne-` (futuro); presente sin marca.
+- **Evidencialidad (obligatoria)**: `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (asumido).
+- **Modalidad epistémica**: `to` (cierto), `be` (probable), `os` (posible), `ku` (dudoso).
+- **Negación**: `na` antes del verbo.
+- **Pregunta sí/no**: `mo` al final.
+- **Posesión**: `de`. **Subordinación**: `ki`.""",
     "en": """## Essential grammar
 
 - **Order**: Subject-Verb-Object (SVO). `mi go a le ho` = "I go to the house".
 - **Modifier before head**: `me ho` = "big house".
-- **Plural**: suffix `-s`. `li` → `lis` (he → they).
-- **Tense**: prefixes `an-` (past) and `ne-` (future); present unmarked.
-- **Evidentiality (mandatory)**: suffixes `-ve` (direct), `-pen` (inferred), `-di` (reported), `-sa` (assumed). Every statement declares its source.
-- **Epistemic modality**: particles `to` (certain), `be` (probable), `os` (possible), `ku` (doubtful).
-- **Negation**: `na` before the verb. `mi na sa` = "I don't know".
-- **Yes/no question**: particle `mo` at the end. `tu go mo?` = "do you go?".
-- **Possession**: `de`. `le ho de mi` = "my house".
-- **Subordination**: `ki`. Each clause carries its own evidential.""",
+- **Plural**: suffix `-s`. `li` → `lis`.
+- **Tense**: `an-` (past), `ne-` (future); present unmarked.
+- **Evidentiality (mandatory)**: `-ve` (direct), `-pen` (inferred), `-di` (reported), `-sa` (assumed).
+- **Epistemic modality**: `to` (certain), `be` (probable), `os` (possible), `ku` (doubtful).
+- **Negation**: `na` before the verb.
+- **Yes/no question**: `mo` at the end.
+- **Possession**: `de`. **Subordination**: `ki`.""",
+    "fr": """## Grammaire essentielle
+
+- **Ordre** : Sujet-Verbe-Objet (SVO). `mi go a le ho` = « je vais à la maison ».
+- **Modificateur avant le noyau** : `me ho` = « grande maison ».
+- **Pluriel** : suffixe `-s`. `li` → `lis`.
+- **Temps** : `an-` (passé), `ne-` (futur) ; présent non marqué.
+- **Évidentialité (obligatoire)** : `-ve` (direct), `-pen` (inféré), `-di` (rapporté), `-sa` (supposé).
+- **Modalité épistémique** : `to` (certain), `be` (probable), `os` (possible), `ku` (douteux).
+- **Négation** : `na` avant le verbe.
+- **Question oui/non** : `mo` à la fin.
+- **Possession** : `de`. **Subordination** : `ki`.""",
+    "zh": """## 基本语法
+
+- **语序**：主-谓-宾（SVO）。`mi go a le ho` =「我去房子」。
+- **修饰语在核心词之前**：`me ho` =「大房子」。
+- **复数**：后缀 `-s`。`li` → `lis`。
+- **时态**：`an-`（过去）、`ne-`（将来）；现在时无标记。
+- **示证（强制）**：`-ve`（直接）、`-pen`（推断）、`-di`（转述）、`-sa`（假定）。
+- **认识情态**：`to`（确定）、`be`（可能）、`os`（也许）、`ku`（存疑）。
+- **否定**：`na` 置于动词前。
+- **是非疑问句**：`mo` 置于句末。
+- **所有格**：`de`。**从句**：`ki`。""",
+    "ja": """## 基本文法
+
+- **語順**：主語-動詞-目的語（SVO）。`mi go a le ho` =「私は家に行く」。
+- **修飾語は主要部の前**：`me ho` =「大きな家」。
+- **複数**：接尾辞 `-s`。`li` → `lis`。
+- **時制**：`an-`（過去）、`ne-`（未来）；現在は無標。
+- **証拠性（必須）**：`-ve`（直接）、`-pen`（推論）、`-di`（伝聞）、`-sa`（想定）。
+- **認識モダリティ**：`to`（確実）、`be`（多分）、`os`（可能）、`ku`（疑わしい）。
+- **否定**：`na` を動詞の前に。
+- **Yes/No 疑問**：`mo` を文末に。
+- **所有**：`de`。**従属節**：`ki`。""",
 }
 
+
+# ---------------------------------------------------------------------------
+# Grupos (categorías) con títulos en 5 idiomas
+# ---------------------------------------------------------------------------
 GRUPOS = [
-    (["partícula", "preposición", "conjunción", "adverbio", "saludo"], "Palabras funcionales", "Function words"),
-    (["pronombre"], "Pronombres", "Pronouns"),
-    (["determinante"], "Determinantes", "Determiners"),
-    (["verbo"], "Verbos", "Verbs"),
-    (["sustantivo", "nombre propio"], "Sustantivos", "Nouns"),
-    (["adjetivo"], "Adjetivos", "Adjectives"),
-    (["color"], "Colores", "Colors"),
-    (["número"], "Números", "Numbers"),
-    (["matemática"], "Matemáticas", "Mathematics"),
-    (["prefijo SI"], "Prefijos SI", "SI prefixes"),
-    (["país"], "Países", "Countries"),
-    (["slang"], "Slang", "Slang"),
-    (["actitud"], "Partículas de actitud", "Attitude particles"),
-    (["modalidad"], "Modalidad epistémica", "Epistemic modality"),
+    (["partícula", "preposición", "conjunción", "adverbio", "saludo"],
+     {"es": "Palabras funcionales", "en": "Function words", "fr": "Mots fonctionnels", "zh": "功能词", "ja": "機能語"}),
+    (["pronombre"], {"es": "Pronombres", "en": "Pronouns", "fr": "Pronoms", "zh": "代词", "ja": "代名詞"}),
+    (["determinante"], {"es": "Determinantes", "en": "Determiners", "fr": "Déterminants", "zh": "限定词", "ja": "限定詞"}),
+    (["verbo"], {"es": "Verbos", "en": "Verbs", "fr": "Verbes", "zh": "动词", "ja": "動詞"}),
+    (["sustantivo", "nombre propio"], {"es": "Sustantivos", "en": "Nouns", "fr": "Noms", "zh": "名词", "ja": "名詞"}),
+    (["adjetivo"], {"es": "Adjetivos", "en": "Adjectives", "fr": "Adjectifs", "zh": "形容词", "ja": "形容詞"}),
+    (["color"], {"es": "Colores", "en": "Colors", "fr": "Couleurs", "zh": "颜色", "ja": "色"}),
+    (["número"], {"es": "Números", "en": "Numbers", "fr": "Nombres", "zh": "数字", "ja": "数字"}),
+    (["matemática"], {"es": "Matemáticas", "en": "Mathematics", "fr": "Mathématiques", "zh": "数学", "ja": "数学"}),
+    (["prefijo SI"], {"es": "Prefijos SI", "en": "SI prefixes", "fr": "Préfixes SI", "zh": "国际单位制前缀", "ja": "SI接頭辞"}),
+    (["país"], {"es": "Países", "en": "Countries", "fr": "Pays", "zh": "国家", "ja": "国"}),
+    (["slang"], {"es": "Slang", "en": "Slang", "fr": "Argot", "zh": "俚语", "ja": "俗語"}),
+    (["actitud"], {"es": "Partículas de actitud", "en": "Attitude particles", "fr": "Particules d'attitude", "zh": "态度助词", "ja": "態度助詞"}),
+    (["modalidad"], {"es": "Modalidad epistémica", "en": "Epistemic modality", "fr": "Modalité épistémique", "zh": "认识情态", "ja": "認識モダリティ"}),
 ]
 
 
-def agrupar_por_categoria(palabras):
+def agrupar(palabras):
     d = defaultdict(list)
     for p in palabras:
         d[p["categoria"]].append(p)
     return d
 
 
-def tabla_lexico(palabras, idioma):
-    lineas = ["| Korlin | AFI | Significado |", "|---|---|---|"]
-    for p in palabras:
-        lineas.append(f"| **{p['forma']}** | {p['afi']} | {p[idioma]} |")
-    return "\n".join(lineas)
+def generar_manual(idioma, lexico, afijos, traducciones):
+    meta = IDIOMAS[idioma]
+    trad = traducciones.get(idioma, {})
+    por_cat = agrupar(lexico["palabras"])
+    partes = [f"# {meta['titulo']}", "", meta["tagline"], "", PRONUNCIACION[idioma], "", GRAMATICA[idioma], ""]
 
-
-def generar_manual(idioma, titulo, lexico, afijos):
-    por_cat = agrupar_por_categoria(lexico["palabras"])
-    partes = [f"# {titulo}", "", "**Korlin** (/ˈkoɾlin/) es una lengua construida *corta, honesta y moderna*.",
-              "", PRONUNCIACION[idioma], "", GRAMATICA[idioma], ""]
-
-    for cats, tit_es, tit_en in GRUPOS:
-        tit = tit_es if idioma == "es" else tit_en
+    for cats, titulos in GRUPOS:
+        titulo = titulos[idioma]
         palabras = [p for c in cats for p in por_cat.get(c, [])]
         if not palabras:
             continue
-        partes.append(f"## {tit}")
+        partes.append(f"## {titulo}")
         partes.append("")
-        partes.append(tabla_lexico(palabras, idioma))
+        partes.append(f"| Korlin | AFI | {'Significado' if idioma=='es' else 'Meaning' if idioma=='en' else 'Sens' if idioma=='fr' else '含义' if idioma=='zh' else '意味'} |")
+        partes.append("|---|---|---|")
+        for p in palabras:
+            # Usar la traducción del idioma si existe, si no el campo es/en
+            significado = trad.get(p["forma"], p.get(idioma, p["es"]))
+            partes.append(f"| **{p['forma']}** | {p['afi']} | {significado} |")
         partes.append("")
 
-    # Afijos
-    partes.append("## Afijos")
-    partes.append("")
-    cab = "| Afijo | Tipo | Función | Ejemplo |" if idioma == "es" else "| Affix | Type | Function | Example |"
-    partes.append(cab)
-    partes.append("|---|---|---|---|")
-    for a in afijos["afijos"]:
-        funcion = a["es"] if idioma == "es" else a["en"]
-        partes.append(f"| `{a['forma']}` | {a['tipo']} | {funcion} | `{a['ejemplo']}` |")
-    partes.append("")
     return "\n".join(partes)
 
 
 def generar_manual_ia(lexico, afijos):
-    """Manual pensado para que un agente de IA (o un LLM) aprenda Korlin."""
     lineas = [
-        "# Manual de Korlin para agentes de IA",
-        "",
+        "# Manual de Korlin para agentes de IA", "",
         "Korlin (Shortlang) es una lengua construida regular y sin ambigüedad.",
-        "Reglas de uso para un agente:",
-        "",
+        "Reglas de uso para un agente:", "",
         "1. **Orden**: SVO. Modificador antes del núcleo.",
         "2. **Plural**: sufijo `-s`.",
         "3. **Tiempo**: `an-` (pasado), `ne-` (futuro), presente sin marca.",
-        "4. **Evidencialidad OBLIGATORIA**: todo verbo declarativo lleva `-ve` (directo), `-pen` (inferido), `-di` (reportado) o `-sa` (asumido).",
+        "4. **Evidencialidad OBLIGATORIA**: `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (asumido).",
         "5. **Modalidad epistémica** (opcional, al final): `to` cierto, `be` probable, `os` posible, `ku` dudoso.",
         "6. **Negación**: `na` antes del verbo.",
         "7. **Pregunta sí/no**: `mo` al final. Interrogativos al inicio.",
         "8. **Posesión**: `de`. **Subordinación**: `ki`.",
-        "9. **Derivación**: `-pe` agente, `-lo` lugar, `-re` cosa, `-i` adjetivo, `-ro` abstracto, `na-` opuesto, `me-` aumentativo, `pi-` diminutivo.",
-        "",
-        "## Vocabulario (korlin | categoría | es | en)",
-        "```",
+        "9. **Derivación**: `-pe` agente, `-lo` lugar, `-re` cosa, `-i` adjetivo, `-ro` abstracto, `na-` opuesto, `me-` aumentativo, `pi-` diminutivo.", "",
+        "## Vocabulario (korlin | categoría | es | en)", "```",
     ]
     for p in lexico["palabras"]:
         lineas.append(f"{p['forma']:<8} | {p['categoria']:<12} | {p['es']} | {p['en']}")
     lineas.append("```")
     lineas.append("")
-    lineas.append("## Pares de ejemplo (traducción)")
+    lineas.append("## Pares de ejemplo")
     lineas.append("```")
     ejemplos = [
         ("Halo! Mi e-sa Korlin.", "¡Hola! Soy Korlin.", "Hello! I am Korlin."),
-        ("Mi e-sa u ko lin.", "Soy una lengua corta.", "I am a short language."),
         ("Na-toro na-kan-sa vi i mi.", "La mentira no puede vivir en mí.", "Lies cannot live in me."),
         ("li go-ve.", "Él se fue (lo vi).", "He left (I saw it)."),
         ("li go-di ku.", "Se fue (me lo contaron, no me fío).", "He left (I was told, I doubt it)."),
         ("Tu go mo?", "¿Vas?", "Do you go?"),
     ]
     for k, es, en in ejemplos:
-        lineas.append(f"{k}")
+        lineas.append(k)
         lineas.append(f"  ES: {es}")
         lineas.append(f"  EN: {en}")
     lineas.append("```")
@@ -227,27 +339,25 @@ def generar_lexico_js(lexico):
 def main():
     lexico = cargar("lexico.yaml")
     afijos = cargar("afijos.yaml")
+    traducciones = cargar("traducciones.yaml")
 
     docs = ROOT / "docs"
     web = ROOT / "web"
     docs.mkdir(exist_ok=True)
     web.mkdir(exist_ok=True)
 
-    manual_es = generar_manual("es", "Manual de Korlin (español)", lexico, afijos)
-    manual_en = generar_manual("en", "Korlin Manual (English)", lexico, afijos)
-    manual_ia = generar_manual_ia(lexico, afijos)
-    lexico_js = generar_lexico_js(lexico)
+    # Manuales ES/EN (desde lexico.yaml) + FR/ZH/JA (desde traducciones.yaml)
+    for idioma in ["es", "en", "fr", "zh", "ja"]:
+        manual = generar_manual(idioma, lexico, afijos, traducciones)
+        (docs / f"manual-{idioma}.md").write_text(manual, encoding="utf-8")
 
-    (docs / "manual-es.md").write_text(manual_es, encoding="utf-8")
-    (docs / "manual-en.md").write_text(manual_en, encoding="utf-8")
-    (docs / "manual-ia.md").write_text(manual_ia, encoding="utf-8")
-    (web / "lexico.js").write_text(lexico_js, encoding="utf-8")
+    (docs / "manual-ia.md").write_text(generar_manual_ia(lexico, afijos), encoding="utf-8")
+    (web / "lexico.js").write_text(generar_lexico_js(lexico), encoding="utf-8")
 
     n_pal = len(lexico["palabras"])
-    n_af = len(afijos["afijos"])
-    print(f"✓ Generados {n_pal} palabras y {n_af} afijos →")
-    print(f"  docs/manual-es.md")
-    print(f"  docs/manual-en.md")
+    print(f"✓ {n_pal} palabras →")
+    for idioma in ["es", "en", "fr", "zh", "ja"]:
+        print(f"  docs/manual-{idioma}.md")
     print(f"  docs/manual-ia.md")
     print(f"  web/lexico.js")
 

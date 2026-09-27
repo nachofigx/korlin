@@ -6,7 +6,7 @@
 
 20 sonidos, 20 letras. **Una letra = un sonido, siempre.**
 
-| Letra | Sonido (AFI) | Como en español |
+| Letra | AFI | Como en español |
 |---|---|---|
 | a | /a/ | c**a**sa |
 | e | /e/ | m**e**sa |
@@ -29,20 +29,19 @@
 | w | /w/ | **w**ater (inglesa) |
 | y | /j/ | **y**o |
 
-**Reglas de oro**: vocales puras · p/t/k sin soplo · r siempre suave · s siempre [s] · h siempre sonora.
+**Reglas de oro**: vocales puras · p/t/k sin soplo · r suave · s siempre [s] · h siempre sonora.
 
 ## Gramática esencial
 
 - **Orden**: Sujeto-Verbo-Objeto (SVO). `mi go a le ho` = "voy a la casa".
 - **Modificador antes del núcleo**: `me ho` = "casa grande".
-- **Plural**: sufijo `-s`. `li` → `lis` (él → ellos).
-- **Tiempos**: prefijos `an-` (pasado) y `ne-` (futuro); presente sin marca.
-- **Evidencialidad (obligatoria)**: sufijos `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (asumido). Toda afirmación declara su fuente.
-- **Modalidad epistémica**: partículas `to` (cierto), `be` (probable), `os` (posible), `ku` (dudoso).
-- **Negación**: `na` antes del verbo. `mi na sa` = "no sé".
-- **Pregunta sí/no**: partícula `mo` al final. `tu go mo?` = "¿vas?".
-- **Posesión**: `de`. `le ho de mi` = "mi casa".
-- **Subordinación**: `ki`. Cada cláusula lleva su propio evidencial.
+- **Plural**: sufijo `-s`. `li` → `lis`.
+- **Tiempos**: `an-` (pasado), `ne-` (futuro); presente sin marca.
+- **Evidencialidad (obligatoria)**: `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (asumido).
+- **Modalidad epistémica**: `to` (cierto), `be` (probable), `os` (posible), `ku` (dudoso).
+- **Negación**: `na` antes del verbo.
+- **Pregunta sí/no**: `mo` al final.
+- **Posesión**: `de`. **Subordinación**: `ki`.
 
 ## Palabras funcionales
 
@@ -256,23 +255,3 @@
 | **be** | /be/ | probable 👍 |
 | **os** | /os/ | posible 🤔 |
 | **ku** | /ku/ | dudoso ⚠️ |
-
-## Afijos
-
-| Afijo | Tipo | Función | Ejemplo |
-|---|---|---|---|
-| `-s` | sufijo | plural | `li → lis (él → ellos)` |
-| `an-` | prefijo | pasado | `an-go = fue` |
-| `ne-` | prefijo | futuro | `ne-go = irá` |
-| `-ve` | sufijo | directo (lo vi) | `go-ve = va (lo veo)` |
-| `-pen` | sufijo | inferido (lo deduzco) | `go-pen = va (lo infiero)` |
-| `-di` | sufijo | reportado (me lo dijeron) | `go-di = va (me lo contaron)` |
-| `-sa` | sufijo | asumido (se sabe) | `go-sa = va (se asume)` |
-| `-pe` | sufijo | agente (persona que X) | `sa-pe = sabio` |
-| `-lo` | sufijo | lugar (donde se X) | `man-lo = comedor` |
-| `-re` | sufijo | cosa/objeto | `man-re = comida` |
-| `-i` | sufijo | adjetivo relativo | `su-i = solar` |
-| `-ro` | sufijo | abstracto (cualidad) | `gu-ro = bondad` |
-| `na-` | prefijo | opuesto/negativo | `na-gu = malo` |
-| `me-` | prefijo | aumentativo (grande/muy) | `me-gu = excelente` |
-| `pi-` | prefijo | diminutivo (pequeño) | `pi-ho = casita` |

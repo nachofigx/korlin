@@ -6,7 +6,7 @@ Reglas de uso para un agente:
 1. **Orden**: SVO. Modificador antes del núcleo.
 2. **Plural**: sufijo `-s`.
 3. **Tiempo**: `an-` (pasado), `ne-` (futuro), presente sin marca.
-4. **Evidencialidad OBLIGATORIA**: todo verbo declarativo lleva `-ve` (directo), `-pen` (inferido), `-di` (reportado) o `-sa` (asumido).
+4. **Evidencialidad OBLIGATORIA**: `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (asumido).
 5. **Modalidad epistémica** (opcional, al final): `to` cierto, `be` probable, `os` posible, `ku` dudoso.
 6. **Negación**: `na` antes del verbo.
 7. **Pregunta sí/no**: `mo` al final. Interrogativos al inicio.
@@ -160,14 +160,11 @@ gu-gu    | slang        | guay, súper bueno (reduplicación) | cool, awesome (r
 me-ku    | slang        | ni de broma (muy dudoso) | no way (very doubtful)
 ```
 
-## Pares de ejemplo (traducción)
+## Pares de ejemplo
 ```
 Halo! Mi e-sa Korlin.
   ES: ¡Hola! Soy Korlin.
   EN: Hello! I am Korlin.
-Mi e-sa u ko lin.
-  ES: Soy una lengua corta.
-  EN: I am a short language.
 Na-toro na-kan-sa vi i mi.
   ES: La mentira no puede vivir en mí.
   EN: Lies cannot live in me.

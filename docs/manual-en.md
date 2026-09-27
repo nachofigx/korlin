@@ -1,17 +1,17 @@
 # Korlin Manual (English)
 
-**Korlin** (/ˈkoɾlin/) es una lengua construida *corta, honesta y moderna*.
+**Korlin** (/ˈkoɾlin/) is a constructed language: *short, honest and modern*.
 
 ## Pronunciation
 
 20 sounds, 20 letters. **One letter = one sound, always.**
 
-| Letter | Sound (IPA) | Like in English |
+| Letter | IPA | Like in English |
 |---|---|---|
 | a | /a/ | f**a**ther |
 | e | /e/ | b**e**d |
 | i | /i/ | s**ee** |
-| o | /o/ | g**o** (pure, no glide) |
+| o | /o/ | g**o** (pure) |
 | u | /u/ | f**oo**d |
 | p | /p/ | s**p**in (no puff) |
 | b | /b/ | **b**ed |
@@ -22,31 +22,30 @@
 | m | /m/ | **m**an |
 | n | /n/ | **n**o |
 | f | /f/ | **f**an |
-| s | /s/ | **s**ee (always /s/) |
+| s | /s/ | **s**ee |
 | h | /h/ | **h**ouse |
 | l | /l/ | **l**ow |
-| r | /ɾ/ | Spanish "pe**r**o" (tapped) |
+| r | /ɾ/ | Spanish "pe**r**o" |
 | w | /w/ | **w**ater |
 | y | /j/ | **y**es |
 
-**Golden rules**: pure vowels · no aspiration on p/t/k · r always tapped · s always /s/ · h always voiced.
+**Golden rules**: pure vowels · no aspiration · r tapped · s always /s/ · h voiced.
 
 ## Essential grammar
 
 - **Order**: Subject-Verb-Object (SVO). `mi go a le ho` = "I go to the house".
 - **Modifier before head**: `me ho` = "big house".
-- **Plural**: suffix `-s`. `li` → `lis` (he → they).
-- **Tense**: prefixes `an-` (past) and `ne-` (future); present unmarked.
-- **Evidentiality (mandatory)**: suffixes `-ve` (direct), `-pen` (inferred), `-di` (reported), `-sa` (assumed). Every statement declares its source.
-- **Epistemic modality**: particles `to` (certain), `be` (probable), `os` (possible), `ku` (doubtful).
-- **Negation**: `na` before the verb. `mi na sa` = "I don't know".
-- **Yes/no question**: particle `mo` at the end. `tu go mo?` = "do you go?".
-- **Possession**: `de`. `le ho de mi` = "my house".
-- **Subordination**: `ki`. Each clause carries its own evidential.
+- **Plural**: suffix `-s`. `li` → `lis`.
+- **Tense**: `an-` (past), `ne-` (future); present unmarked.
+- **Evidentiality (mandatory)**: `-ve` (direct), `-pen` (inferred), `-di` (reported), `-sa` (assumed).
+- **Epistemic modality**: `to` (certain), `be` (probable), `os` (possible), `ku` (doubtful).
+- **Negation**: `na` before the verb.
+- **Yes/no question**: `mo` at the end.
+- **Possession**: `de`. **Subordination**: `ki`.
 
 ## Function words
 
-| Korlin | AFI | Significado |
+| Korlin | AFI | Meaning |
 |---|---|---|
 | **e** | /e/ | to be |
 | **mo** | /mo/ | question particle |
@@ -67,7 +66,7 @@
 
 ## Pronouns
 
-| Korlin | AFI | Significado |
+| Korlin | AFI | Meaning |
 |---|---|---|
 | **mi** | /mi/ | I, me |
 | **tu** | /tu/ | you |
@@ -78,7 +77,7 @@
 
 ## Determiners
 
-| Korlin | AFI | Significado |
+| Korlin | AFI | Meaning |
 |---|---|---|
 | **u** | /u/ | a, an, one |
 | **le** | /le/ | the |
@@ -88,7 +87,7 @@
 
 ## Verbs
 
-| Korlin | AFI | Significado |
+| Korlin | AFI | Meaning |
 |---|---|---|
 | **go** | /go/ | to go |
 | **ven** | /ven/ | to come |
@@ -119,7 +118,7 @@
 
 ## Nouns
 
-| Korlin | AFI | Significado |
+| Korlin | AFI | Meaning |
 |---|---|---|
 | **pe** | /pe/ | person |
 | **re** | /re/ | thing, object |
@@ -150,7 +149,7 @@
 
 ## Adjectives
 
-| Korlin | AFI | Significado |
+| Korlin | AFI | Meaning |
 |---|---|---|
 | **gu** | /gu/ | good |
 | **fe** | /fe/ | bad |
@@ -168,7 +167,7 @@
 
 ## Colors
 
-| Korlin | AFI | Significado |
+| Korlin | AFI | Meaning |
 |---|---|---|
 | **ru** | /ru/ | red |
 | **gi** | /gi/ | green |
@@ -184,7 +183,7 @@
 
 ## Numbers
 
-| Korlin | AFI | Significado |
+| Korlin | AFI | Meaning |
 |---|---|---|
 | **u** | /u/ | 1 |
 | **du** | /du/ | 2 |
@@ -199,7 +198,7 @@
 
 ## Mathematics
 
-| Korlin | AFI | Significado |
+| Korlin | AFI | Meaning |
 |---|---|---|
 | **sum** | /sum/ | to add, sum (+) |
 | **min** | /min/ | to subtract, minus (−) |
@@ -208,7 +207,7 @@
 
 ## SI prefixes
 
-| Korlin | AFI | Significado |
+| Korlin | AFI | Meaning |
 |---|---|---|
 | **kilo** | /ˈkilo/ | thousand (×1000) |
 | **mega** | /ˈmega/ | million (×10⁶) |
@@ -219,7 +218,7 @@
 
 ## Countries
 
-| Korlin | AFI | Significado |
+| Korlin | AFI | Meaning |
 |---|---|---|
 | **Mekiko** | /meˈkiko/ | Mexico |
 | **Espan** | /eˈspan/ | Spain |
@@ -229,14 +228,14 @@
 
 ## Slang
 
-| Korlin | AFI | Significado |
+| Korlin | AFI | Meaning |
 |---|---|---|
 | **gu-gu** | /ˈgugu/ | cool, awesome (reduplication) |
 | **me-ku** | /ˈmeku/ | no way (very doubtful) |
 
 ## Attitude particles
 
-| Korlin | AFI | Significado |
+| Korlin | AFI | Meaning |
 |---|---|---|
 | **yo** | /jo/ | joy, love ❤️ |
 | **hu** | /hu/ | sadness 😢 |
@@ -250,29 +249,9 @@
 
 ## Epistemic modality
 
-| Korlin | AFI | Significado |
+| Korlin | AFI | Meaning |
 |---|---|---|
 | **to** | /to/ | certain ✅ |
 | **be** | /be/ | probable 👍 |
 | **os** | /os/ | possible 🤔 |
 | **ku** | /ku/ | doubtful ⚠️ |
-
-## Afijos
-
-| Affix | Type | Function | Example |
-|---|---|---|---|
-| `-s` | sufijo | plural | `li → lis (él → ellos)` |
-| `an-` | prefijo | past | `an-go = fue` |
-| `ne-` | prefijo | future | `ne-go = irá` |
-| `-ve` | sufijo | direct (I saw) | `go-ve = va (lo veo)` |
-| `-pen` | sufijo | inferred | `go-pen = va (lo infiero)` |
-| `-di` | sufijo | reported (told) | `go-di = va (me lo contaron)` |
-| `-sa` | sufijo | assumed (known) | `go-sa = va (se asume)` |
-| `-pe` | sufijo | agent (person who X) | `sa-pe = sabio` |
-| `-lo` | sufijo | place (where X happens) | `man-lo = comedor` |
-| `-re` | sufijo | thing/object | `man-re = comida` |
-| `-i` | sufijo | relational adjective | `su-i = solar` |
-| `-ro` | sufijo | abstract (quality) | `gu-ro = bondad` |
-| `na-` | prefijo | opposite/negative | `na-gu = malo` |
-| `me-` | prefijo | augmentative | `me-gu = excelente` |
-| `pi-` | prefijo | diminutive | `pi-ho = casita` |
