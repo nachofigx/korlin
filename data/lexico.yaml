@@ -1,0 +1,749 @@
+# Léxico de Korlin — Fuente de verdad única (bilingüe ES/EN)
+# Un cambio AQUÍ se refleja automáticamente en: manual ES, manual EN, manual IA, sitio web.
+version: "1.0"
+
+palabras:
+  # ===== Partículas y funcionales =====
+  - forma: e
+    afi: /e/
+    categoria: partícula
+    es: ser, estar
+    en: to be
+  - forma: a
+    afi: /a/
+    categoria: preposición
+    es: a, hacia
+    en: to, toward
+  - forma: i
+    afi: /i/
+    categoria: preposición
+    es: en, dentro
+    en: in, inside
+  - forma: o
+    afi: /o/
+    categoria: conjunción
+    es: o
+    en: or
+  - forma: u
+    afi: /u/
+    categoria: determinante
+    es: un, una, uno
+    en: a, an, one
+  - forma: ka
+    afi: /ka/
+    categoria: conjunción
+    es: y
+    en: and
+  - forma: ba
+    afi: /ba/
+    categoria: conjunción
+    es: pero
+    en: but
+  - forma: ki
+    afi: /ki/
+    categoria: conjunción
+    es: que, qué
+    en: that, which, what
+  - forma: si
+    afi: /si/
+    categoria: conjunción
+    es: si (condicional)
+    en: if
+  - forma: so
+    afi: /so/
+    categoria: conjunción
+    es: entonces, así que
+    en: then, so
+  - forma: na
+    afi: /na/
+    categoria: adverbio
+    es: no (negación)
+    en: no, not
+  - forma: ya
+    afi: /ya/
+    categoria: adverbio
+    es: sí
+    en: yes
+  - forma: de
+    afi: /de/
+    categoria: preposición
+    es: de
+    en: of, from
+  - forma: kon
+    afi: /kon/
+    categoria: preposición
+    es: con
+    en: with
+  - forma: po
+    afi: /po/
+    categoria: preposición
+    es: por, para
+    en: for, by
+  - forma: mo
+    afi: /mo/
+    categoria: partícula
+    es: ¿? (pregunta sí/no)
+    en: question particle
+  - forma: halo
+    afi: /ˈhalo/
+    categoria: saludo
+    es: hola
+    en: hello
+
+  # ===== Pronombres =====
+  - forma: mi
+    afi: /mi/
+    categoria: pronombre
+    es: yo
+    en: I, me
+  - forma: tu
+    afi: /tu/
+    categoria: pronombre
+    es: tú
+    en: you
+  - forma: li
+    afi: /li/
+    categoria: pronombre
+    es: él, ella
+    en: he, she
+  - forma: wi
+    afi: /wi/
+    categoria: pronombre
+    es: nosotros
+    en: we
+  - forma: yu
+    afi: /yu/
+    categoria: pronombre
+    es: vosotros, ustedes
+    en: you all
+  - forma: lis
+    afi: /lis/
+    categoria: pronombre
+    es: ellos, ellas
+    en: they
+
+  # ===== Determinantes =====
+  - forma: le
+    afi: /le/
+    categoria: determinante
+    es: el, la
+    en: the
+  - forma: se
+    afi: /se/
+    categoria: determinante
+    es: este, esta
+    en: this
+  - forma: te
+    afi: /te/
+    categoria: determinante
+    es: ese, esa
+    en: that
+  - forma: ke
+    afi: /ke/
+    categoria: determinante
+    es: aquel, aquella
+    en: that (over there)
+
+  # ===== Verbos =====
+  - forma: go
+    afi: /go/
+    categoria: verbo
+    es: ir
+    en: to go
+  - forma: ven
+    afi: /ven/
+    categoria: verbo
+    es: venir
+    en: to come
+  - forma: ve
+    afi: /ve/
+    categoria: verbo
+    es: ver
+    en: to see
+  - forma: di
+    afi: /di/
+    categoria: verbo
+    es: decir
+    en: to say
+  - forma: pa
+    afi: /pa/
+    categoria: verbo
+    es: hablar
+    en: to speak
+  - forma: fa
+    afi: /fa/
+    categoria: verbo
+    es: hacer
+    en: to do, make
+  - forma: ha
+    afi: /ha/
+    categoria: verbo
+    es: tener
+    en: to have
+  - forma: vo
+    afi: /vo/
+    categoria: verbo
+    es: querer
+    en: to want
+  - forma: kan
+    afi: /kan/
+    categoria: verbo
+    es: poder
+    en: can, to be able
+  - forma: mus
+    afi: /mus/
+    categoria: verbo
+    es: deber
+    en: must
+  - forma: sa
+    afi: /sa/
+    categoria: verbo
+    es: saber
+    en: to know
+  - forma: da
+    afi: /da/
+    categoria: verbo
+    es: dar
+    en: to give
+  - forma: ta
+    afi: /ta/
+    categoria: verbo
+    es: tomar
+    en: to take
+  - forma: pen
+    afi: /pen/
+    categoria: verbo
+    es: pensar
+    en: to think
+  - forma: sen
+    afi: /sen/
+    categoria: verbo
+    es: sentir
+    en: to feel
+  - forma: man
+    afi: /man/
+    categoria: verbo
+    es: comer
+    en: to eat
+  - forma: bi
+    afi: /bi/
+    categoria: verbo
+    es: beber
+    en: to drink
+  - forma: do
+    afi: /do/
+    categoria: verbo
+    es: dormir
+    en: to sleep
+  - forma: vi
+    afi: /vi/
+    categoria: verbo
+    es: vivir
+    en: to live
+  - forma: mu
+    afi: /mu/
+    categoria: verbo
+    es: morir
+    en: to die
+
+  # ===== Sustantivos =====
+  - forma: pe
+    afi: /pe/
+    categoria: sustantivo
+    es: persona
+    en: person
+  - forma: re
+    afi: /re/
+    categoria: sustantivo
+    es: cosa, objeto
+    en: thing, object
+  - forma: wa
+    afi: /wa/
+    categoria: sustantivo
+    es: agua
+    en: water
+  - forma: fo
+    afi: /fo/
+    categoria: sustantivo
+    es: fuego
+    en: fire
+  - forma: ga
+    afi: /ga/
+    categoria: sustantivo
+    es: tierra
+    en: earth, land
+  - forma: su
+    afi: /su/
+    categoria: sustantivo
+    es: sol
+    en: sun
+  - forma: lu
+    afi: /lu/
+    categoria: sustantivo
+    es: luna
+    en: moon
+  - forma: jo
+    afi: /jo/
+    categoria: sustantivo
+    es: día
+    en: day
+  - forma: no
+    afi: /no/
+    categoria: sustantivo
+    es: noche
+    en: night
+  - forma: tem
+    afi: /tem/
+    categoria: sustantivo
+    es: tiempo
+    en: time
+  - forma: lo
+    afi: /lo/
+    categoria: sustantivo
+    es: lugar
+    en: place
+  - forma: ho
+    afi: /ho/
+    categoria: sustantivo
+    es: casa
+    en: house, home
+  - forma: ma
+    afi: /ma/
+    categoria: sustantivo
+    es: mano
+    en: hand
+  - forma: ye
+    afi: /ye/
+    categoria: sustantivo
+    es: ojo
+    en: eye
+  - forma: he
+    afi: /he/
+    categoria: sustantivo
+    es: cabeza
+    en: head
+  - forma: wo
+    afi: /wo/
+    categoria: sustantivo
+    es: palabra
+    en: word
+  - forma: nom
+    afi: /nom/
+    categoria: sustantivo
+    es: nombre
+    en: name
+  - forma: kin
+    afi: /kin/
+    categoria: sustantivo
+    es: máquina
+    en: machine
+  - forma: toro
+    afi: /ˈtoɾo/
+    categoria: sustantivo
+    es: verdad, certeza
+    en: truth, certainty
+
+  # ===== Adjetivos =====
+  - forma: gu
+    afi: /gu/
+    categoria: adjetivo
+    es: bueno
+    en: good
+  - forma: fe
+    afi: /fe/
+    categoria: adjetivo
+    es: malo
+    en: bad
+  - forma: me
+    afi: /me/
+    categoria: adjetivo
+    es: grande
+    en: big, great
+  - forma: pi
+    afi: /pi/
+    categoria: adjetivo
+    es: pequeño
+    en: small
+  - forma: ne
+    afi: /ne/
+    categoria: adjetivo
+    es: nuevo
+    en: new
+  - forma: an
+    afi: /an/
+    categoria: adjetivo
+    es: viejo
+    en: old
+  - forma: ra
+    afi: /ra/
+    categoria: adjetivo
+    es: rápido
+    en: fast
+  - forma: len
+    afi: /len/
+    categoria: adjetivo
+    es: lento
+    en: slow
+  - forma: hi
+    afi: /hi/
+    categoria: adjetivo
+    es: alto
+    en: high, tall
+  - forma: bo
+    afi: /bo/
+    categoria: adjetivo
+    es: bajo
+    en: low
+  - forma: tom
+    afi: /tom/
+    categoria: adjetivo
+    es: caliente
+    en: hot
+  - forma: ge
+    afi: /ge/
+    categoria: adjetivo
+    es: frío
+    en: cold
+  - forma: ko
+    afi: /ko/
+    categoria: adjetivo
+    es: corto, breve
+    en: short, brief
+
+  # ===== Técnicas =====
+  - forma: ban
+    afi: /ban/
+    categoria: verbo
+    es: construir
+    en: to build
+  - forma: men
+    afi: /men/
+    categoria: sustantivo
+    es: medida, volumen
+    en: measure, volume
+  - forma: pis
+    afi: /pis/
+    categoria: sustantivo
+    es: piso, nivel
+    en: floor, level
+  - forma: ren
+    afi: /ren/
+    categoria: sustantivo
+    es: regla, ley
+    en: rule, law
+  - forma: som
+    afi: /som/
+    categoria: sustantivo
+    es: sombra
+    en: shadow
+  - forma: lum
+    afi: /lum/
+    categoria: sustantivo
+    es: luz
+    en: light
+  - forma: gan
+    afi: /gan/
+    categoria: verbo
+    es: proteger, guardar
+    en: to protect, guard
+  - forma: pon
+    afi: /pon/
+    categoria: verbo
+    es: poner, colocar
+    en: to put, place
+  - forma: num
+    afi: /num/
+    categoria: verbo
+    es: calcular, número
+    en: to calculate
+  - forma: sim
+    afi: /sim/
+    categoria: verbo
+    es: simular
+    en: to simulate
+  - forma: ken
+    afi: /ken/
+    categoria: verbo
+    es: comprar
+    en: to buy
+  - forma: plan
+    afi: /plan/
+    categoria: sustantivo
+    es: plano, diseño
+    en: plan, design
+  - forma: Yapan
+    afi: /ˈjapan/
+    categoria: nombre propio
+    es: Japón
+    en: Japan
+
+  # ===== Números =====
+  - forma: u
+    afi: /u/
+    categoria: número
+    es: "1"
+    en: "1"
+  - forma: du
+    afi: /du/
+    categoria: número
+    es: "2"
+    en: "2"
+  - forma: san
+    afi: /san/
+    categoria: número
+    es: "3"
+    en: "3"
+  - forma: fu
+    afi: /fu/
+    categoria: número
+    es: "4"
+    en: "4"
+  - forma: sin
+    afi: /sin/
+    categoria: número
+    es: "5"
+    en: "5"
+  - forma: sis
+    afi: /sis/
+    categoria: número
+    es: "6"
+    en: "6"
+  - forma: sem
+    afi: /sem/
+    categoria: número
+    es: "7"
+    en: "7"
+  - forma: om
+    afi: /om/
+    categoria: número
+    es: "8"
+    en: "8"
+  - forma: nu
+    afi: /nu/
+    categoria: número
+    es: "9"
+    en: "9"
+  - forma: des
+    afi: /des/
+    categoria: número
+    es: "10"
+    en: "10"
+
+  # ===== Partículas de actitud (emoji) =====
+  - forma: yo
+    afi: /jo/
+    categoria: actitud
+    es: alegría, me encanta ❤️
+    en: joy, love ❤️
+  - forma: hu
+    afi: /hu/
+    categoria: actitud
+    es: tristeza 😢
+    en: sadness 😢
+  - forma: we
+    afi: /we/
+    categoria: actitud
+    es: sorpresa 😮
+    en: surprise 😮
+  - forma: fi
+    afi: /fi/
+    categoria: actitud
+    es: ironía, sarcasmo 🙃
+    en: irony, sarcasm 🙃
+  - forma: bu
+    afi: /bu/
+    categoria: actitud
+    es: enfado 😤
+    en: anger 😤
+  - forma: ri
+    afi: /ri/
+    categoria: actitud
+    es: risa 😂
+    en: laughter 😂
+  - forma: pu
+    afi: /pu/
+    categoria: actitud
+    es: asco 🤢
+    en: disgust 🤢
+  - forma: ni
+    afi: /ni/
+    categoria: actitud
+    es: miedo 😨
+    en: fear 😨
+  - forma: la
+    afi: /la/
+    categoria: actitud
+    es: cariño 🥰
+    en: affection 🥰
+
+  # ===== Modalidad epistémica (certeza) =====
+  - forma: to
+    afi: /to/
+    categoria: modalidad
+    es: cierto ✅
+    en: certain ✅
+  - forma: be
+    afi: /be/
+    categoria: modalidad
+    es: probable 👍
+    en: probable 👍
+  - forma: os
+    afi: /os/
+    categoria: modalidad
+    es: posible 🤔
+    en: possible 🤔
+  - forma: ku
+    afi: /ku/
+    categoria: modalidad
+    es: dudoso ⚠️
+    en: doubtful ⚠️
+
+  # ===== Colores =====
+  - forma: ru
+    afi: /ru/
+    categoria: color
+    es: rojo
+    en: red
+  - forma: gi
+    afi: /gi/
+    categoria: color
+    es: verde
+    en: green
+  - forma: ro
+    afi: /ro/
+    categoria: color
+    es: rosa
+    en: pink
+  - forma: lumi
+    afi: /ˈlumi/
+    categoria: color
+    es: blanco (de "luz")
+    en: white (from "light")
+  - forma: noi
+    afi: /ˈno.i/
+    categoria: color
+    es: negro (de "noche")
+    en: black (from "night")
+  - forma: sui
+    afi: /ˈsu.i/
+    categoria: color
+    es: amarillo (de "sol")
+    en: yellow (from "sun")
+  - forma: wai
+    afi: /ˈwa.i/
+    categoria: color
+    es: azul (de "agua")
+    en: blue (from "water")
+  - forma: gai
+    afi: /ˈga.i/
+    categoria: color
+    es: marrón (de "tierra")
+    en: brown (from "earth")
+  - forma: lui
+    afi: /ˈlu.i/
+    categoria: color
+    es: morado (de "luna")
+    en: purple (from "moon")
+  - forma: somi
+    afi: /ˈso.mi/
+    categoria: color
+    es: gris (de "sombra")
+    en: grey (from "shadow")
+  - forma: ru-sui
+    afi: /ruˈsu.i/
+    categoria: color
+    es: naranja (rojo-amarillo)
+    en: orange (red-yellow)
+
+  # ===== Matemáticas =====
+  - forma: sum
+    afi: /sum/
+    categoria: matemática
+    es: sumar, suma (+)
+    en: to add, sum (+)
+  - forma: min
+    afi: /min/
+    categoria: matemática
+    es: restar, menos (−)
+    en: to subtract, minus (−)
+  - forma: fan
+    afi: /fan/
+    categoria: matemática
+    es: multiplicar (×)
+    en: to multiply (×)
+  - forma: fen
+    afi: /fen/
+    categoria: matemática
+    es: dividir (÷)
+    en: to divide (÷)
+
+  # ===== Prefijos SI =====
+  - forma: kilo
+    afi: /ˈkilo/
+    categoria: prefijo SI
+    es: mil (×1000)
+    en: thousand (×1000)
+  - forma: mega
+    afi: /ˈmega/
+    categoria: prefijo SI
+    es: millón (×10⁶)
+    en: million (×10⁶)
+  - forma: giga
+    afi: /ˈgiga/
+    categoria: prefijo SI
+    es: mil millones (×10⁹)
+    en: billion (×10⁹)
+  - forma: mili
+    afi: /ˈmili/
+    categoria: prefijo SI
+    es: milésima (÷1000)
+    en: thousandth (÷1000)
+  - forma: miko
+    afi: /ˈmiko/
+    categoria: prefijo SI
+    es: millonésima (micro-)
+    en: millionth (micro-)
+  - forma: nano
+    afi: /ˈnano/
+    categoria: prefijo SI
+    es: milmillonésima (nano-)
+    en: billionth (nano-)
+
+  # ===== Países (nombres propios adaptados) =====
+  - forma: Mekiko
+    afi: /meˈkiko/
+    categoria: país
+    es: México
+    en: Mexico
+  - forma: Espan
+    afi: /eˈspan/
+    categoria: país
+    es: España
+    en: Spain
+  - forma: Kina
+    afi: /ˈkina/
+    categoria: país
+    es: China
+    en: China
+  - forma: Frans
+    afi: /frans/
+    categoria: país
+    es: Francia
+    en: France
+  - forma: Brasil
+    afi: /bɾaˈsil/
+    categoria: país
+    es: Brasil
+    en: Brazil
+
+  # ===== Slang (ejemplos iniciales) =====
+  - forma: gu-gu
+    afi: /ˈgugu/
+    categoria: slang
+    es: guay, súper bueno (reduplicación)
+    en: cool, awesome (reduplication)
+  - forma: me-ku
+    afi: /ˈmeku/
+    categoria: slang
+    es: ni de broma (muy dudoso)
+    en: no way (very doubtful)

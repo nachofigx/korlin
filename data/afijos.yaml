@@ -1,0 +1,97 @@
+# Afijos de Korlin — Fuente de verdad única (bilingüe ES/EN)
+version: "1.0"
+
+afijos:
+  # ===== Flexivos (gramaticales) =====
+  - forma: "-s"
+    tipo: sufijo
+    funcion: flexión
+    es: plural
+    en: plural
+    ejemplo: "li → lis (él → ellos)"
+  - forma: "an-"
+    tipo: prefijo
+    funcion: tiempo
+    es: pasado
+    en: past
+    ejemplo: "an-go = fue"
+  - forma: "ne-"
+    tipo: prefijo
+    funcion: tiempo
+    es: futuro
+    en: future
+    ejemplo: "ne-go = irá"
+  - forma: "-ve"
+    tipo: sufijo
+    funcion: evidencial
+    es: directo (lo vi)
+    en: direct (I saw)
+    ejemplo: "go-ve = va (lo veo)"
+  - forma: "-pen"
+    tipo: sufijo
+    funcion: evidencial
+    es: inferido (lo deduzco)
+    en: inferred
+    ejemplo: "go-pen = va (lo infiero)"
+  - forma: "-di"
+    tipo: sufijo
+    funcion: evidencial
+    es: reportado (me lo dijeron)
+    en: reported (told)
+    ejemplo: "go-di = va (me lo contaron)"
+  - forma: "-sa"
+    tipo: sufijo
+    funcion: evidencial
+    es: asumido (se sabe)
+    en: assumed (known)
+    ejemplo: "go-sa = va (se asume)"
+
+  # ===== Derivacionales =====
+  - forma: "-pe"
+    tipo: sufijo
+    funcion: derivación
+    es: agente (persona que X)
+    en: agent (person who X)
+    ejemplo: "sa-pe = sabio"
+  - forma: "-lo"
+    tipo: sufijo
+    funcion: derivación
+    es: lugar (donde se X)
+    en: place (where X happens)
+    ejemplo: "man-lo = comedor"
+  - forma: "-re"
+    tipo: sufijo
+    funcion: derivación
+    es: cosa/objeto
+    en: thing/object
+    ejemplo: "man-re = comida"
+  - forma: "-i"
+    tipo: sufijo
+    funcion: derivación
+    es: adjetivo relativo
+    en: relational adjective
+    ejemplo: "su-i = solar"
+  - forma: "-ro"
+    tipo: sufijo
+    funcion: derivación
+    es: abstracto (cualidad)
+    en: abstract (quality)
+    ejemplo: "gu-ro = bondad"
+  - forma: "na-"
+    tipo: prefijo
+    funcion: derivación
+    es: opuesto/negativo
+    en: opposite/negative
+    ejemplo: "na-gu = malo"
+  - forma: "me-"
+    tipo: prefijo
+    funcion: derivación
+    es: aumentativo (grande/muy)
+    en: augmentative
+    ejemplo: "me-gu = excelente"
+  - forma: "pi-"
+    tipo: prefijo
+    funcion: derivación
+    es: diminutivo (pequeño)
+    en: diminutive
+    ejemplo: "pi-ho = casita"
