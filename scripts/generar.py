@@ -342,9 +342,7 @@ def main():
     traducciones = cargar("traducciones.yaml")
 
     docs = ROOT / "docs"
-    web = ROOT / "web"
     docs.mkdir(exist_ok=True)
-    web.mkdir(exist_ok=True)
 
     # Manuales ES/EN (desde lexico.yaml) + FR/ZH/JA (desde traducciones.yaml)
     for idioma in ["es", "en", "fr", "zh", "ja"]:
@@ -352,7 +350,7 @@ def main():
         (docs / f"manual-{idioma}.md").write_text(manual, encoding="utf-8")
 
     (docs / "manual-ia.md").write_text(generar_manual_ia(lexico, afijos), encoding="utf-8")
-    (web / "lexico.js").write_text(generar_lexico_js(lexico), encoding="utf-8")
+    (ROOT / "lexico.js").write_text(generar_lexico_js(lexico), encoding="utf-8")
 
     n_pal = len(lexico["palabras"])
     print(f"✓ {n_pal} palabras →")

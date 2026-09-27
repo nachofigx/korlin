@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korlin (Shortlang) — Lengua construida</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>Korlin</h1>
+      <span class="sub">/ˈkoɾlin/ · Shortlang</span>
+    </div>
+    <p class="tagline">A short, honest, modern constructed language · Una lengua corta, honesta y moderna</p>
+    <nav>
+      <button class="tab active" data-tab="inicio">🏠 Inicio</button>
+      <button class="tab" data-tab="diccionario">📖 Diccionario</button>
+      <button class="tab" data-tab="flashcards">🎴 Flashcards</button>
+      <button class="tab" data-tab="traductor">🔄 Traductor</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- INICIO -->
+    <section id="inicio" class="panel active">
+      <h2>Bienvenido a Korlin 🗣️</h2>
+      <p>Korlin es una lengua construida diseñada para ser <strong>corta</strong>, <strong>honesta</strong> y <strong>moderna</strong> — sucesora del Dutton Speedwords y un Esperanto mejorado.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>✂️ Corta</h3>
+          <p>Palabras de 1–2 sílabas condensan conceptos. ~40% más corta que el Esperanto.</p>
+        </div>
+        <div class="card">
+          <h3>🛡️ Honesta</h3>
+          <p>Evidencialidad obligatoria: toda afirmación declara su fuente. Mentir es costoso y detectable.</p>
+        </div>
+        <div class="card">
+          <h3>📱 Moderna</h3>
+          <p>20 letras, sin tildes, partículas emoji, y lista para IA.</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Ejemplo</h3>
+        <p class="korlin">Na-toro na-kan-sa vi i mi.</p>
+        <p class="gloss">"La mentira no puede vivir en mí." · <code>na-toro</code> = mentira (<code>na-</code> no + <code>toro</code> verdad)</p>
+      </div>
+    </section>
+
+    <!-- DICCIONARIO -->
+    <section id="diccionario" class="panel">
+      <h2>Diccionario 📖</h2>
+      <input type="text" id="busqueda" placeholder="Busca en Korlin, español o inglés… (ej: go, comer, water)">
+      <p id="resultado-count"></p>
+      <div id="resultados" class="resultados"></div>
+    </section>
+
+    <!-- FLASHCARDS -->
+    <section id="flashcards" class="panel">
+      <h2>Flashcards 🎴</h2>
+      <p>Adivina el significado. Haz clic en la tarjeta para revelar.</p>
+      <div id="flashcard" class="flashcard" onclick="revelar()">
+        <p id="flash-palabra" class="korlin"></p>
+        <p id="flash-significado" class="hidden"></p>
+      </div>
+      <div class="flash-buttons">
+        <button onclick="siguiente('no')">🙈 No la sabía</button>
+        <button onclick="siguiente('si')">✅ La sabía</button>
+      </div>
+      <p id="flash-score">Aciertos: 0 / 0</p>
+    </section>
+
+    <!-- TRADUCTOR -->
+    <section id="traductor" class="panel">
+      <h2>Traductor (palabra por palabra) 🔄</h2>
+      <p>Traduce Korlin → Español / Inglés palabra por palabra (demo).</p>
+      <textarea id="texto-origen" placeholder="Escribe en Korlin… ej: mi go a le ho"></textarea>
+      <div class="traductor-controles">
+        <button onclick="traducir('es')">→ Español</button>
+        <button onclick="traducir('en')">→ English</button>
+      </div>
+      <div id="traduccion" class="traduccion"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Korlin (Shortlang) · <a href="https://github.com/nachofigx/korlin" target="_blank">github.com/nachofigx/korlin</a> · Licencia CC BY-SA 4.0 (idioma) / MIT (código)</p>
+  </footer>
+
+  <script src="lexico.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

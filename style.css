@@ -1,0 +1,167 @@
+:root {
+  --bg: #0d1117;
+  --bg2: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #7c5cff;
+  --accent2: #4cc9f0;
+  --good: #3fb950;
+  --bad: #f85149;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+header {
+  padding: 2rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.brand h1 {
+  font-size: 2.5rem;
+  display: inline;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sub { color: var(--muted); font-size: 1rem; margin-left: 0.5rem; }
+
+.tagline { color: var(--muted); margin-top: 0.3rem; }
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.15s;
+}
+
+.tab:hover { border-color: var(--accent); }
+.tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.panel { display: none; }
+.panel.active { display: block; animation: fade 0.2s; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; } }
+
+h2 { margin-bottom: 1rem; font-size: 1.6rem; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; }
+.card h3 { margin-bottom: 0.5rem; }
+.card p { color: var(--muted); font-size: 0.95rem; }
+
+.example { background: var(--bg2); border: 1px solid var(--accent); border-radius: 10px; padding: 1.2rem; margin-top: 1rem; }
+.korlin { color: var(--accent2); font-weight: 600; font-size: 1.3rem; }
+.gloss { color: var(--muted); margin-top: 0.4rem; }
+
+input[type="text"], textarea {
+  width: 100%;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+input[type="text"]:focus, textarea:focus { outline: none; border-color: var(--accent); }
+
+textarea { min-height: 80px; resize: vertical; }
+
+.resultados { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.item {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.item .f { color: var(--accent2); font-weight: 600; font-size: 1.1rem; }
+.item .t { color: var(--muted); text-align: right; }
+.item .cat { color: var(--accent); font-size: 0.8rem; }
+
+#resultado-count { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+.flashcard {
+  background: var(--bg2);
+  border: 2px solid var(--accent);
+  border-radius: 14px;
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+  transition: 0.15s;
+}
+.flashcard:hover { border-color: var(--accent2); }
+.hidden { display: none; }
+
+.flash-buttons { display: flex; gap: 0.8rem; margin-top: 1rem; justify-content: center; }
+.flash-buttons button {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.flash-buttons button:hover { border-color: var(--accent); }
+#flash-score { text-align: center; color: var(--muted); margin-top: 0.8rem; }
+
+.traductor-controles { display: flex; gap: 0.8rem; margin-bottom: 1rem; }
+.traductor-controles button {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.traduccion { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; min-height: 50px; }
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+footer a { color: var(--accent2); }
