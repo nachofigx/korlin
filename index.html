@@ -22,6 +22,8 @@
     <p class="tagline" data-i18n="tagline">A short, honest, modern constructed language</p>
     <nav>
       <button class="tab active" data-tab="inicio" data-i18n="tab_inicio">🏠 Home</button>
+      <button class="tab" data-tab="why" data-i18n="tab_why">🚀 Why Korlin</button>
+      <button class="tab" data-tab="compare" data-i18n="tab_compare">📊 Compare</button>
       <button class="tab" data-tab="diccionario" data-i18n="tab_diccionario">📖 Dictionary</button>
       <button class="tab" data-tab="flashcards" data-i18n="tab_flashcards">🎴 Flashcards</button>
       <button class="tab" data-tab="traductor" data-i18n="tab_traductor">🔄 Translator</button>
@@ -29,24 +31,38 @@
   </header>
 
   <main>
-    <!-- HOME -->
+    <!-- ============ HOME ============ -->
     <section id="inicio" class="panel active">
-      <h2 data-i18n="inicio_titulo">Welcome to Korlin 🗣️</h2>
-      <p data-i18n="inicio_desc">Korlin is a constructed language designed to be <strong>short</strong>, <strong>honest</strong> and <strong>modern</strong> — a spiritual successor to Dutton Speedwords and a better Esperanto.</p>
+      <div class="hero">
+        <h2 data-i18n="hero_titulo">Speak less, say more.</h2>
+        <p data-i18n="hero_sub">Korlin is a constructed language that condenses meaning into tiny, honest, modern words.</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><div class="num">20</div><div class="lbl" data-i18n="stat_letras">letters, 1 letter = 1 sound</div></div>
+        <div class="stat"><div class="num">143</div><div class="lbl" data-i18n="stat_palabras">core words</div></div>
+        <div class="stat"><div class="num">5</div><div class="lbl" data-i18n="stat_idiomas">documentation languages</div></div>
+        <div class="stat"><div class="num">−40%</div><div class="lbl" data-i18n="stat_corto">shorter than Esperanto</div></div>
+      </div>
+
       <div class="cards">
         <div class="card">
-          <h3 data-i18n="card_corta_t">✂️ Short</h3>
+          <div class="icon">✂️</div>
+          <h3 data-i18n="card_corta_t">Short</h3>
           <p data-i18n="card_corta_d">Words of 1–2 syllables condense concepts. ~40% shorter than Esperanto.</p>
         </div>
         <div class="card">
-          <h3 data-i18n="card_honesta_t">🛡️ Honest</h3>
+          <div class="icon">🛡️</div>
+          <h3 data-i18n="card_honesta_t">Honest</h3>
           <p data-i18n="card_honesta_d">Mandatory evidentiality: every statement declares its source. Lying is costly and detectable.</p>
         </div>
-        <div class="card">
-          <h3 data-i18n="card_moderna_t">📱 Modern</h3>
+        <div class="card warm">
+          <div class="icon">📱</div>
+          <h3 data-i18n="card_moderna_t">Modern</h3>
           <p data-i18n="card_moderna_d">20 letters, no diacritics, emoji particles, and AI-ready.</p>
         </div>
       </div>
+
       <div class="example">
         <h3 data-i18n="ejemplo_titulo">Example</h3>
         <p class="korlin">Na-toro na-kan-sa vi i mi.</p>
@@ -54,15 +70,102 @@
       </div>
     </section>
 
-    <!-- DICTIONARY -->
+    <!-- ============ WHY ============ -->
+    <section id="why" class="panel">
+      <h2 data-i18n="why_titulo">Why Korlin? 🚀</h2>
+      <p class="lead" data-i18n="why_desc">Built for a connected, digital, honest world.</p>
+
+      <div class="cards">
+        <div class="card warm">
+          <div class="icon">🧑‍🎤</div>
+          <h3 data-i18n="why_youth_t">Made for youth</h3>
+          <p data-i18n="why_youth_d">Informal, playful, emoji-native. Attitude particles express feelings with two letters that map to emojis.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🤖</div>
+          <h3 data-i18n="why_ia_t">AI-ready</h3>
+          <p data-i18n="why_ia_d">Fewer tokens, deterministic parsing, mandatory evidentiality. Machines understand it efficiently.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🌍</div>
+          <h3 data-i18n="why_adopt_t">Mass adoption</h3>
+          <p data-i18n="why_adopt_d">Total regularity, no exceptions, easy for Asian and African speakers. Learnable in days, not years.</p>
+        </div>
+        <div class="card warm">
+          <div class="icon">⚡</div>
+          <h3 data-i18n="why_modern_t">Super modern</h3>
+          <p data-i18n="why_modern_d">Digital-native: no diacritics, emoji-compatible, designed for chat, phones and AI agents.</p>
+        </div>
+      </div>
+
+      <h3 data-i18n="emoji_titulo">Attitude particles → emoji</h3>
+      <p data-i18n="emoji_desc">Two letters trigger the matching emoji on your phone keyboard.</p>
+      <div class="emoji-wall">
+        <div class="emoji-chip"><span class="em">❤️</span><span class="k">yo</span><span class="m" data-i18n="emo_yo">joy</span></div>
+        <div class="emoji-chip"><span class="em">😮</span><span class="k">we</span><span class="m" data-i18n="emo_we">surprise</span></div>
+        <div class="emoji-chip"><span class="em">🙃</span><span class="k">fi</span><span class="m" data-i18n="emo_fi">irony</span></div>
+        <div class="emoji-chip"><span class="em">😂</span><span class="k">ri</span><span class="m" data-i18n="emo_ri">laugh</span></div>
+        <div class="emoji-chip"><span class="em">😢</span><span class="k">hu</span><span class="m" data-i18n="emo_hu">sadness</span></div>
+        <div class="emoji-chip"><span class="em">😤</span><span class="k">bu</span><span class="m" data-i18n="emo_bu">anger</span></div>
+        <div class="emoji-chip"><span class="em">🥰</span><span class="k">la</span><span class="m" data-i18n="emo_la">love</span></div>
+        <div class="emoji-chip"><span class="em">🤢</span><span class="k">pu</span><span class="m" data-i18n="emo_pu">disgust</span></div>
+        <div class="emoji-chip"><span class="em">😨</span><span class="k">ni</span><span class="m" data-i18n="emo_ni">fear</span></div>
+      </div>
+    </section>
+
+    <!-- ============ COMPARE ============ -->
+    <section id="compare" class="panel">
+      <h2 data-i18n="compare_titulo">Comparisons 📊</h2>
+      <p class="lead" data-i18n="compare_desc">Korlin against its rivals and natural languages.</p>
+
+      <h3 data-i18n="vs_esp_titulo">Korlin vs Esperanto</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th data-i18n="th_feat">Feature</th><th>Korlin</th><th>Esperanto</th></tr>
+          <tr><td data-i18n="f_diacrit">Diacritics</td><td class="yes">0 ✓</td><td class="no">6 ✗</td></tr>
+          <tr><td data-i18n="f_acc">Accusative case (-n)</td><td class="yes">None ✓</td><td class="no">Yes ✗</td></tr>
+          <tr><td data-i18n="f_evid">Evidentiality (anti-lie)</td><td class="yes">Yes ✓</td><td class="no">No ✗</td></tr>
+          <tr><td data-i18n="f_emoji">Emoji particles</td><td class="yes">Yes ✓</td><td class="no">No ✗</td></tr>
+          <tr><td data-i18n="f_ia">AI-ready</td><td class="yes">Yes ✓</td><td class="no">No ✗</td></tr>
+          <tr><td data-i18n="f_len">Length (same text)</td><td class="yes">388 ch.</td><td class="no">660 ch.</td></tr>
+        </table>
+      </div>
+
+      <h3 data-i18n="vs_dut_titulo">Korlin vs Dutton Speedwords</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th data-i18n="th_feat">Feature</th><th>Korlin</th><th>Dutton</th></tr>
+          <tr><td data-i18n="f_pron">Pronounceable</td><td class="yes">Yes ✓</td><td class="no">No ✗</td></tr>
+          <tr><td data-i18n="f_reg">Fully regular</td><td class="yes">Yes ✓</td><td class="no">No ✗</td></tr>
+          <tr><td data-i18n="f_tech">Technical vocabulary</td><td class="yes">Yes ✓</td><td class="no">No ✗</td></tr>
+          <tr><td data-i18n="f_evid">Evidentiality</td><td class="yes">Yes ✓</td><td class="no">No ✗</td></tr>
+          <tr><td data-i18n="f_len">Length (same text)</td><td class="yes">388 ch.</td><td class="no">338 ch.</td></tr>
+        </table>
+      </div>
+
+      <h3 data-i18n="len_titulo">Length: one sentence in several languages</h3>
+      <p class="lead" data-i18n="len_desc">"The lie cannot live in me" — characters per language.</p>
+      <div class="bar-row"><div class="bar-label"><span>Korlin</span><span class="n">26</span></div><div class="bar"><div class="fill korlin" style="width:68%"></div></div></div>
+      <div class="bar-row"><div class="bar-label"><span>Dutton (style)</span><span class="n">21</span></div><div class="bar"><div class="fill other" style="width:55%"></div></div></div>
+      <div class="bar-row"><div class="bar-label"><span>English</span><span class="n">26</span></div><div class="bar"><div class="fill other" style="width:68%"></div></div></div>
+      <div class="bar-row"><div class="bar-label"><span>Esperanto</span><span class="n">31</span></div><div class="bar"><div class="fill other" style="width:82%"></div></div></div>
+      <div class="bar-row"><div class="bar-label"><span>Spanish</span><span class="n">32</span></div><div class="bar"><div class="fill other" style="width:84%"></div></div></div>
+      <div class="bar-row"><div class="bar-label"><span>German</span><span class="n">33</span></div><div class="bar"><div class="fill other" style="width:87%"></div></div></div>
+      <div class="bar-row"><div class="bar-label"><span>French</span><span class="n">37</span></div><div class="bar"><div class="fill other" style="width:97%"></div></div></div>
+      <div class="bar-row"><div class="bar-label"><span>Japanese (romaji)</span><span class="n">37</span></div><div class="bar"><div class="fill other" style="width:97%"></div></div></div>
+      <div class="bar-row"><div class="bar-label"><span>Chinese (pinyin)</span><span class="n">38</span></div><div class="bar"><div class="fill other" style="width:100%"></div></div></div>
+      <p class="gloss" data-i18n="len_nota">On a longer text, Korlin saves ~44% characters vs Spanish, ~36% vs English, ~31% vs Japanese.</p>
+    </section>
+
+    <!-- ============ DICTIONARY ============ -->
     <section id="diccionario" class="panel">
       <h2 data-i18n="diccionario_titulo">Dictionary 📖</h2>
-      <input type="text" id="busqueda" data-i18n-ph="busqueda_ph" placeholder="Search in Korlin, Spanish or English… (e.g. go, comer, water)">
+      <input type="text" id="busqueda" data-i18n-ph="busqueda_ph" placeholder="Search in Korlin, Spanish or English…">
       <p id="resultado-count"></p>
       <div id="resultados" class="resultados"></div>
     </section>
 
-    <!-- FLASHCARDS -->
+    <!-- ============ FLASHCARDS ============ -->
     <section id="flashcards" class="panel">
       <h2 data-i18n="flashcards_titulo">Flashcards 🎴</h2>
       <p data-i18n="flashcards_desc">Guess the meaning. Click the card to reveal.</p>
@@ -77,7 +180,7 @@
       <p id="flash-score"></p>
     </section>
 
-    <!-- TRANSLATOR -->
+    <!-- ============ TRANSLATOR ============ -->
     <section id="traductor" class="panel">
       <h2 data-i18n="traductor_titulo">Translator (word by word) 🔄</h2>
       <p data-i18n="traductor_desc">Translates Korlin → selected language, word by word (demo).</p>
