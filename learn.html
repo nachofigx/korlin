@@ -29,6 +29,7 @@
       <p class="sub" id="subtitulo-app">La lengua corta, honesta y moderna. <span class="korlin">ko lin</span></p>
       <div id="lista-lecciones" class="lecciones"></div>
       <button id="btn-conversar" class="btn-conversar">🗣️ Conversar en Korlin</button>
+      <button id="btn-flashcards" class="btn-flashcards">🎴 Repasar con flashcards</button>
     </section>
 
     <!-- ===== Vista: lección (ejercicio) ===== -->
@@ -63,6 +64,26 @@
         <button id="btn-escuchar" class="btn-primario">🔊 Escuchar</button>
       </div>
       <p id="conv-pista" class="sub"></p>
+    </section>
+
+    <!-- ===== Vista: flashcards ===== -->
+    <section id="vista-flashcards" class="vista">
+      <div class="leccion-top">
+        <button id="btn-salir-flash" class="salir">✕</button>
+        <div class="barra"><div class="fill" style="width:100%"></div></div>
+        <span class="vidas-mini">🎴</span>
+      </div>
+      <div class="flash-card" id="flash-card" onclick="voltearFlash()">
+        <div class="flash-inner">
+          <div class="flash-face flash-front"><span id="flash-frente" class="korlin"></span></div>
+          <div class="flash-face flash-back"><span id="flash-reverso"></span></div>
+        </div>
+      </div>
+      <p id="flash-contador" class="sub" style="text-align:center"></p>
+      <div class="flash-buttons">
+        <button id="flash-btn-no" class="btn-sec">🙈 No la sabía</button>
+        <button id="flash-btn-si" class="btn-primario">✅ La sabía</button>
+      </div>
     </section>
 
     <!-- ===== Vista: resultado ===== -->

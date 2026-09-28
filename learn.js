@@ -23,6 +23,7 @@ const I18N = {
     noTeEscuche: 'No te escuché. Intenta de nuevo.', pista: 'Pista: intenta decir',
     convCompletada: 'Conversación completada. ¡Enhorabuena!', yaSabesKorlin: '¡Bien! ¡Ya sabes Korlin!',
     sinSoporte: 'Tu navegador no soporta reconocimiento de voz. Usa Chrome o Edge.',
+    flashcards: '🎴 Repasar con flashcards', noLaSabia: '🙈 No la sabía', laSabia: '✅ La sabía',
   },
   en: {
     titulo: 'Learn Korlin', subtitulo: 'The short, honest, modern language.',
@@ -41,6 +42,7 @@ const I18N = {
     noTeEscuche: "I didn't hear you. Try again.", pista: 'Hint: try saying',
     convCompletada: 'Conversation completed. Congratulations!', yaSabesKorlin: 'Great! You know Korlin!',
     sinSoporte: "Your browser doesn't support speech recognition. Use Chrome or Edge.",
+    flashcards: '🎴 Review with flashcards', noLaSabia: "🙈 Didn't know it", laSabia: '✅ Knew it',
   },
 };
 function t(clave) { return (I18N[LANG] || I18N.es)[clave] || clave; }
@@ -85,6 +87,7 @@ const vistaLecciones = $('vista-lecciones');
 const vistaLeccion = $('vista-leccion');
 const vistaResultado = $('vista-resultado');
 const vistaConversar = $('vista-conversar');
+const vistaFlashcards = $('vista-flashcards');
 
 // ===== Utilidades =====
 function getPalabra(f) { return LEXICO.find(p => p.f === f); }
@@ -112,11 +115,12 @@ let errores = 0;
 let respondiendo = false;
 
 function mostrarVista(v) {
-  [vistaLecciones, vistaLeccion, vistaResultado, vistaConversar].forEach(x => x.classList.remove('active'));
+  [vistaLecciones, vistaLeccion, vistaResultado, vistaConversar, vistaFlashcards].forEach(x => x.classList.remove('active'));
   if (v === 'lecciones') vistaLecciones.classList.add('active');
   if (v === 'leccion') vistaLeccion.classList.add('active');
   if (v === 'resultado') vistaResultado.classList.add('active');
   if (v === 'conversar') vistaConversar.classList.add('active');
+  if (v === 'flashcards') vistaFlashcards.classList.add('active');
   actualizarHUD();
 }
 
@@ -540,6 +544,49 @@ document.querySelectorAll('.langbtn').forEach(btn => {
     else if (vistaConversar.classList.contains('active')) siguienteTurno();
   });
 });
+
+// ===== Flashcards =====
+let flashIdx = 0;
+let flashPalabras = [];
+let flashVolteada = false;
+
+function iniciarFlashcards() {
+  flashPalabras = barajar(LEXICO).slice(0, 20);
+  flashIdx = 0;
+  mostrarVista('flashcards');
+  renderFlash();
+}
+
+function renderFlash() {
+  const p = flashPalabras[flashIdx];
+  $('flash-frente').textContent = p.f;
+  $('flash-reverso').textContent = sig(p);
+  $('flash-card').classList.remove('volteada');
+  flashVolteada = false;
+  $('flash-contador').textContent = (flashIdx + 1) + ' / ' + flashPalabras.length;
+  $('flash-btn-no').textContent = t('noLaSabia');
+  $('flash-btn-si').textContent = t('laSabia');
+}
+
+function voltearFlash() {
+  flashVolteada = !flashVolteada;
+  $('flash-card').classList.toggle('volteada', flashVolteada);
+}
+
+function flashSiguiente() {
+  flashIdx++;
+  if (flashIdx >= flashPalabras.length) {
+    estado.xp += 10; guardar(); actualizarHUD();
+    mostrarVista('lecciones'); renderLecciones();
+    return;
+  }
+  renderFlash();
+}
+
+$('btn-flashcards').addEventListener('click', iniciarFlashcards);
+$('btn-salir-flash').addEventListener('click', () => { mostrarVista('lecciones'); renderLecciones(); });
+$('flash-btn-no').addEventListener('click', flashSiguiente);
+$('flash-btn-si').addEventListener('click', flashSiguiente);
 
 // ===== Init =====
 actualizarHUD();
