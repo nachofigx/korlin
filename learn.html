@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korlin — Aprende jugando</title>
+  <link rel="stylesheet" href="learn.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="assets/logo-korlin-white.png" alt="korlin" class="logo">
+    </div>
+    <div class="hud">
+      <span class="hud-item" title="Racha">🔥 <b id="racha">0</b></span>
+      <span class="hud-item" title="Puntos">⚡ <b id="xp">0</b></span>
+      <span class="hud-item" title="Vidas">❤️ <b id="vidas">3</b></span>
+      <span class="lang-switch">
+        <button class="langbtn active" data-lang="es">ES</button>
+        <button class="langbtn" data-lang="en">EN</button>
+      </span>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Vista: lista de lecciones ===== -->
+    <section id="vista-lecciones" class="vista active">
+      <h1>Aprende Korlin</h1>
+      <p class="sub">La lengua corta, honesta y moderna. <span class="korlin">ko lin</span></p>
+      <div id="lista-lecciones" class="lecciones"></div>
+    </section>
+
+    <!-- ===== Vista: lección (ejercicio) ===== -->
+    <section id="vista-leccion" class="vista">
+      <div class="leccion-top">
+        <button id="btn-salir" class="salir">✕</button>
+        <div class="barra"><div id="barra-fill" class="fill"></div></div>
+        <span class="vidas-mini" id="vidas-mini">❤️❤️❤️</span>
+      </div>
+      <div class="mascota-box">
+        <img id="mascota-img" src="" alt="mascota" class="mascota">
+        <div id="bocadillo" class="bocadillo">¡Vamos!</div>
+      </div>
+      <div id="ejercicio" class="ejercicio"></div>
+    </section>
+
+    <!-- ===== Vista: resultado ===== -->
+    <section id="vista-resultado" class="vista">
+      <div class="resultado-card">
+        <div class="resultado-icono" id="resultado-icono">🏆</div>
+        <h2 id="resultado-titulo">¡Lección completada!</h2>
+        <p id="resultado-detalle" class="sub"></p>
+        <div class="resultado-xp">⚡ +<span id="resultado-xp">20</span> XP</div>
+        <button id="btn-continuar" class="btn-primario">Continuar</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="lexico.js"></script>
+  <script src="learn.js"></script>
+</body>
+</html>
