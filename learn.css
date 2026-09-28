@@ -156,6 +156,11 @@ h1 { font-size: 26px; }
 .chip.seleccionada { border-color: var(--accent2); background: var(--bg3); }
 .placeholder { color: var(--muted); font-size: 14px; }
 
+.hueco {
+  display: inline-block; min-width: 70px; border-bottom: 2px solid var(--accent2);
+  text-align: center; padding: 0 6px; color: var(--accent2);
+}
+
 /* ===== Emparejar ===== */
 .emparejar { display: flex; gap: 16px; }
 .col { flex: 1; display: flex; flex-direction: column; gap: 8px; }

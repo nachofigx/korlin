@@ -89,18 +89,21 @@ function actualizarHUD() {
 // ===== Render lecciones =====
 function renderLecciones() {
   const lista = $('lista-lecciones');
-  lista.innerHTML = LECCIONES.map((l) => {
-    const nivel = estado.completadas[l.id] || 0;
+  lista.innerHTML = LECCIONES.map((l, i) => {
+    const nivel = Math.min(estado.completadas[l.id] || 0, 5);
     const completada = nivel > 0;
+    const dominada = nivel >= 5;
+    const bloqueada = i > 0 && (estado.completadas[LECCIONES[i - 1].id] || 0) === 0;
     const detalle = l.tipo === 'frases' ? 'frases completas' : (l.palabras.length + ' palabras');
+    const estadoTxt = dominada ? 'dominada 🏆' : (completada ? 'nivel ' + nivel + '/5' : 'disponible');
     return `
-      <div class="leccion-card ${completada ? 'completada' : ''}" onclick="iniciarLeccion('${l.id}')">
+      <div class="leccion-card ${completada ? 'completada' : ''} ${bloqueada ? 'bloqueada' : ''}" onclick="${bloqueada ? '' : "iniciarLeccion('" + l.id + "')"}">
         <div class="ico">${l.icono}</div>
         <div class="info">
           <b>${l.nombre}</b>
-          <span>${detalle} · ${completada ? 'completada ✓' : 'nivel ' + (nivel + 1)}</span>
+          <span>${detalle} · ${estadoTxt}</span>
         </div>
-        <div class="estado">${completada ? '✅' : '▶️'}</div>
+        <div class="estado">${dominada ? '🏆' : completada ? '✅' : bloqueada ? '🔒' : '▶️'}</div>
       </div>`;
   }).join('');
 }
@@ -111,7 +114,7 @@ function iniciarLeccion(id) {
   leccionActual = LECCIONES.find(l => l.id === id);
 
   if (leccionActual.tipo === 'frases') {
-    ejercicios = barajar(FRASES.slice(0, 6)).map(f => ({ tipo: 'ordenar', frase: f }));
+    ejercicios = barajar(FRASES.slice(0, 6)).map((f, i) => i % 2 === 0 ? { tipo: 'ordenar', frase: f } : crearFill(f));
   } else {
     const palabras = leccionActual.palabras.map(getPalabra).filter(Boolean);
     ejercicios = [];
@@ -153,6 +156,8 @@ function renderEjercicio() {
     renderOrdenar(e);
   } else if (e.tipo === 'emparejar') {
     renderEmparejar(e);
+  } else if (e.tipo === 'fill') {
+    renderFill(e);
   }
 }
 
@@ -309,6 +314,47 @@ function selSig(s) {
     $('bocadillo').textContent = 'Na... 😅';
     pintarEmparejar(e);
   }
+}
+
+// --- Completar hueco ---
+function crearFill(frase) {
+  const tokens = frase.k.split(' ');
+  const hueco = Math.floor(Math.random() * tokens.length);
+  const respuesta = tokens[hueco];
+  const distractores = barajar(LEXICO.filter(p => p.f !== respuesta)).slice(0, 3).map(p => p.f);
+  const opciones = barajar([respuesta, ...distractores]);
+  return { tipo: 'fill', frase, tokens, hueco, respuesta, opciones };
+}
+
+function renderFill(e) {
+  const trad = e.frase[LANG] || e.frase.es;
+  const tokensHtml = e.tokens.map((t, i) => i === e.hueco ? '<span class="hueco">____</span>' : t).join(' ');
+  const opciones = e.opciones.map(t => `<button class="opcion" data-p="${t}" onclick="responderFill('${t}')">${t}</button>`).join('');
+  $('ejercicio').innerHTML = `
+    <p class="prompt">Completa la frase: <b>"${trad}"</b></p>
+    <div class="palabra-grande">${tokensHtml}</div>
+    <div class="opciones">${opciones}</div>`;
+}
+
+function responderFill(t) {
+  if (respondiendo) return;
+  respondiendo = true;
+  const e = ejercicios[idxEjercicio];
+  const correcto = t === e.respuesta;
+  document.querySelectorAll('#ejercicio .opcion').forEach(b => {
+    b.disabled = true;
+    if (b.dataset.p === e.respuesta) b.classList.add('correcta');
+    if (b.dataset.p === t && !correcto) b.classList.add('incorrecta');
+  });
+  if (correcto) {
+    $('bocadillo').textContent = MSG_OK[Math.floor(Math.random() * MSG_OK.length)];
+    estado.xp += 10;
+  } else {
+    $('bocadillo').textContent = MSG_NO[Math.floor(Math.random() * MSG_NO.length)];
+    estado.vidas -= 1; errores++;
+  }
+  guardar(); actualizarHUD();
+  setTimeout(avanzar, 900);
 }
 
 // ===== Avanzar =====
