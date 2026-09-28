@@ -14,13 +14,18 @@
     line-height: 1.5;
   }
   h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #9aa7bd; margin: 28px 0 12px; }
-  .section { max-width: 720px; }
+  .section { max-width: 760px; }
 
   .logo-hero {
     display: flex; flex-direction: column; align-items: flex-start; gap: 8px;
     padding: 24px 0;
   }
-  .logo-hero img { height: 84px; }
+  .logo-hero img { height: 80px; }
+
+  .variants { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+  .variant { border-radius: 14px; padding: 18px 22px; text-align: center; }
+  .variant img { height: 44px; }
+  .variant .cap { font-size: 10px; margin-top: 8px; }
 
   .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
   .swatch { width: 128px; border-radius: 12px; overflow: hidden; border: 1px solid #2a3248; }
@@ -49,8 +54,24 @@
   <div class="section">
 
     <div class="logo-hero">
-      <img src="logo-korlin.svg" alt="Logo Korlin">
+      <img src="logo-korlin-gradient.png" alt="Logo Korlin">
       <div style="color:#9aa7bd; font-size:13px">/ˈkoɾlin/ · The short, honest, modern language</div>
+    </div>
+
+    <h2>Variantes del logo</h2>
+    <div class="variants">
+      <div class="variant" style="background:#ffffff">
+        <img src="logo-korlin.png" alt="negro">
+        <div class="cap" style="color:#555">Negro · fondo claro</div>
+      </div>
+      <div class="variant" style="background:#101726; border:1px solid #2a3248">
+        <img src="logo-korlin-white.png" alt="blanco">
+        <div class="cap" style="color:#9aa7bd">Blanco · dark mode</div>
+      </div>
+      <div class="variant" style="background:#101726; border:1px solid #2a3248">
+        <img src="logo-korlin-gradient.png" alt="degradado">
+        <div class="cap" style="color:#9aa7bd">Degradado · marca</div>
+      </div>
     </div>
 
     <h2>Paleta de colores</h2>

@@ -9,16 +9,21 @@
 
 ### 1.1 Logo
 
-El logo combina un **icono** (squircle con degradado y una "K" con puntos de "condensación") y un **wordmark** en minúscula moderna.
+El logo oficial es un **wordmark tipográfico**: `korlin` en minúsculas, sans-serif bold geométrico, limpio y moderno (proporcionado por Ignacio).
 
-**Archivo:** `assets/logo-korlin.svg` (vectorial, escala a cualquier tamaño).
+**Archivos:**
+- `assets/logo-korlin.png` — original (negro sobre blanco).
+- `assets/logo-korlin-white.png` — blanco con fondo transparente (para fondos oscuros).
+- `assets/logo-korlin-gradient.png` — degradado morado→cian (variante de marca).
+- `assets/logo-korlin.svg` — icono/app-icon (squircle con "K") para favicon y avatar.
 
-**Concepto:** la "K" de Korlin con dos puntos en los extremos representa la **condensación** (comprimir el mensaje al mínimo) y la **precisión** (puntos que marcan el final exacto de cada trazo). El degradado morado→cian transmite "futuro digital".
+**Concepto:** la simplicidad tipográfica transmite claridad, modernidad y profesionalismo. Al ser solo texto, es atemporal, memorable y versátil.
 
 **Reglas de uso:**
 - Espacio de seguridad mínimo: la altura de la "k" alrededor del logo.
-- No estirar, rotar ni cambiar los colores.
-- Sobre fondos claros, usar la versión con wordmark oscuro (variante por crear).
+- No estirar, rotar ni distorsionar.
+- Sobre **fondo oscuro**: usar la versión blanca o degradado.
+- Sobre **fondo claro**: usar la versión negra.
 
 ### 1.2 Paleta de colores
 
