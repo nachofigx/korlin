@@ -23,7 +23,7 @@ const I18N = {
     noTeEscuche: 'No te escuché. Intenta de nuevo.', pista: 'Pista: intenta decir',
     convCompletada: 'Conversación completada. ¡Enhorabuena!', yaSabesKorlin: '¡Bien! ¡Ya sabes Korlin!',
     sinSoporte: 'Tu navegador no soporta reconocimiento de voz. Usa Chrome o Edge.',
-    flashcards: '🎴 Repasar con flashcards', noLaSabia: '🙈 No la sabía', laSabia: '✅ La sabía',
+    flashcards: '🎴 Repasar con flashcards', noLaSabia: '🙈 No la sabía', laSabia: '✅ La sabía', gramatica: 'gramática',
   },
   en: {
     titulo: 'Learn Korlin', subtitulo: 'The short, honest, modern language.',
@@ -42,7 +42,7 @@ const I18N = {
     noTeEscuche: "I didn't hear you. Try again.", pista: 'Hint: try saying',
     convCompletada: 'Conversation completed. Congratulations!', yaSabesKorlin: 'Great! You know Korlin!',
     sinSoporte: "Your browser doesn't support speech recognition. Use Chrome or Edge.",
-    flashcards: '🎴 Review with flashcards', noLaSabia: "🙈 Didn't know it", laSabia: '✅ Knew it',
+    flashcards: '🎴 Review with flashcards', noLaSabia: "🙈 Didn't know it", laSabia: '✅ Knew it', gramatica: 'grammar',
   },
 };
 function t(clave) { return (I18N[LANG] || I18N.es)[clave] || clave; }
@@ -57,6 +57,36 @@ const LECCIONES = [
   { id: 'colores', nombre: 'Colores', nombre_en: 'Colors', icono: '🎨', mascota: 'assets/personajes/pez.jpg', palabras: ['ru','gi','ro','lumi','noi','sui'] },
   { id: 'actitud', nombre: 'Emociones', nombre_en: 'Emotions', icono: '💖', mascota: 'assets/personajes/monstruo.jpg', palabras: ['yo','we','fi','ri','hu','bu','la'] },
   { id: 'frases', nombre: 'Frases', nombre_en: 'Phrases', icono: '💬', mascota: 'assets/personajes/ovoide.jpg', tipo: 'frases' },
+  { id: 'evidenciales', nombre: 'Evidenciales', nombre_en: 'Evidentials', icono: '🛡️', mascota: 'assets/personajes/monstruo.jpg', tipo: 'gramatica',
+    explicacion: { es: 'Toda afirmación declara su fuente: -ve directo, -pen inferido, -di reportado, -sa asumido.', en: 'Every statement declares its source: -ve direct, -pen inferred, -di reported, -sa assumed.' },
+    pares: [
+      { f: 'go-ve', es: 'va (lo vi)', en: 'goes (I saw)' },
+      { f: 'go-pen', es: 'va (lo deduzco)', en: 'goes (I infer)' },
+      { f: 'go-di', es: 'va (me lo contaron)', en: 'goes (told)' },
+      { f: 'go-sa', es: 'va (se asume)', en: 'goes (assumed)' },
+      { f: 've-ve', es: 've (lo veo)', en: 'sees (direct)' },
+      { f: 've-di', es: 've (me lo dijeron)', en: 'sees (reported)' },
+    ] },
+  { id: 'tiempos', nombre: 'Tiempos', nombre_en: 'Tenses', icono: '⏰', mascota: 'assets/personajes/pez.jpg', tipo: 'gramatica',
+    explicacion: { es: 'an- indica pasado, ne- indica futuro. El presente no lleva marca.', en: 'an- marks past, ne- marks future. Present is unmarked.' },
+    pares: [
+      { f: 'an-go', es: 'fue', en: 'went' },
+      { f: 'ne-go', es: 'irá', en: 'will go' },
+      { f: 'an-man', es: 'comió', en: 'ate' },
+      { f: 'ne-man', es: 'comerá', en: 'will eat' },
+      { f: 'an-vi', es: 'vivió', en: 'lived' },
+      { f: 'ne-vi', es: 'vivirá', en: 'will live' },
+    ] },
+  { id: 'derivacion', nombre: 'Derivación', nombre_en: 'Derivation', icono: '🧩', mascota: 'assets/personajes/cocodrilo.jpg', tipo: 'gramatica',
+    explicacion: { es: 'Los afijos crean palabras: -pe agente, -lo lugar, -re cosa, na- opuesto, me- aumentativo, pi- diminutivo.', en: 'Affixes build words: -pe agent, -lo place, -re thing, na- opposite, me- augmentative, pi- diminutive.' },
+    pares: [
+      { f: 'ban-pe', es: 'constructor', en: 'builder' },
+      { f: 'man-lo', es: 'comedor', en: 'dining room' },
+      { f: 'man-re', es: 'comida', en: 'food' },
+      { f: 'na-toro', es: 'mentira', en: 'lie' },
+      { f: 'me-ho', es: 'mansión', en: 'mansion' },
+      { f: 'pi-ho', es: 'casita', en: 'little house' },
+    ] },
 ];
 
 const FRASES = [
@@ -141,7 +171,7 @@ function renderLecciones() {
     const completada = nivel > 0;
     const dominada = nivel >= 5;
     const bloqueada = i > 0 && (estado.completadas[LECCIONES[i - 1].id] || 0) === 0;
-    const detalle = l.tipo === 'frases' ? t('frases') : (l.palabras.length + ' ' + t('palabras'));
+    const detalle = l.tipo === 'frases' ? t('frases') : (l.tipo === 'gramatica' ? t('gramatica') : (l.palabras.length + ' ' + t('palabras')));
     const estadoTxt = dominada ? t('dominada') : (completada ? t('nivel') + ' ' + nivel + '/5' : t('disponible'));
     return `
       <div class="leccion-card ${completada ? 'completada' : ''} ${bloqueada ? 'bloqueada' : ''}" onclick="${bloqueada ? '' : "iniciarLeccion('" + l.id + "')"}">
@@ -162,6 +192,8 @@ function iniciarLeccion(id) {
 
   if (leccionActual.tipo === 'frases') {
     ejercicios = barajar(FRASES.slice(0, 6)).map((f, i) => i % 2 === 0 ? { tipo: 'ordenar', frase: f } : crearFill(f));
+  } else if (leccionActual.tipo === 'gramatica') {
+    ejercicios = barajar(leccionActual.pares).map(p => crearChoice(p, leccionActual.pares));
   } else {
     const palabras = leccionActual.palabras.map(getPalabra).filter(Boolean);
     ejercicios = [];
@@ -177,13 +209,16 @@ function iniciarLeccion(id) {
   respondiendo = false;
   $('mascota-img').src = leccionActual.mascota;
   mostrarVista('leccion');
-  $('bocadillo').textContent = t('vamos');
+  $('bocadillo').textContent = leccionActual.explicacion
+    ? (leccionActual.explicacion[LANG] || leccionActual.explicacion.es)
+    : t('vamos');
   renderEjercicio();
 }
 
-function crearChoice(objetivo) {
+function crearChoice(objetivo, pool) {
   const tipo = Math.random() < 0.5 ? 'k2s' : 's2k';
-  const distractores = barajar(LEXICO.filter(p => p.f !== objetivo.f)).slice(0, 3);
+  const base = pool || LEXICO;
+  const distractores = barajar(base.filter(p => p.f !== objetivo.f)).slice(0, 3);
   const opciones = barajar([objetivo, ...distractores]);
   const correcta = opciones.indexOf(objetivo);
   return { tipo, objetivo, opciones, correcta };
