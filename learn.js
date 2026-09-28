@@ -24,6 +24,7 @@ const I18N = {
     convCompletada: 'Conversación completada. ¡Enhorabuena!', yaSabesKorlin: '¡Bien! ¡Ya sabes Korlin!',
     sinSoporte: 'Tu navegador no soporta reconocimiento de voz. Usa Chrome o Edge.',
     flashcards: '🎴 Repasar con flashcards', noLaSabia: '🙈 No la sabía', laSabia: '✅ La sabía', gramatica: 'gramática',
+    cofre: '🎁 Cofre diario', logros: '🏅 Logros', logrosTitulo: 'Logros',
   },
   en: {
     titulo: 'Learn Korlin', subtitulo: 'The short, honest, modern language.',
@@ -43,6 +44,7 @@ const I18N = {
     convCompletada: 'Conversation completed. Congratulations!', yaSabesKorlin: 'Great! You know Korlin!',
     sinSoporte: "Your browser doesn't support speech recognition. Use Chrome or Edge.",
     flashcards: '🎴 Review with flashcards', noLaSabia: "🙈 Didn't know it", laSabia: '✅ Knew it', gramatica: 'grammar',
+    cofre: '🎁 Daily chest', logros: '🏅 Achievements', logrosTitulo: 'Achievements',
   },
 };
 function t(clave) { return (I18N[LANG] || I18N.es)[clave] || clave; }
@@ -102,10 +104,11 @@ const FRASES = [
 // ===== Estado (localStorage) =====
 const CLAVE = 'korlin_estado';
 function cargarEstado() {
+  const base = { xp: 0, racha: 0, vidas: 3, ultima: null, completadas: {}, ultimoCofre: null, logros: {}, conversa: 0 };
   try {
-    return JSON.parse(localStorage.getItem(CLAVE)) || { xp: 0, racha: 0, vidas: 3, ultima: null, completadas: {} };
+    return Object.assign(base, JSON.parse(localStorage.getItem(CLAVE)) || {});
   } catch (e) {
-    return { xp: 0, racha: 0, vidas: 3, ultima: null, completadas: {} };
+    return base;
   }
 }
 let estado = cargarEstado();
@@ -474,6 +477,7 @@ function completarLeccion() {
   $('resultado-detalle').textContent = `"${nom(leccionActual)}" · ${errores} ${t(errores === 1 ? 'error' : 'errores')}`;
   $('resultado-xp').textContent = (10 * 7 + 5 * 5) + bonus;
   $('btn-continuar').textContent = t('continuar');
+  verificarLogros();
   mostrarVista('resultado');
 }
 
@@ -517,7 +521,7 @@ function siguienteTurno() {
     $('conv-transcripcion').textContent = t('convCompletada');
     $('conv-pista').textContent = '';
     $('btn-mic').style.display = 'none';
-    estado.xp += 20; guardar(); actualizarHUD();
+    estado.xp += 20; estado.conversa += 1; guardar(); actualizarHUD(); verificarLogros();
     return;
   }
   $('conv-bocadillo').textContent = turno.m;
@@ -623,6 +627,84 @@ $('btn-salir-flash').addEventListener('click', () => { mostrarVista('lecciones')
 $('flash-btn-no').addEventListener('click', flashSiguiente);
 $('flash-btn-si').addEventListener('click', flashSiguiente);
 
+// ===== Logros y cofre diario =====
+const LOGROS = [
+  { id: 'primera', icono: '🎯', es: 'Primera lección', en: 'First lesson', cond: e => totalCompletadas(e) >= 1 },
+  { id: 'diez', icono: '📚', es: 'Diez lecciones', en: 'Ten lessons', cond: e => totalCompletadas(e) >= 10 },
+  { id: 'racha3', icono: '🔥', es: 'Racha de 3 días', en: '3-day streak', cond: e => e.racha >= 3 },
+  { id: 'racha7', icono: '⚡', es: 'Racha de 7 días', en: '7-day streak', cond: e => e.racha >= 7 },
+  { id: 'xp100', icono: '💎', es: '100 XP', en: '100 XP', cond: e => e.xp >= 100 },
+  { id: 'xp500', icono: '👑', es: '500 XP', en: '500 XP', cond: e => e.xp >= 500 },
+  { id: 'conversa', icono: '🗣️', es: 'Conversador', en: 'Conversationalist', cond: e => e.conversa >= 1 },
+  { id: 'dominio', icono: '🏆', es: 'Dominio', en: 'Mastery', cond: e => Object.values(e.completadas).some(n => n >= 5) },
+  { id: 'todo', icono: '🌟', es: 'Políglota', en: 'Polyglot', cond: e => LECCIONES.every(l => (e.completadas[l.id] || 0) >= 1) },
+];
+function totalCompletadas(e) { return Object.values(e.completadas).reduce((a, b) => a + b, 0); }
+function nomLogro(l) { return LANG === 'en' ? l.en : l.es; }
+
+let toastTimer;
+function toast(msg) {
+  const t = $('toast');
+  t.textContent = msg;
+  t.classList.add('mostrar');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('mostrar'), 2600);
+}
+
+function verificarLogros() {
+  let nuevos = [];
+  LOGROS.forEach(l => {
+    if (!estado.logros[l.id] && l.cond(estado)) {
+      estado.logros[l.id] = Date.now();
+      nuevos.push(l);
+    }
+  });
+  if (nuevos.length) {
+    guardar();
+    toast('🏅 ' + (LANG === 'es' ? '¡Logro desbloqueado!' : 'Achievement unlocked!') + ' ' + nuevos.map(l => l.icono + ' ' + nomLogro(l)).join(', '));
+  }
+}
+
+function puedeReclamarCofre() { return estado.ultimoCofre !== new Date().toDateString(); }
+function actualizarCofre() {
+  const c = $('cofre-dia');
+  if (!c) return;
+  if (puedeReclamarCofre()) {
+    c.style.display = 'flex';
+    $('cofre-texto').textContent = t('cofre');
+  } else {
+    c.style.display = 'none';
+  }
+}
+function reclamarCofre() {
+  if (!puedeReclamarCofre()) return;
+  estado.ultimoCofre = new Date().toDateString();
+  estado.xp += 20;
+  guardar(); actualizarHUD(); verificarLogros();
+  toast('🎁 +20 XP');
+  actualizarCofre();
+}
+
+function renderLogros() {
+  $('logros-titulo').textContent = t('logrosTitulo');
+  const ganados = LOGROS.filter(l => estado.logros[l.id]).length;
+  $('lista-logros').innerHTML = LOGROS.map(l => {
+    const ok = !!estado.logros[l.id];
+    return `
+      <div class="logro ${ok ? 'ok' : 'no'}">
+        <div class="logro-ico">${l.icono}</div>
+        <div class="logro-info"><b>${nomLogro(l)}</b></div>
+        <div class="logro-estado">${ok ? '✅' : '🔒'}</div>
+      </div>`;
+  }).join('');
+  $('logros-contador').textContent = ganados + ' / ' + LOGROS.length;
+}
+
+$('btn-logros').addEventListener('click', () => { renderLogros(); mostrarVista('logros'); });
+$('btn-salir-logros').addEventListener('click', () => { mostrarVista('lecciones'); renderLecciones(); });
+$('cofre-dia').addEventListener('click', reclamarCofre);
+
 // ===== Init =====
 actualizarHUD();
 renderLecciones();
+actualizarCofre();

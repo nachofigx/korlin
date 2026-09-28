@@ -27,9 +27,13 @@
     <section id="vista-lecciones" class="vista active">
       <h1 id="titulo-app">Aprende Korlin</h1>
       <p class="sub" id="subtitulo-app">La lengua corta, honesta y moderna. <span class="korlin">ko lin</span></p>
+      <div id="cofre-dia" class="cofre-dia" onclick="reclamarCofre()">
+        🎁 <span id="cofre-texto">Cofre diario</span> <b>+20 XP</b>
+      </div>
       <div id="lista-lecciones" class="lecciones"></div>
       <button id="btn-conversar" class="btn-conversar">🗣️ Conversar en Korlin</button>
       <button id="btn-flashcards" class="btn-flashcards">🎴 Repasar con flashcards</button>
+      <button id="btn-logros" class="btn-flashcards">🏅 Logros</button>
     </section>
 
     <!-- ===== Vista: lección (ejercicio) ===== -->
@@ -86,6 +90,18 @@
       </div>
     </section>
 
+    <!-- ===== Vista: logros ===== -->
+    <section id="vista-logros" class="vista">
+      <div class="leccion-top">
+        <button id="btn-salir-logros" class="salir">✕</button>
+        <div class="barra"><div class="fill" style="width:100%"></div></div>
+        <span class="vidas-mini">🏅</span>
+      </div>
+      <h1 id="logros-titulo">Logros</h1>
+      <p class="sub" id="logros-contador"></p>
+      <div id="lista-logros" class="logros"></div>
+    </section>
+
     <!-- ===== Vista: resultado ===== -->
     <section id="vista-resultado" class="vista">
       <div class="resultado-card">
@@ -98,6 +114,7 @@
     </section>
   </main>
 
+  <div id="toast" class="toast"></div>
   <script src="lexico.js"></script>
   <script src="learn.js"></script>
 </body>

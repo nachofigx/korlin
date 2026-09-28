@@ -279,6 +279,38 @@ h1 { font-size: 28px; letter-spacing: -.4px; }
 }
 .btn-sec:hover { border-color: var(--bad); color: var(--bad); }
 
+/* ===== Cofre diario ===== */
+.cofre-dia {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 18px;
+  background: linear-gradient(135deg, rgba(240,180,41,.16), rgba(240,180,41,.05));
+  border: 1.5px solid var(--gold); border-radius: 14px;
+  padding: 14px 16px; cursor: pointer; font-size: 15px; transition: .15s;
+}
+.cofre-dia:hover { box-shadow: 0 6px 20px rgba(240,180,41,.25); }
+.cofre-dia b { color: var(--gold); margin-left: auto; }
+
+/* ===== Logros ===== */
+.logros { display: flex; flex-direction: column; gap: 10px; }
+.logro {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; padding: 13px 16px;
+}
+.logro.ok { border-color: var(--good); }
+.logro.no { opacity: .55; filter: grayscale(.6); }
+.logro-ico { font-size: 26px; }
+.logro-info { flex: 1; }
+.logro-estado { font-size: 20px; }
+
+/* ===== Toast ===== */
+.toast {
+  position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%);
+  background: var(--grad); color: #fff; padding: 13px 22px; border-radius: 12px;
+  font-weight: 700; font-size: 15px; opacity: 0; pointer-events: none;
+  transition: opacity .3s, transform .3s; z-index: 100; box-shadow: 0 8px 24px rgba(124,92,255,.4);
+  max-width: 90vw; text-align: center;
+}
+.toast.mostrar { opacity: 1; transform: translateX(-50%) translateY(-8px); }
+
 @media (max-width: 520px) {
   h1 { font-size: 23px; }
   .palabra-grande { font-size: 27px; }
