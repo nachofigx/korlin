@@ -96,6 +96,11 @@ nav {
 }
 .tab:hover { border-color: var(--accent); transform: translateY(-1px); }
 .tab.active { background: var(--grad); border-color: transparent; color: #fff; box-shadow: 0 4px 18px rgba(124, 92, 255, 0.4); }
+.tab.learn-btn {
+  background: var(--grad); border-color: transparent; color: #fff;
+  box-shadow: 0 4px 14px rgba(124, 92, 255, 0.4); text-decoration: none;
+}
+.tab.learn-btn:hover { box-shadow: 0 6px 20px rgba(124, 92, 255, 0.55); }
 
 /* ===== Main ===== */
 main { max-width: 1100px; margin: 2rem auto 4rem; padding: 0 1.5rem; }

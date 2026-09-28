@@ -9,7 +9,7 @@ const I18N = {
   en: {
     tagline: "A short, honest, modern constructed language",
     tab_inicio: "🏠 Home", tab_why: "🚀 Why Korlin", tab_compare: "📊 Compare",
-    tab_diccionario: "📖 Dictionary", tab_flashcards: "🎴 Flashcards", tab_traductor: "🔄 Translator",
+    tab_diccionario: "📖 Dictionary", tab_flashcards: "🎴 Flashcards", tab_traductor: "🔄 Translator", tab_aprender: "🎓 Learn",
     hero_titulo: "Speak less, say more.",
     hero_sub: "Korlin is a constructed language that condenses meaning into tiny, honest, modern words.",
     stat_letras: "letters, 1 letter = 1 sound", stat_palabras: "core words", stat_idiomas: "documentation languages", stat_corto: "shorter than Esperanto",
@@ -39,7 +39,7 @@ const I18N = {
   es: {
     tagline: "Una lengua corta, honesta y moderna",
     tab_inicio: "🏠 Inicio", tab_why: "🚀 Por qué", tab_compare: "📊 Compara",
-    tab_diccionario: "📖 Diccionario", tab_flashcards: "🎴 Flashcards", tab_traductor: "🔄 Traductor",
+    tab_diccionario: "📖 Diccionario", tab_flashcards: "🎴 Flashcards", tab_traductor: "🔄 Traductor", tab_aprender: "🎓 Aprender",
     hero_titulo: "Habla menos, di más.",
     hero_sub: "Korlin es una lengua construida que condensa el significado en palabras diminutas, honestas y modernas.",
     stat_letras: "letras, 1 letra = 1 sonido", stat_palabras: "palabras núcleo", stat_idiomas: "idiomas de documentación", stat_corto: "más corto que el Esperanto",
@@ -69,7 +69,7 @@ const I18N = {
   fr: {
     tagline: "Une langue construite courte, honnête et moderne",
     tab_inicio: "🏠 Accueil", tab_why: "🚀 Pourquoi", tab_compare: "📊 Comparer",
-    tab_diccionario: "📖 Dictionnaire", tab_flashcards: "🎴 Flashcards", tab_traductor: "🔄 Traducteur",
+    tab_diccionario: "📖 Dictionnaire", tab_flashcards: "🎴 Flashcards", tab_traductor: "🔄 Traducteur", tab_aprender: "🎓 Apprendre",
     hero_titulo: "Parlez moins, dites plus.",
     hero_sub: "Korlin est une langue construite qui condense le sens en petits mots honnêtes et modernes.",
     stat_letras: "lettres, 1 lettre = 1 son", stat_palabras: "mots de base", stat_idiomas: "langues de documentation", stat_corto: "plus court que l'espéranto",
@@ -99,7 +99,7 @@ const I18N = {
   zh: {
     tagline: "一种简短、诚实、现代的人造语言",
     tab_inicio: "🏠 首页", tab_why: "🚀 为什么", tab_compare: "📊 比较",
-    tab_diccionario: "📖 词典", tab_flashcards: "🎴 闪卡", tab_traductor: "🔄 翻译器",
+    tab_diccionario: "📖 词典", tab_flashcards: "🎴 闪卡", tab_traductor: "🔄 翻译器", tab_aprender: "🎓 学习",
     hero_titulo: "说得更少，表达更多。",
     hero_sub: "Korlin 是一种人造语言，将意义浓缩为微小、诚实、现代的词语。",
     stat_letras: "字母，1 字母 = 1 音", stat_palabras: "核心词汇", stat_idiomas: "文档语言", stat_corto: "比世界语更短",
@@ -129,7 +129,7 @@ const I18N = {
   ja: {
     tagline: "短く、誠実で、現代的に作られた言語",
     tab_inicio: "🏠 ホーム", tab_why: "🚀 なぜ Korlin", tab_compare: "📊 比較",
-    tab_diccionario: "📖 辞書", tab_flashcards: "🎴 フラッシュカード", tab_traductor: "🔄 翻訳",
+    tab_diccionario: "📖 辞書", tab_flashcards: "🎴 フラッシュカード", tab_traductor: "🔄 翻訳", tab_aprender: "🎓 学ぶ",
     hero_titulo: "少なく話し、多くを伝える。",
     hero_sub: "Korlin は意味を小さく、誠実で、現代的な言葉に凝縮する人工言語です。",
     stat_letras: "文字、1 文字 = 1 音", stat_palabras: "基本語彙", stat_idiomas: "ドキュメント言語", stat_corto: "エスペラントより短い",
