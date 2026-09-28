@@ -118,7 +118,10 @@ function iniciarLeccion(id) {
   } else {
     const palabras = leccionActual.palabras.map(getPalabra).filter(Boolean);
     ejercicios = [];
-    for (let i = 0; i < 7; i++) ejercicios.push(crearChoice(palabras[i % palabras.length]));
+    for (let i = 0; i < 7; i++) {
+      if (i % 4 === 3) ejercicios.push(crearDictado(palabras[i % palabras.length]));
+      else ejercicios.push(crearChoice(palabras[i % palabras.length]));
+    }
     // último ejercicio: emparejar
     ejercicios.push(crearEmparejar(barajar(palabras).slice(0, 5)));
   }
@@ -158,6 +161,8 @@ function renderEjercicio() {
     renderEmparejar(e);
   } else if (e.tipo === 'fill') {
     renderFill(e);
+  } else if (e.tipo === 'dictado') {
+    renderDictado(e);
   }
 }
 
@@ -351,6 +356,42 @@ function responderFill(t) {
     estado.xp += 10;
   } else {
     $('bocadillo').textContent = MSG_NO[Math.floor(Math.random() * MSG_NO.length)];
+    estado.vidas -= 1; errores++;
+  }
+  guardar(); actualizarHUD();
+  setTimeout(avanzar, 900);
+}
+
+// --- Dictado (escucha y escribe) ---
+function crearDictado(palabra) {
+  return { tipo: 'dictado', objetivo: palabra };
+}
+
+function renderDictado(e) {
+  $('ejercicio').innerHTML = `
+    <p class="prompt">Escucha y escribe lo que oyes en Korlin</p>
+    <div class="audio-grande">
+      <button class="btn-audio-grande" onclick="hablar('${e.objetivo.f}')">🔊</button>
+      <p class="sub">(pulsa para escuchar de nuevo)</p>
+    </div>
+    <input type="text" id="input-dictado" placeholder="Escribe la palabra…" autocomplete="off" autocapitalize="off" spellcheck="false">
+    <button class="btn-primario" style="width:100%" onclick="comprobarDictado()">Comprobar</button>`;
+  hablar(e.objetivo.f);
+  $('input-dictado').focus();
+  $('input-dictado').addEventListener('keydown', (ev) => { if (ev.key === 'Enter') comprobarDictado(); });
+}
+
+function comprobarDictado() {
+  if (respondiendo) return;
+  const e = ejercicios[idxEjercicio];
+  const valor = ($('input-dictado').value || '').trim().toLowerCase();
+  const correcto = valor === e.objetivo.f;
+  respondiendo = true;
+  if (correcto) {
+    $('bocadillo').textContent = MSG_OK[Math.floor(Math.random() * MSG_OK.length)];
+    estado.xp += 10;
+  } else {
+    $('bocadillo').textContent = MSG_NO[Math.floor(Math.random() * MSG_NO.length)] + ` Era: ${e.objetivo.f}`;
     estado.vidas -= 1; errores++;
   }
   guardar(); actualizarHUD();
