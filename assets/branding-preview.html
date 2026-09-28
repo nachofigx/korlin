@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Korlin — Branding</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: #0a0e1a;
+    color: #e8edf7;
+    padding: 32px;
+    line-height: 1.5;
+  }
+  h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #9aa7bd; margin: 28px 0 12px; }
+  .section { max-width: 720px; }
+
+  .logo-hero {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 8px;
+    padding: 24px 0;
+  }
+  .logo-hero img { height: 84px; }
+
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 128px; border-radius: 12px; overflow: hidden; border: 1px solid #2a3248; }
+  .swatch .c { height: 56px; }
+  .swatch .lbl { padding: 8px 10px; font-size: 11px; background: #101726; }
+  .swatch .lbl b { display: block; font-size: 12px; }
+  .swatch .lbl span { color: #9aa7bd; }
+
+  .type-sample { display: flex; flex-direction: column; gap: 10px; }
+  .type-sample .d { font-size: 32px; font-weight: 800; }
+  .type-sample .b { font-size: 17px; }
+  .type-sample .k { font-family: ui-monospace, "SF Mono", monospace; color: #4cc9f0; font-size: 17px; }
+
+  .mock-grid { display: flex; gap: 18px; flex-wrap: wrap; }
+  .mock { width: 200px; border-radius: 16px; background: #101726; border: 1px solid #2a3248; overflow: hidden; }
+  .mock .img { height: 120px; display: flex; align-items: center; justify-content: center; font-size: 40px; }
+  .mock .txt { padding: 12px; font-size: 12px; }
+  .mock .txt b { display: block; margin-bottom: 4px; }
+  .mock .txt span { color: #9aa7bd; }
+  .mock .tag { display: inline-block; background: rgba(124,92,255,.2); color: #4cc9f0; border-radius: 999px; padding: 2px 8px; font-size: 10px; margin-top: 6px; }
+
+  .cta { display: inline-block; margin-top: 16px; background: linear-gradient(135deg,#7c5cff,#4cc9f0); color: #fff; padding: 10px 20px; border-radius: 10px; font-weight: 700; font-size: 14px; }
+</style>
+</head>
+<body>
+  <div class="section">
+
+    <div class="logo-hero">
+      <img src="logo-korlin.svg" alt="Logo Korlin">
+      <div style="color:#9aa7bd; font-size:13px">/ˈkoɾlin/ · The short, honest, modern language</div>
+    </div>
+
+    <h2>Paleta de colores</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="c" style="background:#7c5cff"></div><div class="lbl"><b>Morado</b><span>#7c5cff · acento</span></div></div>
+      <div class="swatch"><div class="c" style="background:#4cc9f0"></div><div class="lbl"><b>Cian</b><span>#4cc9f0 · IA/tech</span></div></div>
+      <div class="swatch"><div class="c" style="background:#ff6b9d"></div><div class="lbl"><b>Rosa</b><span>#ff6b9d · cute</span></div></div>
+      <div class="swatch"><div class="c" style="background:#f0b429"></div><div class="lbl"><b>Dorado</b><span>#f0b429 · énfasis</span></div></div>
+      <div class="swatch"><div class="c" style="background:#0a0e1a"></div><div class="lbl"><b>Fondo</b><span>#0a0e1a · dark</span></div></div>
+      <div class="swatch"><div class="c" style="background:#101726"></div><div class="lbl"><b>Superficie</b><span>#101726 · tarjetas</span></div></div>
+      <div class="swatch"><div class="c" style="background:#3fb950"></div><div class="lbl"><b>Verde</b><span>#3fb950 · correcto</span></div></div>
+      <div class="swatch"><div class="c" style="background:#f85149"></div><div class="lbl"><b>Rojo</b><span>#f85149 · error</span></div></div>
+    </div>
+
+    <h2>Tipografía</h2>
+    <div class="type-sample">
+      <div class="d">Speak less, say more.</div>
+      <div class="b">La lengua corta, honesta y moderna.</div>
+      <div class="k">Na-toro na-kan-sa vi i mi.</div>
+    </div>
+
+    <h2>Ejemplos de aplicación</h2>
+    <div class="mock-grid">
+      <div class="mock">
+        <div class="img" style="background:linear-gradient(135deg,#7c5cff,#4cc9f0)">🗣️</div>
+        <div class="txt"><b>go = ir</b><span>Una sílaba. Aprendido.</span><div class="tag">#Korlin</div></div>
+      </div>
+      <div class="mock">
+        <div class="img" style="background:linear-gradient(135deg,#ff6b9d,#f0b429)">🛡️</div>
+        <div class="txt"><b>Miente y te pillo</b><span>La evidencialidad te delata.</span><div class="tag">#honesto</div></div>
+      </div>
+      <div class="mock">
+        <div class="img" style="background:linear-gradient(135deg,#4cc9f0,#7c5cff)">🤖</div>
+        <div class="txt"><b>Habla con la IA</b><span>Menos tokens, más rápido.</span><div class="tag">#IA</div></div>
+      </div>
+    </div>
+
+    <div class="cta">Habla menos, di más → korlin</div>
+
+  </div>
+</body>
+</html>
