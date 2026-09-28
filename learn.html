@@ -28,6 +28,7 @@
       <h1>Aprende Korlin</h1>
       <p class="sub">La lengua corta, honesta y moderna. <span class="korlin">ko lin</span></p>
       <div id="lista-lecciones" class="lecciones"></div>
+      <button id="btn-conversar" class="btn-conversar">🗣️ Conversar en Korlin</button>
     </section>
 
     <!-- ===== Vista: lección (ejercicio) ===== -->
@@ -42,6 +43,26 @@
         <div id="bocadillo" class="bocadillo">¡Vamos!</div>
       </div>
       <div id="ejercicio" class="ejercicio"></div>
+    </section>
+
+    <!-- ===== Vista: conversación ===== -->
+    <section id="vista-conversar" class="vista">
+      <div class="leccion-top">
+        <button id="btn-salir-conv" class="salir">✕</button>
+        <div class="barra"><div class="fill" style="width:100%"></div></div>
+        <span class="vidas-mini">💬</span>
+      </div>
+      <div class="mascota-box">
+        <img id="conv-mascota" src="assets/personajes/pez.jpg" alt="mascota" class="mascota">
+        <div id="conv-bocadillo" class="bocadillo">Halo! Mi e-sa Lin.</div>
+      </div>
+      <p id="conv-traduccion" class="sub"></p>
+      <div id="conv-transcripcion" class="transcripcion">Tu respuesta aparecerá aquí…</div>
+      <div class="conv-controles">
+        <button id="btn-mic" class="btn-mic">🎤</button>
+        <button id="btn-escuchar" class="btn-primario">🔊 Escuchar</button>
+      </div>
+      <p id="conv-pista" class="sub"></p>
     </section>
 
     <!-- ===== Vista: resultado ===== -->

@@ -44,6 +44,7 @@ const $ = (id) => document.getElementById(id);
 const vistaLecciones = $('vista-lecciones');
 const vistaLeccion = $('vista-leccion');
 const vistaResultado = $('vista-resultado');
+const vistaConversar = $('vista-conversar');
 
 // ===== Utilidades =====
 function getPalabra(f) { return LEXICO.find(p => p.f === f); }
@@ -72,10 +73,11 @@ let respondiendo = false;
 let pendientes = [];   // estado temporal para ordenar/emparejar
 
 function mostrarVista(v) {
-  [vistaLecciones, vistaLeccion, vistaResultado].forEach(x => x.classList.remove('active'));
+  [vistaLecciones, vistaLeccion, vistaResultado, vistaConversar].forEach(x => x.classList.remove('active'));
   if (v === 'lecciones') vistaLecciones.classList.add('active');
   if (v === 'leccion') vistaLeccion.classList.add('active');
   if (v === 'resultado') vistaResultado.classList.add('active');
+  if (v === 'conversar') vistaConversar.classList.add('active');
   actualizarHUD();
 }
 
@@ -442,6 +444,87 @@ document.querySelectorAll('.langbtn').forEach(btn => {
     LANG = btn.dataset.lang;
   });
 });
+
+// ===== Conversación por voz =====
+const DIALOGO = [
+  { m: 'Halo! Mi e-sa Lin.', t: '¡Hola! Yo soy Lin.', esperado: ['halo'] },
+  { m: 'Tu e-sa mo gu?', t: '¿Estás bien?', esperado: ['ya', 'gu'] },
+  { m: 'Gu! To.', t: '¡Bien! Cierto.', esperado: ['to', 'gu'] },
+  { m: 'Mi e-sa u ko lin.', t: 'Soy una lengua corta.', esperado: ['ko', 'lin'] },
+  { m: 'Tu kan-ve sa mi.', t: 'Puedes aprenderme.', esperado: ['ya', 'kan'] },
+  { m: 'Na-toro na-kan-sa vi i mi.', t: 'La mentira no puede vivir en mí.', esperado: ['toro', 'na-toro'] },
+];
+
+let idxDialogo = 0;
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+let rec = null;
+
+function normalizar(s) {
+  return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function iniciarConversacion() {
+  idxDialogo = 0;
+  $('btn-mic').style.display = '';
+  mostrarVista('conversar');
+  siguienteTurno();
+}
+
+function siguienteTurno() {
+  const turno = DIALOGO[idxDialogo];
+  if (!turno) {
+    $('conv-bocadillo').textContent = 'Gu! Tu sa Korlin! 🎉';
+    $('conv-traduccion').textContent = '¡Bien! ¡Ya sabes Korlin!';
+    $('conv-transcripcion').textContent = 'Conversación completada. ¡Enhorabuena!';
+    $('conv-pista').textContent = '';
+    $('btn-mic').style.display = 'none';
+    estado.xp += 20; guardar(); actualizarHUD();
+    return;
+  }
+  $('conv-bocadillo').textContent = turno.m;
+  $('conv-traduccion').textContent = turno.t;
+  $('conv-transcripcion').textContent = 'Tu respuesta aparecerá aquí…';
+  $('conv-transcripcion').className = 'transcripcion';
+  $('conv-pista').textContent = '';
+  hablar(turno.m);
+}
+
+function escuchar() {
+  if (!SR) { alert('Tu navegador no soporta reconocimiento de voz. Usa Chrome o Edge.'); return; }
+  if (!rec) {
+    rec = new SR();
+    rec.lang = 'es-ES';
+    rec.interimResults = false;
+    rec.maxAlternatives = 1;
+    rec.onresult = (ev) => { const texto = ev.results[0][0].transcript; verificar(texto); };
+    rec.onerror = () => { $('btn-mic').classList.remove('escuchando'); $('conv-transcripcion').textContent = 'No te escuché. Intenta de nuevo.'; };
+    rec.onend = () => { $('btn-mic').classList.remove('escuchando'); };
+  }
+  $('btn-mic').classList.add('escuchando');
+  $('conv-transcripcion').textContent = 'Escuchando… 🎙️';
+  rec.start();
+}
+
+function verificar(texto) {
+  const turno = DIALOGO[idxDialogo];
+  const n = normalizar(texto);
+  const ok = turno.esperado.some(e => n.includes(normalizar(e)));
+  const tc = $('conv-transcripcion');
+  tc.textContent = 'Tú: ' + texto;
+  tc.className = 'transcripcion ' + (ok ? 'correcta' : 'incorrecta');
+  if (ok) {
+    $('conv-bocadillo').textContent = 'Gu! 👍';
+    estado.xp += 5; guardar(); actualizarHUD();
+    setTimeout(() => { idxDialogo++; siguienteTurno(); }, 1200);
+  } else {
+    $('conv-pista').textContent = 'Pista: intenta decir "' + turno.esperado[0] + '"';
+  }
+}
+
+$('btn-conversar').addEventListener('click', iniciarConversacion);
+$('btn-salir-conv').addEventListener('click', () => { if (rec) rec.abort(); speechSynthesis.cancel(); mostrarVista('lecciones'); renderLecciones(); });
+$('btn-mic').addEventListener('click', escuchar);
+$('btn-escuchar').addEventListener('click', () => { if (idxDialogo < DIALOGO.length) hablar(DIALOGO[idxDialogo].m); });
 
 // ===== Init =====
 actualizarHUD();
