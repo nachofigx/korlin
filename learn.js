@@ -25,6 +25,7 @@ const I18N = {
     sinSoporte: 'Tu navegador no soporta reconocimiento de voz. Usa Chrome o Edge.',
     flashcards: '🎴 Repasar con flashcards', noLaSabia: '🙈 No la sabía', laSabia: '✅ La sabía', gramatica: 'gramática',
     cofre: '🎁 Cofre diario', logros: '🏅 Logros', logrosTitulo: 'Logros',
+    reforzar: '🔁 Reforzar', reforzarMsg: '¡Repasemos tus palabras débiles!',
   },
   en: {
     titulo: 'Learn Korlin', subtitulo: 'The short, honest, modern language.',
@@ -45,6 +46,7 @@ const I18N = {
     sinSoporte: "Your browser doesn't support speech recognition. Use Chrome or Edge.",
     flashcards: '🎴 Review with flashcards', noLaSabia: "🙈 Didn't know it", laSabia: '✅ Knew it', gramatica: 'grammar',
     cofre: '🎁 Daily chest', logros: '🏅 Achievements', logrosTitulo: 'Achievements',
+    reforzar: '🔁 Strengthen', reforzarMsg: "Let's review your weak words!",
   },
 };
 function t(clave) { return (I18N[LANG] || I18N.es)[clave] || clave; }
@@ -104,7 +106,7 @@ const FRASES = [
 // ===== Estado (localStorage) =====
 const CLAVE = 'korlin_estado';
 function cargarEstado() {
-  const base = { xp: 0, racha: 0, vidas: 3, ultima: null, completadas: {}, ultimoCofre: null, logros: {}, conversa: 0 };
+  const base = { xp: 0, racha: 0, vidas: 3, ultima: null, completadas: {}, ultimoCofre: null, logros: {}, conversa: 0, debiles: {} };
   try {
     return Object.assign(base, JSON.parse(localStorage.getItem(CLAVE)) || {});
   } catch (e) {
@@ -169,6 +171,10 @@ function renderLecciones() {
   const lista = $('lista-lecciones');
   $('titulo-app').textContent = t('titulo');
   $('subtitulo-app').textContent = t('subtitulo');
+  $('btn-conversar').textContent = t('conversar');
+  $('btn-flashcards').textContent = t('flashcards');
+  $('btn-logros').textContent = t('logros');
+  $('btn-reforzar').textContent = t('reforzar');
   lista.innerHTML = LECCIONES.map((l, i) => {
     const nivel = Math.min(estado.completadas[l.id] || 0, 5);
     const completada = nivel > 0;
@@ -273,7 +279,7 @@ function responderChoice(i) {
     estado.xp += 10;
   } else {
     $('bocadillo').textContent = MSG_NO[Math.floor(Math.random() * MSG_NO.length)] + ' ' + t('era') + ' ' + (e.tipo === 'k2s' ? sig(e.objetivo) : e.objetivo.f);
-    estado.vidas -= 1; errores++;
+    estado.vidas -= 1; errores++; registrarError(e.objetivo.f);
   }
   guardar(); actualizarHUD();
   setTimeout(avanzar, 900);
@@ -415,7 +421,7 @@ function responderFill(t) {
     estado.xp += 10;
   } else {
     $('bocadillo').textContent = MSG_NO[Math.floor(Math.random() * MSG_NO.length)];
-    estado.vidas -= 1; errores++;
+    estado.vidas -= 1; errores++; registrarError(e.respuesta);
   }
   guardar(); actualizarHUD();
   setTimeout(avanzar, 900);
@@ -448,7 +454,7 @@ function comprobarDictado() {
     estado.xp += 10;
   } else {
     $('bocadillo').textContent = MSG_NO[Math.floor(Math.random() * MSG_NO.length)] + ' ' + t('era') + ' ' + e.objetivo.f;
-    estado.vidas -= 1; errores++;
+    estado.vidas -= 1; errores++; registrarError(e.objetivo.f);
   }
   guardar(); actualizarHUD();
   setTimeout(avanzar, 900);
@@ -703,6 +709,36 @@ function renderLogros() {
 $('btn-logros').addEventListener('click', () => { renderLogros(); mostrarVista('logros'); });
 $('btn-salir-logros').addEventListener('click', () => { mostrarVista('lecciones'); renderLecciones(); });
 $('cofre-dia').addEventListener('click', reclamarCofre);
+
+// ===== Repetición espaciada (reforzar) =====
+function registrarError(f) {
+  if (!estado.debiles) estado.debiles = {};
+  estado.debiles[f] = (estado.debiles[f] || 0) + 1;
+}
+
+function iniciarReforzar() {
+  const debiles = estado.debiles || {};
+  const formas = Object.keys(debiles).sort((a, b) => debiles[b] - debiles[a]).slice(0, 10);
+  const palabras = formas.map(getPalabra).filter(Boolean);
+  if (palabras.length === 0) {
+    toast('🎉 ' + (LANG === 'es' ? '¡No tienes palabras débiles!' : 'No weak words yet!'));
+    return;
+  }
+  leccionActual = { id: 'reforzar', nombre: 'Reforzar', nombre_en: 'Strengthen', mascota: 'assets/personajes/monstruo.jpg' };
+  ejercicios = [];
+  const n = Math.min(palabras.length, 8);
+  for (let i = 0; i < n; i++) ejercicios.push(crearChoice(palabras[i % palabras.length]));
+  if (palabras.length >= 4) ejercicios.push(crearEmparejar(barajar(palabras).slice(0, 4)));
+  idxEjercicio = 0;
+  errores = 0;
+  respondiendo = false;
+  $('mascota-img').src = leccionActual.mascota;
+  mostrarVista('leccion');
+  $('bocadillo').textContent = t('reforzarMsg');
+  renderEjercicio();
+}
+
+$('btn-reforzar').addEventListener('click', iniciarReforzar);
 
 // ===== Init =====
 actualizarHUD();
