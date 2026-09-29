@@ -26,6 +26,7 @@ const I18N = {
     flashcards: '🎴 Repasar con flashcards', noLaSabia: '🙈 No la sabía', laSabia: '✅ La sabía', gramatica: 'gramática',
     cofre: '🎁 Cofre diario', logros: '🏅 Logros', logrosTitulo: 'Logros',
     reforzar: '🔁 Reforzar', reforzarMsg: '¡Repasemos tus palabras débiles!',
+    dialogosTitulo: 'Conversar', elegirDialogo: 'Elige un diálogo para practicar',
   },
   en: {
     titulo: 'Learn Korlin', subtitulo: 'The short, honest, modern language.',
@@ -47,6 +48,7 @@ const I18N = {
     flashcards: '🎴 Review with flashcards', noLaSabia: "🙈 Didn't know it", laSabia: '✅ Knew it', gramatica: 'grammar',
     cofre: '🎁 Daily chest', logros: '🏅 Achievements', logrosTitulo: 'Achievements',
     reforzar: '🔁 Strengthen', reforzarMsg: "Let's review your weak words!",
+    dialogosTitulo: 'Chat', elegirDialogo: 'Choose a dialogue to practice',
   },
 };
 function t(clave) { return (I18N[LANG] || I18N.es)[clave] || clave; }
@@ -123,6 +125,7 @@ const vistaLeccion = $('vista-leccion');
 const vistaResultado = $('vista-resultado');
 const vistaConversar = $('vista-conversar');
 const vistaFlashcards = $('vista-flashcards');
+const vistaSeleccionDialogo = $('vista-seleccion-dialogo');
 
 // ===== Utilidades =====
 function getPalabra(f) { return LEXICO.find(p => p.f === f); }
@@ -150,12 +153,13 @@ let errores = 0;
 let respondiendo = false;
 
 function mostrarVista(v) {
-  [vistaLecciones, vistaLeccion, vistaResultado, vistaConversar, vistaFlashcards].forEach(x => x.classList.remove('active'));
+  [vistaLecciones, vistaLeccion, vistaResultado, vistaConversar, vistaFlashcards, vistaSeleccionDialogo].forEach(x => x.classList.remove('active'));
   if (v === 'lecciones') vistaLecciones.classList.add('active');
   if (v === 'leccion') vistaLeccion.classList.add('active');
   if (v === 'resultado') vistaResultado.classList.add('active');
   if (v === 'conversar') vistaConversar.classList.add('active');
   if (v === 'flashcards') vistaFlashcards.classList.add('active');
+  if (v === 'seleccion-dialogo') vistaSeleccionDialogo.classList.add('active');
   actualizarHUD();
 }
 
@@ -496,31 +500,69 @@ function actualizarRacha() {
 }
 
 // ===== Conversación por voz =====
-const DIALOGO = [
-  { m: 'Halo! Mi e-sa Lin.', es: '¡Hola! Yo soy Lin.', en: 'Hi! I am Lin.', esperado: ['halo'] },
-  { m: 'Tu e-sa mo gu?', es: '¿Estás bien?', en: 'Are you ok?', esperado: ['ya', 'gu'] },
-  { m: 'Gu! To.', es: '¡Bien! Cierto.', en: 'Good! Sure.', esperado: ['to', 'gu'] },
-  { m: 'Mi e-sa u ko lin.', es: 'Soy una lengua corta.', en: 'I am a short language.', esperado: ['ko', 'lin'] },
-  { m: 'Tu kan-ve sa mi.', es: 'Puedes aprenderme.', en: 'You can learn me.', esperado: ['ya', 'kan'] },
-  { m: 'Na-toro na-kan-sa vi i mi.', es: 'La mentira no puede vivir en mí.', en: 'The lie cannot live in me.', esperado: ['toro', 'na-toro'] },
+const DIALOGOS = [
+  { id: 'saludo', icono: '👋', titulo: 'Saludo', titulo_en: 'Greeting', pasos: [
+    { m: 'Halo! Mi e-sa Lin.', es: '¡Hola! Yo soy Lin.', en: 'Hi! I am Lin.', esperado: ['halo'] },
+    { m: 'Tu e-sa mo gu?', es: '¿Estás bien?', en: 'Are you ok?', esperado: ['ya', 'gu'] },
+    { m: 'Gu! To.', es: '¡Bien! Cierto.', en: 'Good! Sure.', esperado: ['to', 'gu'] },
+    { m: 'Mi e-sa u ko lin.', es: 'Soy una lengua corta.', en: 'I am a short language.', esperado: ['ko', 'lin'] },
+    { m: 'Tu kan-ve sa mi.', es: 'Puedes aprenderme.', en: 'You can learn me.', esperado: ['ya', 'kan'] },
+    { m: 'Na-toro na-kan-sa vi i mi.', es: 'La mentira no puede vivir en mí.', en: 'The lie cannot live in me.', esperado: ['toro', 'na-toro'] },
+  ]},
+  { id: 'comida', icono: '🍽️', titulo: 'Comida', titulo_en: 'Food', pasos: [
+    { m: 'Tu vo man mo?', es: '¿Quieres comer?', en: 'Do you want to eat?', esperado: ['ya', 'vo'] },
+    { m: 'Ki tu man?', es: '¿Qué comes?', en: 'What do you eat?', esperado: ['man'] },
+    { m: 'Mi man-ve man-re.', es: 'Como comida.', en: 'I eat food.', esperado: ['man-re', 'man'] },
+    { m: 'Tu bi-ve wa mo?', es: '¿Bebes agua?', en: 'Do you drink water?', esperado: ['ya', 'wa'] },
+    { m: 'Man-re e-sa gu.', es: 'La comida es buena.', en: 'The food is good.', esperado: ['gu'] },
+  ]},
+  { id: 'lugar', icono: '🏠', titulo: 'Lugar', titulo_en: 'Place', pasos: [
+    { m: 'Ki lo e-sa le ho de tu?', es: '¿Dónde está tu casa?', en: 'Where is your house?', esperado: ['ho', 'lo'] },
+    { m: 'Mi go a le ho.', es: 'Voy a la casa.', en: 'I go to the house.', esperado: ['go', 'ho'] },
+    { m: 'Le ho e-sa me mo?', es: '¿La casa es grande?', en: 'Is the house big?', esperado: ['me'] },
+    { m: 'Ya! Me ho.', es: '¡Sí! Casa grande.', en: 'Yes! Big house.', esperado: ['ya', 'me'] },
+  ]},
+  { id: 'sentimientos', icono: '💖', titulo: 'Sentimientos', titulo_en: 'Feelings', pasos: [
+    { m: 'Tu sen-ve mo gu?', es: '¿Te sientes bien?', en: 'Do you feel good?', esperado: ['ya', 'gu'] },
+    { m: 'Mi sen-ve gu.', es: 'Me siento bien.', en: 'I feel good.', esperado: ['gu'] },
+    { m: 'Tu sen-ve yo mo?', es: '¿Sientes alegría?', en: 'Do you feel joy?', esperado: ['ya', 'yo'] },
+    { m: 'Ya! Yo! ❤️', es: '¡Sí! ¡Alegría! ❤️', en: 'Yes! Joy! ❤️', esperado: ['ya', 'yo'] },
+  ]},
 ];
 
 let idxDialogo = 0;
+let dialogoActual = null;
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 let rec = null;
 
 function normalizar(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
 
 function iniciarConversacion() {
+  renderSeleccionDialogo();
+  mostrarVista('seleccion-dialogo');
+}
+
+function renderSeleccionDialogo() {
+  $('dialogos-titulo').textContent = t('dialogosTitulo');
+  $('dialogos-sub').textContent = t('elegirDialogo');
+  $('lista-dialogos').innerHTML = DIALOGOS.map(d => `
+    <div class="leccion-card" onclick="seleccionarDialogo('${d.id}')">
+      <div class="ico">${d.icono}</div>
+      <div class="info"><b>${LANG === 'en' ? d.titulo_en : d.titulo}</b></div>
+      <div class="estado">▶️</div>
+    </div>`).join('');
+}
+
+function seleccionarDialogo(id) {
+  dialogoActual = DIALOGOS.find(d => d.id === id);
   idxDialogo = 0;
   $('btn-mic').style.display = '';
-  $('btn-conversar').textContent = t('conversar');
   mostrarVista('conversar');
   siguienteTurno();
 }
 
 function siguienteTurno() {
-  const turno = DIALOGO[idxDialogo];
+  const turno = dialogoActual.pasos[idxDialogo];
   if (!turno) {
     $('conv-bocadillo').textContent = 'Gu! Tu sa Korlin! 🎉';
     $('conv-traduccion').textContent = t('yaSabesKorlin');
@@ -556,7 +598,7 @@ function escuchar() {
 }
 
 function verificar(texto) {
-  const turno = DIALOGO[idxDialogo];
+  const turno = dialogoActual.pasos[idxDialogo];
   const n = normalizar(texto);
   const ok = turno.esperado.some(e => n.includes(normalizar(e)));
   const tc = $('conv-transcripcion');
@@ -574,7 +616,8 @@ function verificar(texto) {
 $('btn-conversar').addEventListener('click', iniciarConversacion);
 $('btn-salir-conv').addEventListener('click', () => { if (rec) rec.abort(); speechSynthesis.cancel(); mostrarVista('lecciones'); renderLecciones(); });
 $('btn-mic').addEventListener('click', escuchar);
-$('btn-escuchar').addEventListener('click', () => { if (idxDialogo < DIALOGO.length) hablar(DIALOGO[idxDialogo].m); });
+$('btn-escuchar').addEventListener('click', () => { if (dialogoActual && idxDialogo < dialogoActual.pasos.length) hablar(dialogoActual.pasos[idxDialogo].m); });
+$('btn-salir-sel').addEventListener('click', () => { mostrarVista('lecciones'); renderLecciones(); });
 
 // ===== Botones =====
 $('btn-salir').addEventListener('click', () => { speechSynthesis.cancel(); mostrarVista('lecciones'); renderLecciones(); });
