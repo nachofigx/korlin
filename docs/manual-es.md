@@ -127,7 +127,7 @@
 | **ga** | /ga/ | tierra |
 | **su** | /su/ | sol |
 | **lu** | /lu/ | luna |
-| **jo** | /jo/ | día |
+| **ti** | /ti/ | día |
 | **no** | /no/ | noche |
 | **tem** | /tem/ | tiempo |
 | **lo** | /lo/ | lugar |

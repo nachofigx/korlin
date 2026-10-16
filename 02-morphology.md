@@ -53,7 +53,10 @@ It is Korlin's "anti-lying" layer.
 1. **Mandatory**: every declarative sentence carries an evidential on its verb
    (or copula `e`). One cannot assert a fact without declaring its source.
 2. **Position**: suffix immediately after the verb.
-3. **Exemptions**: questions, orders and irony marked with `fi` carry no evidential.
+3. **Exemptions**: the evidential is omitted only in **questions** (`mo`),
+   **orders**, and **irony marked with `fi`**. It is NOT optional elsewhere.
+   In subordinate clauses, **each clause carries its own** evidential:
+   `mi sa-ve ki li an-go-di.` = "I know-DIR that he left-REP."
 4. **Hierarchy**: with several sources, mark the strongest
    (direct > inferred > reported > assumed; cf. Barnes 1984, Faller 2002).
 

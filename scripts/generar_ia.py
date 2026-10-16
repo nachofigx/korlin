@@ -44,8 +44,8 @@ REGLAS = {
         "tipo_morfologico": "aglutinante, altamente regular",
     },
     "fonologia": {
-        "fonemas": 20,
-        "consonantes": ["p", "t", "k", "b", "d", "g", "m", "n", "s", "l", "r", "f", "h", "v", "w"],
+        "fonemas": 21,
+        "consonantes": ["p", "b", "t", "d", "k", "g", "m", "n", "f", "v", "s", "h", "l", "r", "w", "y"],
         "vocales": ["a", "e", "i", "o", "u"],
         "silaba": "(C)V(C)",
         "coda_permitida": ["m", "n", "s"],
@@ -106,7 +106,7 @@ def genera_json(palabras, afijos):
         "exonimo": "Shortlang",
         "autonimo": "korlin",
         "significado": "ko (corto) + lin (lengua) = lengua corta",
-        "version": "1.0",
+        "version": "0.2",
         "licencia": "MIT",
         "sitio": "https://nachofigx.github.io/korlin/",
         "repo": "https://github.com/nachofigx/korlin",
@@ -144,11 +144,12 @@ def genera_json(palabras, afijos):
 EJEMPLOS = [
     ("Halo! Mi e-sa Korlin.", "¡Hola! Soy Korlin.", "Hello! I am Korlin."),
     ("Na-toro na-kan-sa vi i mi.", "La mentira no puede vivir en mí.", "Lies cannot live in me."),
-    ("li go-ve.", "Él se fue (lo vi).", "He left (I saw it)."),
-    ("li go-di ku.", "Se fue (me lo contaron, no me fío).", "He left (I was told, I doubt it)."),
+    ("li go-ve.", "Él va (lo veo).", "He goes (I see it)."),
+    ("li an-go-ve.", "Él fue (lo vi).", "He went (I saw it)."),
+    ("li an-go-di ku.", "Se fue (me lo contaron, no me fío).", "He left (I was told, I doubt it)."),
     ("Tu go mo?", "¿Vas?", "Do you go?"),
     ("Mi man-ve man-re.", "Como comida.", "I eat food."),
-    ("an-go-ve.", "Fui (lo vi/viví).", "I went (I witnessed it)."),
+    ("an-go-ve.", "Fui (yo; el sujeto se omite).", "I went (subject omitted)."),
     ("ne-go-pen.", "Irá (lo infiero).", "He will go (I infer it)."),
     ("me-ho.", "Casa grande.", "Big house."),
     ("pi-ho.", "Casita.", "Little house."),
@@ -156,7 +157,7 @@ EJEMPLOS = [
     ("gu-ro.", "Bondad.", "Goodness."),
     ("man-lo.", "Comedor.", "Dining place."),
     ("sa-pe.", "Sabio (el que sabe).", "Wise one (the one who knows)."),
-    ("Wi e-sa pe-s.", "Somos personas.", "We are people."),
+    ("Wi e-sa pes.", "Somos personas.", "We are people."),
     ("Yo! Mi vo tu la.", "¡Qué alegría! Te quiero (cariño).", "Yay! I love you (affection)."),
 ]
 
@@ -164,7 +165,7 @@ EJEMPLOS = [
 def genera_spec(palabras, afijos):
     L = []
     A = L.append
-    A("# Korlin — Especificación para modelos de lenguaje (v1.0)")
+    A("# Korlin — Especificación para modelos de lenguaje (v0.2)")
     A("")
     A("> **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer")
     A("> mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para")
@@ -174,6 +175,8 @@ def genera_spec(palabras, afijos):
     A("diseñada para hablar mucho en poco tiempo, con honestidad forzada por gramática")
     A("(evidencialidad obligatoria) y pensada para uso humano y con agentes de IA.")
     A("Autónimo: **korlin** = `ko` (corto) + `lin` (lengua) = *lengua corta*.")
+    A("**Versión de esta especificación: v0.2** (ver `CHANGELOG.md`). Este documento manda")
+    A("sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.")
     A("")
     A("---")
     A("")
@@ -184,18 +187,27 @@ def genera_spec(palabras, afijos):
     A("3. **El modificador va ANTES del núcleo:** `me ho` = *casa grande*; `gu pe` = *persona buena*.")
     A("4. **La evidencialidad es OBLIGATORIA en todo verbo con contenido factual.**")
     A("   Sin ella, la oración está mal formada. (Ver §4.)")
+    A("   **Exenta** en: preguntas (`mo`), órdenes e ironía marcada con `fi`.")
+    A("   En **subordinadas**, cada cláusula lleva la suya.")
     A("5. **La modalidad epistémica va al final**, opcional: `to be os ku`.")
     A("6. **La actitud va al final**, opcional: `yo hu we fi bu ri pu ni la`.")
-    A("7. **Negación `na`** inmediatamente antes del verbo.")
+    A("7. **Negación:** hay DOS mecanismos, y no se mezclan.")
+    A("   a) **`na` suelto**, inmediatamente antes del verbo → niega la oración.")
+    A("      `mi na sa-ve.` = *No sé (lo veo).*")
+    A("   b) **`na-` pegado**, como prefijo derivativo → crea la palabra opuesta.")
+    A("      `na-gu` = *malo*, `na-toro` = *mentira*.")
     A("8. **Pregunta sí/no:** `mo` al final. **Interrogativos** (`ki`, `lo`) al inicio.")
     A("9. **No hay concordancia** de género, número ni persona. Nunca.")
     A("10. **No hay artículos obligatorios**; `le` existe y es opcional.")
+    A("11. **El sujeto puede omitirse** si el contexto lo deja claro (pro-drop).")
+    A("12. **La modalidad epistémica no marcada equivale a `to`** (certeza),")
+    A("    pero la evidencialidad NUNCA se puede omitir en una declarativa.")
     A("")
     A("---")
     A("")
     A("## 2. Fonología")
     A("")
-    A("20 fonemas: 15 consonantes + 5 vocales.")
+    A("21 fonemas: 16 consonantes + 5 vocales.")
     A("")
     A("| Consonantes | AFI | | Vocales | AFI |")
     A("|---|---|---|---|---|")
@@ -207,16 +219,19 @@ def genera_spec(palabras, afijos):
     A("| g | /g/ | | | |")
     A("| m | /m/ | | | |")
     A("| n | /n/ | | | |")
+    A("| f | /f/ | | | |")
+    A("| v | /v/ | | | |")
     A("| s | /s/ | | | |")
+    A("| h | /h/ | | | |")
     A("| l | /l/ | | | |")
     A("| r | /ɾ/ | | | |")
-    A("| f | /f/ | | | |")
-    A("| h | /h/ | | | |")
-    A("| v | /v/ | | | |")
     A("| w | /w/ | | | |")
+    A("| y | /j/ | | | |")
     A("")
     A("- **Sílaba:** `(C)V(C)`. La coda solo admite `m`, `n`, `s`.")
+    A("- **Sílabas posibles:** 17 onsets (16 consonantes + vacío) × 5 vocales × 4 codas = **340**.")
     A("- **Acento:** siempre en la **penúltima** sílaba. Nunca se escribe tilde.")
+    A("- **Letras prohibidas:** `c j q x z`. La `j` no existe: /j/ se escribe `y`.")
     A("- **Aproximación para hispanohablantes:** se pronuncia como español, con `v`")
     A("  labiodental suave y `h` aspirada (como en inglés `house`).")
     A("")
@@ -305,11 +320,12 @@ def genera_spec(palabras, afijos):
     A("")
     A("| Estructura | Marca | Ejemplo |")
     A("|---|---|---|")
-    A("| Negación | `na` + verbo | `na-go-ve` = *no voy (lo veo)* |")
-    A("| Pregunta sí/no | `mo` final | `Tu go-ve mo?` = *¿Vas?* |")
+    A("| Negación de oración | `na` + verbo | `mi na sa-ve` = *no sé (lo veo)* |")
+    A("| Palabra opuesta | `na-` + raíz | `na-gu` = *malo* |")
+    A("| Pregunta sí/no | `mo` final | `Tu go mo?` = *¿Vas?* |")
     A("| Interrogativo | al inicio | `Ki tu man?` = *¿Qué comes?* |")
     A("| Posesión | `de` | `le ho de mi` = *mi casa* |")
-    A("| Subordinación | `ki` | `Mi sa ki li go-ve` = *Sé que él fue* |")
+    A("| Subordinación | `ki` | `Mi sa-ve ki li an-go-di` = *Sé que él fue (me lo dijeron)* |")
     A("| Condicional | `si … so …` | `si tu go, so mi go` = *si vas, voy* |")
     A("")
     A("---")

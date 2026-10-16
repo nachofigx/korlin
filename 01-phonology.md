@@ -2,9 +2,9 @@
 
 *[Español disponible en docs/manual-es.md]*
 
-## 1. Phoneme inventory (20 total)
+## 1. Phoneme inventory (21 total)
 
-### 1.1 Consonants (15)
+### 1.1 Consonants (16)
 
 | Letter | IPA | Place/manner | Voicing | Approximate reference |
 |---|---|---|---|---|
@@ -17,6 +17,7 @@
 | m | /m/ | bilabial nasal | voiced | "m" |
 | n | /n/ | alveolar nasal | voiced | "n" |
 | f | /f/ | labiodental fricative | voiceless | "f" |
+| v | /v/ | labiodental fricative | voiced | "v" (English *van*) |
 | s | /s/ | alveolar fricative | voiceless | "s" |
 | h | /h/ | glottal fricative | voiceless | "h" as in *house* |
 | l | /l/ | alveolar lateral | voiced | "l" |
@@ -56,7 +57,7 @@ Rules:
 Valid: `a`, `e`, `ka`, `te`, `mi`, `so`, `lu`, `kan`, `sen`, `los`, `nam`, `sis`, `tan`, `wan`.
 Invalid: `stra` (cluster), `kri` (cluster), `ek` (coda /k/), `kast` (double coda).
 
-**Possible syllables** = 16 onsets × 5 vowels × 4 codas = **320**.
+**Possible syllables** = 17 onsets (16 consonants + empty) × 5 vowels × 4 codas = **340**.
 
 ## 3. Stress
 - Fixed on the **penultimate syllable** of the word.
@@ -65,16 +66,20 @@ Invalid: `stra` (cluster), `kri` (cluster), `ek` (coda /k/), `kast` (double coda
 
 ## 4. Orthography (official romanization)
 - **1 letter = 1 phoneme, always.** No digraphs, no silent letters, no accents.
-- Alphabet (20 letters, in order):
-  `a b d e f g h i k l m n o p r s t u w y`
-- Unused Latin letters: c, j, q, v, x, z.
+- Alphabet (21 letters, in order):
+  `a b d e f g h i k l m n o p r s t u v w y`
+- Unused Latin letters: c, j, q, x, z.
+
+**Inventario consonántico (16):** `p b t d k g m n f s h l r w y v`.
+`v` y `y` son fonemas plenos (`v` = /v/ labiodental, `y` = /j/ palatal); `j` no
+existe como letra: su sonido /j/ se escribe siempre `y`.
 
 ## 5. Typological notes
 - 5-vowel system /a e i o u/: the most common worldwide (Spanish, Italian,
   Japanese, Greek, Swahili, Hawaiian…).
-- No voicing contrast in fricatives (only voiceless /f s h/): Spanish and Japanese
-  also lack /s/–/z/; simplification for maximal ease.
+- No voicing contrast in fricatives: only voiceless /f s h/ plus a single voiced
+  /v/ (kept because it is extremely frequent in the world's languages).
 - Tap /ɾ/ instead of trill /r/: /ɾ/ is typologically far more frequent.
 - All chosen consonants rank among the world's most frequent.
-- 15 consonants + 5 vowels compares to Spanish (~18 C + 5 V), Italian (~21 C + 7 V)
+- 16 consonants + 5 vowels compares to Spanish (~18 C + 5 V), Italian (~21 C + 7 V)
   and Japanese (~14 C + 5 V); simpler than most.

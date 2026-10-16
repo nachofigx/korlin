@@ -1,4 +1,4 @@
-# Korlin — Especificación para modelos de lenguaje (v1.0)
+# Korlin — Especificación para modelos de lenguaje (v0.2)
 
 > **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer
 > mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para
@@ -8,6 +8,8 @@ Korlin (exónimo **Shortlang**) es una lengua construida, regular y sin ambigüe
 diseñada para hablar mucho en poco tiempo, con honestidad forzada por gramática
 (evidencialidad obligatoria) y pensada para uso humano y con agentes de IA.
 Autónimo: **korlin** = `ko` (corto) + `lin` (lengua) = *lengua corta*.
+**Versión de esta especificación: v0.2** (ver `CHANGELOG.md`). Este documento manda
+sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
 
 ---
 
@@ -18,18 +20,27 @@ Autónimo: **korlin** = `ko` (corto) + `lin` (lengua) = *lengua corta*.
 3. **El modificador va ANTES del núcleo:** `me ho` = *casa grande*; `gu pe` = *persona buena*.
 4. **La evidencialidad es OBLIGATORIA en todo verbo con contenido factual.**
    Sin ella, la oración está mal formada. (Ver §4.)
+   **Exenta** en: preguntas (`mo`), órdenes e ironía marcada con `fi`.
+   En **subordinadas**, cada cláusula lleva la suya.
 5. **La modalidad epistémica va al final**, opcional: `to be os ku`.
 6. **La actitud va al final**, opcional: `yo hu we fi bu ri pu ni la`.
-7. **Negación `na`** inmediatamente antes del verbo.
+7. **Negación:** hay DOS mecanismos, y no se mezclan.
+   a) **`na` suelto**, inmediatamente antes del verbo → niega la oración.
+      `mi na sa-ve.` = *No sé (lo veo).*
+   b) **`na-` pegado**, como prefijo derivativo → crea la palabra opuesta.
+      `na-gu` = *malo*, `na-toro` = *mentira*.
 8. **Pregunta sí/no:** `mo` al final. **Interrogativos** (`ki`, `lo`) al inicio.
 9. **No hay concordancia** de género, número ni persona. Nunca.
 10. **No hay artículos obligatorios**; `le` existe y es opcional.
+11. **El sujeto puede omitirse** si el contexto lo deja claro (pro-drop).
+12. **La modalidad epistémica no marcada equivale a `to`** (certeza),
+    pero la evidencialidad NUNCA se puede omitir en una declarativa.
 
 ---
 
 ## 2. Fonología
 
-20 fonemas: 15 consonantes + 5 vocales.
+21 fonemas: 16 consonantes + 5 vocales.
 
 | Consonantes | AFI | | Vocales | AFI |
 |---|---|---|---|---|
@@ -41,16 +52,19 @@ Autónimo: **korlin** = `ko` (corto) + `lin` (lengua) = *lengua corta*.
 | g | /g/ | | | |
 | m | /m/ | | | |
 | n | /n/ | | | |
+| f | /f/ | | | |
+| v | /v/ | | | |
 | s | /s/ | | | |
+| h | /h/ | | | |
 | l | /l/ | | | |
 | r | /ɾ/ | | | |
-| f | /f/ | | | |
-| h | /h/ | | | |
-| v | /v/ | | | |
 | w | /w/ | | | |
+| y | /j/ | | | |
 
 - **Sílaba:** `(C)V(C)`. La coda solo admite `m`, `n`, `s`.
+- **Sílabas posibles:** 17 onsets (16 consonantes + vacío) × 5 vocales × 4 codas = **340**.
 - **Acento:** siempre en la **penúltima** sílaba. Nunca se escribe tilde.
+- **Letras prohibidas:** `c j q x z`. La `j` no existe: /j/ se escribe `y`.
 - **Aproximación para hispanohablantes:** se pronuncia como español, con `v`
   labiodental suave y `h` aspirada (como en inglés `house`).
 
@@ -139,11 +153,12 @@ Van al **final** de la oración, después del verbo.
 
 | Estructura | Marca | Ejemplo |
 |---|---|---|
-| Negación | `na` + verbo | `na-go-ve` = *no voy (lo veo)* |
-| Pregunta sí/no | `mo` final | `Tu go-ve mo?` = *¿Vas?* |
+| Negación de oración | `na` + verbo | `mi na sa-ve` = *no sé (lo veo)* |
+| Palabra opuesta | `na-` + raíz | `na-gu` = *malo* |
+| Pregunta sí/no | `mo` final | `Tu go mo?` = *¿Vas?* |
 | Interrogativo | al inicio | `Ki tu man?` = *¿Qué comes?* |
 | Posesión | `de` | `le ho de mi` = *mi casa* |
-| Subordinación | `ki` | `Mi sa ki li go-ve` = *Sé que él fue* |
+| Subordinación | `ki` | `Mi sa-ve ki li an-go-di` = *Sé que él fue (me lo dijeron)* |
 | Condicional | `si … so …` | `si tu go, so mi go` = *si vas, voy* |
 
 ---
@@ -208,7 +223,7 @@ Van al **final** de la oración, después del verbo.
 | `ga` | /ga/ | sustantivo | tierra | earth, land |
 | `su` | /su/ | sustantivo | sol | sun |
 | `lu` | /lu/ | sustantivo | luna | moon |
-| `jo` | /jo/ | sustantivo | día | day |
+| `ti` | /ti/ | sustantivo | día | day |
 | `no` | /no/ | sustantivo | noche | night |
 | `tem` | /tem/ | sustantivo | tiempo | time |
 | `lo` | /lo/ | sustantivo | lugar | place |
@@ -337,45 +352,48 @@ Van al **final** de la oración, después del verbo.
    - ES: La mentira no puede vivir en mí.
    - EN: Lies cannot live in me.
 3. **li go-ve.**
-   - ES: Él se fue (lo vi).
-   - EN: He left (I saw it).
-4. **li go-di ku.**
+   - ES: Él va (lo veo).
+   - EN: He goes (I see it).
+4. **li an-go-ve.**
+   - ES: Él fue (lo vi).
+   - EN: He went (I saw it).
+5. **li an-go-di ku.**
    - ES: Se fue (me lo contaron, no me fío).
    - EN: He left (I was told, I doubt it).
-5. **Tu go mo?**
+6. **Tu go mo?**
    - ES: ¿Vas?
    - EN: Do you go?
-6. **Mi man-ve man-re.**
+7. **Mi man-ve man-re.**
    - ES: Como comida.
    - EN: I eat food.
-7. **an-go-ve.**
-   - ES: Fui (lo vi/viví).
-   - EN: I went (I witnessed it).
-8. **ne-go-pen.**
+8. **an-go-ve.**
+   - ES: Fui (yo; el sujeto se omite).
+   - EN: I went (subject omitted).
+9. **ne-go-pen.**
    - ES: Irá (lo infiero).
    - EN: He will go (I infer it).
-9. **me-ho.**
+10. **me-ho.**
    - ES: Casa grande.
    - EN: Big house.
-10. **pi-ho.**
+11. **pi-ho.**
    - ES: Casita.
    - EN: Little house.
-11. **na-gu.**
+12. **na-gu.**
    - ES: Malo.
    - EN: Bad.
-12. **gu-ro.**
+13. **gu-ro.**
    - ES: Bondad.
    - EN: Goodness.
-13. **man-lo.**
+14. **man-lo.**
    - ES: Comedor.
    - EN: Dining place.
-14. **sa-pe.**
+15. **sa-pe.**
    - ES: Sabio (el que sabe).
    - EN: Wise one (the one who knows).
-15. **Wi e-sa pe-s.**
+16. **Wi e-sa pes.**
    - ES: Somos personas.
    - EN: We are people.
-16. **Yo! Mi vo tu la.**
+17. **Yo! Mi vo tu la.**
    - ES: ¡Qué alegría! Te quiero (cariño).
    - EN: Yay! I love you (affection).
 

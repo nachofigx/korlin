@@ -30,9 +30,12 @@ As in Spanish/English: `a` (to), `i` (in), `de` (of/from), `kon` (with), `po` (f
 
 ## 4. Negation
 
-`na` goes **before** the verb (or copula).
+Two mechanisms — do not mix them.
 
-- `mi na sa.` — "I don't know."
+- **Sentence negation:** free `na` **immediately before the verb**.
+  `mi na sa-ve.` — "I don't know (I see it)."
+- **Derivational negation:** prefix `na-` **attached** to a root, creating the
+  opposite word: `na-gu` = "bad", `na-toro` = "lie".
 
 ## 5. Questions
 
@@ -68,7 +71,7 @@ SVO order (subject before verb, object after). No case marking.
 1. SVO order.
 2. Modifier before head.
 3. Prepositions before the noun.
-4. Negation `na` before the verb.
+4. Negation: free `na` before the verb (sentence); prefix `na-` (derivation).
 5. `mo` at the end for yes/no; interrogatives first.
 6. Subordination with `ki`; evidential in each clause.
 7. Possession with `de`.

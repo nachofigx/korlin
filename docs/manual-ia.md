@@ -69,7 +69,7 @@ fo       | sustantivo   | fuego | fire
 ga       | sustantivo   | tierra | earth, land
 su       | sustantivo   | sol | sun
 lu       | sustantivo   | luna | moon
-jo       | sustantivo   | día | day
+ti       | sustantivo   | día | day
 no       | sustantivo   | noche | night
 tem      | sustantivo   | tiempo | time
 lo       | sustantivo   | lugar | place

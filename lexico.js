@@ -540,8 +540,8 @@ window.KORLIN_LEXICO = [
     "ja": "月"
   },
   {
-    "f": "jo",
-    "a": "/jo/",
+    "f": "ti",
+    "a": "/ti/",
     "c": "sustantivo",
     "es": "día",
     "en": "day",

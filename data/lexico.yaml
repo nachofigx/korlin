@@ -1,6 +1,6 @@
 # Léxico de Korlin — Fuente de verdad única (bilingüe ES/EN)
 # Un cambio AQUÍ se refleja automáticamente en: manual ES, manual EN, manual IA, sitio web.
-version: "1.0"
+version: "0.2"
 
 palabras:
   # ===== Partículas y funcionales =====
@@ -282,8 +282,8 @@ palabras:
     categoria: sustantivo
     es: luna
     en: moon
-  - forma: jo
-    afi: /jo/
+  - forma: ti
+    afi: /ti/
     categoria: sustantivo
     es: día
     en: day

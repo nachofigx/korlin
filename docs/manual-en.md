@@ -127,7 +127,7 @@
 | **ga** | /ga/ | earth, land |
 | **su** | /su/ | sun |
 | **lu** | /lu/ | moon |
-| **jo** | /jo/ | day |
+| **ti** | /ti/ | day |
 | **no** | /no/ | night |
 | **tem** | /tem/ | time |
 | **lo** | /lo/ | place |
