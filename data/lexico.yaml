@@ -63,7 +63,7 @@ palabras:
     afi: /ya/
     categoria: adverbio
     es: sí
-    en: yes
+    en: "yes"
   - forma: de
     afi: /de/
     categoria: preposición
@@ -287,7 +287,7 @@ palabras:
     categoria: sustantivo
     es: día
     en: day
-  - forma: no
+  - forma: "no"
     afi: /no/
     categoria: sustantivo
     es: noche
@@ -342,6 +342,36 @@ palabras:
     categoria: sustantivo
     es: verdad, certeza
     en: truth, certainty
+  - forma: lin
+    afi: /lin/
+    categoria: sustantivo
+    es: lengua, idioma
+    en: language, tongue
+  - forma: man-re
+    afi: /ˈman.re/
+    categoria: sustantivo
+    es: comida
+    en: food
+  - forma: gu-ro
+    afi: /ˈgu.ro/
+    categoria: sustantivo
+    es: bondad
+    en: goodness
+  - forma: man-lo
+    afi: /ˈman.lo/
+    categoria: sustantivo
+    es: comedor
+    en: dining room
+  - forma: sa-pe
+    afi: /ˈsa.pe/
+    categoria: sustantivo
+    es: sabio
+    en: wise one
+  - forma: na-gu
+    afi: /ˈna.gu/
+    categoria: adjetivo
+    es: malo
+    en: bad
 
   # ===== Adjetivos =====
   - forma: gu

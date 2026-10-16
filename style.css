@@ -344,6 +344,21 @@ textarea { min-height: 80px; resize: vertical; }
 .traductor-controles button:hover { box-shadow: 0 6px 20px rgba(124,92,255,0.4); }
 .traduccion { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; min-height: 50px; }
 
+/* ===== Para IA ===== */
+.btn-dl {
+  display: inline-block; margin-top: .6rem; padding: .45rem .9rem;
+  border: 1.5px solid var(--accent2); border-radius: 10px;
+  color: var(--accent2); text-decoration: none; font-size: .85rem; font-weight: 600;
+  transition: .15s;
+}
+.btn-dl:hover { background: var(--accent2); color: #0a0e1a; }
+.pasos { margin: 1rem 0 1rem 1.2rem; line-height: 2; }
+.pasos li { color: var(--fg); }
+.nota {
+  background: rgba(76,201,240,.08); border-left: 3px solid var(--accent2);
+  border-radius: 8px; padding: .9rem 1rem; color: var(--muted); font-size: .9rem;
+}
+
 /* ===== Footer ===== */
 footer {
   text-align: center;

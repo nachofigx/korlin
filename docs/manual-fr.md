@@ -128,7 +128,7 @@
 | **su** | /su/ | soleil |
 | **lu** | /lu/ | lune |
 | **jo** | /jo/ | jour |
-| **False** | /no/ | nuit |
+| **no** | /no/ | noche |
 | **tem** | /tem/ | temps |
 | **lo** | /lo/ | lieu |
 | **ho** | /ho/ | maison |
@@ -139,6 +139,11 @@
 | **nom** | /nom/ | nom |
 | **kin** | /kin/ | machine |
 | **toro** | /ˈtoɾo/ | vérité |
+| **lin** | /lin/ | lengua, idioma |
+| **man-re** | /ˈman.re/ | comida |
+| **gu-ro** | /ˈgu.ro/ | bondad |
+| **man-lo** | /ˈman.lo/ | comedor |
+| **sa-pe** | /ˈsa.pe/ | sabio |
 | **men** | /men/ | mesure, volume |
 | **pis** | /pis/ | étage |
 | **ren** | /ren/ | règle, loi |
@@ -151,6 +156,7 @@
 
 | Korlin | AFI | Sens |
 |---|---|---|
+| **na-gu** | /ˈna.gu/ | malo |
 | **gu** | /gu/ | bon |
 | **fe** | /fe/ | mauvais |
 | **me** | /me/ | grand |

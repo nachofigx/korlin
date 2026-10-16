@@ -27,6 +27,7 @@
       <button class="tab" data-tab="diccionario" data-i18n="tab_diccionario">📖 Dictionary</button>
       <button class="tab" data-tab="flashcards" data-i18n="tab_flashcards">🎴 Flashcards</button>
       <button class="tab" data-tab="traductor" data-i18n="tab_traductor">🔄 Translator</button>
+      <button class="tab" data-tab="ia" data-i18n="tab_ia">🤖 For AI</button>
       <a class="tab learn-btn" href="learn.html" data-i18n="tab_aprender">🎓 Learn</a>
     </nav>
   </header>
@@ -190,6 +191,42 @@
         <button onclick="traducir()" data-i18n="btn_traducir">Translate →</button>
       </div>
       <div id="traduccion" class="traduccion"></div>
+    </section>
+
+    <!-- ============ FOR AI ============ -->
+    <section id="ia" class="panel">
+      <h2 data-i18n="ia_titulo">For AI agents 🤖</h2>
+      <p data-i18n="ia_desc">Any LLM can speak Korlin today — no training needed. Give it the spec, and it will translate correctly.</p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon">📋</div>
+          <h3>korlin-spec.md</h3>
+          <p data-i18n="ia_card1">Self-contained spec pack (~16 KB). Paste it into any system prompt.</p>
+          <a class="btn-dl" href="https://raw.githubusercontent.com/nachofigx/korlin/main/korlin-spec.md" target="_blank" data-i18n="ia_ver">View / download</a>
+        </div>
+        <div class="card">
+          <div class="icon">🧩</div>
+          <h3>korlin.json</h3>
+          <p data-i18n="ia_card2">Machine-readable lexicon, affixes and rules for tool calls.</p>
+          <a class="btn-dl" href="https://raw.githubusercontent.com/nachofigx/korlin/main/korlin.json" target="_blank" data-i18n="ia_ver">View / download</a>
+        </div>
+        <div class="card warm">
+          <div class="icon">⚙️</div>
+          <h3>traductor-korlin.py</h3>
+          <p data-i18n="ia_card3">Deterministic rule-based translator. The code produces Korlin, not the model.</p>
+          <a class="btn-dl" href="https://github.com/nachofigx/korlin/blob/main/scripts/traductor-korlin.py" target="_blank" data-i18n="ia_ver">View / download</a>
+        </div>
+      </div>
+
+      <h3 data-i18n="ia_pasos_t">Three steps</h3>
+      <ol class="pasos">
+        <li data-i18n="ia_paso1">Copy korlin-spec.md into your AI's system prompt.</li>
+        <li data-i18n="ia_paso2">Ask it to translate or chat in Korlin.</li>
+        <li data-i18n="ia_paso3">Check the three rules: SVO order, mandatory evidential, valid phonemes.</li>
+      </ol>
+
+      <p class="nota" data-i18n="ia_nota">Tip: give the model the translator as a tool and it will never invent a root word.</p>
     </section>
   </main>
 

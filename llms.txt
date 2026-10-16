@@ -1,0 +1,25 @@
+# Korlin (Shortlang)
+
+> Lengua construida corta, regular y honesta (evidencialidad obligatoria).
+> Diseñada para hablar rápido, ser hablable y ser usable por humanos y agentes de IA.
+
+## Especificación para IA
+- [korlin-spec.md](https://raw.githubusercontent.com/nachofigx/korlin/main/korlin-spec.md): spec pack autocontenido. Pégalo en tu system prompt para hablar Korlin.
+- [korlin.json](https://raw.githubusercontent.com/nachofigx/korlin/main/korlin.json): léxico + afijos + reglas en JSON.
+
+## Gramática
+- [01-phonology.md](https://github.com/nachofigx/korlin/blob/main/docs/01-phonology.md): fonología
+- [02-morphology.md](https://github.com/nachofigx/korlin/blob/main/docs/02-morphology.md): morfología
+- [03-syntax.md](https://github.com/nachofigx/korlin/blob/main/docs/03-syntax.md): sintaxis
+- [glossary.md](https://github.com/nachofigx/korlin/blob/main/docs/glossary.md): glosario
+
+## Herramientas
+- [traductor-korlin.py](https://github.com/nachofigx/korlin/blob/main/scripts/traductor-korlin.py): traductor por reglas ES/EN <-> Korlin
+
+## Web
+- [Sitio](https://nachofigx.github.io/korlin/): diccionario, comparativas, flashcards
+- [App de aprendizaje](https://nachofigx.github.io/korlin/learn.html): tipo Duolingo, con voz
+
+## Investigación
+- [research.md](https://github.com/nachofigx/korlin/blob/main/docs/research.md): white paper (EN)
+- [investigacion.md](https://github.com/nachofigx/korlin/blob/main/docs/investigacion.md): white paper (ES)

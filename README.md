@@ -23,27 +23,53 @@ Korlin (/ˈkoɾlin/) is a constructed language ("conlang") designed to be:
 
 ```
 data/           ← single source of truth (lexicon + affixes, bilingual ES/EN)
-scripts/        ← generator (produces everything from data/)
-docs/           ← generated manuals (ES, EN, IA)
-web/            ← web data (interactive site)
+scripts/        ← generators + rule-based translator + test suite
+docs/           ← generated manuals (ES, EN, FR, ZH, JA, AI) + white papers
+korlin-spec.md  ← self-contained spec pack, ready for any LLM's system prompt
+korlin.json     ← machine-readable lexicon, affixes and rules
+llms.txt        ← discovery file for AI agents
+index.html      ← interactive website (dictionary, flashcards, translator)
+learn.html      ← Duolingo-style learning app
 ```
+
+## Use Korlin with an AI 🤖
+
+No training needed. Two ways:
+
+1. **Paste the spec.** Copy `korlin-spec.md` (~16 KB) into any LLM's system
+   prompt and ask it to translate or chat in Korlin.
+2. **Give it the tool.** Let the model call `scripts/traductor-korlin.py`; the
+   code produces the Korlin, so it never invents a root word.
+
+```bash
+python scripts/traductor-korlin.py es "Yo como comida."     # → mi man-sa man-re.
+python scripts/traductor-korlin.py en "He went home." --ev=ve
+python scripts/traductor-korlin.py k "Mi man-ve man-re."    # → ES/EN
+python scripts/test-traductor.py                            # run the test suite
+```
+
+See [`docs/ia-integracion.md`](docs/ia-integracion.md) for the full guide.
 
 ## Generate
 
 ```bash
 uv venv .venv
 uv pip install --python .venv/bin/python pyyaml
-.venv/bin/python scripts/generar.py
+.venv/bin/python scripts/generar.py        # manuals in 5 languages + web data
+.venv/bin/python scripts/generar_ia.py     # spec pack + JSON + llms.txt
+.venv/bin/python scripts/generar_pdf.py    # white papers as PDF
 ```
 
-One change in `data/` → regenerates the ES/EN/IA manuals and web data automatically.
+One change in `data/` → regenerates every manual, the web data and the AI spec.
 
 ## Learn
 
 - `docs/manual-es.md` — manual en español
 - `docs/manual-en.md` — manual in English
 - `docs/manual-ia.md` — manual for AI agents
-- `manual-de-estudio.md` — study manual (11 lessons)
+- `docs/study-manual.md` — study manual (11 lessons)
+- **Website:** https://nachofigx.github.io/korlin/
+- **Learning app:** https://nachofigx.github.io/korlin/learn.html
 
 ## License
 

@@ -61,7 +61,7 @@
 | **si** | /si/ | if |
 | **so** | /so/ | then, so |
 | **na** | /na/ | no, not |
-| **ya** | /ya/ | True |
+| **ya** | /ya/ | yes |
 | **halo** | /ˈhalo/ | hello |
 
 ## Pronouns
@@ -128,7 +128,7 @@
 | **su** | /su/ | sun |
 | **lu** | /lu/ | moon |
 | **jo** | /jo/ | day |
-| **False** | /no/ | night |
+| **no** | /no/ | night |
 | **tem** | /tem/ | time |
 | **lo** | /lo/ | place |
 | **ho** | /ho/ | house, home |
@@ -139,6 +139,11 @@
 | **nom** | /nom/ | name |
 | **kin** | /kin/ | machine |
 | **toro** | /ˈtoɾo/ | truth, certainty |
+| **lin** | /lin/ | language, tongue |
+| **man-re** | /ˈman.re/ | food |
+| **gu-ro** | /ˈgu.ro/ | goodness |
+| **man-lo** | /ˈman.lo/ | dining room |
+| **sa-pe** | /ˈsa.pe/ | wise one |
 | **men** | /men/ | measure, volume |
 | **pis** | /pis/ | floor, level |
 | **ren** | /ren/ | rule, law |
@@ -151,6 +156,7 @@
 
 | Korlin | AFI | Meaning |
 |---|---|---|
+| **na-gu** | /ˈna.gu/ | bad |
 | **gu** | /gu/ | good |
 | **fe** | /fe/ | bad |
 | **me** | /me/ | big, great |

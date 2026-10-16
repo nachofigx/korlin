@@ -128,7 +128,7 @@
 | **su** | /su/ | 太陽 |
 | **lu** | /lu/ | 月 |
 | **jo** | /jo/ | 昼 |
-| **False** | /no/ | 夜 |
+| **no** | /no/ | noche |
 | **tem** | /tem/ | 時間 |
 | **lo** | /lo/ | 場所 |
 | **ho** | /ho/ | 家 |
@@ -139,6 +139,11 @@
 | **nom** | /nom/ | 名前 |
 | **kin** | /kin/ | 機械 |
 | **toro** | /ˈtoɾo/ | 真実 |
+| **lin** | /lin/ | lengua, idioma |
+| **man-re** | /ˈman.re/ | comida |
+| **gu-ro** | /ˈgu.ro/ | bondad |
+| **man-lo** | /ˈman.lo/ | comedor |
+| **sa-pe** | /ˈsa.pe/ | sabio |
 | **men** | /men/ | 測定, 体積 |
 | **pis** | /pis/ | 階 |
 | **ren** | /ren/ | 規則, 法律 |
@@ -151,6 +156,7 @@
 
 | Korlin | AFI | 意味 |
 |---|---|---|
+| **na-gu** | /ˈna.gu/ | malo |
 | **gu** | /gu/ | 良い |
 | **fe** | /fe/ | 悪い |
 | **me** | /me/ | 大きい |

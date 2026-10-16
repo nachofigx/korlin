@@ -365,7 +365,7 @@ def main():
     for idioma in ["es", "en", "fr", "zh", "ja"]:
         print(f"  docs/manual-{idioma}.md")
     print(f"  docs/manual-ia.md")
-    print(f"  web/lexico.js")
+    print(f"  lexico.js")
 
 
 if __name__ == "__main__":

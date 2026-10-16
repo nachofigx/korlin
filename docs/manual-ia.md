@@ -26,7 +26,7 @@ ki       | conjunción   | que, qué | that, which, what
 si       | conjunción   | si (condicional) | if
 so       | conjunción   | entonces, así que | then, so
 na       | adverbio     | no (negación) | no, not
-ya       | adverbio     | sí | True
+ya       | adverbio     | sí | yes
 de       | preposición  | de | of, from
 kon      | preposición  | con | with
 po       | preposición  | por, para | for, by
@@ -70,7 +70,7 @@ ga       | sustantivo   | tierra | earth, land
 su       | sustantivo   | sol | sun
 lu       | sustantivo   | luna | moon
 jo       | sustantivo   | día | day
-0        | sustantivo   | noche | night
+no       | sustantivo   | noche | night
 tem      | sustantivo   | tiempo | time
 lo       | sustantivo   | lugar | place
 ho       | sustantivo   | casa | house, home
@@ -81,6 +81,12 @@ wo       | sustantivo   | palabra | word
 nom      | sustantivo   | nombre | name
 kin      | sustantivo   | máquina | machine
 toro     | sustantivo   | verdad, certeza | truth, certainty
+lin      | sustantivo   | lengua, idioma | language, tongue
+man-re   | sustantivo   | comida | food
+gu-ro    | sustantivo   | bondad | goodness
+man-lo   | sustantivo   | comedor | dining room
+sa-pe    | sustantivo   | sabio | wise one
+na-gu    | adjetivo     | malo | bad
 gu       | adjetivo     | bueno | good
 fe       | adjetivo     | malo | bad
 me       | adjetivo     | grande | big, great

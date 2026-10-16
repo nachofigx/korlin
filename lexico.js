@@ -114,7 +114,7 @@ window.KORLIN_LEXICO = [
     "a": "/ya/",
     "c": "adverbio",
     "es": "sí",
-    "en": true,
+    "en": "yes",
     "fr": "oui",
     "zh": "是, 对",
     "ja": "はい"
@@ -550,14 +550,11 @@ window.KORLIN_LEXICO = [
     "ja": "昼"
   },
   {
-    "f": false,
+    "f": "no",
     "a": "/no/",
     "c": "sustantivo",
     "es": "noche",
-    "en": "night",
-    "fr": "nuit",
-    "zh": "夜晚",
-    "ja": "夜"
+    "en": "night"
   },
   {
     "f": "tem",
@@ -658,6 +655,48 @@ window.KORLIN_LEXICO = [
     "fr": "vérité",
     "zh": "真相, 真理",
     "ja": "真実"
+  },
+  {
+    "f": "lin",
+    "a": "/lin/",
+    "c": "sustantivo",
+    "es": "lengua, idioma",
+    "en": "language, tongue"
+  },
+  {
+    "f": "man-re",
+    "a": "/ˈman.re/",
+    "c": "sustantivo",
+    "es": "comida",
+    "en": "food"
+  },
+  {
+    "f": "gu-ro",
+    "a": "/ˈgu.ro/",
+    "c": "sustantivo",
+    "es": "bondad",
+    "en": "goodness"
+  },
+  {
+    "f": "man-lo",
+    "a": "/ˈman.lo/",
+    "c": "sustantivo",
+    "es": "comedor",
+    "en": "dining room"
+  },
+  {
+    "f": "sa-pe",
+    "a": "/ˈsa.pe/",
+    "c": "sustantivo",
+    "es": "sabio",
+    "en": "wise one"
+  },
+  {
+    "f": "na-gu",
+    "a": "/ˈna.gu/",
+    "c": "adjetivo",
+    "es": "malo",
+    "en": "bad"
   },
   {
     "f": "gu",
