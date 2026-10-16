@@ -5,7 +5,7 @@
 > **Halo! Mi e-sa Korlin.**
 > **Mi e-sa u ko lin.**
 > **Mi e-sa ra ka gu.**
-> **Na-toro na-kan-sa vi i mi.**
+> **Na-toro na kan-sa vi i mi.**
 > **Mi pa-ve kon pe ka kon kin.**
 > **Tu kan-ve sa mi.**
 > **Ven kon mi yo!**
@@ -32,7 +32,7 @@ mi    e-sa      fast   and   good
 I     be-ASU    fast   and   good
 ```
 
-**5. `Na-toro na-kan-sa vi i mi.`** — "The lie cannot live in me."
+**5. `Na-toro na kan-sa vi i mi.`** — "The lie cannot live in me."
 ```
 na-toro     NEG-can-ASU   live   in   me
 lie         cannot        live   in   me

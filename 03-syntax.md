@@ -76,4 +76,9 @@ SVO order (subject before verb, object after). No case marking.
 6. Subordination with `ki`; evidential in each clause.
 7. Possession with `de`.
 8. No cases (SVO order).
-9. Final particles in fixed order.
+9. Final particles in fixed order: `[verb+evidential] … [epistemic] [attitude] [mo]`.
+10. Orders: bare verb root, no evidential, no subject (`Go!` = "Go!").
+11. Pro-drop applies also with `na` and `mo` (`na sa-ve.`, `go mo?`).
+12. Copula `e` carries the evidential (`le ti e-ve gu.`).
+13. Conditional `si … so …`: protasis exempt, apodosis carries the evidential.
+14. Subordinate clause introduced by `ki` is exempt; the main clause keeps its own.

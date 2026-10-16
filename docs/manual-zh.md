@@ -61,7 +61,7 @@
 | **si** | /si/ | 如果 |
 | **so** | /so/ | 那么, 所以 |
 | **na** | /na/ | 不 |
-| **ya** | /ya/ | 是, 对 |
+| **ya** | /ja/ | 是, 对 |
 | **halo** | /ˈhalo/ | 你好 |
 
 ## 代词
@@ -72,7 +72,7 @@
 | **tu** | /tu/ | 你 |
 | **li** | /li/ | 他, 她 |
 | **wi** | /wi/ | 我们 |
-| **yu** | /yu/ | 你们 |
+| **yu** | /ju/ | 你们 |
 | **lis** | /lis/ | 他们, 她们 |
 
 ## 限定词
@@ -133,7 +133,7 @@
 | **lo** | /lo/ | 地方 |
 | **ho** | /ho/ | 房子, 家 |
 | **ma** | /ma/ | 手 |
-| **ye** | /ye/ | 眼睛 |
+| **ye** | /je/ | 眼睛 |
 | **he** | /he/ | 头 |
 | **wo** | /wo/ | 词 |
 | **nom** | /nom/ | 名字 |
@@ -149,7 +149,7 @@
 | **ren** | /ren/ | 规则, 法律 |
 | **som** | /som/ | 阴影 |
 | **lum** | /lum/ | 光 |
-| **plan** | /plan/ | 平面图, 设计 |
+| **pilan** | /pilan/ | plano, diseño |
 | **Yapan** | /ˈjapan/ | 日本 |
 
 ## 形容词
@@ -229,8 +229,8 @@
 | **Mekiko** | /meˈkiko/ | 墨西哥 |
 | **Espan** | /eˈspan/ | 西班牙 |
 | **Kina** | /ˈkina/ | 中国 |
-| **Frans** | /frans/ | 法国 |
-| **Brasil** | /bɾaˈsil/ | 巴西 |
+| **Faransa** | /faˈransa/ | Francia |
+| **Barasila** | /baɾaˈsila/ | Brasil |
 
 ## 俚语
 

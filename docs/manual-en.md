@@ -61,7 +61,7 @@
 | **si** | /si/ | if |
 | **so** | /so/ | then, so |
 | **na** | /na/ | no, not |
-| **ya** | /ya/ | yes |
+| **ya** | /ja/ | yes |
 | **halo** | /ˈhalo/ | hello |
 
 ## Pronouns
@@ -72,7 +72,7 @@
 | **tu** | /tu/ | you |
 | **li** | /li/ | he, she |
 | **wi** | /wi/ | we |
-| **yu** | /yu/ | you all |
+| **yu** | /ju/ | you all |
 | **lis** | /lis/ | they |
 
 ## Determiners
@@ -133,7 +133,7 @@
 | **lo** | /lo/ | place |
 | **ho** | /ho/ | house, home |
 | **ma** | /ma/ | hand |
-| **ye** | /ye/ | eye |
+| **ye** | /je/ | eye |
 | **he** | /he/ | head |
 | **wo** | /wo/ | word |
 | **nom** | /nom/ | name |
@@ -149,7 +149,7 @@
 | **ren** | /ren/ | rule, law |
 | **som** | /som/ | shadow |
 | **lum** | /lum/ | light |
-| **plan** | /plan/ | plan, design |
+| **pilan** | /pilan/ | plan, design |
 | **Yapan** | /ˈjapan/ | Japan |
 
 ## Adjectives
@@ -229,8 +229,8 @@
 | **Mekiko** | /meˈkiko/ | Mexico |
 | **Espan** | /eˈspan/ | Spain |
 | **Kina** | /ˈkina/ | China |
-| **Frans** | /frans/ | France |
-| **Brasil** | /bɾaˈsil/ | Brazil |
+| **Faransa** | /faˈransa/ | France |
+| **Barasila** | /baɾaˈsila/ | Brazil |
 
 ## Slang
 

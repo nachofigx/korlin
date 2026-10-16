@@ -61,7 +61,7 @@
 | **si** | /si/ | si |
 | **so** | /so/ | alors, donc |
 | **na** | /na/ | non, ne…pas |
-| **ya** | /ya/ | oui |
+| **ya** | /ja/ | oui |
 | **halo** | /ˈhalo/ | bonjour |
 
 ## Pronoms
@@ -72,7 +72,7 @@
 | **tu** | /tu/ | tu |
 | **li** | /li/ | il, elle |
 | **wi** | /wi/ | nous |
-| **yu** | /yu/ | vous |
+| **yu** | /ju/ | vous |
 | **lis** | /lis/ | ils, elles |
 
 ## Déterminants
@@ -133,7 +133,7 @@
 | **lo** | /lo/ | lieu |
 | **ho** | /ho/ | maison |
 | **ma** | /ma/ | main |
-| **ye** | /ye/ | œil |
+| **ye** | /je/ | œil |
 | **he** | /he/ | tête |
 | **wo** | /wo/ | mot |
 | **nom** | /nom/ | nom |
@@ -149,7 +149,7 @@
 | **ren** | /ren/ | règle, loi |
 | **som** | /som/ | ombre |
 | **lum** | /lum/ | lumière |
-| **plan** | /plan/ | plan, dessin |
+| **pilan** | /pilan/ | plano, diseño |
 | **Yapan** | /ˈjapan/ | Japon |
 
 ## Adjectifs
@@ -229,8 +229,8 @@
 | **Mekiko** | /meˈkiko/ | Mexique |
 | **Espan** | /eˈspan/ | Espagne |
 | **Kina** | /ˈkina/ | Chine |
-| **Frans** | /frans/ | France |
-| **Brasil** | /bɾaˈsil/ | Brésil |
+| **Faransa** | /faˈransa/ | Francia |
+| **Barasila** | /baɾaˈsila/ | Brasil |
 
 ## Argot
 

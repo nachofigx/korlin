@@ -1,6 +1,6 @@
 # Léxico de Korlin — Fuente de verdad única (bilingüe ES/EN)
 # Un cambio AQUÍ se refleja automáticamente en: manual ES, manual EN, manual IA, sitio web.
-version: "0.2"
+version: "0.3"
 
 palabras:
   # ===== Partículas y funcionales =====
@@ -60,7 +60,7 @@ palabras:
     es: no (negación)
     en: no, not
   - forma: ya
-    afi: /ya/
+    afi: /ja/
     categoria: adverbio
     es: sí
     en: "yes"
@@ -112,7 +112,7 @@ palabras:
     es: nosotros
     en: we
   - forma: yu
-    afi: /yu/
+    afi: /ju/
     categoria: pronombre
     es: vosotros, ustedes
     en: you all
@@ -313,7 +313,7 @@ palabras:
     es: mano
     en: hand
   - forma: ye
-    afi: /ye/
+    afi: /je/
     categoria: sustantivo
     es: ojo
     en: eye
@@ -496,8 +496,8 @@ palabras:
     categoria: verbo
     es: comprar
     en: to buy
-  - forma: plan
-    afi: /plan/
+  - forma: pilan
+    afi: /pilan/
     categoria: sustantivo
     es: plano, diseño
     en: plan, design
@@ -755,13 +755,13 @@ palabras:
     categoria: país
     es: China
     en: China
-  - forma: Frans
-    afi: /frans/
+  - forma: Faransa
+    afi: /faˈransa/
     categoria: país
     es: Francia
     en: France
-  - forma: Brasil
-    afi: /bɾaˈsil/
+  - forma: Barasila
+    afi: /baɾaˈsila/
     categoria: país
     es: Brasil
     en: Brazil

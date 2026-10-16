@@ -81,11 +81,17 @@ REGLAS = {
         },
     },
     "sintaxis": {
-        "negacion": "na antes del verbo",
-        "pregunta_si_no": "mo al final",
+        "negacion": {"oracion": "na suelto antes del verbo", "derivacion": "prefijo na- = opuesto (nunca sobre verbo en '-'"},
+        "pregunta_si_no": "mo al final (la pregunta exime el evidencial)",
         "interrogativo": "al inicio",
+        "pro_drop": "el sujeto se omite si el contexto basta (tambien con na y mo)",
+        "orden_final": "[verbo+evidencial] ... [modalidad] [actitud] [mo]",
+        "modalidad_por_defecto": "to (certeza)",
+        "ordenes": "raiz desnuda, sin evidencial ni sujeto (Go!)",
+        "condicional": "si ... so ...: protasis exenta, apodosis con evidencial",
+        "copula": "e lleva el evidencial en la declarativa (le ti e-ve gu)",
+        "subordinacion": "ki (la subordinada va exenta; cada clausula puede llevar el suyo)",
         "posesion": "de (X de Y = Y posee X)",
-        "subordinacion": "ki",
         "derivacion": {
             "-pe": "agente (persona que X)",
             "-lo": "lugar (donde se X)",
@@ -106,7 +112,7 @@ def genera_json(palabras, afijos):
         "exonimo": "Shortlang",
         "autonimo": "korlin",
         "significado": "ko (corto) + lin (lengua) = lengua corta",
-        "version": "0.2",
+        "version": "0.3",
         "licencia": "MIT",
         "sitio": "https://nachofigx.github.io/korlin/",
         "repo": "https://github.com/nachofigx/korlin",
@@ -143,7 +149,7 @@ def genera_json(palabras, afijos):
 
 EJEMPLOS = [
     ("Halo! Mi e-sa Korlin.", "¡Hola! Soy Korlin.", "Hello! I am Korlin."),
-    ("Na-toro na-kan-sa vi i mi.", "La mentira no puede vivir en mí.", "Lies cannot live in me."),
+    ("Na-toro na kan-sa vi i mi.", "La mentira no puede vivir en mí.", "Lies cannot live in me."),
     ("li go-ve.", "Él va (lo veo).", "He goes (I see it)."),
     ("li an-go-ve.", "Él fue (lo vi).", "He went (I saw it)."),
     ("li an-go-di ku.", "Se fue (me lo contaron, no me fío).", "He left (I was told, I doubt it)."),
@@ -165,7 +171,7 @@ EJEMPLOS = [
 def genera_spec(palabras, afijos):
     L = []
     A = L.append
-    A("# Korlin — Especificación para modelos de lenguaje (v0.2)")
+    A("# Korlin — Especificación para modelos de lenguaje (v0.3)")
     A("")
     A("> **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer")
     A("> mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para")
@@ -195,13 +201,24 @@ def genera_spec(palabras, afijos):
     A("   a) **`na` suelto**, inmediatamente antes del verbo → niega la oración.")
     A("      `mi na sa-ve.` = *No sé (lo veo).*")
     A("   b) **`na-` pegado**, como prefijo derivativo → crea la palabra opuesta.")
-    A("      `na-gu` = *malo*, `na-toro` = *mentira*.")
+    A("      `na-gu` = *malo*, `na-toro` = *mentira*. **Nunca** niega un verbo en `-`.")
     A("8. **Pregunta sí/no:** `mo` al final. **Interrogativos** (`ki`, `lo`) al inicio.")
+    A("   Toda pregunta va **sin evidencial** en su propia cláusula.")
     A("9. **No hay concordancia** de género, número ni persona. Nunca.")
     A("10. **No hay artículos obligatorios**; `le` existe y es opcional.")
-    A("11. **El sujeto puede omitirse** si el contexto lo deja claro (pro-drop).")
+    A("11. **El sujeto puede omitirse** si el contexto lo deja claro (pro-drop),")
+    A("    también con `na` y con `mo`: `na sa-ve.` = *no sé*; `go mo?` = *¿vas?*")
     A("12. **La modalidad epistémica no marcada equivale a `to`** (certeza),")
     A("    pero la evidencialidad NUNCA se puede omitir en una declarativa.")
+    A("13. **ÓRDENES: la raíz desnuda del verbo, sin evidencial y sin sujeto.**")
+    A("    `Go!` = *¡ve!*; `Kan-sa mi!` = *¡mírame!* No hay morfema nuevo: como el")
+    A("    evidencial es obligatorio en la declaración, la forma desnuda queda libre")
+    A("    para el mandato (igual que el inglés `Go!`). Es la exención nº2.")
+    A("14. **La oración subordinada va exenta** si su núcleo la marca con `ki`.")
+    A("    `Mi sa-ve ki li go.` = *Sé que él va.* La principal `sa-ve` sí lleva evidencial.")
+    A("15. **Condicional `si … so …`: la prótasis es exenta, la apódosis lleva evidencial.**")
+    A("    `si tu go, so mi ne-go-pen.` = *Si vas, iré (lo deduzco).*")
+    A("16. **Cópula `e`: el evidencial va en `e`.** `le ti e-ve gu.` = *El día está bueno (lo veo).*")
     A("")
     A("---")
     A("")
@@ -275,12 +292,19 @@ def genera_spec(palabras, afijos):
     A("o lo asume. Estudios tipológicos (Aikhenvald 2004) muestran que ~25% de las lenguas")
     A("del mundo marcan la fuente obligatoriamente; Korlin lo adopta desde el diseño.")
     A("")
-    A("| Sufijo | Fuente | Ejemplo | Traducción |")
+    A("| Sufijo | Fuente | Ejemplo (presente) | Traducción |")
     A("|---|---|---|---|")
-    A("| `-ve` | **Directo** (lo vi, lo viví) | `li go-ve` | *Él se fue (lo vi)* |")
-    A("| `-pen` | **Inferido** (lo deduzco) | `li go-pen` | *Él se fue (lo deduzco)* |")
-    A("| `-di` | **Reportado** (me lo dijeron) | `li go-di` | *Él se fue (me lo contaron)* |")
-    A("| `-sa` | **Asumido** (se sabe) | `li go-sa` | *Él se fue (es sabido)* |")
+    A("| `-ve` | **Directo** (lo vi, lo viví) | `li go-ve` | *Él va (lo veo)* |")
+    A("| `-pen` | **Inferido** (lo deduzco) | `li go-pen` | *Él va (lo deduzco)* |")
+    A("| `-di` | **Reportado** (me lo dijeron) | `li go-di` | *Él va (me lo contaron)* |")
+    A("| `-sa` | **Asumido** (se sabe) | `li go-sa` | *Él va (es sabido)* |")
+    A("")
+    A("**Pasado: el evidencial NO cambia, pero `an-` es obligatorio.**")
+    A("`li an-go-ve` = *Él fue (lo vi)*; `li an-go-di` = *Él fue (me lo contaron)*.")
+    A("")
+    A("**Un evidencial por cláusula, en el verbo finito (el primero de la cadena).**")
+    A("En `tu kan-ve sa mi` (*puedes verme*), `kan` lleva el evidencial y `sa` queda")
+    A("desnudo. En una subordinada, cada cláusula lleva el suyo: `mi sa-ve ki li an-go-di.`")
     A("")
     A("**Regla de honestidad:** si no sabes de dónde viene algo, usa `-pen` (lo deduzco) o")
     A("`-di` (me lo dijeron), nunca `-ve` (lo vi) si no lo viste realmente.")
@@ -290,6 +314,11 @@ def genera_spec(palabras, afijos):
     A("## 5. Modalidad epistémica y actitud")
     A("")
     A("Van al **final** de la oración, después del verbo.")
+    A("")
+    A("**Modalidad y actitud van al final, en este orden fijo:**")
+    A("`[verbo+evidencial] … [modalidad] [actitud] [mo]`.")
+    A("`li an-go-di ku bu.` = *Se fue (me lo contaron, dudo) 😤.*")
+    A("`Tu go ku mo?` = *¿Vas, quizá?* — válido: la pregunta lleva `mo` al final del todo.")
     A("")
     A("**Modalidad** (certeza, opcional):")
     A("")
@@ -326,7 +355,9 @@ def genera_spec(palabras, afijos):
     A("| Interrogativo | al inicio | `Ki tu man?` = *¿Qué comes?* |")
     A("| Posesión | `de` | `le ho de mi` = *mi casa* |")
     A("| Subordinación | `ki` | `Mi sa-ve ki li an-go-di` = *Sé que él fue (me lo dijeron)* |")
-    A("| Condicional | `si … so …` | `si tu go, so mi go` = *si vas, voy* |")
+    A("| Condicional | `si … so …` | `si tu go, so mi ne-go-pen` = *si vas, iré (lo deduzco)* |")
+    A("| Orden | raíz desnuda | `Go!` = *¡ve!* · `Kan-sa mi!` = *¡mírame!* |")
+    A("| Cópula | `e` + evidencial | `le ti e-ve gu` = *el día está bueno (lo veo)* |")
     A("")
     A("---")
     A("")

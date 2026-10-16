@@ -27,7 +27,7 @@ Format: **word** /IPA/ · category · meaning.
 
 ## Nouns
 - **pe** person · **re** thing · **wa** water · **fo** fire · **ga** earth · **su** sun · **lu** moon
-- **jo** day · **no** night · **tem** time · **lo** place · **ho** house · **ma** hand · **ye** eye
+- **ti** day · **no** night · **tem** time · **lo** place · **ho** house · **ma** hand · **ye** eye
 - **he** head · **wo** word · **nom** name · **kin** machine · **toro** truth
 
 ## Adjectives

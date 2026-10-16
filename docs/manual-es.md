@@ -4,7 +4,7 @@
 
 ## Pronunciación
 
-20 sonidos, 20 letras. **Una letra = un sonido, siempre.**
+21 sonidos, 21 letras. **Una letra = un sonido, siempre.**
 
 | Letra | AFI | Como en español |
 |---|---|---|
@@ -61,7 +61,7 @@
 | **si** | /si/ | si (condicional) |
 | **so** | /so/ | entonces, así que |
 | **na** | /na/ | no (negación) |
-| **ya** | /ya/ | sí |
+| **ya** | /ja/ | sí |
 | **halo** | /ˈhalo/ | hola |
 
 ## Pronombres
@@ -72,7 +72,7 @@
 | **tu** | /tu/ | tú |
 | **li** | /li/ | él, ella |
 | **wi** | /wi/ | nosotros |
-| **yu** | /yu/ | vosotros, ustedes |
+| **yu** | /ju/ | vosotros, ustedes |
 | **lis** | /lis/ | ellos, ellas |
 
 ## Determinantes
@@ -133,7 +133,7 @@
 | **lo** | /lo/ | lugar |
 | **ho** | /ho/ | casa |
 | **ma** | /ma/ | mano |
-| **ye** | /ye/ | ojo |
+| **ye** | /je/ | ojo |
 | **he** | /he/ | cabeza |
 | **wo** | /wo/ | palabra |
 | **nom** | /nom/ | nombre |
@@ -149,7 +149,7 @@
 | **ren** | /ren/ | regla, ley |
 | **som** | /som/ | sombra |
 | **lum** | /lum/ | luz |
-| **plan** | /plan/ | plano, diseño |
+| **pilan** | /pilan/ | plano, diseño |
 | **Yapan** | /ˈjapan/ | Japón |
 
 ## Adjetivos
@@ -229,8 +229,8 @@
 | **Mekiko** | /meˈkiko/ | México |
 | **Espan** | /eˈspan/ | España |
 | **Kina** | /ˈkina/ | China |
-| **Frans** | /frans/ | Francia |
-| **Brasil** | /bɾaˈsil/ | Brasil |
+| **Faransa** | /faˈransa/ | Francia |
+| **Barasila** | /baɾaˈsila/ | Brasil |
 
 ## Slang
 

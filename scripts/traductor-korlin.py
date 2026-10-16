@@ -418,18 +418,24 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="-sa", tiempo=None, glosa=
         if n in indice and not verbo_puesto:
             raiz, tp = indice[n]
             t = tiempo if tiempo is not None else tp
-            forma = (t or "") + raiz + evidencial
+            # v0.2: la pregunta exime el evidencial en SU cláusula
+            ev_v = "" if (pregunta and "," not in salida) else evidencial
+            forma = (t or "") + raiz + ev_v
             if negacion:
                 forma = "na " + forma
             salida.append(forma)
-            glosas.append(f"{tok}=[{t or ''}{raiz}{evidencial}]")
+            glosas.append(f"{tok}=[{t or ''}{raiz}{ev_v}]")
             verbo_puesto = True
             continue
 
         # 2) palabra funcional
         if n in func:
-            salida.append(func[n])
-            glosas.append(f"{tok}={func[n]}")
+            f = func[n]
+            # v0.2: la cópula `e` lleva evidencial en la declarativa
+            if f == "e" and not pregunta:
+                f = "e" + evidencial
+            salida.append(f)
+            glosas.append(f"{tok}={f}")
             continue
 
         # 3) derivado ("comida" = cosa de comer -> man-re)

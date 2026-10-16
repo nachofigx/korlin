@@ -27,7 +27,7 @@ Can also be used **alone** as an interjection.
 - **Usable alone**: `we!` = "wow!".
 
 ### Examples
-- `le jo e gu yo!` — "The day is good, I love it!"
+- `le ti e-ve gu yo!` — "The day is good, I love it!"
 - `we! le su e hi.` — "Wow! The sun is high."
 - `mi go a le ho fi.` — "I go to the house (irony)."
 
@@ -61,10 +61,10 @@ It is Korlin's "anti-lying" layer.
    (direct > inferred > reported > assumed; cf. Barnes 1984, Faller 2002).
 
 ### Examples
-- `li go-ve.` — "He left (I saw it)."
-- `li go-di.` — "He left (I was told)."
-- `li go-pen.` — "He left (I infer it)."
-- `li go-sa.` — "He left (it's assumed)."
+- `li go-ve.` — "He goes (I see it)."
+- `li an-go-di.` — "He went (I was told)."
+- `li go-pen.` — "He goes (I infer it)."
+- `li go-sa.` — "He goes (it's assumed)."
 - `le lu e-ve i le no.` — "The moon is in the night (I see it)."
 
 ### Anti-lying effect

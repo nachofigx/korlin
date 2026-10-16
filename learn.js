@@ -101,7 +101,7 @@ const FRASES = [
   { k: 'mi na sa', es: 'no sé', en: "I don't know" },
   { k: 'tu go mo', es: '¿vas?', en: 'are you going?' },
   { k: 'le ho de mi', es: 'mi casa', en: 'my house' },
-  { k: 'na-toro na-kan-sa vi i mi', es: 'la mentira no puede vivir en mí', en: 'the lie cannot live in me' },
+  { k: 'na-toro na kan-sa vi i mi', es: 'la mentira no puede vivir en mí', en: 'the lie cannot live in me' },
   { k: 'mi e-sa Korlin', es: 'yo soy Korlin', en: 'I am Korlin' },
 ];
 
@@ -507,7 +507,7 @@ const DIALOGOS = [
     { m: 'Gu! To.', es: '¡Bien! Cierto.', en: 'Good! Sure.', esperado: ['to', 'gu'] },
     { m: 'Mi e-sa u ko lin.', es: 'Soy una lengua corta.', en: 'I am a short language.', esperado: ['ko', 'lin'] },
     { m: 'Tu kan-ve sa mi.', es: 'Puedes aprenderme.', en: 'You can learn me.', esperado: ['ya', 'kan'] },
-    { m: 'Na-toro na-kan-sa vi i mi.', es: 'La mentira no puede vivir en mí.', en: 'The lie cannot live in me.', esperado: ['toro', 'na-toro'] },
+    { m: 'Na-toro na kan-sa vi i mi.', es: 'La mentira no puede vivir en mí.', en: 'The lie cannot live in me.', esperado: ['toro', 'na-toro'] },
   ]},
   { id: 'comida', icono: '🍽️', titulo: 'Comida', titulo_en: 'Food', pasos: [
     { m: 'Tu vo man mo?', es: '¿Quieres comer?', en: 'Do you want to eat?', esperado: ['ya', 'vo'] },

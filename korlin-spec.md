@@ -1,4 +1,4 @@
-# Korlin — Especificación para modelos de lenguaje (v0.2)
+# Korlin — Especificación para modelos de lenguaje (v0.3)
 
 > **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer
 > mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para
@@ -28,13 +28,24 @@ sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
    a) **`na` suelto**, inmediatamente antes del verbo → niega la oración.
       `mi na sa-ve.` = *No sé (lo veo).*
    b) **`na-` pegado**, como prefijo derivativo → crea la palabra opuesta.
-      `na-gu` = *malo*, `na-toro` = *mentira*.
+      `na-gu` = *malo*, `na-toro` = *mentira*. **Nunca** niega un verbo en `-`.
 8. **Pregunta sí/no:** `mo` al final. **Interrogativos** (`ki`, `lo`) al inicio.
+   Toda pregunta va **sin evidencial** en su propia cláusula.
 9. **No hay concordancia** de género, número ni persona. Nunca.
 10. **No hay artículos obligatorios**; `le` existe y es opcional.
-11. **El sujeto puede omitirse** si el contexto lo deja claro (pro-drop).
+11. **El sujeto puede omitirse** si el contexto lo deja claro (pro-drop),
+    también con `na` y con `mo`: `na sa-ve.` = *no sé*; `go mo?` = *¿vas?*
 12. **La modalidad epistémica no marcada equivale a `to`** (certeza),
     pero la evidencialidad NUNCA se puede omitir en una declarativa.
+13. **ÓRDENES: la raíz desnuda del verbo, sin evidencial y sin sujeto.**
+    `Go!` = *¡ve!*; `Kan-sa mi!` = *¡mírame!* No hay morfema nuevo: como el
+    evidencial es obligatorio en la declaración, la forma desnuda queda libre
+    para el mandato (igual que el inglés `Go!`). Es la exención nº2.
+14. **La oración subordinada va exenta** si su núcleo la marca con `ki`.
+    `Mi sa-ve ki li go.` = *Sé que él va.* La principal `sa-ve` sí lleva evidencial.
+15. **Condicional `si … so …`: la prótasis es exenta, la apódosis lleva evidencial.**
+    `si tu go, so mi ne-go-pen.` = *Si vas, iré (lo deduzco).*
+16. **Cópula `e`: el evidencial va en `e`.** `le ti e-ve gu.` = *El día está bueno (lo veo).*
 
 ---
 
@@ -108,12 +119,19 @@ hace la mentira cara: quien afirma debe decir si lo vio, lo dedujo, se lo contar
 o lo asume. Estudios tipológicos (Aikhenvald 2004) muestran que ~25% de las lenguas
 del mundo marcan la fuente obligatoriamente; Korlin lo adopta desde el diseño.
 
-| Sufijo | Fuente | Ejemplo | Traducción |
+| Sufijo | Fuente | Ejemplo (presente) | Traducción |
 |---|---|---|---|
-| `-ve` | **Directo** (lo vi, lo viví) | `li go-ve` | *Él se fue (lo vi)* |
-| `-pen` | **Inferido** (lo deduzco) | `li go-pen` | *Él se fue (lo deduzco)* |
-| `-di` | **Reportado** (me lo dijeron) | `li go-di` | *Él se fue (me lo contaron)* |
-| `-sa` | **Asumido** (se sabe) | `li go-sa` | *Él se fue (es sabido)* |
+| `-ve` | **Directo** (lo vi, lo viví) | `li go-ve` | *Él va (lo veo)* |
+| `-pen` | **Inferido** (lo deduzco) | `li go-pen` | *Él va (lo deduzco)* |
+| `-di` | **Reportado** (me lo dijeron) | `li go-di` | *Él va (me lo contaron)* |
+| `-sa` | **Asumido** (se sabe) | `li go-sa` | *Él va (es sabido)* |
+
+**Pasado: el evidencial NO cambia, pero `an-` es obligatorio.**
+`li an-go-ve` = *Él fue (lo vi)*; `li an-go-di` = *Él fue (me lo contaron)*.
+
+**Un evidencial por cláusula, en el verbo finito (el primero de la cadena).**
+En `tu kan-ve sa mi` (*puedes verme*), `kan` lleva el evidencial y `sa` queda
+desnudo. En una subordinada, cada cláusula lleva el suyo: `mi sa-ve ki li an-go-di.`
 
 **Regla de honestidad:** si no sabes de dónde viene algo, usa `-pen` (lo deduzco) o
 `-di` (me lo dijeron), nunca `-ve` (lo vi) si no lo viste realmente.
@@ -123,6 +141,11 @@ del mundo marcan la fuente obligatoriamente; Korlin lo adopta desde el diseño.
 ## 5. Modalidad epistémica y actitud
 
 Van al **final** de la oración, después del verbo.
+
+**Modalidad y actitud van al final, en este orden fijo:**
+`[verbo+evidencial] … [modalidad] [actitud] [mo]`.
+`li an-go-di ku bu.` = *Se fue (me lo contaron, dudo) 😤.*
+`Tu go ku mo?` = *¿Vas, quizá?* — válido: la pregunta lleva `mo` al final del todo.
 
 **Modalidad** (certeza, opcional):
 
@@ -159,7 +182,9 @@ Van al **final** de la oración, después del verbo.
 | Interrogativo | al inicio | `Ki tu man?` = *¿Qué comes?* |
 | Posesión | `de` | `le ho de mi` = *mi casa* |
 | Subordinación | `ki` | `Mi sa-ve ki li an-go-di` = *Sé que él fue (me lo dijeron)* |
-| Condicional | `si … so …` | `si tu go, so mi go` = *si vas, voy* |
+| Condicional | `si … so …` | `si tu go, so mi ne-go-pen` = *si vas, iré (lo deduzco)* |
+| Orden | raíz desnuda | `Go!` = *¡ve!* · `Kan-sa mi!` = *¡mírame!* |
+| Cópula | `e` + evidencial | `le ti e-ve gu` = *el día está bueno (lo veo)* |
 
 ---
 
@@ -180,7 +205,7 @@ Van al **final** de la oración, después del verbo.
 | `si` | /si/ | conjunción | si (condicional) | if |
 | `so` | /so/ | conjunción | entonces, así que | then, so |
 | `na` | /na/ | adverbio | no (negación) | no, not |
-| `ya` | /ya/ | adverbio | sí | yes |
+| `ya` | /ja/ | adverbio | sí | yes |
 | `de` | /de/ | preposición | de | of, from |
 | `kon` | /kon/ | preposición | con | with |
 | `po` | /po/ | preposición | por, para | for, by |
@@ -190,7 +215,7 @@ Van al **final** de la oración, después del verbo.
 | `tu` | /tu/ | pronombre | tú | you |
 | `li` | /li/ | pronombre | él, ella | he, she |
 | `wi` | /wi/ | pronombre | nosotros | we |
-| `yu` | /yu/ | pronombre | vosotros, ustedes | you all |
+| `yu` | /ju/ | pronombre | vosotros, ustedes | you all |
 | `lis` | /lis/ | pronombre | ellos, ellas | they |
 | `le` | /le/ | determinante | el, la | the |
 | `se` | /se/ | determinante | este, esta | this |
@@ -229,7 +254,7 @@ Van al **final** de la oración, después del verbo.
 | `lo` | /lo/ | sustantivo | lugar | place |
 | `ho` | /ho/ | sustantivo | casa | house, home |
 | `ma` | /ma/ | sustantivo | mano | hand |
-| `ye` | /ye/ | sustantivo | ojo | eye |
+| `ye` | /je/ | sustantivo | ojo | eye |
 | `he` | /he/ | sustantivo | cabeza | head |
 | `wo` | /wo/ | sustantivo | palabra | word |
 | `nom` | /nom/ | sustantivo | nombre | name |
@@ -265,7 +290,7 @@ Van al **final** de la oración, después del verbo.
 | `num` | /num/ | verbo | calcular, número | to calculate |
 | `sim` | /sim/ | verbo | simular | to simulate |
 | `ken` | /ken/ | verbo | comprar | to buy |
-| `plan` | /plan/ | sustantivo | plano, diseño | plan, design |
+| `pilan` | /pilan/ | sustantivo | plano, diseño | plan, design |
 | `Yapan` | /ˈjapan/ | nombre propio | Japón | Japan |
 | `u` | /u/ | número | 1 | 1 |
 | `du` | /du/ | número | 2 | 2 |
@@ -314,8 +339,8 @@ Van al **final** de la oración, después del verbo.
 | `Mekiko` | /meˈkiko/ | país | México | Mexico |
 | `Espan` | /eˈspan/ | país | España | Spain |
 | `Kina` | /ˈkina/ | país | China | China |
-| `Frans` | /frans/ | país | Francia | France |
-| `Brasil` | /bɾaˈsil/ | país | Brasil | Brazil |
+| `Faransa` | /faˈransa/ | país | Francia | France |
+| `Barasila` | /baɾaˈsila/ | país | Brasil | Brazil |
 | `gu-gu` | /ˈgugu/ | slang | guay, súper bueno (reduplicación) | cool, awesome (reduplication) |
 | `me-ku` | /ˈmeku/ | slang | ni de broma (muy dudoso) | no way (very doubtful) |
 
@@ -348,7 +373,7 @@ Van al **final** de la oración, después del verbo.
 1. **Halo! Mi e-sa Korlin.**
    - ES: ¡Hola! Soy Korlin.
    - EN: Hello! I am Korlin.
-2. **Na-toro na-kan-sa vi i mi.**
+2. **Na-toro na kan-sa vi i mi.**
    - ES: La mentira no puede vivir en mí.
    - EN: Lies cannot live in me.
 3. **li go-ve.**

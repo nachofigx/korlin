@@ -3,7 +3,7 @@
   "exonimo": "Shortlang",
   "autonimo": "korlin",
   "significado": "ko (corto) + lin (lengua) = lengua corta",
-  "version": "0.2",
+  "version": "0.3",
   "licencia": "MIT",
   "sitio": "https://nachofigx.github.io/korlin/",
   "repo": "https://github.com/nachofigx/korlin",
@@ -96,11 +96,20 @@
       }
     },
     "sintaxis": {
-      "negacion": "na antes del verbo",
-      "pregunta_si_no": "mo al final",
+      "negacion": {
+        "oracion": "na suelto antes del verbo",
+        "derivacion": "prefijo na- = opuesto (nunca sobre verbo en '-'"
+      },
+      "pregunta_si_no": "mo al final (la pregunta exime el evidencial)",
       "interrogativo": "al inicio",
+      "pro_drop": "el sujeto se omite si el contexto basta (tambien con na y mo)",
+      "orden_final": "[verbo+evidencial] ... [modalidad] [actitud] [mo]",
+      "modalidad_por_defecto": "to (certeza)",
+      "ordenes": "raiz desnuda, sin evidencial ni sujeto (Go!)",
+      "condicional": "si ... so ...: protasis exenta, apodosis con evidencial",
+      "copula": "e lleva el evidencial en la declarativa (le ti e-ve gu)",
+      "subordinacion": "ki (la subordinada va exenta; cada clausula puede llevar el suyo)",
       "posesion": "de (X de Y = Y posee X)",
-      "subordinacion": "ki",
       "derivacion": {
         "-pe": "agente (persona que X)",
         "-lo": "lugar (donde se X)",
@@ -193,7 +202,7 @@
     },
     {
       "forma": "ya",
-      "afi": "/ya/",
+      "afi": "/ja/",
       "categoria": "adverbio",
       "es": "sí",
       "en": "yes"
@@ -263,7 +272,7 @@
     },
     {
       "forma": "yu",
-      "afi": "/yu/",
+      "afi": "/ju/",
       "categoria": "pronombre",
       "es": "vosotros, ustedes",
       "en": "you all"
@@ -536,7 +545,7 @@
     },
     {
       "forma": "ye",
-      "afi": "/ye/",
+      "afi": "/je/",
       "categoria": "sustantivo",
       "es": "ojo",
       "en": "eye"
@@ -787,8 +796,8 @@
       "en": "to buy"
     },
     {
-      "forma": "plan",
-      "afi": "/plan/",
+      "forma": "pilan",
+      "afi": "/pilan/",
       "categoria": "sustantivo",
       "es": "plano, diseño",
       "en": "plan, design"
@@ -1130,15 +1139,15 @@
       "en": "China"
     },
     {
-      "forma": "Frans",
-      "afi": "/frans/",
+      "forma": "Faransa",
+      "afi": "/faˈransa/",
       "categoria": "país",
       "es": "Francia",
       "en": "France"
     },
     {
-      "forma": "Brasil",
-      "afi": "/bɾaˈsil/",
+      "forma": "Barasila",
+      "afi": "/baɾaˈsila/",
       "categoria": "país",
       "es": "Brasil",
       "en": "Brazil"

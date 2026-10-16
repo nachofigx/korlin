@@ -111,7 +111,7 @@ window.KORLIN_LEXICO = [
   },
   {
     "f": "ya",
-    "a": "/ya/",
+    "a": "/ja/",
     "c": "adverbio",
     "es": "sí",
     "en": "yes",
@@ -211,7 +211,7 @@ window.KORLIN_LEXICO = [
   },
   {
     "f": "yu",
-    "a": "/yu/",
+    "a": "/ju/",
     "c": "pronombre",
     "es": "vosotros, ustedes",
     "en": "you all",
@@ -598,7 +598,7 @@ window.KORLIN_LEXICO = [
   },
   {
     "f": "ye",
-    "a": "/ye/",
+    "a": "/je/",
     "c": "sustantivo",
     "es": "ojo",
     "en": "eye",
@@ -939,14 +939,11 @@ window.KORLIN_LEXICO = [
     "ja": "買う"
   },
   {
-    "f": "plan",
-    "a": "/plan/",
+    "f": "pilan",
+    "a": "/pilan/",
     "c": "sustantivo",
     "es": "plano, diseño",
-    "en": "plan, design",
-    "fr": "plan, dessin",
-    "zh": "平面图, 设计",
-    "ja": "平面図, デザイン"
+    "en": "plan, design"
   },
   {
     "f": "Yapan",
@@ -1363,24 +1360,18 @@ window.KORLIN_LEXICO = [
     "ja": "中国"
   },
   {
-    "f": "Frans",
-    "a": "/frans/",
+    "f": "Faransa",
+    "a": "/faˈransa/",
     "c": "país",
     "es": "Francia",
-    "en": "France",
-    "fr": "France",
-    "zh": "法国",
-    "ja": "フランス"
+    "en": "France"
   },
   {
-    "f": "Brasil",
-    "a": "/bɾaˈsil/",
+    "f": "Barasila",
+    "a": "/baɾaˈsila/",
     "c": "país",
     "es": "Brasil",
-    "en": "Brazil",
-    "fr": "Brésil",
-    "zh": "巴西",
-    "ja": "ブラジル"
+    "en": "Brazil"
   },
   {
     "f": "gu-gu",

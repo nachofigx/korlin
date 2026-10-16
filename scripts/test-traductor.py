@@ -16,7 +16,7 @@ CASOS_K = [
     ("Mi e-sa lin.", "lengua"),
     ("Wi e-sa pes.", "personas"),
     ("Li go-pen a le ho.", "lo deduzco"),
-    ("Na-toro na-kan-sa vi i mi.", "mentira"),
+    ("Na-toro na kan-sa vi i mi.", "mentira"),
     ("Halo! Mi e-sa Lin.", "lengua"),
     ("gu-ro", "bondad"),
     ("man-lo", "comedor"),
@@ -69,4 +69,74 @@ for texto, esperados in CASOS_EN:
     check(texto, m.otro_a_korlin(texto, LEX, "en"), esperados)
 
 print(f"\n{'✅ TODO OK' if fallos == 0 else f'❌ {fallos} fallos'}")
+
+
+
+def test_coherencia_v02():
+    import yaml, json, re
+    fallos = []
+
+    # 1) cero formas con letras prohibidas
+    lex = yaml.safe_load(open("data/lexico.yaml", encoding="utf-8"))
+    malas = [str(p["forma"]) for p in lex["palabras"]
+             if any(c in str(p["forma"]).lower() for c in "cqxjz")]
+    if malas:
+        fallos.append(f"formas con c/q/x/j/z: {malas}")
+    # `jo` (dia) debe estar fuera
+    formas = {str(p["forma"]).lower() for p in lex["palabras"]}
+    if "jo" in formas:
+        fallos.append("'jo' sigue en el lexico")
+    if "ti" not in formas:
+        fallos.append("'ti' (dia) no esta en el lexico")
+
+    # 2) 21 fonemas (16 C + 5 V) en korlin.json, coherentes con el spec
+    d = json.load(open("korlin.json", encoding="utf-8"))
+    f = d["reglas"]["fonologia"]
+    if f["fonemas"] != 21:
+        fallos.append(f"fonemas en json = {f['fonemas']}, esperado 21")
+    if len(f["consonantes"]) != 16 or len(f["vocales"]) != 5:
+        fallos.append(f"consonantes={len(f['consonantes'])}, vocales={len(f['vocales'])}")
+    if "v" not in f["consonantes"]:
+        fallos.append("falta 'v' en consonantes")
+    if "j" in f["consonantes"]:
+        fallos.append("'j' sigue en consonantes")
+
+    # 3) la spec y json coinciden en lo esencial
+    spec = open("korlin-spec.md", encoding="utf-8").read()
+    for frag in ["21 fonemas: 16 consonantes", "340", "`na` suelto", "`na-` pegado",
+                 "raíz desnuda", "pro-drop"]:
+        if frag not in spec:
+            fallos.append(f"spec no contiene: {frag}")
+
+    # 4) na- pegado NO niega verbos: aparece solo sobre raices nominales
+    for frag in ["na-kan-sa", "na-go-ve"]:
+        if frag in spec:
+            fallos.append(f"spec aun usa '{frag}' (na- sobre verbo)")
+
+    # 5) el traductor respeta v0.2
+    from subprocess import run
+    def tr(t):
+        r = run(["python", "scripts/traductor-korlin.py", "es", t],
+                capture_output=True, text=True)
+        return r.stdout.strip().splitlines()[0]
+    casos = [("¿Tú comes comida?", "mo"), ("El día es bueno.", "e-sa"),
+             ("Él fue.", "an-go")]
+    for txt, esp in casos:
+        got = tr(txt)
+        if esp not in got:
+            fallos.append(f"traductor '{txt}' -> '{got}' (esperaba {esp})")
+
+    return fallos
+
+
+
+
+# ---- ejecucion de coherencia v0.2 ----
+_cof = test_coherencia_v02()
+print("\n== Coherencia v0.2 (peticion de Korlin) ==")
+for _c in _cof:
+    print("  FALLA:", _c)
+if _cof:
+    fallos += len(_cof)
+print(f"\n{'TODO OK' if fallos == 0 else str(fallos)+' fallos'}")
 sys.exit(1 if fallos else 0)

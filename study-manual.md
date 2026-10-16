@@ -264,7 +264,7 @@ Like speaking with emojis. Placed **at the end**.
 | bu 😤 | anger | | | |
 
 **Examples:**
-- `Le jo e gu yo!` — "The day is good, I love it!"
+- `Le ti e-ve gu yo!` — "The day is good, I love it!"
 - `We! Le su e hi.` — "Wow! The sun is high."
 - `Mi go a le ho fi.` — "I go to the house (irony)."
 
@@ -281,7 +281,7 @@ Like speaking with emojis. Placed **at the end**.
 ## Practice texts
 
 ### Text 1 — Korlin's introduction
-> **Halo! Mi e-sa Korlin. Mi e-sa u ko lin. Mi e-sa ra ka gu. Na-toro na-kan-sa vi i mi. Mi pa-ve kon pe ka kon kin. Tu kan-ve sa mi. Ven kon mi yo!**
+> **Halo! Mi e-sa Korlin. Mi e-sa u ko lin. Mi e-sa ra ka gu. Na-toro na kan-sa vi i mi. Mi pa-ve kon pe ka kon kin. Tu kan-ve sa mi. Ven kon mi yo!**
 
 Translation: "Hello! I am Korlin. I am a short language. I am fast and good.
 The lie cannot live in me. I speak with people and with machines. You can learn

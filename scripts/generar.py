@@ -38,7 +38,7 @@ IDIOMAS = {
 PRONUNCIACION = {
     "es": """## Pronunciación
 
-20 sonidos, 20 letras. **Una letra = un sonido, siempre.**
+21 sonidos, 21 letras. **Una letra = un sonido, siempre.**
 
 | Letra | AFI | Como en español |
 |---|---|---|
@@ -318,7 +318,7 @@ def generar_manual_ia(lexico, afijos):
     lineas.append("```")
     ejemplos = [
         ("Halo! Mi e-sa Korlin.", "¡Hola! Soy Korlin.", "Hello! I am Korlin."),
-        ("Na-toro na-kan-sa vi i mi.", "La mentira no puede vivir en mí.", "Lies cannot live in me."),
+        ("Na-toro na kan-sa vi i mi.", "La mentira no puede vivir en mí.", "Lies cannot live in me."),
         ("li go-ve.", "Él se fue (lo vi).", "He left (I saw it)."),
         ("li go-di ku.", "Se fue (me lo contaron, no me fío).", "He left (I was told, I doubt it)."),
         ("Tu go mo?", "¿Vas?", "Do you go?"),

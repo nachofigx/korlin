@@ -69,7 +69,7 @@ const I18N = {
     stat_letras: "letras, 1 letra = 1 sonido", stat_palabras: "palabras núcleo", stat_idiomas: "idiomas de documentación", stat_corto: "más corto que el Esperanto",
     card_corta_t: "✂️ Corta", card_corta_d: "Palabras de 1–2 sílabas condensan conceptos. ~40% más corta que el Esperanto.",
     card_honesta_t: "🛡️ Honesta", card_honesta_d: "Evidencialidad obligatoria: toda afirmación declara su fuente. Mentir es costoso y detectable.",
-    card_moderna_t: "📱 Moderna", card_moderna_d: "20 letras, sin tildes, partículas emoji y lista para IA.",
+    card_moderna_t: "📱 Moderna", card_moderna_d: "21 letras, sin tildes, partículas emoji y lista para IA.",
     ejemplo_titulo: "Ejemplo",
     ejemplo_gloss: '"La mentira no puede vivir en mí." · <code>na-toro</code> = mentira (<code>na-</code> no + <code>toro</code> verdad)',
     why_titulo: "¿Por qué Korlin? 🚀", why_desc: "Hecho para un mundo conectado, digital y honesto.",

@@ -111,7 +111,7 @@ pon      | verbo        | poner, colocar | to put, place
 num      | verbo        | calcular, número | to calculate
 sim      | verbo        | simular | to simulate
 ken      | verbo        | comprar | to buy
-plan     | sustantivo   | plano, diseño | plan, design
+pilan    | sustantivo   | plano, diseño | plan, design
 Yapan    | nombre propio | Japón | Japan
 u        | número       | 1 | 1
 du       | número       | 2 | 2
@@ -160,8 +160,8 @@ nano     | prefijo SI   | milmillonésima (nano-) | billionth (nano-)
 Mekiko   | país         | México | Mexico
 Espan    | país         | España | Spain
 Kina     | país         | China | China
-Frans    | país         | Francia | France
-Brasil   | país         | Brasil | Brazil
+Faransa  | país         | Francia | France
+Barasila | país         | Brasil | Brazil
 gu-gu    | slang        | guay, súper bueno (reduplicación) | cool, awesome (reduplication)
 me-ku    | slang        | ni de broma (muy dudoso) | no way (very doubtful)
 ```
@@ -171,7 +171,7 @@ me-ku    | slang        | ni de broma (muy dudoso) | no way (very doubtful)
 Halo! Mi e-sa Korlin.
   ES: ¡Hola! Soy Korlin.
   EN: Hello! I am Korlin.
-Na-toro na-kan-sa vi i mi.
+Na-toro na kan-sa vi i mi.
   ES: La mentira no puede vivir en mí.
   EN: Lies cannot live in me.
 li go-ve.

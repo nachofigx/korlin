@@ -78,7 +78,7 @@ One change in `data/` → regenerates every manual, the web data and the AI spec
 
 ## Example
 
-> **Na-toro na-kan-sa vi i mi.**
+> **Na-toro na kan-sa vi i mi.**
 > *The lie cannot live in me.*
 > (`na-toro` = "lie" = `na-` not + `toro` truth)
 
@@ -91,7 +91,7 @@ moderna** — sucesora espiritual del Dutton Speedwords y un Esperanto mejorado.
 
 - **Corta** — palabras de 1–2 sílabas condensan conceptos (~40% más corta que el Esperanto).
 - **Honesta** — evidencialidad obligatoria: toda afirmación declara su fuente.
-- **Moderna** — digital (20 letras, sin tildes), partículas de emoción tipo emoji, lista para IA.
+- **Moderna** — digital (21 letras, sin tildes), partículas de emoción tipo emoji, lista para IA.
 
 Documentación en español: `docs/manual-es.md` y `manual-de-estudio.md`.
 
