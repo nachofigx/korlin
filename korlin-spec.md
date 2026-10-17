@@ -196,7 +196,7 @@ Van al **final** de la oración, después del verbo.
 | Posesión | `de` | `le ho de mi` = *mi casa* |
 | Subordinación | `ki` | `Mi sa-ve ki li an-go-di` = *Sé que él fue (me lo dijeron)* |
 | Condicional | `si … so …` | `si tu go, so mi ne-go-pen` = *si vas, iré (lo deduzco)* |
-| Orden | raíz desnuda | `Go!` = *¡ve!* · `Kan-sa mi!` = *¡mírame!* |
+| Orden | raíz desnuda | `Go!` = *¡ve!* · `Ve mi!` = *¡mírame!* |
 | Cópula | `e` + evidencial | `le ti e-ve gu` = *el día está bueno (lo veo)* |
 
 ---

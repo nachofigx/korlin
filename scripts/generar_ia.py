@@ -369,7 +369,7 @@ def genera_spec(palabras, afijos):
     A("| Posesión | `de` | `le ho de mi` = *mi casa* |")
     A("| Subordinación | `ki` | `Mi sa-ve ki li an-go-di` = *Sé que él fue (me lo dijeron)* |")
     A("| Condicional | `si … so …` | `si tu go, so mi ne-go-pen` = *si vas, iré (lo deduzco)* |")
-    A("| Orden | raíz desnuda | `Go!` = *¡ve!* · `Kan-sa mi!` = *¡mírame!* |")
+    A("| Orden | raíz desnuda | `Go!` = *¡ve!* · `Ve mi!` = *¡mírame!* |")
     A("| Cópula | `e` + evidencial | `le ti e-ve gu` = *el día está bueno (lo veo)* |")
     A("")
     A("---")

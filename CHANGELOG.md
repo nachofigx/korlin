@@ -7,6 +7,68 @@ la versión. **Documento que manda:** `korlin-spec.md` (generado desde
 
 ---
 
+## v0.4 — 2026-10-16
+
+**Segunda auditoría del agente `korlin`** (mensajes `2ddc672f` y `bd816c89`). Encontró
+**2 contradicciones nuevas (P0) —una de ellas error mío de la v0.3— y 5 huecos**, más
+el bloque PR-07..PR-16. Verificado todo: **real**. Crédito doble a Korlin por cazar
+la contradicción que yo mismo introduje entre las reglas 4 y 14.
+
+### P0-1 — Regla 14 contra regla 4 (mi error de la v0.3)
+En v0.3 escribí que la subordinada con `ki` **va exenta**, pero la regla 4 y §4 dicen
+que **cada cláusula lleva su evidencial**. **Dictamen: gana la regla 4.** No hay
+exención por subordinación — en quechua y tariana la fuente se marca donde está el
+conocimiento, no donde está la oración. Regla 14 reescrita:
+`Mi sa-ve ki li an-go-di.` = *Sé (lo veo) que él fue (me lo contaron).*
+
+### P0-2 — `Kan-sa mi!` violaba la regla 13 (mi error de la v0.3)
+La orden de ejemplo usaba `-sa`, que es el **evidencial** de "asumido", pero las órdenes
+van desnudas. Además `sa` = *saber* y `ve` = *ver*, así que el verbo correcto para
+"mírame" es `ve`. Corregido: **`Ve mi!`** = *¡mírame!*
+
+### P1-3 — `Yo! Mi vo tu la.` sin evidencial
+Declarativa sin evidencial → **`Yo! Mi vo-ve tu la.`**
+
+### P1-4 — Texto truncado
+"Nunca niega un verbo en `-`." (cortado) → redacción completa en spec y `korlin.json`.
+
+### P2-5 — Orden con sujeto explícito
+Documentado: `Tu go!` = *¡tú, ve!* (la orden sigue sin evidencial).
+
+### PR-07 — Nueva regla 17: derivación regulada
+Raíz + afijo = palabra válida **si el sentido es composicional**; si se lexicaliza, se
+lista. `do-lo` (*dormitorio*) válido por regla; *derivar antes que inventar*.
+
+### PR-09 — Nueva regla 18: el guion marca frontera de morfema
+Afijos con guion (`do-lo`, `mi man-ve`); plural `-s` pegado (`pes`, `lis`).
+`vi-sa` (vivir+asumido) ≠ `vi sa` (vivir/saber).
+
+### PR-11 — Duplicados
+Entrada `u` duplicada (determinante y número) → queda **una**. (`fe` = *malo* y
+`na-gu` = *na-* + `gu`: sinónimos; se documenta la relación en vez de borrar uno.)
+
+### PR-15b — El traductor no ponía `?`
+`tu man man-re mo` → **`tu man man-re mo?`**
+
+### P2-6 — El test dependía de pyyaml
+Ahora funciona sin pyyaml (lee el YAML por patrón) y **detecta duplicados**.
+
+### Varios
+- `na-kan-sa` seguía en `index.html`, `assets/branding-preview.html`, `research.md`,
+  `investigacion.md` (sí, el push anterior no los cubría).
+- Conteos 20/15 → 21/16 también en los **white papers** (`research.md`,
+  `investigacion.md`: sílabas 320→340, CV 75→80).
+- `data/afijos.yaml` subido a la versión en curso.
+- CHANGELOG: "5 contradicciones" → 6; estado de publicación corregido.
+
+### Pendiente
+- **PR-08, PR-10, PR-12..PR-14, PR-16** (del bloque 1) y **PR-17..PR-27** (bloque 2):
+  evaluadas por separado; requieren decisión o son de menor prioridad.
+- **PR-16** (71 conceptos sin raíz) es un encargo de diseño de léxico: presentarlo a
+  Ignacio antes de acuñar palabras.
+
+---
+
 ## v0.3 — 2026-10-16
 
 **Auditoría del agente `korlin`** (segunda ronda, mensaje `8329f878`). Revisó el
