@@ -1,4 +1,4 @@
-# Korlin — Especificación para modelos de lenguaje (v0.3)
+# Korlin — Especificación para modelos de lenguaje (v0.4)
 
 > **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer
 > mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para
@@ -28,7 +28,8 @@ sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
    a) **`na` suelto**, inmediatamente antes del verbo → niega la oración.
       `mi na sa-ve.` = *No sé (lo veo).*
    b) **`na-` pegado**, como prefijo derivativo → crea la palabra opuesta.
-      `na-gu` = *malo*, `na-toro` = *mentira*. **Nunca** niega un verbo en `-`.
+      `na-gu` = *malo*, `na-toro` = *mentira*. **Nunca** niega un verbo: para
+      negar la acción se usa siempre `na` suelto.
 8. **Pregunta sí/no:** `mo` al final. **Interrogativos** (`ki`, `lo`) al inicio.
    Toda pregunta va **sin evidencial** en su propia cláusula.
 9. **No hay concordancia** de género, número ni persona. Nunca.
@@ -38,14 +39,26 @@ sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
 12. **La modalidad epistémica no marcada equivale a `to`** (certeza),
     pero la evidencialidad NUNCA se puede omitir en una declarativa.
 13. **ÓRDENES: la raíz desnuda del verbo, sin evidencial y sin sujeto.**
-    `Go!` = *¡ve!*; `Kan-sa mi!` = *¡mírame!* No hay morfema nuevo: como el
+    `Go!` = *¡ve!*; `Ve mi!` = *¡mírame!* No hay morfema nuevo: como el
     evidencial es obligatorio en la declaración, la forma desnuda queda libre
     para el mandato (igual que el inglés `Go!`). Es la exención nº2.
-14. **La oración subordinada va exenta** si su núcleo la marca con `ki`.
-    `Mi sa-ve ki li go.` = *Sé que él va.* La principal `sa-ve` sí lleva evidencial.
+    Si el sujeto va explícito, la orden sigue sin evidencial: `Tu go!` = *¡tú, ve!*
+14. **NO hay exención por subordinación.** En una subordinada, **cada cláusula
+    lleva su propio evidencial** (cf. quechua, tariana; la fuente se marca donde
+    está el conocimiento, no donde está la oración).
+    `Mi sa-ve ki li an-go-di.` = *Sé (lo veo) que él fue (me lo contaron).*
 15. **Condicional `si … so …`: la prótasis es exenta, la apódosis lleva evidencial.**
     `si tu go, so mi ne-go-pen.` = *Si vas, iré (lo deduzco).*
 16. **Cópula `e`: el evidencial va en `e`.** `le ti e-ve gu.` = *El día está bueno (lo veo).*
+17. **DERIVACIÓN: una raíz + un afijo derivacional válido es palabra legítima**
+    si el sentido es composicional (el afijo aporta lo suyo sin sorpresa).
+    `do` (dormir) + `-lo` (lugar) = `do-lo` (*dormitorio*) es válido por regla.
+    Si el sentido se lexicaliza (deja de ser predecible), se LISTA en el léxico.
+    Regla de oro: **derivar antes que inventar**; inventar solo si ningún afijo sirve.
+18. **El guion marca frontera de morfema.** Los afijos derivacionales y flexivos
+    van con guion (`do-lo`, `mi man-ve`); el plural `-s` se escribe pegado
+    (`pes`, `lis`). Sin guion, dos raíces seguidas son dos palabras.
+    `vi-sa` (vivir+asumido) ≠ `vi sa` (vivir/saber).
 
 ---
 
@@ -190,7 +203,7 @@ Van al **final** de la oración, después del verbo.
 
 ## 7. Léxico completo
 
-149 palabras. Formato: **korlin** · AFI · categoría · español · inglés.
+148 palabras. Formato: **korlin** · AFI · categoría · español · inglés.
 
 | Korlin | AFI | Categoría | Español | English |
 |---|---|---|---|---|
@@ -292,7 +305,6 @@ Van al **final** de la oración, después del verbo.
 | `ken` | /ken/ | verbo | comprar | to buy |
 | `pilan` | /pilan/ | sustantivo | plano, diseño | plan, design |
 | `Yapan` | /ˈjapan/ | nombre propio | Japón | Japan |
-| `u` | /u/ | número | 1 | 1 |
 | `du` | /du/ | número | 2 | 2 |
 | `san` | /san/ | número | 3 | 3 |
 | `fu` | /fu/ | número | 4 | 4 |
@@ -418,7 +430,7 @@ Van al **final** de la oración, después del verbo.
 16. **Wi e-sa pes.**
    - ES: Somos personas.
    - EN: We are people.
-17. **Yo! Mi vo tu la.**
+17. **Yo! Mi vo-ve tu la.**
    - ES: ¡Qué alegría! Te quiero (cariño).
    - EN: Yay! I love you (affection).
 

@@ -73,21 +73,40 @@ print(f"\n{'✅ TODO OK' if fallos == 0 else f'❌ {fallos} fallos'}")
 
 
 def test_coherencia_v02():
-    import yaml, json, re
+    import json, re
+    try:
+        import yaml
+    except ImportError:
+        yaml = None
     fallos = []
 
     # 1) cero formas con letras prohibidas
-    lex = yaml.safe_load(open("data/lexico.yaml", encoding="utf-8"))
-    malas = [str(p["forma"]) for p in lex["palabras"]
+    if yaml is None:
+        # sin pyyaml: leer las claves `forma:` del texto
+        txt = open("data/lexico.yaml", encoding="utf-8").read()
+        formas = re.findall(r"^\s*-?\s*forma:\s*\"?([^\"\n]+)\"?\s*$", txt, re.M)
+        formas = [{"forma": f} for f in formas]
+    else:
+        formas = yaml.safe_load(open("data/lexico.yaml", encoding="utf-8"))["palabras"]
+    malas = [str(p["forma"]) for p in formas
              if any(c in str(p["forma"]).lower() for c in "cqxjz")]
     if malas:
         fallos.append(f"formas con c/q/x/j/z: {malas}")
-    # `jo` (dia) debe estar fuera
-    formas = {str(p["forma"]).lower() for p in lex["palabras"]}
-    if "jo" in formas:
+    fm = {str(p["forma"]).lower() for p in formas}
+    if "jo" in fm:
         fallos.append("'jo' sigue en el lexico")
-    if "ti" not in formas:
+    if "ti" not in fm:
         fallos.append("'ti' (dia) no esta en el lexico")
+    # sin formas duplicadas (misma forma + categoria)
+    if yaml is not None:
+        vistos, dup = set(), []
+        for p in formas:
+            k = (str(p["forma"]), str(p.get("categoria")))
+            if k in vistos:
+                dup.append(k)
+            vistos.add(k)
+        if dup:
+            fallos.append(f"duplicadas (forma+categoria): {dup}")
 
     # 2) 21 fonemas (16 C + 5 V) en korlin.json, coherentes con el spec
     d = json.load(open("korlin.json", encoding="utf-8"))

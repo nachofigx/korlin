@@ -3,7 +3,7 @@
   "exonimo": "Shortlang",
   "autonimo": "korlin",
   "significado": "ko (corto) + lin (lengua) = lengua corta",
-  "version": "0.3",
+  "version": "0.4",
   "licencia": "MIT",
   "sitio": "https://nachofigx.github.io/korlin/",
   "repo": "https://github.com/nachofigx/korlin",
@@ -98,7 +98,7 @@
     "sintaxis": {
       "negacion": {
         "oracion": "na suelto antes del verbo",
-        "derivacion": "prefijo na- = opuesto (nunca sobre verbo en '-'"
+        "derivacion": "prefijo na- = opuesto (nunca sobre un verbo: para negar la accion se usa na suelto)"
       },
       "pregunta_si_no": "mo al final (la pregunta exime el evidencial)",
       "interrogativo": "al inicio",
@@ -808,13 +808,6 @@
       "categoria": "nombre propio",
       "es": "Japón",
       "en": "Japan"
-    },
-    {
-      "forma": "u",
-      "afi": "/u/",
-      "categoria": "número",
-      "es": "1",
-      "en": "1"
     },
     {
       "forma": "du",

@@ -464,6 +464,9 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="-sa", tiempo=None, glosa=
     out = " ".join(salida)
     out = re.sub(r"\s+", " ", out).strip()
     out = re.sub(r"\s+([.,!?])", r"\1", out)
+    # PR-15b: conservar el signo de interrogacion al final
+    if pregunta and not out.endswith("?"):
+        out = out.rstrip(".!") + "?"
     if glosa:
         return out + "\nGlosa: " + "  ".join(glosas)
     return out

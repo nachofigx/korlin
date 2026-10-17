@@ -191,7 +191,6 @@
 
 | Korlin | AFI | Sens |
 |---|---|---|
-| **u** | /u/ | un, une |
 | **du** | /du/ | 2 |
 | **san** | /san/ | 3 |
 | **fu** | /fu/ | 4 |

@@ -49,7 +49,7 @@ including Asian and African ones.
 - No sound requires special training: nearly any speaker already has them.
 
 ## Syllabary (for practice)
-With 15 consonants + 5 vowels, 75 basic syllables (CV):
+With 16 consonants + 5 vowels, 80 basic syllables (CV):
 ```
 ka  ke  ki  ko  ku      pa  pe  pi  po  pu
 ba  be  bi  bo  bu      ta  te  ti  to  tu

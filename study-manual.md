@@ -29,7 +29,7 @@ This manual takes you from zero to speaking Korlin in 11 lessons.
 
 ## Lesson 1 — Pronunciation
 
-Korlin is pronounced **neutrally**, like Spanish or Latin. 20 sounds, 20 letters.
+Korlin is pronounced **neutrally**, like Spanish or Latin. 21 sounds, 21 letters.
 **One letter = one sound, always.** No exceptions.
 
 ### Vowels (5, pure)

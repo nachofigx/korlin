@@ -66,7 +66,7 @@ PRONUNCIACION = {
 **Reglas de oro**: vocales puras · p/t/k sin soplo · r suave · s siempre [s] · h siempre sonora.""",
     "en": """## Pronunciation
 
-20 sounds, 20 letters. **One letter = one sound, always.**
+21 sounds, 21 letters. **One letter = one sound, always.**
 
 | Letter | IPA | Like in English |
 |---|---|---|

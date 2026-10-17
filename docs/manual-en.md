@@ -4,7 +4,7 @@
 
 ## Pronunciation
 
-20 sounds, 20 letters. **One letter = one sound, always.**
+21 sounds, 21 letters. **One letter = one sound, always.**
 
 | Letter | IPA | Like in English |
 |---|---|---|
@@ -191,7 +191,6 @@
 
 | Korlin | AFI | Meaning |
 |---|---|---|
-| **u** | /u/ | 1 |
 | **du** | /du/ | 2 |
 | **san** | /san/ | 3 |
 | **fu** | /fu/ | 4 |

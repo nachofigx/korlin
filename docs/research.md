@@ -244,7 +244,7 @@ Rules:
 Valid syllables: `a`, `e`, `ka`, `te`, `mi`, `so`, `lu`, `kan`, `sen`, `los`, `nam`, `sis`, `tan`, `wan`.
 Invalid syllables: `stra` (cluster), `kri` (cluster), `ek` (coda /k/), `kast` (double coda).
 
-**Total possible syllables** = 16 onsets × 5 vowels × 4 codas = **320 syllables**. Of these, the **75 CV syllables** (15 consonants × 5 vowels) form the basis of the pronunciation guide for students.
+**Total possible syllables** = 17 onsets × 5 vowels × 4 codas = **340 syllables**. Of these, the **80 CV syllables** (16 consonants × 5 vowels) form the basis of the pronunciation guide for students.
 
 ### 4.3 Stress
 
@@ -255,7 +255,7 @@ Invalid syllables: `stra` (cluster), `kri` (cluster), `ek` (coda /k/), `kast` (d
 ### 4.4 Orthography (official romanization)
 
 - **1 letter = 1 phoneme, always.** No digraphs, no silent letters, no accents.
-- Alphabet (20 letters, in order): `a b d e f g h i k l m n o p r s t u w y`.
+- Alphabet (21 letters, in order): `a b d e f g h i k l m n o p r s t u w y`.
 - Unused Latin letters: `c, j, q, v, x, z` (redundant with other Korlin letters).
 
 ### 4.5 Typological justification
@@ -264,7 +264,7 @@ Invalid syllables: `stra` (cluster), `kri` (cluster), `ek` (coda /k/), `kast` (d
 - **No voicing contrast in fricatives** (only voiceless /f s h/): Spanish and Japanese also lack the /s/–/z/ pair, a simplification for maximal ease.
 - **Tap /ɾ/** instead of trill /r/: /ɾ/ is typologically far more frequent and easy.
 - All chosen consonants rank among the world's most frequent.
-- 15 consonants + 5 vowels compares to Spanish (~18 C + 5 V), Italian (~21 C + 7 V) and Japanese (~14 C + 5 V): **simpler than most**.
+- 16 consonants + 5 vowels compares to Spanish (~18 C + 5 V), Italian (~21 C + 7 V) and Japanese (~14 C + 5 V): **simpler than most**.
 
 The **neutral Spanish/Latin-style pronunciation** was deliberately chosen as the most accessible for the greatest number of speakers, avoiding difficult sounds (aspiration, tones, gutturals) that would hinder adoption by Asian and African speakers.
 
@@ -887,7 +887,7 @@ scripts/generar.py      ← generator
 
 Korlin's presentation text, with gloss and translation:
 
-**Korlin:** `Halo! Mi e-sa Korlin. Mi e-sa u ko lin. Mi e-sa ra ka gu. Na-toro na-kan-sa vi i mi. Mi pa-ve kon pe ka kon kin. Tu kan-ve sa mi. Ven kon mi yo!`
+**Korlin:** `Halo! Mi e-sa Korlin. Mi e-sa u ko lin. Mi e-sa ra ka gu. Na-toro na kan-sa vi i mi. Mi pa-ve kon pe ka kon kin. Tu kan-ve sa mi. Ven kon mi yo!`
 
 **Gloss (morpheme by morpheme):**
 
@@ -897,7 +897,7 @@ Korlin's presentation text, with gloss and translation:
 | Mi e-sa Korlin | I be-ASSUMED Korlin → "I am Korlin" |
 | Mi e-sa u ko lin | I be-ASSUMED a short language → "I am a short language" |
 | Mi e-sa ra ka gu | I be-ASSUMED fast and good → "I am fast and good" |
-| Na-toro na-kan-sa vi i mi | lie not-can-ASSUMED live in me → "the lie cannot live in me" |
+| Na-toro na kan-sa vi i mi | lie not-can-ASSUMED live in me → "the lie cannot live in me" |
 | Mi pa-ve kon pe ka kon kin | I speak-DIRECT with person and with machine → "I speak with people and with machines" |
 | Tu kan-ve sa mi | you can-DIRECT know me → "you can learn me" |
 | Ven kon mi yo | come with me JOY → "come with me! ❤️" |

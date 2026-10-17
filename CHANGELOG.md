@@ -64,14 +64,14 @@ pronunciation-guide, manual-es/en y app.js → **21 / 16**.
 ### Pendiente de decidir por Ignacio
 - **PR-07..PR-27** de `PROPUESTAS_v0.2.md` de Korlin: siguen abiertas (PR-09 y
   PR-11 parciales). Korlin se ofrece a pasarlas con casos de prueba.
-- **Publicación:** nada se sube a GitHub sin el OK de Ignacio. El commit local
+- **Publicación:** el commit v0.3 se publicó el 16-oct con el OK de Ignacio. El commit local
   de esta ronda queda pendiente de su aprobación.
 
 ---
 
 ## v0.2 — 2026-10-16
 
-Resolución de las **5 contradicciones** detectadas por el agente `korlin`
+Resolución de las **6 contradicciones** detectadas por el agente `korlin`
 (PR-01..PR-06). Todas eran reales; ninguna era un error de quien reportó.
 
 ### PR-01 — Alfabeto (crítico)

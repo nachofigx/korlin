@@ -81,7 +81,7 @@ REGLAS = {
         },
     },
     "sintaxis": {
-        "negacion": {"oracion": "na suelto antes del verbo", "derivacion": "prefijo na- = opuesto (nunca sobre verbo en '-'"},
+        "negacion": {"oracion": "na suelto antes del verbo", "derivacion": "prefijo na- = opuesto (nunca sobre un verbo: para negar la accion se usa na suelto)"},
         "pregunta_si_no": "mo al final (la pregunta exime el evidencial)",
         "interrogativo": "al inicio",
         "pro_drop": "el sujeto se omite si el contexto basta (tambien con na y mo)",
@@ -112,7 +112,7 @@ def genera_json(palabras, afijos):
         "exonimo": "Shortlang",
         "autonimo": "korlin",
         "significado": "ko (corto) + lin (lengua) = lengua corta",
-        "version": "0.3",
+        "version": "0.4",
         "licencia": "MIT",
         "sitio": "https://nachofigx.github.io/korlin/",
         "repo": "https://github.com/nachofigx/korlin",
@@ -164,14 +164,14 @@ EJEMPLOS = [
     ("man-lo.", "Comedor.", "Dining place."),
     ("sa-pe.", "Sabio (el que sabe).", "Wise one (the one who knows)."),
     ("Wi e-sa pes.", "Somos personas.", "We are people."),
-    ("Yo! Mi vo tu la.", "¡Qué alegría! Te quiero (cariño).", "Yay! I love you (affection)."),
+    ("Yo! Mi vo-ve tu la.", "¡Qué alegría! Te quiero (cariño).", "Yay! I love you (affection)."),
 ]
 
 
 def genera_spec(palabras, afijos):
     L = []
     A = L.append
-    A("# Korlin — Especificación para modelos de lenguaje (v0.3)")
+    A("# Korlin — Especificación para modelos de lenguaje (v0.4)")
     A("")
     A("> **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer")
     A("> mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para")
@@ -201,7 +201,8 @@ def genera_spec(palabras, afijos):
     A("   a) **`na` suelto**, inmediatamente antes del verbo → niega la oración.")
     A("      `mi na sa-ve.` = *No sé (lo veo).*")
     A("   b) **`na-` pegado**, como prefijo derivativo → crea la palabra opuesta.")
-    A("      `na-gu` = *malo*, `na-toro` = *mentira*. **Nunca** niega un verbo en `-`.")
+    A("      `na-gu` = *malo*, `na-toro` = *mentira*. **Nunca** niega un verbo: para")
+    A("      negar la acción se usa siempre `na` suelto.")
     A("8. **Pregunta sí/no:** `mo` al final. **Interrogativos** (`ki`, `lo`) al inicio.")
     A("   Toda pregunta va **sin evidencial** en su propia cláusula.")
     A("9. **No hay concordancia** de género, número ni persona. Nunca.")
@@ -211,14 +212,26 @@ def genera_spec(palabras, afijos):
     A("12. **La modalidad epistémica no marcada equivale a `to`** (certeza),")
     A("    pero la evidencialidad NUNCA se puede omitir en una declarativa.")
     A("13. **ÓRDENES: la raíz desnuda del verbo, sin evidencial y sin sujeto.**")
-    A("    `Go!` = *¡ve!*; `Kan-sa mi!` = *¡mírame!* No hay morfema nuevo: como el")
+    A("    `Go!` = *¡ve!*; `Ve mi!` = *¡mírame!* No hay morfema nuevo: como el")
     A("    evidencial es obligatorio en la declaración, la forma desnuda queda libre")
     A("    para el mandato (igual que el inglés `Go!`). Es la exención nº2.")
-    A("14. **La oración subordinada va exenta** si su núcleo la marca con `ki`.")
-    A("    `Mi sa-ve ki li go.` = *Sé que él va.* La principal `sa-ve` sí lleva evidencial.")
+    A("    Si el sujeto va explícito, la orden sigue sin evidencial: `Tu go!` = *¡tú, ve!*")
+    A("14. **NO hay exención por subordinación.** En una subordinada, **cada cláusula")
+    A("    lleva su propio evidencial** (cf. quechua, tariana; la fuente se marca donde")
+    A("    está el conocimiento, no donde está la oración).")
+    A("    `Mi sa-ve ki li an-go-di.` = *Sé (lo veo) que él fue (me lo contaron).*")
     A("15. **Condicional `si … so …`: la prótasis es exenta, la apódosis lleva evidencial.**")
     A("    `si tu go, so mi ne-go-pen.` = *Si vas, iré (lo deduzco).*")
     A("16. **Cópula `e`: el evidencial va en `e`.** `le ti e-ve gu.` = *El día está bueno (lo veo).*")
+    A("17. **DERIVACIÓN: una raíz + un afijo derivacional válido es palabra legítima**")
+    A("    si el sentido es composicional (el afijo aporta lo suyo sin sorpresa).")
+    A("    `do` (dormir) + `-lo` (lugar) = `do-lo` (*dormitorio*) es válido por regla.")
+    A("    Si el sentido se lexicaliza (deja de ser predecible), se LISTA en el léxico.")
+    A("    Regla de oro: **derivar antes que inventar**; inventar solo si ningún afijo sirve.")
+    A("18. **El guion marca frontera de morfema.** Los afijos derivacionales y flexivos")
+    A("    van con guion (`do-lo`, `mi man-ve`); el plural `-s` se escribe pegado")
+    A("    (`pes`, `lis`). Sin guion, dos raíces seguidas son dos palabras.")
+    A("    `vi-sa` (vivir+asumido) ≠ `vi sa` (vivir/saber).")
     A("")
     A("---")
     A("")

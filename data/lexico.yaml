@@ -1,6 +1,6 @@
 # Léxico de Korlin — Fuente de verdad única (bilingüe ES/EN)
 # Un cambio AQUÍ se refleja automáticamente en: manual ES, manual EN, manual IA, sitio web.
-version: "0.3"
+version: "0.4"
 
 palabras:
   # ===== Partículas y funcionales =====
@@ -508,11 +508,6 @@ palabras:
     en: Japan
 
   # ===== Números =====
-  - forma: u
-    afi: /u/
-    categoria: número
-    es: "1"
-    en: "1"
   - forma: du
     afi: /du/
     categoria: número

@@ -27,7 +27,7 @@ const I18N = {
     stat_letras: "letters, 1 letter = 1 sound", stat_palabras: "core words", stat_idiomas: "documentation languages", stat_corto: "shorter than Esperanto",
     card_corta_t: "✂️ Short", card_corta_d: "Words of 1–2 syllables condense concepts. ~40% shorter than Esperanto.",
     card_honesta_t: "🛡️ Honest", card_honesta_d: "Mandatory evidentiality: every statement declares its source. Lying is costly and detectable.",
-    card_moderna_t: "📱 Modern", card_moderna_d: "20 letters, no diacritics, emoji particles, and AI-ready.",
+    card_moderna_t: "📱 Modern", card_moderna_d: "21 letters, no diacritics, emoji particles, and AI-ready.",
     ejemplo_titulo: "Example",
     ejemplo_gloss: '"The lie cannot live in me." · <code>na-toro</code> = lie (<code>na-</code> not + <code>toro</code> truth)',
     why_titulo: "Why Korlin? 🚀", why_desc: "Built for a connected, digital, honest world.",

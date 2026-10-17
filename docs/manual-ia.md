@@ -113,7 +113,6 @@ sim      | verbo        | simular | to simulate
 ken      | verbo        | comprar | to buy
 pilan    | sustantivo   | plano, diseño | plan, design
 Yapan    | nombre propio | Japón | Japan
-u        | número       | 1 | 1
 du       | número       | 2 | 2
 san      | número       | 3 | 3
 fu       | número       | 4 | 4

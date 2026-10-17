@@ -956,16 +956,6 @@ window.KORLIN_LEXICO = [
     "ja": "日本"
   },
   {
-    "f": "u",
-    "a": "/u/",
-    "c": "número",
-    "es": "1",
-    "en": "1",
-    "fr": "un, une",
-    "zh": "一, 一个",
-    "ja": "一つの"
-  },
-  {
     "f": "du",
     "a": "/du/",
     "c": "número",

@@ -244,7 +244,7 @@ Reglas:
 Sílabas válidas: `a`, `e`, `ka`, `te`, `mi`, `so`, `lu`, `kan`, `sen`, `los`, `nam`, `sis`, `tan`, `wan`.
 Sílabas inválidas: `stra` (grupo), `kri` (grupo), `ek` (coda /k/), `kast` (doble coda).
 
-**Total de sílabas posibles** = 16 ataques × 5 vocales × 4 codas = **320 sílabas**. De ellas, las **75 sílabas CV** (15 consonantes × 5 vocales) forman la base de la guía de pronunciación para estudiantes.
+**Total de sílabas posibles** = 17 ataques × 5 vocales × 4 codas = **340 sílabas**. De ellas, las **80 sílabas CV** (16 consonantes × 5 vocales) forman la base de la guía de pronunciación para estudiantes.
 
 ### 4.3 Acento
 
@@ -255,7 +255,7 @@ Sílabas inválidas: `stra` (grupo), `kri` (grupo), `ek` (coda /k/), `kast` (dob
 ### 4.4 Ortografía (romanización oficial)
 
 - **1 letra = 1 fonema, siempre.** Sin dígrafos, sin letras mudas, sin tildes.
-- Alfabeto (20 letras, en orden): `a b d e f g h i k l m n o p r s t u w y`.
+- Alfabeto (21 letras, en orden): `a b d e f g h i k l m n o p r s t u w y`.
 - Letras latinas no utilizadas: `c, j, q, v, x, z` (redundantes con otras letras de Korlin).
 
 ### 4.5 Justificación tipológica
@@ -264,7 +264,7 @@ Sílabas inválidas: `stra` (grupo), `kri` (grupo), `ek` (coda /k/), `kast` (dob
 - **Sin contraste de sonoridad en las fricativas** (solo /f s h/ sordas): el español y el japonés también carecen del par /s/–/z/, simplificación que maximiza la facilidad.
 - **Vibrante simple /ɾ/** en lugar de vibrante múltiple /r/: la /ɾ/ es tipológicamente mucho más frecuente y fácil.
 - Todas las consonantes elegidas figuran entre las más frecuentes del mundo.
-- 15 consonantes + 5 vocales se compara con el español (~18 C + 5 V), el italiano (~21 C + 7 V) y el japonés (~14 C + 5 V): **más simple que la mayoría**.
+- 16 consonantes + 5 vocales se compara con el español (~18 C + 5 V), el italiano (~21 C + 7 V) y el japonés (~14 C + 5 V): **más simple que la mayoría**.
 
 La **pronunciación neutra tipo español/latín** se eligió deliberadamente por ser la más accesible para el mayor número de hablantes, evitando sonidos difíciles (aspiradas, tonos, guturales) que dificultarían la adopción por hablantes de Asia y África.
 
@@ -435,7 +435,7 @@ El slang de Korlin se construye mediante mecanismos productivos:
 
 ### 8.1 Romanización
 
-Korlin se escribe con el alfabeto latino de 20 letras, sin diacríticos ni dígrafos. La romanización es biunívoca: **cada letra corresponde a exactamente un sonido y viceversa**, lo que elimina toda ambigüedad de lectura.
+Korlin se escribe con el alfabeto latino de 21 letras, sin diacríticos ni dígrafos. La romanización es biunívoca: **cada letra corresponde a exactamente un sonido y viceversa**, lo que elimina toda ambigüedad de lectura.
 
 ### 8.2 Partículas de actitud → emojis
 
@@ -887,7 +887,7 @@ scripts/generar.py      ← generador
 
 Texto de presentación de Korlin, con glosado y traducción:
 
-**Korlin:** `Halo! Mi e-sa Korlin. Mi e-sa u ko lin. Mi e-sa ra ka gu. Na-toro na-kan-sa vi i mi. Mi pa-ve kon pe ka kon kin. Tu kan-ve sa mi. Ven kon mi yo!`
+**Korlin:** `Halo! Mi e-sa Korlin. Mi e-sa u ko lin. Mi e-sa ra ka gu. Na-toro na kan-sa vi i mi. Mi pa-ve kon pe ka kon kin. Tu kan-ve sa mi. Ven kon mi yo!`
 
 **Glosado (morfema por morfema):**
 
@@ -897,7 +897,7 @@ Texto de presentación de Korlin, con glosado y traducción:
 | Mi e-sa Korlin | yo ser-ASUMIDO Korlin → "yo soy Korlin" |
 | Mi e-sa u ko lin | yo ser-ASUMIDO una corta lengua → "soy una lengua corta" |
 | Mi e-sa ra ka gu | yo ser-ASUMIDO rápida y buena → "soy rápida y buena" |
-| Na-toro na-kan-sa vi i mi | mentira no-poder-ASUMIDO vivir en mí → "la mentira no puede vivir en mí" |
+| Na-toro na kan-sa vi i mi | mentira no-poder-ASUMIDO vivir en mí → "la mentira no puede vivir en mí" |
 | Mi pa-ve kon pe ka kon kin | yo hablar-DIRECTO con persona y con máquina → "hablo con personas y con máquinas" |
 | Tu kan-ve sa mi | tú poder-DIRECTO saber yo → "puedes aprenderme" |
 | Ven kon mi yo | ven con yo ALEGRÍA → "¡ven conmigo! ❤️" |
