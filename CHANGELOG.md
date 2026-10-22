@@ -7,6 +7,60 @@ la versión. **Documento que manda:** `korlin-spec.md` (generado desde
 
 ---
 
+## v0.5 — 2026-10-22
+
+**Bloque 2 de Korlin** (mensajes `aa22aaa1` y `643575ca`, PR-17..PR-27). Casi todo
+documentación y proceso: ninguno de diseño lingüístico salvo PR-17. Verificado: real.
+
+### PR-17 — Posesión y numerales
+Dos formas equivalentes (documentadas): pronombre antepuesto `mi ho` (*mi casa*) como
+normal, `le ho de mi` analítico/enfático. Numerales 1-10 raíces; 11+ compuestos
+(`des-u`); plural `-s` opcional tras numeral. Nueva regla 19.
+
+### PR-18 — Versiones sueltas en la documentación
+`02-morphology.md` llevaba "v0.1" en 5 encabezados; `glossary.md` decía "v0.2".
+Quitados; la versión vigente vive en el spec, `korlin.json` y `data/*.yaml`.
+
+### PR-22 — Los tests no verificaban la gramática
+`check()` solo miraba que aparecieran tokens, no el orden ni el evidencial; usaba
+`python` en vez de `sys.executable`. Añadidos: orden del modificador, evidencial por
+cláusula, pregunta sin evidencial, negación suelta. **El test nuevo encontró un fallo
+real (PR-13) el mismo día.**
+
+### PR-23 — Enlaces rotos en `llms.txt`
+Apuntaban a `blob/main/docs/01-phonology.md`, etc., pero esos archivos están en la
+**raíz**, no en `docs/`. Corregidos.
+
+### PR-24 — Cifras de la guía
+"19 casos" → **24**; "149 palabras" → **148** (tras quitar la `u` duplicada);
+"16 ejemplos" → **17**.
+
+### PR-25 — Licencia contradictoria
+El spec decía "licencia MIT" a secas, mientras el README distingue lengua y código.
+Corregido: **lengua CC BY-SA 4.0; código MIT**.
+
+### PR-26 — Mayúsculas, puntuación, nombres propios, acento
+Reglas nuevas en §2: mayúscula solo inicial y nombres propios; puntuación `. ! ?`;
+**nombres propios adaptados a la fonología** (`Mekiko`, `Faransa`, `Yapan`,
+`Barasila`); acento de compuestos con guion.
+
+### PR-27 — Fuente de verdad
+El spec ahora declara explícitamente **qué es generado** (léxico y afijos desde
+`data/*.yaml`) y **qué es manual** (las reglas en `generar_ia.py`; 01/02/03 como
+explicaciones que siguen al spec).
+
+### PR-13 (encontrado por el test nuevo)
+El traductor ponía el adjetivo **después** del sustantivo (`u ho me`) contra la regla 3.
+Corregido: invierte el par → **`u me ho`**.
+
+### Pendiente
+- **PR-08** (`me-ho` vs `me ho`), **PR-10** (evidencial por defecto), **PR-12**
+  (`él`→`li`), **PR-14** (no reconocidas), **P2-7** (órdenes y condicional en el
+  traductor): del bloque 1.
+- **PR-16** (71 raíces nuevas): encargo de diseño de léxico, va a Ignacio.
+
+---
+
 ## v0.4 — 2026-10-16
 
 **Segunda auditoría del agente `korlin`** (mensajes `2ddc672f` y `bd816c89`). Encontró
