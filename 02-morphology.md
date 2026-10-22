@@ -2,7 +2,7 @@
 
 *[Español disponible en docs/manual-es.md]*
 
-## 1. Attitude particles (attitudinals) — v0.1
+## 1. Attitude particles (attitudinals)
 
 **Optional** particles marking the speaker's emotion/attitude.
 Position: **at the end of the sentence** (like the question particle `mo`).
@@ -36,7 +36,7 @@ The particle `fi` (irony) explicitly marks the "playful lie" of sarcasm, separat
 it from factual assertion. Thus irony does **not contaminate** the evidentiality
 system: a joke is declared a joke.
 
-## 2. Evidentiality (mandatory) — v0.1
+## 2. Evidentiality (mandatory)
 
 Evidentiality forces marking the **source** of information of every statement.
 It is Korlin's "anti-lying" layer.
@@ -72,7 +72,7 @@ Asserting "li go" without evidential is **ungrammatical**. The speaker MUST choo
 a source; marking "I saw it" commits and exposes them. Lying requires an explicit,
 traceable, refutable commitment.
 
-## 3. Epistemic modality (degree of certainty) — v0.1
+## 3. Epistemic modality (degree of certainty)
 
 Epistemic modality marks **how certain** the speaker is of the statement.
 It complements evidentiality: evidentiality says *how* you know (source);
@@ -99,7 +99,7 @@ modality says *how sure* you are (certainty).
 - `li go-di ku.` — "He left (I was told), doubtful (I don't trust it)."
 - `li go-di ku bu.` — "He left (I was told, doubtful) 😤."
 
-## 4. Verb tense — v0.1
+## 4. Verb tense
 
 Tense is marked with **prefixes** on the verbal root.
 Present is unmarked.
@@ -129,7 +129,7 @@ Present is unmarked.
 In the future, the evidential marks the source of the *prediction*: `ne-go-ve` = "I'll
 go (by my plan/will)"; `ne-go-pen` = "I'll go (I infer)"; `ne-go-sa` = "I'll go (expected)".
 
-## 5. Derivation (affixes) — v0.1
+## 5. Derivation (affixes)
 
 Derivation multiplies vocabulary: few roots + regular affixes = thousands of words
 without extra memorization. This is Dutton's conciseness key, done cleanly.

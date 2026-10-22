@@ -14,7 +14,7 @@ La idea central:
 | Enfoque | ¿Sirve? | Motivo |
 |---|---|---|
 | Darle un PDF del manual | ⚠️ Poco | El modelo no lo lee si no lo pegas, y no lo retiene entre sesiones |
-| Fine-tuning | ❌ Todavía no | Requiere ~1.000+ pares glosados; con 149 palabras generaliza mal |
+| Fine-tuning | ❌ Todavía no | Requiere ~1.000+ pares glosados; con 148 palabras generaliza mal |
 | **Spec pack en el system prompt** | ✅ **Sí** | Es el estándar de facto: 7-8k tokens con fonología + gramática + léxico |
 | **Traductor por reglas como herramienta** | ✅ **Sí** | El Korlin lo produce el código, no el modelo → cero alucinación |
 | **Benchmark de frases** | ✅ Sí | Sin medir, no sabes si "aprendió" |
@@ -24,7 +24,7 @@ La idea central:
 ## 2. Los tres archivos
 
 ### `korlin-spec.md` — el paquete de contexto
-Autocontenido y denso: reglas irrompibles, fonología, morfología, evidencialidad, sintaxis, las 149 palabras en tabla, los 15 afijos, 16 ejemplos glosados e instrucciones de agente.
+Autocontenido y denso: reglas irrompibles, fonología, morfología, evidencialidad, sintaxis, las 149 palabras en tabla, los 15 afijos, 17 ejemplos glosados e instrucciones de agente.
 
 **Cómo usarlo:** pégalo completo en el *system prompt* (o en el primer mensaje) y pídele al modelo que hable Korlin. No requiere entrenamiento.
 
@@ -82,7 +82,7 @@ Pega solo §1 (reglas) + §4 (evidenciales) + §7 (léxico). Con eso ya produce 
 Usa el banco de pruebas como referencia y evalúa al modelo con frases nuevas:
 
 ```bash
-python scripts/test-traductor.py     # verifica el traductor (19 casos)
+python scripts/test-traductor.py     # verifica el traductor (24 casos)
 ```
 
 Para el modelo, pídele que traduzca 10 frases y comprueba tres cosas:

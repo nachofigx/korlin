@@ -1,4 +1,4 @@
-# Korlin — Especificación para modelos de lenguaje (v0.4)
+# Korlin — Especificación para modelos de lenguaje (v0.5)
 
 > **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer
 > mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para
@@ -8,8 +8,15 @@ Korlin (exónimo **Shortlang**) es una lengua construida, regular y sin ambigüe
 diseñada para hablar mucho en poco tiempo, con honestidad forzada por gramática
 (evidencialidad obligatoria) y pensada para uso humano y con agentes de IA.
 Autónimo: **korlin** = `ko` (corto) + `lin` (lengua) = *lengua corta*.
-**Versión de esta especificación: v0.2** (ver `CHANGELOG.md`). Este documento manda
+**Versión de esta especificación: v0.4** (ver `CHANGELOG.md`). Este documento manda
 sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
+
+**Fuente de verdad y qué es generado.** `data/lexico.yaml`, `data/afijos.yaml` y
+`data/traducciones.yaml` son la fuente única del **léxico y los afijos**; de ahí
+salen este spec, `korlin.json`, `llms.txt`, los manuales y `lexico.js`. Las
+**reglas gramaticales** (1-19) viven por ahora en `scripts/generar_ia.py` y en este
+spec; `01-phonology.md`, `02-morphology.md` y `03-syntax.md` son explicaciones
+manuales que deben seguir al spec, no al revés.
 
 ---
 
@@ -30,7 +37,8 @@ sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
    b) **`na-` pegado**, como prefijo derivativo → crea la palabra opuesta.
       `na-gu` = *malo*, `na-toro` = *mentira*. **Nunca** niega un verbo: para
       negar la acción se usa siempre `na` suelto.
-8. **Pregunta sí/no:** `mo` al final. **Interrogativos** (`ki`, `lo`) al inicio.
+8. **Pregunta sí/no:** `mo` al final. **Interrogativos** al inicio:
+    `ki` + sustantivo = qué/cuál (`ki lo` = *qué lugar, dónde*); se antepone.
    Toda pregunta va **sin evidencial** en su propia cláusula.
 9. **No hay concordancia** de género, número ni persona. Nunca.
 10. **No hay artículos obligatorios**; `le` existe y es opcional.
@@ -38,11 +46,12 @@ sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
     también con `na` y con `mo`: `na sa-ve.` = *no sé*; `go mo?` = *¿vas?*
 12. **La modalidad epistémica no marcada equivale a `to`** (certeza),
     pero la evidencialidad NUNCA se puede omitir en una declarativa.
-13. **ÓRDENES: la raíz desnuda del verbo, sin evidencial y sin sujeto.**
+13. **ÓRDENES: la raíz desnuda del verbo, sin evidencial.**
     `Go!` = *¡ve!*; `Ve mi!` = *¡mírame!* No hay morfema nuevo: como el
     evidencial es obligatorio en la declaración, la forma desnuda queda libre
     para el mandato (igual que el inglés `Go!`). Es la exención nº2.
-    Si el sujeto va explícito, la orden sigue sin evidencial: `Tu go!` = *¡tú, ve!*
+    El sujeto se omite por defecto; si va explícito, tampoco lleva evidencial:
+    `Tu go!` = *¡tú, ve!*
 14. **NO hay exención por subordinación.** En una subordinada, **cada cláusula
     lleva su propio evidencial** (cf. quechua, tariana; la fuente se marca donde
     está el conocimiento, no donde está la oración).
@@ -59,6 +68,10 @@ sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
     van con guion (`do-lo`, `mi man-ve`); el plural `-s` se escribe pegado
     (`pes`, `lis`). Sin guion, dos raíces seguidas son dos palabras.
     `vi-sa` (vivir+asumido) ≠ `vi sa` (vivir/saber).
+19. **Posesión: dos formas equivalentes.** El pronombre antepuesto es la normal
+    (`mi ho` = *mi casa*); `de` da la forma analítica o enfática (`le ho de mi`).
+    **Numerales:** del 1 al 10 son raíces; 11+ se componen (`des-u` = *once*).
+    El plural `-s` es opcional tras un numeral (`du ho` = *dos casas*).
 
 ---
 
@@ -91,6 +104,15 @@ sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
 - **Letras prohibidas:** `c j q x z`. La `j` no existe: /j/ se escribe `y`.
 - **Aproximación para hispanohablantes:** se pronuncia como español, con `v`
   labiodental suave y `h` aspirada (como en inglés `house`).
+- **Mayúscula:** solo en la primera letra de la oración y en los nombres
+  propios. Nunca en medio de una palabra ni para marcar énfasis.
+- **Puntuación:** `.` `!` `?` como en español; `?` cierra toda pregunta.
+- **Nombres propios:** se adaptan a la fonología, no se dejan en su grafía
+  original: `Mekiko` (México), `Faransa` (Francia), `Yapan` (Japón),
+  `Barasila` (Brasil), `Alemania` (Alemania). Si violan `(C)V(C)`, se adaptan
+  (`Frans` → `Faransa`, `Brasil` → `Barasila`).
+- **Acento en compuestos con guion:** cada segmento conserva el suyo; se cuenta
+  la penúltima **dentro de la palabra principal** (`do-lo` → /do.lo/).
 
 ---
 
@@ -193,7 +215,7 @@ Van al **final** de la oración, después del verbo.
 | Palabra opuesta | `na-` + raíz | `na-gu` = *malo* |
 | Pregunta sí/no | `mo` final | `Tu go mo?` = *¿Vas?* |
 | Interrogativo | al inicio | `Ki tu man?` = *¿Qué comes?* |
-| Posesión | `de` | `le ho de mi` = *mi casa* |
+| Posesión | `de` (o pronombre antepuesto) | `le ho de mi` = *mi casa* · `mi ho` |
 | Subordinación | `ki` | `Mi sa-ve ki li an-go-di` = *Sé que él fue (me lo dijeron)* |
 | Condicional | `si … so …` | `si tu go, so mi ne-go-pen` = *si vas, iré (lo deduzco)* |
 | Orden | raíz desnuda | `Go!` = *¡ve!* · `Ve mi!` = *¡mírame!* |

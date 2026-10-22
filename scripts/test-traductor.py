@@ -133,9 +133,10 @@ def test_coherencia_v02():
             fallos.append(f"spec aun usa '{frag}' (na- sobre verbo)")
 
     # 5) el traductor respeta v0.2
+    import sys as _s
     from subprocess import run
     def tr(t):
-        r = run(["python", "scripts/traductor-korlin.py", "es", t],
+        r = run([_s.executable, "scripts/traductor-korlin.py", "es", t],
                 capture_output=True, text=True)
         return r.stdout.strip().splitlines()[0]
     casos = [("¿Tú comes comida?", "mo"), ("El día es bueno.", "e-sa"),
@@ -144,6 +145,26 @@ def test_coherencia_v02():
         got = tr(txt)
         if esp not in got:
             fallos.append(f"traductor '{txt}' -> '{got}' (esperaba {esp})")
+
+    # PR-22: orden del modificador (adjetivo antes del nucleo) y evidencial
+    # en declarativa.  [PR-13/PR-17]
+    casos_orden = [
+        ("Nosotros construimos una casa grande.", "me ho"),   # no 'ho me'
+        ("El agua es buena.", "e-sa"),                        # copula con evidencial
+        ("Yo como comida.", "man-sa"),                        # verbo con evidencial
+    ]
+    for txt, esp in casos_orden:
+        got = tr(txt)
+        if esp not in got:
+            fallos.append(f"orden/evidencial '{txt}' -> '{got}' (esperaba {esp})")
+    # pregunta: no debe llevar evidencial
+    _p = tr("¿Tú comes comida?")
+    if any(e in _p for e in ("-ve", "-pen", "-di", "-sa")):
+        fallos.append(f"la pregunta lleva evidencial: '{_p}'")
+    # negacion suelta
+    _n = tr("Yo no como comida.")
+    if "na " not in _n:
+        fallos.append(f"negacion sin 'na' suelto: '{_n}'")
 
     return fallos
 

@@ -112,7 +112,7 @@ def genera_json(palabras, afijos):
         "exonimo": "Shortlang",
         "autonimo": "korlin",
         "significado": "ko (corto) + lin (lengua) = lengua corta",
-        "version": "0.4",
+        "version": "0.5",
         "licencia": "MIT",
         "sitio": "https://nachofigx.github.io/korlin/",
         "repo": "https://github.com/nachofigx/korlin",
@@ -171,7 +171,7 @@ EJEMPLOS = [
 def genera_spec(palabras, afijos):
     L = []
     A = L.append
-    A("# Korlin — Especificación para modelos de lenguaje (v0.4)")
+    A("# Korlin — Especificación para modelos de lenguaje (v0.5)")
     A("")
     A("> **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer")
     A("> mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para")
@@ -181,8 +181,15 @@ def genera_spec(palabras, afijos):
     A("diseñada para hablar mucho en poco tiempo, con honestidad forzada por gramática")
     A("(evidencialidad obligatoria) y pensada para uso humano y con agentes de IA.")
     A("Autónimo: **korlin** = `ko` (corto) + `lin` (lengua) = *lengua corta*.")
-    A("**Versión de esta especificación: v0.2** (ver `CHANGELOG.md`). Este documento manda")
+    A("**Versión de esta especificación: v0.4** (ver `CHANGELOG.md`). Este documento manda")
     A("sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.")
+    A("")
+    A("**Fuente de verdad y qué es generado.** `data/lexico.yaml`, `data/afijos.yaml` y")
+    A("`data/traducciones.yaml` son la fuente única del **léxico y los afijos**; de ahí")
+    A("salen este spec, `korlin.json`, `llms.txt`, los manuales y `lexico.js`. Las")
+    A("**reglas gramaticales** (1-19) viven por ahora en `scripts/generar_ia.py` y en este")
+    A("spec; `01-phonology.md`, `02-morphology.md` y `03-syntax.md` son explicaciones")
+    A("manuales que deben seguir al spec, no al revés.")
     A("")
     A("---")
     A("")
@@ -203,7 +210,8 @@ def genera_spec(palabras, afijos):
     A("   b) **`na-` pegado**, como prefijo derivativo → crea la palabra opuesta.")
     A("      `na-gu` = *malo*, `na-toro` = *mentira*. **Nunca** niega un verbo: para")
     A("      negar la acción se usa siempre `na` suelto.")
-    A("8. **Pregunta sí/no:** `mo` al final. **Interrogativos** (`ki`, `lo`) al inicio.")
+    A("8. **Pregunta sí/no:** `mo` al final. **Interrogativos** al inicio:")
+    A("    `ki` + sustantivo = qué/cuál (`ki lo` = *qué lugar, dónde*); se antepone.")
     A("   Toda pregunta va **sin evidencial** en su propia cláusula.")
     A("9. **No hay concordancia** de género, número ni persona. Nunca.")
     A("10. **No hay artículos obligatorios**; `le` existe y es opcional.")
@@ -211,11 +219,12 @@ def genera_spec(palabras, afijos):
     A("    también con `na` y con `mo`: `na sa-ve.` = *no sé*; `go mo?` = *¿vas?*")
     A("12. **La modalidad epistémica no marcada equivale a `to`** (certeza),")
     A("    pero la evidencialidad NUNCA se puede omitir en una declarativa.")
-    A("13. **ÓRDENES: la raíz desnuda del verbo, sin evidencial y sin sujeto.**")
+    A("13. **ÓRDENES: la raíz desnuda del verbo, sin evidencial.**")
     A("    `Go!` = *¡ve!*; `Ve mi!` = *¡mírame!* No hay morfema nuevo: como el")
     A("    evidencial es obligatorio en la declaración, la forma desnuda queda libre")
     A("    para el mandato (igual que el inglés `Go!`). Es la exención nº2.")
-    A("    Si el sujeto va explícito, la orden sigue sin evidencial: `Tu go!` = *¡tú, ve!*")
+    A("    El sujeto se omite por defecto; si va explícito, tampoco lleva evidencial:")
+    A("    `Tu go!` = *¡tú, ve!*")
     A("14. **NO hay exención por subordinación.** En una subordinada, **cada cláusula")
     A("    lleva su propio evidencial** (cf. quechua, tariana; la fuente se marca donde")
     A("    está el conocimiento, no donde está la oración).")
@@ -232,6 +241,10 @@ def genera_spec(palabras, afijos):
     A("    van con guion (`do-lo`, `mi man-ve`); el plural `-s` se escribe pegado")
     A("    (`pes`, `lis`). Sin guion, dos raíces seguidas son dos palabras.")
     A("    `vi-sa` (vivir+asumido) ≠ `vi sa` (vivir/saber).")
+    A("19. **Posesión: dos formas equivalentes.** El pronombre antepuesto es la normal")
+    A("    (`mi ho` = *mi casa*); `de` da la forma analítica o enfática (`le ho de mi`).")
+    A("    **Numerales:** del 1 al 10 son raíces; 11+ se componen (`des-u` = *once*).")
+    A("    El plural `-s` es opcional tras un numeral (`du ho` = *dos casas*).")
     A("")
     A("---")
     A("")
@@ -264,6 +277,15 @@ def genera_spec(palabras, afijos):
     A("- **Letras prohibidas:** `c j q x z`. La `j` no existe: /j/ se escribe `y`.")
     A("- **Aproximación para hispanohablantes:** se pronuncia como español, con `v`")
     A("  labiodental suave y `h` aspirada (como en inglés `house`).")
+    A("- **Mayúscula:** solo en la primera letra de la oración y en los nombres")
+    A("  propios. Nunca en medio de una palabra ni para marcar énfasis.")
+    A("- **Puntuación:** `.` `!` `?` como en español; `?` cierra toda pregunta.")
+    A("- **Nombres propios:** se adaptan a la fonología, no se dejan en su grafía")
+    A("  original: `Mekiko` (México), `Faransa` (Francia), `Yapan` (Japón),")
+    A("  `Barasila` (Brasil), `Alemania` (Alemania). Si violan `(C)V(C)`, se adaptan")
+    A("  (`Frans` → `Faransa`, `Brasil` → `Barasila`).")
+    A("- **Acento en compuestos con guion:** cada segmento conserva el suyo; se cuenta")
+    A("  la penúltima **dentro de la palabra principal** (`do-lo` → /do.lo/).")
     A("")
     A("---")
     A("")
@@ -366,7 +388,7 @@ def genera_spec(palabras, afijos):
     A("| Palabra opuesta | `na-` + raíz | `na-gu` = *malo* |")
     A("| Pregunta sí/no | `mo` final | `Tu go mo?` = *¿Vas?* |")
     A("| Interrogativo | al inicio | `Ki tu man?` = *¿Qué comes?* |")
-    A("| Posesión | `de` | `le ho de mi` = *mi casa* |")
+    A("| Posesión | `de` (o pronombre antepuesto) | `le ho de mi` = *mi casa* · `mi ho` |")
     A("| Subordinación | `ki` | `Mi sa-ve ki li an-go-di` = *Sé que él fue (me lo dijeron)* |")
     A("| Condicional | `si … so …` | `si tu go, so mi ne-go-pen` = *si vas, iré (lo deduzco)* |")
     A("| Orden | raíz desnuda | `Go!` = *¡ve!* · `Ve mi!` = *¡mírame!* |")
@@ -444,10 +466,10 @@ def genera_llms():
 - [korlin.json](https://raw.githubusercontent.com/nachofigx/korlin/main/korlin.json): léxico + afijos + reglas en JSON.
 
 ## Gramática
-- [01-phonology.md](https://github.com/nachofigx/korlin/blob/main/docs/01-phonology.md): fonología
-- [02-morphology.md](https://github.com/nachofigx/korlin/blob/main/docs/02-morphology.md): morfología
-- [03-syntax.md](https://github.com/nachofigx/korlin/blob/main/docs/03-syntax.md): sintaxis
-- [glossary.md](https://github.com/nachofigx/korlin/blob/main/docs/glossary.md): glosario
+- [01-phonology.md](https://github.com/nachofigx/korlin/blob/main/01-phonology.md): fonología
+- [02-morphology.md](https://github.com/nachofigx/korlin/blob/main/02-morphology.md): morfología
+- [03-syntax.md](https://github.com/nachofigx/korlin/blob/main/03-syntax.md): sintaxis
+- [glossary.md](https://github.com/nachofigx/korlin/blob/main/glossary.md): glosario
 
 ## Herramientas
 - [traductor-korlin.py](https://github.com/nachofigx/korlin/blob/main/scripts/traductor-korlin.py): traductor por reglas ES/EN <-> Korlin

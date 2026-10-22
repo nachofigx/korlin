@@ -53,7 +53,7 @@ Format: **word** /IPA/ · category · meaning.
 ## Epistemic modality (certainty)
 - **to** certain ✅ · **be** probable 👍 · **os** possible 🤔 · **ku** doubtful ⚠️
 
-## Grammar notes (v0.2)
+## Grammar notes (v0.4)
 - **Plural** = suffix `-s`. E.g. `li` → `lis`.
 - **Yes/no question** = particle `mo` at the end.
 - **Mandatory evidentiality**: every statement carries a verb suffix: `-ve` (direct), `-pen` (inferred), `-di` (reported), `-sa` (assumed).

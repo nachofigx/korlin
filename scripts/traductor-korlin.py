@@ -461,6 +461,21 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="-sa", tiempo=None, glosa=
     if pregunta:
         salida.append("mo")
 
+    # PR-13 / regla 3: el modificador (adjetivo) va ANTES del sustantivo.
+    # En ES/EN el adjetivo suele ir despues ("casa grande") -> invertir el par.
+    def _cat(f):
+        f = f.lstrip("-").split("-")[0]
+        e = lex.por_forma.get(f)
+        return e.get("categoria") if e else None
+    i = 0
+    while i < len(salida) - 1:
+        a, b = salida[i], salida[i + 1]
+        if _cat(a) == "sustantivo" and _cat(b) == "adjetivo":
+            salida[i], salida[i + 1] = b, a
+            i += 2
+        else:
+            i += 1
+
     out = " ".join(salida)
     out = re.sub(r"\s+", " ", out).strip()
     out = re.sub(r"\s+([.,!?])", r"\1", out)

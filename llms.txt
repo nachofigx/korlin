@@ -8,10 +8,10 @@
 - [korlin.json](https://raw.githubusercontent.com/nachofigx/korlin/main/korlin.json): léxico + afijos + reglas en JSON.
 
 ## Gramática
-- [01-phonology.md](https://github.com/nachofigx/korlin/blob/main/docs/01-phonology.md): fonología
-- [02-morphology.md](https://github.com/nachofigx/korlin/blob/main/docs/02-morphology.md): morfología
-- [03-syntax.md](https://github.com/nachofigx/korlin/blob/main/docs/03-syntax.md): sintaxis
-- [glossary.md](https://github.com/nachofigx/korlin/blob/main/docs/glossary.md): glosario
+- [01-phonology.md](https://github.com/nachofigx/korlin/blob/main/01-phonology.md): fonología
+- [02-morphology.md](https://github.com/nachofigx/korlin/blob/main/02-morphology.md): morfología
+- [03-syntax.md](https://github.com/nachofigx/korlin/blob/main/03-syntax.md): sintaxis
+- [glossary.md](https://github.com/nachofigx/korlin/blob/main/glossary.md): glosario
 
 ## Herramientas
 - [traductor-korlin.py](https://github.com/nachofigx/korlin/blob/main/scripts/traductor-korlin.py): traductor por reglas ES/EN <-> Korlin
