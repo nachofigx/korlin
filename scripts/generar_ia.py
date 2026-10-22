@@ -446,7 +446,8 @@ def genera_spec(palabras, afijos):
     A("")
     A("---")
     A("")
-    A(f"*Korlin se distribuye bajo licencia MIT. Repo: {REGLAS and 'https://github.com/nachofigx/korlin'}.*")
+    A("*Korlin: la **lengua** se distribuye bajo CC BY-SA 4.0; el **código** bajo MIT. "
+      "Repo: https://github.com/nachofigx/korlin.*")
     A("")
 
     (RAIZ / "korlin-spec.md").write_text("\n".join(L), encoding="utf-8")

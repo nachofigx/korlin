@@ -24,7 +24,7 @@ La idea central:
 ## 2. Los tres archivos
 
 ### `korlin-spec.md` — el paquete de contexto
-Autocontenido y denso: reglas irrompibles, fonología, morfología, evidencialidad, sintaxis, las 149 palabras en tabla, los 15 afijos, 17 ejemplos glosados e instrucciones de agente.
+Autocontenido y denso: reglas irrompibles, fonología, morfología, evidencialidad, sintaxis, las 148 palabras en tabla, los 15 afijos, 17 ejemplos glosados e instrucciones de agente.
 
 **Cómo usarlo:** pégalo completo en el *system prompt* (o en el primer mensaje) y pídele al modelo que hable Korlin. No requiere entrenamiento.
 

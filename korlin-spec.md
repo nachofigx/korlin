@@ -479,4 +479,4 @@ ES:     <traducción>
 
 ---
 
-*Korlin se distribuye bajo licencia MIT. Repo: https://github.com/nachofigx/korlin.*
+*Korlin: la **lengua** se distribuye bajo CC BY-SA 4.0; el **código** bajo MIT. Repo: https://github.com/nachofigx/korlin.*
