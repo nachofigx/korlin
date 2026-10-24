@@ -1,6 +1,6 @@
 # Léxico de Korlin — Fuente de verdad única (bilingüe ES/EN)
 # Un cambio AQUÍ se refleja automáticamente en: manual ES, manual EN, manual IA, sitio web.
-version: "0.5"
+version: "0.6"
 
 palabras:
   # ===== Partículas y funcionales =====
@@ -24,6 +24,16 @@ palabras:
     categoria: conjunción
     es: o
     en: or
+  - forma: wu
+    afi: /wu/
+    categoria: número
+    es: "0"
+    en: "0"
+  - forma: u
+    afi: /u/
+    categoria: número
+    es: "1"
+    en: "1"
   - forma: u
     afi: /u/
     categoria: determinante

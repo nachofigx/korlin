@@ -149,10 +149,10 @@ without extra memorization. This is Dutton's conciseness key, done cleanly.
 ### Rules
 1. Suffixes attach to the root; prefixes precede it.
 2. One affix = one fixed meaning (no exceptions).
-3. Combinable: `na-sa-pe` = "ignorant" (person who doesn't know).
+3. Combinable: `na-sa-pe` → INCORRECTO: `na-` no va sobre verbos (regla 7b); "ignorante" = `na-sa-pe` no se usa, se dice `pe ki na sa-ve`.
 
 ### Examples (the power of derivation)
-- `sa` (know) → `sa-pe` sage · `sa-re` knowledge · `na-sa` ignore
+- `sa` (know) → `sa-pe` sage · `sa-re` knowledge (na- NO va sobre verbos: regla 7b)
 - `man` (eat) → `man-pe` diner · `man-re` food · `man-lo` dining room
 - `do` (sleep) → `do-pe` sleeper · `do-lo` bedroom · `do-re` dream
 - `gu` (good) → `gu-ro` goodness · `na-gu` bad · `me-gu` excellent

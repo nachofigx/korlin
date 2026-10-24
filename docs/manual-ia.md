@@ -19,6 +19,8 @@ e        | partícula    | ser, estar | to be
 a        | preposición  | a, hacia | to, toward
 i        | preposición  | en, dentro | in, inside
 o        | conjunción   | o | or
+wu       | número       | 0 | 0
+u        | número       | 1 | 1
 u        | determinante | un, una, uno | a, an, one
 ka       | conjunción   | y | and
 ba       | conjunción   | pero | but

@@ -14,7 +14,7 @@ Uso:
     echo "Yo quiero comer" | python scripts/traductor-korlin.py es --stdin
 
 Opciones:
-    --ev=ve|pen|di|sa   evidencial a usar (default: sa = asumido/se sabe)
+    --ev=ve|pen|di|sa   evidencial a usar; SIN --ev se marca [?fuente] (nunca -sa)
     --time=an|ne        fuerza pasado/futuro
     --gloss             muestra la glosa morfema a morfema
 """
@@ -317,7 +317,16 @@ IRREGULARES = {
            "veo": ("ve", None), "ves": ("ve", None), "vio": ("ve", "an-"), "vi": ("ve", "an-"),
            "soy": ("e", None), "eres": ("e", None), "somos": ("e", None), "era": ("e", "an-"),
            "doy": ("da", None), "da": ("da", None), "di": ("da", "an-"),
-           "estoy": ("e", None), "está": ("e", None), "están": ("e", None)},
+           "estoy": ("e", None), "está": ("e", None), "están": ("e", None),
+           "duermo": ("do", None), "duermes": ("do", None), "duerme": ("do", None), "duermen": ("do", None),
+           "pienso": ("pen", None), "piensas": ("pen", None), "piensa": ("pen", None), "piensan": ("pen", None),
+           "sé": ("sa", None), "sabes": ("sa", None), "sabe": ("sa", None), "saben": ("sa", None),
+           "veo": ("ve", None), "ves": ("ve", None), "ve": ("ve", None), "ven": ("ve", None),
+           "como": ("man", None), "comes": ("man", None), "come": ("man", None), "comen": ("man", None),
+           "bebo": ("bi", None), "bebes": ("bi", None), "bebe": ("bi", None), "beben": ("bi", None),
+           "voy": ("go", None), "vas": ("go", None), "va": ("go", None), "vamos": ("go", None), "van": ("go", None),
+           "quiero": ("vo", None), "quieres": ("vo", None), "quiere": ("vo", None), "quieren": ("vo", None),
+           "tengo": ("ha", None), "tiene": ("ha", None), "tienen": ("ha", None), "tenemos": ("ha", None)},
     "en": {"went": ("go", "an-"), "gone": ("go", "an-"), "ate": ("man", "an-"), "eaten": ("man", "an-"),
            "saw": ("ve", "an-"), "seen": ("ve", "an-"), "said": ("di", "an-"), "made": ("fa", "an-"),
            "did": ("fa", "an-"), "had": ("ha", "an-"), "was": ("e", "an-"), "were": ("e", "an-"),
@@ -361,6 +370,8 @@ def construye_indice(lengua):
     idx = dict(IRREGULARES[lengua])
     for inf, raiz in VERBOS.get(lengua, {}).items():
         idx.setdefault(inf, (raiz, None))
+        if inf in ("ser", "estar"):  # irregulares: no generar 'se', 'so', 'esta'...
+            continue
         if lengua == "es":
             stem, terminacion = inf, None
             for s in ("ar", "er", "ir"):
@@ -384,7 +395,7 @@ def construye_indice(lengua):
 INDICE_V = {lg: construye_indice(lg) for lg in ("es", "en")}
 
 
-def otro_a_korlin(texto, lex, idioma="es", evidencial="-sa", tiempo=None, glosa=False):
+def otro_a_korlin(texto, lex, idioma="es", evidencial="?", tiempo=None, glosa=False):
     lengua = idioma if idioma in ("es", "en") else "es"
     func, indice = FUNCIONALES[lengua], INDICE_V[lengua]
 
@@ -394,6 +405,7 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="-sa", tiempo=None, glosa=
     plural = any(n in [normaliza(x) for x in PLURALES[lengua]] for n in norm)
     negacion = any(n in ("no", "not") for n in norm)
     pregunta = "?" in texto or "¿" in texto
+    orden = "!" in texto and not re.match(r"^\s*(yo|tú|tu|él|ella|nosotros|ustedes|ellos)\b", texto, re.I)
     if tiempo is None:
         for n in norm:
             if n in indice and indice[n][1]:
@@ -403,7 +415,8 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="-sa", tiempo=None, glosa=
     salida, glosas = [], []
     verbo_puesto = False
     for tok, n in zip(tokens, norm):
-        if n in ("¿", "?"):
+        k = tok.lower()  # los indices de verbos/funcionales llevan tildes
+        if n in ("¿", "?", "¡"):
             continue
         if n == "!":
             salida.append("!")
@@ -415,11 +428,13 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="-sa", tiempo=None, glosa=
             continue  # se aplica junto al verbo
 
         # 1) verbo conjugado
-        if n in indice and not verbo_puesto:
-            raiz, tp = indice[n]
+        if k in indice and not verbo_puesto:
+            raiz, tp = indice[k]
             t = tiempo if tiempo is not None else tp
             # v0.2: la pregunta exime el evidencial en SU cláusula
-            ev_v = "" if (pregunta and "," not in salida) else evidencial
+            ev_v = "" if ((pregunta or orden) and "," not in salida) else evidencial
+            if ev_v == "?":
+                ev_v = "-?[fuente]"
             forma = (t or "") + raiz + ev_v
             if negacion:
                 forma = "na " + forma
@@ -429,11 +444,14 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="-sa", tiempo=None, glosa=
             continue
 
         # 2) palabra funcional
-        if n in func:
-            f = func[n]
+        if k in func:
+            f = func[k]
             # v0.2: la cópula `e` lleva evidencial en la declarativa
             if f == "e" and not pregunta:
-                f = "e" + evidencial
+                f = "e" + ("-?[fuente]" if evidencial == "?" else evidencial)
+            if f.split("-")[0] == "e" and negacion and not verbo_puesto:
+                f = "na " + f          # negar tambien la copula (regla 7a)
+                verbo_puesto = True
             salida.append(f)
             glosas.append(f"{tok}={f}")
             continue
@@ -466,6 +484,8 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="-sa", tiempo=None, glosa=
     def _cat(f):
         f = f.lstrip("-").split("-")[0]
         e = lex.por_forma.get(f)
+        if e is None and f.endswith("s"):   # plural pegado (regla 18)
+            e = lex.por_forma.get(f[:-1])
         return e.get("categoria") if e else None
     i = 0
     while i < len(salida) - 1:
@@ -496,7 +516,7 @@ def main():
         return
     modo = args[0]
     lex = Lexico()
-    evidencial, tiempo, glosa = "-sa", None, False
+    evidencial, tiempo, glosa = "?", None, False   # C-01: sin --ev no se asume -sa
     resto = []
     for a in args[1:]:
         if a.startswith("--ev="):

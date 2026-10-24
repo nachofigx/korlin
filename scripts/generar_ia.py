@@ -24,6 +24,8 @@ def carga():
     afi = yaml.safe_load((DATA / "afijos.yaml").read_text(encoding="utf-8"))
     palabras = lex["palabras"]
     afijos = afi["afijos"]
+    global VERSION
+    VERSION = str(lex.get("version", "0.0")).strip('"')
     # normaliza 'forma' booleana si alguien vuelve a escribir `no:` sin comillas
     for p in palabras:
         if not isinstance(p["forma"], str):
@@ -31,6 +33,9 @@ def carga():
         for campo in ("es", "en", "categoria", "afi"):
             if not isinstance(p.get(campo), str):
                 p[campo] = {True: "yes", False: "no"}.get(p.get(campo), str(p.get(campo, "")))
+    va = str(afi.get("version", "")).strip('"')
+    if va and va != VERSION:
+        print(f"  AVISO: afijos.yaml v{va} != lexico.yaml v{VERSION}")
     return palabras, afijos
 
 
@@ -91,7 +96,10 @@ REGLAS = {
         "condicional": "si ... so ...: protasis exenta, apodosis con evidencial",
         "copula": "e lleva el evidencial en la declarativa (le ti e-ve gu)",
         "subordinacion": "ki (la subordinada va exenta; cada clausula puede llevar el suyo)",
-        "posesion": "de (X de Y = Y posee X)",
+        "posesion": "pronombre antepuesto (mi ho) normal; de = analitica/enfatica",
+        "numerales": "wu=0, u=1; raices 2-10; suma con guion (des-u=11); multiplica con -des/-sento/-kilo",
+        "ortografia": "mayuscula solo inicial y nombres propios; . ! ? ; nombres propios adaptados (Mekiko, Faransa)",
+        "ki": "al inicio = interrogativo; en medio tras verbo de decir/saber = complementante",
         "derivacion": {
             "-pe": "agente (persona que X)",
             "-lo": "lugar (donde se X)",
@@ -112,7 +120,7 @@ def genera_json(palabras, afijos):
         "exonimo": "Shortlang",
         "autonimo": "korlin",
         "significado": "ko (corto) + lin (lengua) = lengua corta",
-        "version": "0.5",
+        "version": VERSION,
         "licencia": "MIT",
         "sitio": "https://nachofigx.github.io/korlin/",
         "repo": "https://github.com/nachofigx/korlin",
@@ -171,7 +179,7 @@ EJEMPLOS = [
 def genera_spec(palabras, afijos):
     L = []
     A = L.append
-    A("# Korlin — Especificación para modelos de lenguaje (v0.5)")
+    A(f"# Korlin — Especificación para modelos de lenguaje (v{VERSION})")
     A("")
     A("> **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer")
     A("> mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para")
@@ -181,7 +189,7 @@ def genera_spec(palabras, afijos):
     A("diseñada para hablar mucho en poco tiempo, con honestidad forzada por gramática")
     A("(evidencialidad obligatoria) y pensada para uso humano y con agentes de IA.")
     A("Autónimo: **korlin** = `ko` (corto) + `lin` (lengua) = *lengua corta*.")
-    A("**Versión de esta especificación: v0.4** (ver `CHANGELOG.md`). Este documento manda")
+    A(f"**Versión de esta especificación: v{VERSION}** (ver `CHANGELOG.md`). Este documento manda")
     A("sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.")
     A("")
     A("**Fuente de verdad y qué es generado.** `data/lexico.yaml`, `data/afijos.yaml` y")
@@ -198,18 +206,26 @@ def genera_spec(palabras, afijos):
     A("1. **Una letra = un sonido.** Nunca hay excepciones. No existen `c`, `j`, `q`, `x`, `z`.")
     A("2. **Orden SVO.** Sujeto, Verbo, Objeto.")
     A("3. **El modificador va ANTES del núcleo:** `me ho` = *casa grande*; `gu pe` = *persona buena*.")
-    A("4. **La evidencialidad es OBLIGATORIA en todo verbo con contenido factual.**")
-    A("   Sin ella, la oración está mal formada. (Ver §4.)")
-    A("   **Exenta** en: preguntas (`mo`), órdenes e ironía marcada con `fi`.")
-    A("   En **subordinadas**, cada cláusula lleva la suya.")
+    A("4. **La evidencialidad es OBLIGATORIA en el verbo finito de toda oración factual.**")
+    A("   (Declarativa = afirmar un hecho. Las preguntas son declarativas: *pregunto si P*.)")
+    A("   **Exenciones — lista CERRADA, solo estas cinco:**")
+    A("   (a) **preguntas** (`mo`, o interrogativo al inicio);")
+    A("   (b) **órdenes** (raíz desnuda); (c) **ironía marcada con `fi`**;")
+    A("   (d) la **prótasis** del condicional (`si …`);")
+    A("   (e) los **verbos no finitos de una cadena** (el auxiliar o modal lleva el")
+    A("   evidencial; el verbo de apoyo va desnudo: `tu kan-ve ve mi` = *puedes verme*).")
+    A("   **No hay ninguna otra exención.**")
     A("5. **La modalidad epistémica va al final**, opcional: `to be os ku`.")
     A("6. **La actitud va al final**, opcional: `yo hu we fi bu ri pu ni la`.")
     A("7. **Negación:** hay DOS mecanismos, y no se mezclan.")
     A("   a) **`na` suelto**, inmediatamente antes del verbo → niega la oración.")
     A("      `mi na sa-ve.` = *No sé (lo veo).*")
     A("   b) **`na-` pegado**, como prefijo derivativo → crea la palabra opuesta.")
-    A("      `na-gu` = *malo*, `na-toro` = *mentira*. **Nunca** niega un verbo: para")
-    A("      negar la acción se usa siempre `na` suelto.")
+    A("      `na-gu` = *malo*, `na-toro` = *mentira* (**derivado enfático**; `fe` = *malo*")
+    A("      simple). **`na-` NUNCA va sobre un verbo**, ni flexionado ni en su forma de")
+    A("      diccionario: `na-sa-ve` y `na-sa` son incorrectos. Para negar una acción se")
+    A("      usa siempre `na` suelto (`mi na sa-ve`), y `na sa` ≠ `na-sa-ve` porque en la")
+    A("      segunda hay una palabra fonológica y el acento cae distinto.")
     A("8. **Pregunta sí/no:** `mo` al final. **Interrogativos** al inicio:")
     A("    `ki` + sustantivo = qué/cuál (`ki lo` = *qué lugar, dónde*); se antepone.")
     A("   Toda pregunta va **sin evidencial** en su propia cláusula.")
@@ -238,13 +254,21 @@ def genera_spec(palabras, afijos):
     A("    Si el sentido se lexicaliza (deja de ser predecible), se LISTA en el léxico.")
     A("    Regla de oro: **derivar antes que inventar**; inventar solo si ningún afijo sirve.")
     A("18. **El guion marca frontera de morfema.** Los afijos derivacionales y flexivos")
-    A("    van con guion (`do-lo`, `mi man-ve`); el plural `-s` se escribe pegado")
-    A("    (`pes`, `lis`). Sin guion, dos raíces seguidas son dos palabras.")
-    A("    `vi-sa` (vivir+asumido) ≠ `vi sa` (vivir/saber).")
-    A("19. **Posesión: dos formas equivalentes.** El pronombre antepuesto es la normal")
-    A("    (`mi ho` = *mi casa*); `de` da la forma analítica o enfática (`le ho de mi`).")
-    A("    **Numerales:** del 1 al 10 son raíces; 11+ se componen (`des-u` = *once*).")
+    A("    van con guion (`do-lo`, `mi man-ve`). El plural va **pegado**: `-s` tras")
+    A("    vocal (`pes`, `lis`) y **`-es` tras coda** (`nom` → `nomes`, `kin` → `kines`,")
+    A("    `tem` → `temes`). Nunca dos codas seguidas. Sin guion, dos raíces seguidas")
+    A("    son dos palabras: `vi-sa` (vivir+asumido) ≠ `vi sa` (vivir/saber).")
+    A("19. **Posesión y numerales.** El pronombre antepuesto es la forma normal")
+    A("    (`mi ho` = *mi casa*); `de` da la analítica o enfática (`le ho de mi`).")
+    A("    **Numerales:** `wu` = 0, `u` = 1; 2-10 son raíces (`du san fu sin sis sem om nu des`).")
+    A("    Después de 10 se **compone**: suma con guion (`des-u` = 11, `du-des-u` = 21),")
+    A("    multiplica con `-des`/`-sento`/`-kilo` (`du-des` = 20, `sento` = 100, `kilo` = 1.000).")
     A("    El plural `-s` es opcional tras un numeral (`du ho` = *dos casas*).")
+    A("20. **`ki` tiene dos funciones y se distinguen por la posición.**")
+    A("    Al **inicio** de la oración raíz es interrogativo (`Ki pe go?` = *¿quién va?*);")
+    A("    en **medio**, tras un verbo de decir/saber, es complementante (`mi sa-ve ki li go`).")
+    A("    **Interrogativo con pro-drop:** el sujeto se omite solo si el interrogativo es")
+    A("    el sujeto; si es el objeto, va **in situ**: `Tu ve ki pe?` = *¿a quién ves?*")
     A("")
     A("---")
     A("")
@@ -273,7 +297,14 @@ def genera_spec(palabras, afijos):
     A("")
     A("- **Sílaba:** `(C)V(C)`. La coda solo admite `m`, `n`, `s`.")
     A("- **Sílabas posibles:** 17 onsets (16 consonantes + vacío) × 5 vocales × 4 codas = **340**.")
-    A("- **Acento:** siempre en la **penúltima** sílaba. Nunca se escribe tilde.")
+    A("- **Acento:** la **penúltima sílaba de la palabra fonológica** (raíz + afijos).")
+    A("  Coincide con el AFI del léxico (`na-gu` /ˈna.gu/, `ru-sui` /ruˈsu.i/).")
+    A("  Nunca se escribe tilde.")
+    A("- **Prosodia afijo/raíz (corrige C-14):** un **afijo es átono** dentro de la")
+    A("  palabra fonológica; un **monosílabo libre es tónico**. Por eso `vi-sa` (una")
+    A("  palabra, acento en `vi`) ≠ `vi sa` (dos palabras, dos acentos). El guion")
+    A("  marca la frontera y la fonología la distingue **al hablar**; «sin ambigüedad»")
+    A("  se limita a la **escritura**.")
     A("- **Letras prohibidas:** `c j q x z`. La `j` no existe: /j/ se escribe `y`.")
     A("- **Aproximación para hispanohablantes:** se pronuncia como español, con `v`")
     A("  labiodental suave y `h` aspirada (como en inglés `house`).")
@@ -322,24 +353,47 @@ def genera_spec(palabras, afijos):
     A("")
     A("## 4. Evidencialidad — el corazón de Korlin")
     A("")
-    A("Todo verbo factual **debe** declarar de dónde viene la información. Esto es lo que")
+    A("Todo verbo finito factual **debe** declarar de dónde viene la información. Esto es lo que")
     A("hace la mentira cara: quien afirma debe decir si lo vio, lo dedujo, se lo contaron")
     A("o lo asume. Estudios tipológicos (Aikhenvald 2004) muestran que ~25% de las lenguas")
     A("del mundo marcan la fuente obligatoriamente; Korlin lo adopta desde el diseño.")
     A("")
-    A("| Sufijo | Fuente | Ejemplo (presente) | Traducción |")
+    A("**Cada sufijo tiene UN valor, sin solapes (corrige C-01):**")
+    A("")
+    A("| Sufijo | Valor ÚNICO | Ejemplo (presente) | Traducción |")
     A("|---|---|---|---|")
-    A("| `-ve` | **Directo** (lo vi, lo viví) | `li go-ve` | *Él va (lo veo)* |")
-    A("| `-pen` | **Inferido** (lo deduzco) | `li go-pen` | *Él va (lo deduzco)* |")
-    A("| `-di` | **Reportado** (me lo dijeron) | `li go-di` | *Él va (me lo contaron)* |")
-    A("| `-sa` | **Asumido** (se sabe) | `li go-sa` | *Él va (es sabido)* |")
+    A("| `-ve` | **Directo**: lo percibí con cualquier sentido, incluidos los estados internos | `li go-ve` | *Él va (lo veo)* |")
+    A("| `-pen` | **Inferido**: lo deduzco o lo calculo | `li go-pen` | *Él va (lo deduzco)* |")
+    A("| `-di` | **Reportado**: me lo dijeron, lo leí o lo devolvió una herramienta | `li go-di` | *Él va (me lo dijeron)* |")
+    A("| `-sa` | **Conocimiento GENERAL**: es sabido por todos, no de una fuente concreta | `le su e-sa me` | *El sol es grande (hecho general)* |")
+    A("")
+    A("**`-sa` NO es «supuesto».** Para lo conjetural se usa **`-pen` + modalidad `os`/`ku`**:")
+    A("`li ne-go-pen os` = *quizá vaya (lo deduzco)*. Nunca `-sa` para una conjetura.")
     A("")
     A("**Pasado: el evidencial NO cambia, pero `an-` es obligatorio.**")
     A("`li an-go-ve` = *Él fue (lo vi)*; `li an-go-di` = *Él fue (me lo contaron)*.")
     A("")
     A("**Un evidencial por cláusula, en el verbo finito (el primero de la cadena).**")
-    A("En `tu kan-ve sa mi` (*puedes verme*), `kan` lleva el evidencial y `sa` queda")
-    A("desnudo. En una subordinada, cada cláusula lleva el suyo: `mi sa-ve ki li an-go-di.`")
+    A("En `tu kan-ve ve mi` (*puedes verme*), `kan` lleva el evidencial y `ve` queda")
+    A("desnudo. En una subordinada, cada cláusula finita lleva el suyo:")
+    A("`mi sa-ve ki li an-go-di.`")
+    A("")
+    A("**El emisor nunca decide «cuánto se fía» con el evidencial: eso es la modalidad.**")
+    A("")
+    A("### 4.1 Tabla normativa: escenario → evidencial (corrige C-02)")
+    A("")
+    A("| Escenario | Evidencial | Ejemplo |")
+    A("|---|---|---|")
+    A("| Percibido con cualquier sentido (vista, oído, tacto, gusto, olfato) | `-ve` | `mi ve-ve le ho` = *veo la casa* |")
+    A("| Estado interno (dolor, emoción, sueño, hambre) | `-ve` | `mi sen-ve tom` = *tengo calor (lo siento)* |")
+    A("| Deducido, calculado, medido | `-pen` | `le nom e-pen me` = *el número es grande (lo calculo)* |")
+    A("| Dicho, leído, o devuelto por un documento, API o herramienta | `-di` | `le ho e-di me` = *la casa es grande (lo leí)* |")
+    A("| Conocimiento general, saber común | `-sa` | `le wa e-sa wa` = *el agua moja (es sabido)* |")
+    A("| Memoria de algo vivido | `-ve` | `mi an-ve-ve le ho` = *vi la casa (la recuerdo)* |")
+    A("| Sueño o ficción (contenido) | `-pen` | `mi an-mo-pen le ho` = *soñé la casa* |")
+    A("| Matemáticas y lo que uno mismo construye | `-pen` | `du ka du e-pen fu` = *2+2 es 4* |")
+    A("| **Futuro** planeado, predicho o esperado | `-pen` | `ne-go-pen` = *irá (lo deduzco)* |")
+    A("| Acción propia pasada de la que no se tiene percepción directa | `-pen` o `-di` | `an-go-pen` = *fui (según recuerdo)* |")
     A("")
     A("**Regla de honestidad:** si no sabes de dónde viene algo, usa `-pen` (lo deduzco) o")
     A("`-di` (me lo dijeron), nunca `-ve` (lo vi) si no lo viste realmente.")
