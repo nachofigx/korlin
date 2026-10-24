@@ -79,7 +79,6 @@
 
 | Korlin | AFI | 含义 |
 |---|---|---|
-| **u** | /u/ | 一, 一个 |
 | **le** | /le/ | （定冠词） |
 | **se** | /se/ | 这 |
 | **te** | /te/ | 那 |
@@ -115,6 +114,10 @@
 | **num** | /num/ | 计算 |
 | **sim** | /sim/ | 模拟 |
 | **ken** | /ken/ | 购买 |
+| **kotu** | /kotu/ | cerrar |
+| **hapu** | /hapu/ | abrir |
+| **kubi** | /kubi/ | correr |
+| **hudi** | /hudi/ | tocar |
 
 ## 名词
 
@@ -150,6 +153,17 @@
 | **som** | /som/ | 阴影 |
 | **lum** | /lum/ | 光 |
 | **pilan** | /pilan/ | plano, diseño |
+| **dula** | /dula/ | amigo |
+| **hobu** | /hobu/ | animal |
+| **tusi** | /tusi/ | pájaro |
+| **tuni** | /tuni/ | brillo |
+| **husa** | /husa/ | olor |
+| **hesu** | /hesu/ | gusto |
+| **huko** | /huko/ | ciudad |
+| **halu** | /halu/ | mar |
+| **hisu** | /hisu/ | río |
+| **hodu** | /hodu/ | montaña |
+| **hoki** | /hoki/ | dinero |
 | **Yapan** | /ˈjapan/ | 日本 |
 
 ## 形容词
@@ -191,8 +205,7 @@
 
 | Korlin | AFI | 含义 |
 |---|---|---|
-| **wu** | /wu/ | 0 |
-| **u** | /u/ | 一, 一个 |
+| **nul** | /nul/ | 0 |
 | **du** | /du/ | 2 |
 | **san** | /san/ | 3 |
 | **fu** | /fu/ | 4 |
@@ -202,6 +215,7 @@
 | **om** | /om/ | 8 |
 | **nu** | /nu/ | 9 |
 | **des** | /des/ | 10 |
+| **sento** | /ˈsento/ | 100 |
 
 ## 数学
 

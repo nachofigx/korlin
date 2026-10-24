@@ -110,7 +110,7 @@
       "copula": "e lleva el evidencial en la declarativa (le ti e-ve gu)",
       "subordinacion": "ki (la subordinada va exenta; cada clausula puede llevar el suyo)",
       "posesion": "pronombre antepuesto (mi ho) normal; de = analitica/enfatica",
-      "numerales": "wu=0, u=1; raices 2-10; suma con guion (des-u=11); multiplica con -des/-sento/-kilo",
+      "numerales": "nul=0, u=1; raices 2-10; ligadura: digito+base multiplica (du-des=20), base+base suma (des-u=11). sento=100, kilo=1000",
       "ortografia": "mayuscula solo inicial y nombres propios; . ! ? ; nombres propios adaptados (Mekiko, Faransa)",
       "ki": "al inicio = interrogativo; en medio tras verbo de decir/saber = complementante",
       "derivacion": {
@@ -155,8 +155,8 @@
       "en": "or"
     },
     {
-      "forma": "wu",
-      "afi": "/wu/",
+      "forma": "nul",
+      "afi": "/nul/",
       "categoria": "número",
       "es": "0",
       "en": "0"
@@ -164,16 +164,9 @@
     {
       "forma": "u",
       "afi": "/u/",
-      "categoria": "número",
-      "es": "1",
-      "en": "1"
-    },
-    {
-      "forma": "u",
-      "afi": "/u/",
-      "categoria": "determinante",
-      "es": "un, una, uno",
-      "en": "a, an, one"
+      "categoria": "determinante, número",
+      "es": "un, una, uno; 1",
+      "en": "a, an, one; 1"
     },
     {
       "forma": "ka",
@@ -1084,6 +1077,118 @@
       "categoria": "matemática",
       "es": "dividir (÷)",
       "en": "to divide (÷)"
+    },
+    {
+      "forma": "kotu",
+      "afi": "/kotu/",
+      "categoria": "verbo",
+      "es": "cerrar",
+      "en": "close"
+    },
+    {
+      "forma": "hapu",
+      "afi": "/hapu/",
+      "categoria": "verbo",
+      "es": "abrir",
+      "en": "open"
+    },
+    {
+      "forma": "kubi",
+      "afi": "/kubi/",
+      "categoria": "verbo",
+      "es": "correr",
+      "en": "run"
+    },
+    {
+      "forma": "dula",
+      "afi": "/dula/",
+      "categoria": "sustantivo",
+      "es": "amigo",
+      "en": "friend"
+    },
+    {
+      "forma": "hobu",
+      "afi": "/hobu/",
+      "categoria": "sustantivo",
+      "es": "animal",
+      "en": "animal"
+    },
+    {
+      "forma": "tusi",
+      "afi": "/tusi/",
+      "categoria": "sustantivo",
+      "es": "pájaro",
+      "en": "bird"
+    },
+    {
+      "forma": "tuni",
+      "afi": "/tuni/",
+      "categoria": "sustantivo",
+      "es": "brillo",
+      "en": "brightness"
+    },
+    {
+      "forma": "husa",
+      "afi": "/husa/",
+      "categoria": "sustantivo",
+      "es": "olor",
+      "en": "smell"
+    },
+    {
+      "forma": "hudi",
+      "afi": "/hudi/",
+      "categoria": "verbo",
+      "es": "tocar",
+      "en": "touch"
+    },
+    {
+      "forma": "hesu",
+      "afi": "/hesu/",
+      "categoria": "sustantivo",
+      "es": "gusto",
+      "en": "taste"
+    },
+    {
+      "forma": "huko",
+      "afi": "/huko/",
+      "categoria": "sustantivo",
+      "es": "ciudad",
+      "en": "city"
+    },
+    {
+      "forma": "halu",
+      "afi": "/halu/",
+      "categoria": "sustantivo",
+      "es": "mar",
+      "en": "sea"
+    },
+    {
+      "forma": "hisu",
+      "afi": "/hisu/",
+      "categoria": "sustantivo",
+      "es": "río",
+      "en": "river"
+    },
+    {
+      "forma": "hodu",
+      "afi": "/hodu/",
+      "categoria": "sustantivo",
+      "es": "montaña",
+      "en": "mountain"
+    },
+    {
+      "forma": "hoki",
+      "afi": "/hoki/",
+      "categoria": "sustantivo",
+      "es": "dinero",
+      "en": "money"
+    },
+    {
+      "forma": "sento",
+      "afi": "/ˈsento/",
+      "categoria": "número",
+      "es": "100",
+      "en": "100"
     },
     {
       "forma": "kilo",

@@ -79,7 +79,6 @@
 
 | Korlin | AFI | Sens |
 |---|---|---|
-| **u** | /u/ | un, une |
 | **le** | /le/ | le, la |
 | **se** | /se/ | ce, cette |
 | **te** | /te/ | ce…-là |
@@ -115,6 +114,10 @@
 | **num** | /num/ | calculer |
 | **sim** | /sim/ | simuler |
 | **ken** | /ken/ | acheter |
+| **kotu** | /kotu/ | cerrar |
+| **hapu** | /hapu/ | abrir |
+| **kubi** | /kubi/ | correr |
+| **hudi** | /hudi/ | tocar |
 
 ## Noms
 
@@ -150,6 +153,17 @@
 | **som** | /som/ | ombre |
 | **lum** | /lum/ | lumière |
 | **pilan** | /pilan/ | plano, diseño |
+| **dula** | /dula/ | amigo |
+| **hobu** | /hobu/ | animal |
+| **tusi** | /tusi/ | pájaro |
+| **tuni** | /tuni/ | brillo |
+| **husa** | /husa/ | olor |
+| **hesu** | /hesu/ | gusto |
+| **huko** | /huko/ | ciudad |
+| **halu** | /halu/ | mar |
+| **hisu** | /hisu/ | río |
+| **hodu** | /hodu/ | montaña |
+| **hoki** | /hoki/ | dinero |
 | **Yapan** | /ˈjapan/ | Japon |
 
 ## Adjectifs
@@ -191,8 +205,7 @@
 
 | Korlin | AFI | Sens |
 |---|---|---|
-| **wu** | /wu/ | 0 |
-| **u** | /u/ | un, une |
+| **nul** | /nul/ | 0 |
 | **du** | /du/ | 2 |
 | **san** | /san/ | 3 |
 | **fu** | /fu/ | 4 |
@@ -202,6 +215,7 @@
 | **om** | /om/ | 8 |
 | **nu** | /nu/ | 9 |
 | **des** | /des/ | 10 |
+| **sento** | /ˈsento/ | 100 |
 
 ## Mathématiques
 

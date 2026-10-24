@@ -40,8 +40,8 @@ window.KORLIN_LEXICO = [
     "ja": "または"
   },
   {
-    "f": "wu",
-    "a": "/wu/",
+    "f": "nul",
+    "a": "/nul/",
     "c": "número",
     "es": "0",
     "en": "0"
@@ -49,19 +49,9 @@ window.KORLIN_LEXICO = [
   {
     "f": "u",
     "a": "/u/",
-    "c": "número",
-    "es": "1",
-    "en": "1",
-    "fr": "un, une",
-    "zh": "一, 一个",
-    "ja": "一つの"
-  },
-  {
-    "f": "u",
-    "a": "/u/",
-    "c": "determinante",
-    "es": "un, una, uno",
-    "en": "a, an, one",
+    "c": "determinante, número",
+    "es": "un, una, uno; 1",
+    "en": "a, an, one; 1",
     "fr": "un, une",
     "zh": "一, 一个",
     "ja": "一つの"
@@ -1275,6 +1265,118 @@ window.KORLIN_LEXICO = [
     "fr": "diviser (÷)",
     "zh": "除 (÷)",
     "ja": "割る (÷)"
+  },
+  {
+    "f": "kotu",
+    "a": "/kotu/",
+    "c": "verbo",
+    "es": "cerrar",
+    "en": "close"
+  },
+  {
+    "f": "hapu",
+    "a": "/hapu/",
+    "c": "verbo",
+    "es": "abrir",
+    "en": "open"
+  },
+  {
+    "f": "kubi",
+    "a": "/kubi/",
+    "c": "verbo",
+    "es": "correr",
+    "en": "run"
+  },
+  {
+    "f": "dula",
+    "a": "/dula/",
+    "c": "sustantivo",
+    "es": "amigo",
+    "en": "friend"
+  },
+  {
+    "f": "hobu",
+    "a": "/hobu/",
+    "c": "sustantivo",
+    "es": "animal",
+    "en": "animal"
+  },
+  {
+    "f": "tusi",
+    "a": "/tusi/",
+    "c": "sustantivo",
+    "es": "pájaro",
+    "en": "bird"
+  },
+  {
+    "f": "tuni",
+    "a": "/tuni/",
+    "c": "sustantivo",
+    "es": "brillo",
+    "en": "brightness"
+  },
+  {
+    "f": "husa",
+    "a": "/husa/",
+    "c": "sustantivo",
+    "es": "olor",
+    "en": "smell"
+  },
+  {
+    "f": "hudi",
+    "a": "/hudi/",
+    "c": "verbo",
+    "es": "tocar",
+    "en": "touch"
+  },
+  {
+    "f": "hesu",
+    "a": "/hesu/",
+    "c": "sustantivo",
+    "es": "gusto",
+    "en": "taste"
+  },
+  {
+    "f": "huko",
+    "a": "/huko/",
+    "c": "sustantivo",
+    "es": "ciudad",
+    "en": "city"
+  },
+  {
+    "f": "halu",
+    "a": "/halu/",
+    "c": "sustantivo",
+    "es": "mar",
+    "en": "sea"
+  },
+  {
+    "f": "hisu",
+    "a": "/hisu/",
+    "c": "sustantivo",
+    "es": "río",
+    "en": "river"
+  },
+  {
+    "f": "hodu",
+    "a": "/hodu/",
+    "c": "sustantivo",
+    "es": "montaña",
+    "en": "mountain"
+  },
+  {
+    "f": "hoki",
+    "a": "/hoki/",
+    "c": "sustantivo",
+    "es": "dinero",
+    "en": "money"
+  },
+  {
+    "f": "sento",
+    "a": "/ˈsento/",
+    "c": "número",
+    "es": "100",
+    "en": "100"
   },
   {
     "f": "kilo",

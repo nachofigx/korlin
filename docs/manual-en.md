@@ -79,7 +79,6 @@
 
 | Korlin | AFI | Meaning |
 |---|---|---|
-| **u** | /u/ | a, an, one |
 | **le** | /le/ | the |
 | **se** | /se/ | this |
 | **te** | /te/ | that |
@@ -115,6 +114,10 @@
 | **num** | /num/ | to calculate |
 | **sim** | /sim/ | to simulate |
 | **ken** | /ken/ | to buy |
+| **kotu** | /kotu/ | close |
+| **hapu** | /hapu/ | open |
+| **kubi** | /kubi/ | run |
+| **hudi** | /hudi/ | touch |
 
 ## Nouns
 
@@ -150,6 +153,17 @@
 | **som** | /som/ | shadow |
 | **lum** | /lum/ | light |
 | **pilan** | /pilan/ | plan, design |
+| **dula** | /dula/ | friend |
+| **hobu** | /hobu/ | animal |
+| **tusi** | /tusi/ | bird |
+| **tuni** | /tuni/ | brightness |
+| **husa** | /husa/ | smell |
+| **hesu** | /hesu/ | taste |
+| **huko** | /huko/ | city |
+| **halu** | /halu/ | sea |
+| **hisu** | /hisu/ | river |
+| **hodu** | /hodu/ | mountain |
+| **hoki** | /hoki/ | money |
 | **Yapan** | /ˈjapan/ | Japan |
 
 ## Adjectives
@@ -191,8 +205,7 @@
 
 | Korlin | AFI | Meaning |
 |---|---|---|
-| **wu** | /wu/ | 0 |
-| **u** | /u/ | 1 |
+| **nul** | /nul/ | 0 |
 | **du** | /du/ | 2 |
 | **san** | /san/ | 3 |
 | **fu** | /fu/ | 4 |
@@ -202,6 +215,7 @@
 | **om** | /om/ | 8 |
 | **nu** | /nu/ | 9 |
 | **des** | /des/ | 10 |
+| **sento** | /ˈsento/ | 100 |
 
 ## Mathematics
 

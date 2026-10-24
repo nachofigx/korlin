@@ -19,9 +19,8 @@ e        | partícula    | ser, estar | to be
 a        | preposición  | a, hacia | to, toward
 i        | preposición  | en, dentro | in, inside
 o        | conjunción   | o | or
-wu       | número       | 0 | 0
-u        | número       | 1 | 1
-u        | determinante | un, una, uno | a, an, one
+nul      | número       | 0 | 0
+u        | determinante, número | un, una, uno; 1 | a, an, one; 1
 ka       | conjunción   | y | and
 ba       | conjunción   | pero | but
 ki       | conjunción   | que, qué | that, which, what
@@ -152,6 +151,22 @@ sum      | matemática   | sumar, suma (+) | to add, sum (+)
 min      | matemática   | restar, menos (−) | to subtract, minus (−)
 fan      | matemática   | multiplicar (×) | to multiply (×)
 fen      | matemática   | dividir (÷) | to divide (÷)
+kotu     | verbo        | cerrar | close
+hapu     | verbo        | abrir | open
+kubi     | verbo        | correr | run
+dula     | sustantivo   | amigo | friend
+hobu     | sustantivo   | animal | animal
+tusi     | sustantivo   | pájaro | bird
+tuni     | sustantivo   | brillo | brightness
+husa     | sustantivo   | olor | smell
+hudi     | verbo        | tocar | touch
+hesu     | sustantivo   | gusto | taste
+huko     | sustantivo   | ciudad | city
+halu     | sustantivo   | mar | sea
+hisu     | sustantivo   | río | river
+hodu     | sustantivo   | montaña | mountain
+hoki     | sustantivo   | dinero | money
+sento    | número       | 100 | 100
 kilo     | prefijo SI   | mil (×1000) | thousand (×1000)
 mega     | prefijo SI   | millón (×10⁶) | million (×10⁶)
 giga     | prefijo SI   | mil millones (×10⁹) | billion (×10⁹)

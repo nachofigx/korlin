@@ -26,7 +26,8 @@ manuales que deben seguir al spec, no al revés.
 2. **Orden SVO.** Sujeto, Verbo, Objeto.
 3. **El modificador va ANTES del núcleo:** `me ho` = *casa grande*; `gu pe` = *persona buena*.
 4. **La evidencialidad es OBLIGATORIA en el verbo finito de toda oración factual.**
-   (Declarativa = afirmar un hecho. Las preguntas son declarativas: *pregunto si P*.)
+   (Declarativa = afirmar un hecho. **Las preguntas NO son declarativas**: no
+   afirman nada, así que quedan exentas por (a).)
    **Exenciones — lista CERRADA, solo estas cinco:**
    (a) **preguntas** (`mo`, o interrogativo al inicio);
    (b) **órdenes** (raíz desnuda); (c) **ironía marcada con `fi`**;
@@ -79,15 +80,54 @@ manuales que deben seguir al spec, no al revés.
     son dos palabras: `vi-sa` (vivir+asumido) ≠ `vi sa` (vivir/saber).
 19. **Posesión y numerales.** El pronombre antepuesto es la forma normal
     (`mi ho` = *mi casa*); `de` da la analítica o enfática (`le ho de mi`).
-    **Numerales:** `wu` = 0, `u` = 1; 2-10 son raíces (`du san fu sin sis sem om nu des`).
-    Después de 10 se **compone**: suma con guion (`des-u` = 11, `du-des-u` = 21),
-    multiplica con `-des`/`-sento`/`-kilo` (`du-des` = 20, `sento` = 100, `kilo` = 1.000).
-    El plural `-s` es opcional tras un numeral (`du ho` = *dos casas*).
-20. **`ki` tiene dos funciones y se distinguen por la posición.**
-    Al **inicio** de la oración raíz es interrogativo (`Ki pe go?` = *¿quién va?*);
-    en **medio**, tras un verbo de decir/saber, es complementante (`mi sa-ve ki li go`).
+    **Numerales:** `nul` = 0, `u` = 1; 2-10 son raíces (`du san fu sin sis sem om nu des`).
+    **Composición — regla de ligadura (corrige C-17):** un dígito pegado a una base
+    la MULTIPLICA; una base tras otra base solo SUMA. Se escribe de mayor a menor.
+    `du-des` = 20 · `des-u` = 11 · `du-des-u` = 21 · `sento` = 100 · `sento-u` = 101 ·
+    `sento-des` = 110 · `du-sento` = 200 · `nu-des-nu` = 99 · `nu-sento-nu-des-nu` = 999.
+    `kilo` = 1.000 como numeral suelto; como prefijo del SI va con guion a una
+    unidad (`kilo-met` = *kilómetro*). El plural `-s` es opcional tras numeral.
+20. **`ki` tiene dos funciones; decide la posición Y el verbo que la precede.**
+    (corrige C-12 vs C-13)
+    - `ki` **al inicio de la oración raíz** = interrogativo (`Ki pe go?` = *¿quién va?*).
+    - `ki` **en medio tras un verbo de decir/saber** = complementante de una
+      declarativa: `Mi sa-ve ki li go-ve.` = *Sé que él va.* (la subordinada FINITA
+      lleva su propio evidencial, regla 14).
+    - `ki` **en medio tras un verbo de percepción o pregunta** (`ve`, `ari`, `mo`) =
+      interrogativo indirecto, **in situ**: `Tu ve ki pe?` = *¿a quién ves?*
+    **Interrogativa indirecta («sé quién va») = deuda C-36, no tiene forma aún.**
     **Interrogativo con pro-drop:** el sujeto se omite solo si el interrogativo es
-    el sujeto; si es el objeto, va **in situ**: `Tu ve ki pe?` = *¿a quién ves?*
+    el sujeto; si es el objeto, va **in situ**.
+21. **Acento: una palabra fonológica lleva UN solo acento, en la penúltima sílaba.**
+    (corrige C-14 y C-16) Una palabra fonológica = raíz + sus afijos, o raíz + raíz
+    en un compuesto. Un monosílabo libre es siempre tónico.
+    - `me-ho` (1 palabra, 1 acento: /ˈme.ho/) ≠ `me ho` (2 palabras, 2 acentos: /ˈme ˈho/).
+    - `gu-gu` = /ˈgu.gu/ (1 acento) y `ru-sui` = /ruˈsu.i/ (1 acento).
+    - `na-gu` = /ˈna.gu/ y `pi-ho` = /ˈpi.ho`: el acento cae en el prefijo, pero sigue
+      siendo UN solo acento. Por eso la escritura con guion sí distingue derivado de frase.
+22. **Origo (C-18):** el punto de vista del evidencial es SIEMPRE el hablante que
+    emite la oración, salvo en **cita directa**, donde es el hablante citado.
+    - Creencia ajena (= cita indirecta): `Li sa-ve ki le wa e-di wa.` = *Él sabe que el
+      agua moja* — el `-di` es MÍO (me lo dijo él), no suyo.
+    - Cita directa (dos origos): `Li di-an: «Mi ve-ve le ho.»` = *Él dijo: «Veo la casa».*
+      El `-ve` es del hablante citado; `di-an` lleva el evidencial del que cita.
+23. **Modalidad no marcada (C-19):** sin partícula final, la modalidad vale `to`
+    (certeza) SOLO si el evidencial es fuerte (`-ve`, `-di`, `-sa`).
+    Con `-pen` (deducción) la no marcada vale `be` (probable); con `-pen` + dato
+    incompleto, `os`. La partícula explícita siempre manda.
+
+    | evidencial \ explícita | (ninguna) | `to` | `be` | `os` | `ku` |
+    |---|---|---|---|---|---|
+    | `-ve` (vi) | to | to | be | os | os |
+    | `-di` (me dijeron) | to | — | be | os | ku |
+    | `-sa` (sabido) | to | to | be | os | ku |
+    | `-pen` (deduzco) | be | to | be | os | ku |
+
+    (`—` = combinación no usada: si me lo dijeron, la certeza explícita no aporta.)
+24. **Partículas finales (nota C-21, mínima en v0.6):** la oración admite una sola
+    cadena final en orden fijo `[modalidad] [actitud] [mo]`. **No se encadenan dos
+    actitudes** ni dos modalidades: para dos matices, una va al final y la otra se
+    expresa en el verbo. Estudio completo (qué matices merecen partícula propia) = v0.7.
 
 ---
 
@@ -211,8 +251,9 @@ desnudo. En una subordinada, cada cláusula finita lleva el suyo:
 | Memoria de algo vivido | `-ve` | `mi an-ve-ve le ho` = *vi la casa (la recuerdo)* |
 | Sueño o ficción (contenido) | `-pen` | `mi an-mo-pen le ho` = *soñé la casa* |
 | Matemáticas y lo que uno mismo construye | `-pen` | `du ka du e-pen fu` = *2+2 es 4* |
-| **Futuro** planeado, predicho o esperado | `-pen` | `ne-go-pen` = *irá (lo deduzco)* |
-| Acción propia pasada de la que no se tiene percepción directa | `-pen` o `-di` | `an-go-pen` = *fui (según recuerdo)* |
+| **Futuro** que uno mismo da por hecho | `-ve` | `mi ne-go-ve` = *iré (decidido)* |
+| **Futuro** planeado por otros, predicho o esperado | `-pen` | `li ne-go-pen` = *irá (lo deduzco)* |
+| Acción propia pasada sin percepción directa | `-di` | `mi an-go-di` = *fui (consta)* |
 
 **Regla de honestidad:** si no sabes de dónde viene algo, usa `-pen` (lo deduzco) o
 `-di` (me lo dijeron), nunca `-ve` (lo vi) si no lo viste realmente.
@@ -271,7 +312,7 @@ Van al **final** de la oración, después del verbo.
 
 ## 7. Léxico completo
 
-150 palabras. Formato: **korlin** · AFI · categoría · español · inglés.
+165 palabras. Formato: **korlin** · AFI · categoría · español · inglés.
 
 | Korlin | AFI | Categoría | Español | English |
 |---|---|---|---|---|
@@ -279,9 +320,8 @@ Van al **final** de la oración, después del verbo.
 | `a` | /a/ | preposición | a, hacia | to, toward |
 | `i` | /i/ | preposición | en, dentro | in, inside |
 | `o` | /o/ | conjunción | o | or |
-| `wu` | /wu/ | número | 0 | 0 |
-| `u` | /u/ | número | 1 | 1 |
-| `u` | /u/ | determinante | un, una, uno | a, an, one |
+| `nul` | /nul/ | número | 0 | 0 |
+| `u` | /u/ | determinante, número | un, una, uno; 1 | a, an, one; 1 |
 | `ka` | /ka/ | conjunción | y | and |
 | `ba` | /ba/ | conjunción | pero | but |
 | `ki` | /ki/ | conjunción | que, qué | that, which, what |
@@ -412,6 +452,22 @@ Van al **final** de la oración, después del verbo.
 | `min` | /min/ | matemática | restar, menos (−) | to subtract, minus (−) |
 | `fan` | /fan/ | matemática | multiplicar (×) | to multiply (×) |
 | `fen` | /fen/ | matemática | dividir (÷) | to divide (÷) |
+| `kotu` | /kotu/ | verbo | cerrar | close |
+| `hapu` | /hapu/ | verbo | abrir | open |
+| `kubi` | /kubi/ | verbo | correr | run |
+| `dula` | /dula/ | sustantivo | amigo | friend |
+| `hobu` | /hobu/ | sustantivo | animal | animal |
+| `tusi` | /tusi/ | sustantivo | pájaro | bird |
+| `tuni` | /tuni/ | sustantivo | brillo | brightness |
+| `husa` | /husa/ | sustantivo | olor | smell |
+| `hudi` | /hudi/ | verbo | tocar | touch |
+| `hesu` | /hesu/ | sustantivo | gusto | taste |
+| `huko` | /huko/ | sustantivo | ciudad | city |
+| `halu` | /halu/ | sustantivo | mar | sea |
+| `hisu` | /hisu/ | sustantivo | río | river |
+| `hodu` | /hodu/ | sustantivo | montaña | mountain |
+| `hoki` | /hoki/ | sustantivo | dinero | money |
+| `sento` | /ˈsento/ | número | 100 | 100 |
 | `kilo` | /ˈkilo/ | prefijo SI | mil (×1000) | thousand (×1000) |
 | `mega` | /ˈmega/ | prefijo SI | millón (×10⁶) | million (×10⁶) |
 | `giga` | /ˈgiga/ | prefijo SI | mil millones (×10⁹) | billion (×10⁹) |
