@@ -54,8 +54,10 @@ ronda v0.6** (B1-B4, F1-F8, P1-P4). Todo verificado contra el repo: real.
 
 ### Léxico
 - 150 → **178 palabras**: 7 reemplazos del lote 1 rechazado, 8 del lote 2, 11
-  sobrevivientes del lote 1 y 2 sustitutos (`duka` por `halu`, `duno` por `dano`,
-  `famo` por `fama`, rechazadas por R6 verbo+objeto).
+  sobrevivientes del lote 1 y los sustitutos que exige el R6 acotado:
+  `duka` por `halu`, `duno` por `dano`, `famo` por `fama` (verbo+objeto),
+  `semo` por `nami`, `nubi` por `solo`, `nodu` por `hisu` (Adi-N). Las 28
+  raíces del lote pasan limpias el comprobador alineado.
 
 ### Deuda declarada (v0.7)
 C-14 (colores en `-i`, `kilo`, `somi`), C-17 (san/sin/sis/sem/sen), C-36

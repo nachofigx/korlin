@@ -1163,8 +1163,8 @@
       "en": "sea"
     },
     {
-      "forma": "hisu",
-      "afi": "/hisu/",
+      "forma": "nodu",
+      "afi": "/nodu/",
       "categoria": "sustantivo",
       "es": "río",
       "en": "river"
@@ -1219,15 +1219,15 @@
       "en": "write"
     },
     {
-      "forma": "nami",
-      "afi": "/nami/",
+      "forma": "semo",
+      "afi": "/semo/",
       "categoria": "verbo",
       "es": "nadar",
       "en": "swim"
     },
     {
-      "forma": "solo",
-      "afi": "/solo/",
+      "forma": "nubi",
+      "afi": "/nubi/",
       "categoria": "adjetivo",
       "es": "solo",
       "en": "alone"

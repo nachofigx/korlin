@@ -464,7 +464,7 @@ Van al **final** de la oración, después del verbo.
 | `hesu` | /hesu/ | sustantivo | gusto | taste |
 | `huko` | /huko/ | sustantivo | ciudad | city |
 | `duka` | /duka/ | sustantivo | mar | sea |
-| `hisu` | /hisu/ | sustantivo | río | river |
+| `nodu` | /nodu/ | sustantivo | río | river |
 | `hodu` | /hodu/ | sustantivo | montaña | mountain |
 | `hoki` | /hoki/ | sustantivo | dinero | money |
 | `tapa` | /tapa/ | verbo | trabajar | work |
@@ -472,8 +472,8 @@ Van al **final** de la oración, después del verbo.
 | `lama` | /lama/ | verbo | amar | love |
 | `reme` | /reme/ | verbo | recordar | remember |
 | `resi` | /resi/ | verbo | escribir | write |
-| `nami` | /nami/ | verbo | nadar | swim |
-| `solo` | /solo/ | adjetivo | solo | alone |
+| `semo` | /semo/ | verbo | nadar | swim |
+| `nubi` | /nubi/ | adjetivo | solo | alone |
 | `mama` | /mama/ | sustantivo | madre | mother |
 | `papa` | /papa/ | sustantivo | padre | father |
 | `poko` | /poko/ | sustantivo | comercio | trade |

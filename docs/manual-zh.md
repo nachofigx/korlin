@@ -123,7 +123,7 @@
 | **lama** | /lama/ | amar |
 | **reme** | /reme/ | recordar |
 | **resi** | /resi/ | escribir |
-| **nami** | /nami/ | nadar |
+| **semo** | /semo/ | nadar |
 
 ## 名词
 
@@ -167,7 +167,7 @@
 | **hesu** | /hesu/ | gusto |
 | **huko** | /huko/ | ciudad |
 | **duka** | /duka/ | mar |
-| **hisu** | /hisu/ | río |
+| **nodu** | /nodu/ | río |
 | **hodu** | /hodu/ | montaña |
 | **hoki** | /hoki/ | dinero |
 | **mama** | /mama/ | madre |
@@ -195,7 +195,7 @@
 | **tom** | /tom/ | 热 |
 | **ge** | /ge/ | 冷 |
 | **ko** | /ko/ | 短 |
-| **solo** | /solo/ | solo |
+| **nubi** | /nubi/ | solo |
 | **duno** | /duno/ | oscuro |
 
 ## 颜色

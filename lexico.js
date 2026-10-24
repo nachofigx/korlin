@@ -1351,8 +1351,8 @@ window.KORLIN_LEXICO = [
     "en": "sea"
   },
   {
-    "f": "hisu",
-    "a": "/hisu/",
+    "f": "nodu",
+    "a": "/nodu/",
     "c": "sustantivo",
     "es": "río",
     "en": "river"
@@ -1407,15 +1407,15 @@ window.KORLIN_LEXICO = [
     "en": "write"
   },
   {
-    "f": "nami",
-    "a": "/nami/",
+    "f": "semo",
+    "a": "/semo/",
     "c": "verbo",
     "es": "nadar",
     "en": "swim"
   },
   {
-    "f": "solo",
-    "a": "/solo/",
+    "f": "nubi",
+    "a": "/nubi/",
     "c": "adjetivo",
     "es": "solo",
     "en": "alone"

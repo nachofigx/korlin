@@ -163,7 +163,7 @@ hudi     | verbo        | tocar | touch
 hesu     | sustantivo   | gusto | taste
 huko     | sustantivo   | ciudad | city
 duka     | sustantivo   | mar | sea
-hisu     | sustantivo   | río | river
+nodu     | sustantivo   | río | river
 hodu     | sustantivo   | montaña | mountain
 hoki     | sustantivo   | dinero | money
 tapa     | verbo        | trabajar | work
@@ -171,8 +171,8 @@ ari      | verbo        | oír | hear
 lama     | verbo        | amar | love
 reme     | verbo        | recordar | remember
 resi     | verbo        | escribir | write
-nami     | verbo        | nadar | swim
-solo     | adjetivo     | solo | alone
+semo     | verbo        | nadar | swim
+nubi     | adjetivo     | solo | alone
 mama     | sustantivo   | madre | mother
 papa     | sustantivo   | padre | father
 poko     | sustantivo   | comercio | trade

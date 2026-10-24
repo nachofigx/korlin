@@ -123,7 +123,7 @@
 | **lama** | /lama/ | love |
 | **reme** | /reme/ | remember |
 | **resi** | /resi/ | write |
-| **nami** | /nami/ | swim |
+| **semo** | /semo/ | swim |
 
 ## Nouns
 
@@ -167,7 +167,7 @@
 | **hesu** | /hesu/ | taste |
 | **huko** | /huko/ | city |
 | **duka** | /duka/ | sea |
-| **hisu** | /hisu/ | river |
+| **nodu** | /nodu/ | river |
 | **hodu** | /hodu/ | mountain |
 | **hoki** | /hoki/ | money |
 | **mama** | /mama/ | mother |
@@ -195,7 +195,7 @@
 | **tom** | /tom/ | hot |
 | **ge** | /ge/ | cold |
 | **ko** | /ko/ | short, brief |
-| **solo** | /solo/ | alone |
+| **nubi** | /nubi/ | alone |
 | **duno** | /duno/ | dark |
 
 ## Colors
