@@ -40,11 +40,18 @@ window.KORLIN_LEXICO = [
     "ja": "または"
   },
   {
+    "f": "nul",
+    "a": "/nul/",
+    "c": "número",
+    "es": "0",
+    "en": "0"
+  },
+  {
     "f": "u",
     "a": "/u/",
-    "c": "determinante",
-    "es": "un, una, uno",
-    "en": "a, an, one",
+    "c": "determinante, número",
+    "es": "un, una, uno; 1",
+    "en": "a, an, one; 1",
     "fr": "un, une",
     "zh": "一, 一个",
     "ja": "一つの"
@@ -1258,6 +1265,209 @@ window.KORLIN_LEXICO = [
     "fr": "diviser (÷)",
     "zh": "除 (÷)",
     "ja": "割る (÷)"
+  },
+  {
+    "f": "kotu",
+    "a": "/kotu/",
+    "c": "verbo",
+    "es": "cerrar",
+    "en": "close"
+  },
+  {
+    "f": "hapu",
+    "a": "/hapu/",
+    "c": "verbo",
+    "es": "abrir",
+    "en": "open"
+  },
+  {
+    "f": "kubi",
+    "a": "/kubi/",
+    "c": "verbo",
+    "es": "correr",
+    "en": "run"
+  },
+  {
+    "f": "dula",
+    "a": "/dula/",
+    "c": "sustantivo",
+    "es": "amigo",
+    "en": "friend"
+  },
+  {
+    "f": "hobu",
+    "a": "/hobu/",
+    "c": "sustantivo",
+    "es": "animal",
+    "en": "animal"
+  },
+  {
+    "f": "tusi",
+    "a": "/tusi/",
+    "c": "sustantivo",
+    "es": "pájaro",
+    "en": "bird"
+  },
+  {
+    "f": "tuni",
+    "a": "/tuni/",
+    "c": "sustantivo",
+    "es": "brillo",
+    "en": "brightness"
+  },
+  {
+    "f": "husa",
+    "a": "/husa/",
+    "c": "sustantivo",
+    "es": "olor",
+    "en": "smell"
+  },
+  {
+    "f": "hudi",
+    "a": "/hudi/",
+    "c": "verbo",
+    "es": "tocar",
+    "en": "touch"
+  },
+  {
+    "f": "hesu",
+    "a": "/hesu/",
+    "c": "sustantivo",
+    "es": "gusto",
+    "en": "taste"
+  },
+  {
+    "f": "huko",
+    "a": "/huko/",
+    "c": "sustantivo",
+    "es": "ciudad",
+    "en": "city"
+  },
+  {
+    "f": "duka",
+    "a": "/duka/",
+    "c": "sustantivo",
+    "es": "mar",
+    "en": "sea"
+  },
+  {
+    "f": "nodu",
+    "a": "/nodu/",
+    "c": "sustantivo",
+    "es": "río",
+    "en": "river"
+  },
+  {
+    "f": "hodu",
+    "a": "/hodu/",
+    "c": "sustantivo",
+    "es": "montaña",
+    "en": "mountain"
+  },
+  {
+    "f": "hoki",
+    "a": "/hoki/",
+    "c": "sustantivo",
+    "es": "dinero",
+    "en": "money"
+  },
+  {
+    "f": "tapa",
+    "a": "/tapa/",
+    "c": "verbo",
+    "es": "trabajar",
+    "en": "work"
+  },
+  {
+    "f": "ari",
+    "a": "/ari/",
+    "c": "verbo",
+    "es": "oír",
+    "en": "hear"
+  },
+  {
+    "f": "lama",
+    "a": "/lama/",
+    "c": "verbo",
+    "es": "amar",
+    "en": "love"
+  },
+  {
+    "f": "reme",
+    "a": "/reme/",
+    "c": "verbo",
+    "es": "recordar",
+    "en": "remember"
+  },
+  {
+    "f": "resi",
+    "a": "/resi/",
+    "c": "verbo",
+    "es": "escribir",
+    "en": "write"
+  },
+  {
+    "f": "semo",
+    "a": "/semo/",
+    "c": "verbo",
+    "es": "nadar",
+    "en": "swim"
+  },
+  {
+    "f": "nubi",
+    "a": "/nubi/",
+    "c": "adjetivo",
+    "es": "solo",
+    "en": "alone"
+  },
+  {
+    "f": "mama",
+    "a": "/mama/",
+    "c": "sustantivo",
+    "es": "madre",
+    "en": "mother"
+  },
+  {
+    "f": "papa",
+    "a": "/papa/",
+    "c": "sustantivo",
+    "es": "padre",
+    "en": "father"
+  },
+  {
+    "f": "poko",
+    "a": "/poko/",
+    "c": "sustantivo",
+    "es": "comercio",
+    "en": "trade"
+  },
+  {
+    "f": "peke",
+    "a": "/peke/",
+    "c": "sustantivo",
+    "es": "pez",
+    "en": "fish"
+  },
+  {
+    "f": "duno",
+    "a": "/duno/",
+    "c": "adjetivo",
+    "es": "oscuro",
+    "en": "dark"
+  },
+  {
+    "f": "famo",
+    "a": "/famo/",
+    "c": "sustantivo",
+    "es": "familia",
+    "en": "family"
+  },
+  {
+    "f": "sento",
+    "a": "/ˈsento/",
+    "c": "número",
+    "es": "100",
+    "en": "100"
   },
   {
     "f": "kilo",

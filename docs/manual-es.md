@@ -79,7 +79,6 @@
 
 | Korlin | AFI | Significado |
 |---|---|---|
-| **u** | /u/ | un, una, uno |
 | **le** | /le/ | el, la |
 | **se** | /se/ | este, esta |
 | **te** | /te/ | ese, esa |
@@ -115,6 +114,16 @@
 | **num** | /num/ | calcular, número |
 | **sim** | /sim/ | simular |
 | **ken** | /ken/ | comprar |
+| **kotu** | /kotu/ | cerrar |
+| **hapu** | /hapu/ | abrir |
+| **kubi** | /kubi/ | correr |
+| **hudi** | /hudi/ | tocar |
+| **tapa** | /tapa/ | trabajar |
+| **ari** | /ari/ | oír |
+| **lama** | /lama/ | amar |
+| **reme** | /reme/ | recordar |
+| **resi** | /resi/ | escribir |
+| **semo** | /semo/ | nadar |
 
 ## Sustantivos
 
@@ -150,6 +159,22 @@
 | **som** | /som/ | sombra |
 | **lum** | /lum/ | luz |
 | **pilan** | /pilan/ | plano, diseño |
+| **dula** | /dula/ | amigo |
+| **hobu** | /hobu/ | animal |
+| **tusi** | /tusi/ | pájaro |
+| **tuni** | /tuni/ | brillo |
+| **husa** | /husa/ | olor |
+| **hesu** | /hesu/ | gusto |
+| **huko** | /huko/ | ciudad |
+| **duka** | /duka/ | mar |
+| **nodu** | /nodu/ | río |
+| **hodu** | /hodu/ | montaña |
+| **hoki** | /hoki/ | dinero |
+| **mama** | /mama/ | madre |
+| **papa** | /papa/ | padre |
+| **poko** | /poko/ | comercio |
+| **peke** | /peke/ | pez |
+| **famo** | /famo/ | familia |
 | **Yapan** | /ˈjapan/ | Japón |
 
 ## Adjetivos
@@ -170,6 +195,8 @@
 | **tom** | /tom/ | caliente |
 | **ge** | /ge/ | frío |
 | **ko** | /ko/ | corto, breve |
+| **nubi** | /nubi/ | solo |
+| **duno** | /duno/ | oscuro |
 
 ## Colores
 
@@ -191,6 +218,7 @@
 
 | Korlin | AFI | Significado |
 |---|---|---|
+| **nul** | /nul/ | 0 |
 | **du** | /du/ | 2 |
 | **san** | /san/ | 3 |
 | **fu** | /fu/ | 4 |
@@ -200,6 +228,7 @@
 | **om** | /om/ | 8 |
 | **nu** | /nu/ | 9 |
 | **des** | /des/ | 10 |
+| **sento** | /ˈsento/ | 100 |
 
 ## Matemáticas
 

@@ -1,4 +1,4 @@
-# Korlin — Especificación para modelos de lenguaje (v0.5)
+# Korlin — Especificación para modelos de lenguaje (v0.6)
 
 > **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer
 > mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para
@@ -8,7 +8,7 @@ Korlin (exónimo **Shortlang**) es una lengua construida, regular y sin ambigüe
 diseñada para hablar mucho en poco tiempo, con honestidad forzada por gramática
 (evidencialidad obligatoria) y pensada para uso humano y con agentes de IA.
 Autónimo: **korlin** = `ko` (corto) + `lin` (lengua) = *lengua corta*.
-**Versión de esta especificación: v0.4** (ver `CHANGELOG.md`). Este documento manda
+**Versión de esta especificación: v0.6** (ver `CHANGELOG.md`). Este documento manda
 sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
 
 **Fuente de verdad y qué es generado.** `data/lexico.yaml`, `data/afijos.yaml` y
@@ -25,18 +25,27 @@ manuales que deben seguir al spec, no al revés.
 1. **Una letra = un sonido.** Nunca hay excepciones. No existen `c`, `j`, `q`, `x`, `z`.
 2. **Orden SVO.** Sujeto, Verbo, Objeto.
 3. **El modificador va ANTES del núcleo:** `me ho` = *casa grande*; `gu pe` = *persona buena*.
-4. **La evidencialidad es OBLIGATORIA en todo verbo con contenido factual.**
-   Sin ella, la oración está mal formada. (Ver §4.)
-   **Exenta** en: preguntas (`mo`), órdenes e ironía marcada con `fi`.
-   En **subordinadas**, cada cláusula lleva la suya.
+4. **La evidencialidad es OBLIGATORIA en el verbo finito de toda oración factual.**
+   (Declarativa = afirmar un hecho. **Las preguntas NO son declarativas**: no
+   afirman nada, así que quedan exentas por (a).)
+   **Exenciones — lista CERRADA, solo estas cinco:**
+   (a) **preguntas** (`mo`, o interrogativo al inicio);
+   (b) **órdenes** (raíz desnuda); (c) **ironía marcada con `fi`**;
+   (d) la **prótasis** del condicional (`si …`);
+   (e) los **verbos no finitos de una cadena** (el auxiliar o modal lleva el
+   evidencial; el verbo de apoyo va desnudo: `tu kan-ve ve mi` = *puedes verme*).
+   **No hay ninguna otra exención.**
 5. **La modalidad epistémica va al final**, opcional: `to be os ku`.
 6. **La actitud va al final**, opcional: `yo hu we fi bu ri pu ni la`.
 7. **Negación:** hay DOS mecanismos, y no se mezclan.
    a) **`na` suelto**, inmediatamente antes del verbo → niega la oración.
       `mi na sa-ve.` = *No sé (lo veo).*
    b) **`na-` pegado**, como prefijo derivativo → crea la palabra opuesta.
-      `na-gu` = *malo*, `na-toro` = *mentira*. **Nunca** niega un verbo: para
-      negar la acción se usa siempre `na` suelto.
+      `na-gu` = *malo*, `na-toro` = *mentira* (**derivado enfático**; `fe` = *malo*
+      simple). **`na-` NUNCA va sobre un verbo**, ni flexionado ni en su forma de
+      diccionario: `na-sa-ve` y `na-sa` son incorrectos. Para negar una acción se
+      usa siempre `na` suelto (`mi na sa-ve`), y `na sa` ≠ `na-sa-ve` porque en la
+      segunda hay una palabra fonológica y el acento cae distinto.
 8. **Pregunta sí/no:** `mo` al final. **Interrogativos** al inicio:
     `ki` + sustantivo = qué/cuál (`ki lo` = *qué lugar, dónde*); se antepone.
    Toda pregunta va **sin evidencial** en su propia cláusula.
@@ -65,13 +74,60 @@ manuales que deben seguir al spec, no al revés.
     Si el sentido se lexicaliza (deja de ser predecible), se LISTA en el léxico.
     Regla de oro: **derivar antes que inventar**; inventar solo si ningún afijo sirve.
 18. **El guion marca frontera de morfema.** Los afijos derivacionales y flexivos
-    van con guion (`do-lo`, `mi man-ve`); el plural `-s` se escribe pegado
-    (`pes`, `lis`). Sin guion, dos raíces seguidas son dos palabras.
-    `vi-sa` (vivir+asumido) ≠ `vi sa` (vivir/saber).
-19. **Posesión: dos formas equivalentes.** El pronombre antepuesto es la normal
-    (`mi ho` = *mi casa*); `de` da la forma analítica o enfática (`le ho de mi`).
-    **Numerales:** del 1 al 10 son raíces; 11+ se componen (`des-u` = *once*).
-    El plural `-s` es opcional tras un numeral (`du ho` = *dos casas*).
+    van con guion (`do-lo`, `mi man-ve`). El plural va **pegado**: `-s` tras
+    vocal (`pes`, `lis`) y **`-es` tras coda** (`nom` → `nomes`, `kin` → `kines`,
+    `tem` → `temes`). Nunca dos codas seguidas. Sin guion, dos raíces seguidas
+    son dos palabras: `vi-sa` (vivir+asumido) ≠ `vi sa` (vivir/saber).
+19. **Posesión y numerales.** El pronombre antepuesto es la forma normal
+    (`mi ho` = *mi casa*); `de` da la analítica o enfática (`le ho de mi`).
+    **Numerales:** `nul` = 0, `u` = 1; 2-10 son raíces (`du san fu sin sis sem om nu des`).
+    **Composición — regla de ligadura (corrige C-17):** un dígito pegado a una base
+    la MULTIPLICA; una base tras otra base solo SUMA. Se escribe de mayor a menor.
+    `du-des` = 20 · `des-u` = 11 · `du-des-u` = 21 · `sento` = 100 · `sento-u` = 101 ·
+    `sento-des` = 110 · `du-sento` = 200 · `nu-des-nu` = 99 · `nu-sento-nu-des-nu` = 999.
+    `kilo` = 1.000 como numeral suelto; como prefijo del SI va con guion a una
+    unidad (`kilo-met` = *kilómetro*). El plural `-s` es opcional tras numeral.
+20. **`ki` tiene dos funciones; decide la posición Y el verbo que la precede.**
+    (corrige C-12 vs C-13)
+    - `ki` **al inicio de la oración raíz** = interrogativo (`Ki pe go?` = *¿quién va?*).
+    - `ki` **en medio tras un verbo de decir/saber** = complementante de una
+      declarativa: `Mi sa-ve ki li go-ve.` = *Sé que él va.* (la subordinada FINITA
+      lleva su propio evidencial, regla 14).
+    - `ki` **en medio tras un verbo de percepción o pregunta** (`ve`, `ari`, `mo`) =
+      interrogativo indirecto, **in situ**: `Tu ve ki pe?` = *¿a quién ves?*
+    **Interrogativa indirecta («sé quién va») = deuda C-36, no tiene forma aún.**
+    **Interrogativo con pro-drop:** el sujeto se omite solo si el interrogativo es
+    el sujeto; si es el objeto, va **in situ**.
+21. **Acento: una palabra fonológica lleva UN solo acento, en la penúltima sílaba.**
+    (corrige C-14 y C-16) Una palabra fonológica = raíz + sus afijos, o raíz + raíz
+    en un compuesto. Un monosílabo libre es siempre tónico.
+    - `me-ho` (1 palabra, 1 acento: /ˈme.ho/) ≠ `me ho` (2 palabras, 2 acentos: /ˈme ˈho/).
+    - `gu-gu` = /ˈgu.gu/ (1 acento) y `ru-sui` = /ruˈsu.i/ (1 acento).
+    - `na-gu` = /ˈna.gu/ y `pi-ho` = /ˈpi.ho`: el acento cae en el prefijo, pero sigue
+      siendo UN solo acento. Por eso la escritura con guion sí distingue derivado de frase.
+22. **Origo (C-18):** el punto de vista del evidencial es SIEMPRE el hablante que
+    emite la oración, salvo en **cita directa**, donde es el hablante citado.
+    - Creencia ajena (= cita indirecta): `Li sa-ve ki le wa e-di wa.` = *Él sabe que el
+      agua moja* — el `-di` es MÍO (me lo dijo él), no suyo.
+    - Cita directa (dos origos): `Li di-an: «Mi ve-ve le ho.»` = *Él dijo: «Veo la casa».*
+      El `-ve` es del hablante citado; `di-an` lleva el evidencial del que cita.
+23. **Modalidad no marcada (C-19):** sin partícula final, la modalidad vale `to`
+    (certeza) SOLO si el evidencial es fuerte (`-ve`, `-di`, `-sa`).
+    Con `-pen` (deducción) la no marcada vale `be` (probable); con `-pen` + dato
+    incompleto, `os`. La partícula explícita siempre manda.
+
+    | evidencial \ explícita | (ninguna) | `to` | `be` | `os` | `ku` |
+    |---|---|---|---|---|---|
+    | `-ve` (vi) | to | to | be | os | os |
+    | `-di` (me dijeron) | to | — | be | os | ku |
+    | `-sa` (sabido) | to | to | be | os | ku |
+    | `-pen` (deduzco) | be | to | be | os | ku |
+
+    (`—` = combinación no usada: si me lo dijeron, la certeza explícita no aporta.)
+24. **Partículas finales (nota C-21, mínima en v0.6):** la oración admite una sola
+    cadena final en orden fijo `[modalidad] [actitud] [mo]`. **No se encadenan dos
+    actitudes** ni dos modalidades: para dos matices, una va al final y la otra se
+    expresa en el verbo. Estudio completo (qué matices merecen partícula propia) = v0.7.
 
 ---
 
@@ -100,7 +156,14 @@ manuales que deben seguir al spec, no al revés.
 
 - **Sílaba:** `(C)V(C)`. La coda solo admite `m`, `n`, `s`.
 - **Sílabas posibles:** 17 onsets (16 consonantes + vacío) × 5 vocales × 4 codas = **340**.
-- **Acento:** siempre en la **penúltima** sílaba. Nunca se escribe tilde.
+- **Acento:** la **penúltima sílaba de la palabra fonológica** (raíz + afijos).
+  Coincide con el AFI del léxico (`na-gu` /ˈna.gu/, `ru-sui` /ruˈsu.i/).
+  Nunca se escribe tilde.
+- **Prosodia afijo/raíz (corrige C-14):** un **afijo es átono** dentro de la
+  palabra fonológica; un **monosílabo libre es tónico**. Por eso `vi-sa` (una
+  palabra, acento en `vi`) ≠ `vi sa` (dos palabras, dos acentos). El guion
+  marca la frontera y la fonología la distingue **al hablar**; «sin ambigüedad»
+  se limita a la **escritura**.
 - **Letras prohibidas:** `c j q x z`. La `j` no existe: /j/ se escribe `y`.
 - **Aproximación para hispanohablantes:** se pronuncia como español, con `v`
   labiodental suave y `h` aspirada (como en inglés `house`).
@@ -111,6 +174,11 @@ manuales que deben seguir al spec, no al revés.
   original: `Mekiko` (México), `Faransa` (Francia), `Yapan` (Japón),
   `Barasila` (Brasil), `Alemania` (Alemania). Si violan `(C)V(C)`, se adaptan
   (`Frans` → `Faransa`, `Brasil` → `Barasila`).
+- **Excepción documentada (C-10):** los nombres propios y las marcas
+  (mayúscula inicial) pueden conservar una ortografía con coda ilegal
+  respecto a `(C)V{m,n,s}`. El autónimo y la marca del idioma es **Korlin**.
+  Misma familia que `Mekiko`, `Faransa`, `Yapan`, `Barasila` (PR-26).
+  No cambia la coda del léxico común.
 - **Acento en compuestos con guion:** cada segmento conserva el suyo; se cuenta
   la penúltima **dentro de la palabra principal** (`do-lo` → /do.lo/).
 
@@ -149,24 +217,48 @@ sin fusionarse.
 
 ## 4. Evidencialidad — el corazón de Korlin
 
-Todo verbo factual **debe** declarar de dónde viene la información. Esto es lo que
+Todo verbo finito factual **debe** declarar de dónde viene la información. Esto es lo que
 hace la mentira cara: quien afirma debe decir si lo vio, lo dedujo, se lo contaron
 o lo asume. Estudios tipológicos (Aikhenvald 2004) muestran que ~25% de las lenguas
 del mundo marcan la fuente obligatoriamente; Korlin lo adopta desde el diseño.
 
-| Sufijo | Fuente | Ejemplo (presente) | Traducción |
+**Cada sufijo tiene UN valor, sin solapes (corrige C-01):**
+
+| Sufijo | Valor ÚNICO | Ejemplo (presente) | Traducción |
 |---|---|---|---|
-| `-ve` | **Directo** (lo vi, lo viví) | `li go-ve` | *Él va (lo veo)* |
-| `-pen` | **Inferido** (lo deduzco) | `li go-pen` | *Él va (lo deduzco)* |
-| `-di` | **Reportado** (me lo dijeron) | `li go-di` | *Él va (me lo contaron)* |
-| `-sa` | **Asumido** (se sabe) | `li go-sa` | *Él va (es sabido)* |
+| `-ve` | **Directo**: lo percibí con cualquier sentido, incluidos los estados internos | `li go-ve` | *Él va (lo veo)* |
+| `-pen` | **Inferido**: lo deduzco o lo calculo | `li go-pen` | *Él va (lo deduzco)* |
+| `-di` | **Reportado**: me lo dijeron, lo leí o lo devolvió una herramienta | `li go-di` | *Él va (me lo dijeron)* |
+| `-sa` | **Conocimiento GENERAL**: es sabido por todos, no de una fuente concreta | `le su e-sa me` | *El sol es grande (hecho general)* |
+
+**`-sa` NO es «supuesto».** Para lo conjetural se usa **`-pen` + modalidad `os`/`ku`**:
+`li ne-go-pen os` = *quizá vaya (lo deduzco)*. Nunca `-sa` para una conjetura.
 
 **Pasado: el evidencial NO cambia, pero `an-` es obligatorio.**
 `li an-go-ve` = *Él fue (lo vi)*; `li an-go-di` = *Él fue (me lo contaron)*.
 
 **Un evidencial por cláusula, en el verbo finito (el primero de la cadena).**
-En `tu kan-ve sa mi` (*puedes verme*), `kan` lleva el evidencial y `sa` queda
-desnudo. En una subordinada, cada cláusula lleva el suyo: `mi sa-ve ki li an-go-di.`
+En `tu kan-ve ve mi` (*puedes verme*), `kan` lleva el evidencial y `ve` queda
+desnudo. En una subordinada, cada cláusula finita lleva el suyo:
+`mi sa-ve ki li an-go-di.`
+
+**El emisor nunca decide «cuánto se fía» con el evidencial: eso es la modalidad.**
+
+### 4.1 Tabla normativa: escenario → evidencial (corrige C-02)
+
+| Escenario | Evidencial | Ejemplo |
+|---|---|---|
+| Percibido con cualquier sentido (vista, oído, tacto, gusto, olfato) | `-ve` | `mi ve-ve le ho` = *veo la casa* |
+| Estado interno (dolor, emoción, sueño, hambre) | `-ve` | `mi sen-ve tom` = *tengo calor (lo siento)* |
+| Deducido, calculado, medido | `-pen` | `le nom e-pen me` = *el número es grande (lo calculo)* |
+| Dicho, leído, o devuelto por un documento, API o herramienta | `-di` | `le ho e-di me` = *la casa es grande (lo leí)* |
+| Conocimiento general, saber común | `-sa` | `le wa e-sa wa` = *el agua moja (es sabido)* |
+| Memoria de algo vivido | `-ve` | `mi an-ve-ve le ho` = *vi la casa (la recuerdo)* |
+| Sueño o ficción (contenido) | `-pen` | `mi an-mo-pen le ho` = *soñé la casa* |
+| Matemáticas y lo que uno mismo construye | `-pen` | `du ka du e-pen fu` = *2+2 es 4* |
+| **Futuro** que uno mismo da por hecho | `-ve` | `mi ne-go-ve` = *iré (decidido)* |
+| **Futuro** planeado por otros, predicho o esperado | `-pen` | `li ne-go-pen` = *irá (lo deduzco)* |
+| Acción propia pasada sin percepción directa | `-di` | `mi an-go-di` = *fui (consta)* |
 
 **Regla de honestidad:** si no sabes de dónde viene algo, usa `-pen` (lo deduzco) o
 `-di` (me lo dijeron), nunca `-ve` (lo vi) si no lo viste realmente.
@@ -225,7 +317,7 @@ Van al **final** de la oración, después del verbo.
 
 ## 7. Léxico completo
 
-148 palabras. Formato: **korlin** · AFI · categoría · español · inglés.
+178 palabras. Formato: **korlin** · AFI · categoría · español · inglés.
 
 | Korlin | AFI | Categoría | Español | English |
 |---|---|---|---|---|
@@ -233,7 +325,8 @@ Van al **final** de la oración, después del verbo.
 | `a` | /a/ | preposición | a, hacia | to, toward |
 | `i` | /i/ | preposición | en, dentro | in, inside |
 | `o` | /o/ | conjunción | o | or |
-| `u` | /u/ | determinante | un, una, uno | a, an, one |
+| `nul` | /nul/ | número | 0 | 0 |
+| `u` | /u/ | determinante, número | un, una, uno; 1 | a, an, one; 1 |
 | `ka` | /ka/ | conjunción | y | and |
 | `ba` | /ba/ | conjunción | pero | but |
 | `ki` | /ki/ | conjunción | que, qué | that, which, what |
@@ -364,6 +457,35 @@ Van al **final** de la oración, después del verbo.
 | `min` | /min/ | matemática | restar, menos (−) | to subtract, minus (−) |
 | `fan` | /fan/ | matemática | multiplicar (×) | to multiply (×) |
 | `fen` | /fen/ | matemática | dividir (÷) | to divide (÷) |
+| `kotu` | /kotu/ | verbo | cerrar | close |
+| `hapu` | /hapu/ | verbo | abrir | open |
+| `kubi` | /kubi/ | verbo | correr | run |
+| `dula` | /dula/ | sustantivo | amigo | friend |
+| `hobu` | /hobu/ | sustantivo | animal | animal |
+| `tusi` | /tusi/ | sustantivo | pájaro | bird |
+| `tuni` | /tuni/ | sustantivo | brillo | brightness |
+| `husa` | /husa/ | sustantivo | olor | smell |
+| `hudi` | /hudi/ | verbo | tocar | touch |
+| `hesu` | /hesu/ | sustantivo | gusto | taste |
+| `huko` | /huko/ | sustantivo | ciudad | city |
+| `duka` | /duka/ | sustantivo | mar | sea |
+| `nodu` | /nodu/ | sustantivo | río | river |
+| `hodu` | /hodu/ | sustantivo | montaña | mountain |
+| `hoki` | /hoki/ | sustantivo | dinero | money |
+| `tapa` | /tapa/ | verbo | trabajar | work |
+| `ari` | /ari/ | verbo | oír | hear |
+| `lama` | /lama/ | verbo | amar | love |
+| `reme` | /reme/ | verbo | recordar | remember |
+| `resi` | /resi/ | verbo | escribir | write |
+| `semo` | /semo/ | verbo | nadar | swim |
+| `nubi` | /nubi/ | adjetivo | solo | alone |
+| `mama` | /mama/ | sustantivo | madre | mother |
+| `papa` | /papa/ | sustantivo | padre | father |
+| `poko` | /poko/ | sustantivo | comercio | trade |
+| `peke` | /peke/ | sustantivo | pez | fish |
+| `duno` | /duno/ | adjetivo | oscuro | dark |
+| `famo` | /famo/ | sustantivo | familia | family |
+| `sento` | /ˈsento/ | número | 100 | 100 |
 | `kilo` | /ˈkilo/ | prefijo SI | mil (×1000) | thousand (×1000) |
 | `mega` | /ˈmega/ | prefijo SI | millón (×10⁶) | million (×10⁶) |
 | `giga` | /ˈgiga/ | prefijo SI | mil millones (×10⁹) | billion (×10⁹) |

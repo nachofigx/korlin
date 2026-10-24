@@ -62,11 +62,12 @@ for texto, esperado in CASOS_K:
 
 print("\n== ES → Korlin ==")
 for texto, esperados in CASOS_ES:
-    check(texto, m.otro_a_korlin(texto, LEX, "es"), esperados)
+    # C-01: ya no hay -sa por defecto -> se pasa explicito en los casos
+    check(texto, m.otro_a_korlin(texto, LEX, "es", evidencial="-sa"), esperados)
 
 print("\n== EN → Korlin ==")
 for texto, esperados in CASOS_EN:
-    check(texto, m.otro_a_korlin(texto, LEX, "en"), esperados)
+    check(texto, m.otro_a_korlin(texto, LEX, "en", evidencial="-sa"), esperados)
 
 print(f"\n{'✅ TODO OK' if fallos == 0 else f'❌ {fallos} fallos'}")
 
@@ -135,9 +136,11 @@ def test_coherencia_v02():
     # 5) el traductor respeta v0.2
     import sys as _s
     from subprocess import run
-    def tr(t):
-        r = run([_s.executable, "scripts/traductor-korlin.py", "es", t],
-                capture_output=True, text=True)
+    def tr(t, ev="sa"):
+        cmd = [_s.executable, "scripts/traductor-korlin.py", "es"]
+        if ev:
+            cmd.append("--ev=" + ev)
+        r = run(cmd + [t], capture_output=True, text=True)
         return r.stdout.strip().splitlines()[0]
     casos = [("¿Tú comes comida?", "mo"), ("El día es bueno.", "e-sa"),
              ("Él fue.", "an-go")]

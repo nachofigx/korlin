@@ -79,7 +79,6 @@
 
 | Korlin | AFI | Meaning |
 |---|---|---|
-| **u** | /u/ | a, an, one |
 | **le** | /le/ | the |
 | **se** | /se/ | this |
 | **te** | /te/ | that |
@@ -115,6 +114,16 @@
 | **num** | /num/ | to calculate |
 | **sim** | /sim/ | to simulate |
 | **ken** | /ken/ | to buy |
+| **kotu** | /kotu/ | close |
+| **hapu** | /hapu/ | open |
+| **kubi** | /kubi/ | run |
+| **hudi** | /hudi/ | touch |
+| **tapa** | /tapa/ | work |
+| **ari** | /ari/ | hear |
+| **lama** | /lama/ | love |
+| **reme** | /reme/ | remember |
+| **resi** | /resi/ | write |
+| **semo** | /semo/ | swim |
 
 ## Nouns
 
@@ -150,6 +159,22 @@
 | **som** | /som/ | shadow |
 | **lum** | /lum/ | light |
 | **pilan** | /pilan/ | plan, design |
+| **dula** | /dula/ | friend |
+| **hobu** | /hobu/ | animal |
+| **tusi** | /tusi/ | bird |
+| **tuni** | /tuni/ | brightness |
+| **husa** | /husa/ | smell |
+| **hesu** | /hesu/ | taste |
+| **huko** | /huko/ | city |
+| **duka** | /duka/ | sea |
+| **nodu** | /nodu/ | river |
+| **hodu** | /hodu/ | mountain |
+| **hoki** | /hoki/ | money |
+| **mama** | /mama/ | mother |
+| **papa** | /papa/ | father |
+| **poko** | /poko/ | trade |
+| **peke** | /peke/ | fish |
+| **famo** | /famo/ | family |
 | **Yapan** | /ˈjapan/ | Japan |
 
 ## Adjectives
@@ -170,6 +195,8 @@
 | **tom** | /tom/ | hot |
 | **ge** | /ge/ | cold |
 | **ko** | /ko/ | short, brief |
+| **nubi** | /nubi/ | alone |
+| **duno** | /duno/ | dark |
 
 ## Colors
 
@@ -191,6 +218,7 @@
 
 | Korlin | AFI | Meaning |
 |---|---|---|
+| **nul** | /nul/ | 0 |
 | **du** | /du/ | 2 |
 | **san** | /san/ | 3 |
 | **fu** | /fu/ | 4 |
@@ -200,6 +228,7 @@
 | **om** | /om/ | 8 |
 | **nu** | /nu/ | 9 |
 | **des** | /des/ | 10 |
+| **sento** | /ˈsento/ | 100 |
 
 ## Mathematics
 

@@ -79,7 +79,6 @@
 
 | Korlin | AFI | Sens |
 |---|---|---|
-| **u** | /u/ | un, une |
 | **le** | /le/ | le, la |
 | **se** | /se/ | ce, cette |
 | **te** | /te/ | ce…-là |
@@ -115,6 +114,16 @@
 | **num** | /num/ | calculer |
 | **sim** | /sim/ | simuler |
 | **ken** | /ken/ | acheter |
+| **kotu** | /kotu/ | cerrar |
+| **hapu** | /hapu/ | abrir |
+| **kubi** | /kubi/ | correr |
+| **hudi** | /hudi/ | tocar |
+| **tapa** | /tapa/ | trabajar |
+| **ari** | /ari/ | oír |
+| **lama** | /lama/ | amar |
+| **reme** | /reme/ | recordar |
+| **resi** | /resi/ | escribir |
+| **semo** | /semo/ | nadar |
 
 ## Noms
 
@@ -150,6 +159,22 @@
 | **som** | /som/ | ombre |
 | **lum** | /lum/ | lumière |
 | **pilan** | /pilan/ | plano, diseño |
+| **dula** | /dula/ | amigo |
+| **hobu** | /hobu/ | animal |
+| **tusi** | /tusi/ | pájaro |
+| **tuni** | /tuni/ | brillo |
+| **husa** | /husa/ | olor |
+| **hesu** | /hesu/ | gusto |
+| **huko** | /huko/ | ciudad |
+| **duka** | /duka/ | mar |
+| **nodu** | /nodu/ | río |
+| **hodu** | /hodu/ | montaña |
+| **hoki** | /hoki/ | dinero |
+| **mama** | /mama/ | madre |
+| **papa** | /papa/ | padre |
+| **poko** | /poko/ | comercio |
+| **peke** | /peke/ | pez |
+| **famo** | /famo/ | familia |
 | **Yapan** | /ˈjapan/ | Japon |
 
 ## Adjectifs
@@ -170,6 +195,8 @@
 | **tom** | /tom/ | chaud |
 | **ge** | /ge/ | froid |
 | **ko** | /ko/ | court |
+| **nubi** | /nubi/ | solo |
+| **duno** | /duno/ | oscuro |
 
 ## Couleurs
 
@@ -191,6 +218,7 @@
 
 | Korlin | AFI | Sens |
 |---|---|---|
+| **nul** | /nul/ | 0 |
 | **du** | /du/ | 2 |
 | **san** | /san/ | 3 |
 | **fu** | /fu/ | 4 |
@@ -200,6 +228,7 @@
 | **om** | /om/ | 8 |
 | **nu** | /nu/ | 9 |
 | **des** | /des/ | 10 |
+| **sento** | /ˈsento/ | 100 |
 
 ## Mathématiques
 

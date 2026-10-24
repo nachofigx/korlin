@@ -79,7 +79,6 @@
 
 | Korlin | AFI | 含义 |
 |---|---|---|
-| **u** | /u/ | 一, 一个 |
 | **le** | /le/ | （定冠词） |
 | **se** | /se/ | 这 |
 | **te** | /te/ | 那 |
@@ -115,6 +114,16 @@
 | **num** | /num/ | 计算 |
 | **sim** | /sim/ | 模拟 |
 | **ken** | /ken/ | 购买 |
+| **kotu** | /kotu/ | cerrar |
+| **hapu** | /hapu/ | abrir |
+| **kubi** | /kubi/ | correr |
+| **hudi** | /hudi/ | tocar |
+| **tapa** | /tapa/ | trabajar |
+| **ari** | /ari/ | oír |
+| **lama** | /lama/ | amar |
+| **reme** | /reme/ | recordar |
+| **resi** | /resi/ | escribir |
+| **semo** | /semo/ | nadar |
 
 ## 名词
 
@@ -150,6 +159,22 @@
 | **som** | /som/ | 阴影 |
 | **lum** | /lum/ | 光 |
 | **pilan** | /pilan/ | plano, diseño |
+| **dula** | /dula/ | amigo |
+| **hobu** | /hobu/ | animal |
+| **tusi** | /tusi/ | pájaro |
+| **tuni** | /tuni/ | brillo |
+| **husa** | /husa/ | olor |
+| **hesu** | /hesu/ | gusto |
+| **huko** | /huko/ | ciudad |
+| **duka** | /duka/ | mar |
+| **nodu** | /nodu/ | río |
+| **hodu** | /hodu/ | montaña |
+| **hoki** | /hoki/ | dinero |
+| **mama** | /mama/ | madre |
+| **papa** | /papa/ | padre |
+| **poko** | /poko/ | comercio |
+| **peke** | /peke/ | pez |
+| **famo** | /famo/ | familia |
 | **Yapan** | /ˈjapan/ | 日本 |
 
 ## 形容词
@@ -170,6 +195,8 @@
 | **tom** | /tom/ | 热 |
 | **ge** | /ge/ | 冷 |
 | **ko** | /ko/ | 短 |
+| **nubi** | /nubi/ | solo |
+| **duno** | /duno/ | oscuro |
 
 ## 颜色
 
@@ -191,6 +218,7 @@
 
 | Korlin | AFI | 含义 |
 |---|---|---|
+| **nul** | /nul/ | 0 |
 | **du** | /du/ | 2 |
 | **san** | /san/ | 3 |
 | **fu** | /fu/ | 4 |
@@ -200,6 +228,7 @@
 | **om** | /om/ | 8 |
 | **nu** | /nu/ | 9 |
 | **des** | /des/ | 10 |
+| **sento** | /ˈsento/ | 100 |
 
 ## 数学
 

@@ -14,7 +14,7 @@ Uso:
     echo "Yo quiero comer" | python scripts/traductor-korlin.py es --stdin
 
 Opciones:
-    --ev=ve|pen|di|sa   evidencial a usar (default: sa = asumido/se sabe)
+    --ev=ve|pen|di|sa   evidencial a usar; SIN --ev se marca [?fuente] (nunca -sa)
     --time=an|ne        fuerza pasado/futuro
     --gloss             muestra la glosa morfema a morfema
 """
@@ -146,6 +146,10 @@ NEGADOS = {
     "en": {"na-toro": "lie", "na-gu": "bad", "na-me": "small"},
 }
 PRONOMBRES_OBJ = {"es": {"mi": "mí", "tu": "ti", "li": "él"}, "en": {}}
+# F2: 'conmigo/contigo' se derivan con kon + pronombre (regla 17), no son raices
+CON_PRONOMBRE = {"es": {"conmigo": "kon mi", "contigo": "kon tu", "connosco": "kon wi",
+                        "con nosotros": "kon wi", "con él": "kon li", "con ella": "kon li"},
+                 "en": {"with me": "kon mi", "with you": "kon tu", "with us": "kon wi"}}
 
 
 def analiza(palabra, lex=None):
@@ -288,7 +292,7 @@ FUNCIONALES = {
 
 # infinitivo -> raíz korlin
 VERBOS = {
-    "es": {"ir": "go", "venir": "ven", "ver": "ve", "decir": "di", "hablar": "pa",
+    "es": {"ir": "go", "venir": "ven", "ver": "ve", "mirar": "ve", "decir": "di", "hablar": "pa",
            "hacer": "fa", "tener": "ha", "querer": "vo", "poder": "kan", "deber": "mus",
            "saber": "sa", "dar": "da", "tomar": "ta", "pensar": "pen", "sentir": "sen",
            "comer": "man", "beber": "bi", "dormir": "do", "vivir": "vi", "morir": "mu",
@@ -317,7 +321,14 @@ IRREGULARES = {
            "veo": ("ve", None), "ves": ("ve", None), "vio": ("ve", "an-"), "vi": ("ve", "an-"),
            "soy": ("e", None), "eres": ("e", None), "somos": ("e", None), "era": ("e", "an-"),
            "doy": ("da", None), "da": ("da", None), "di": ("da", "an-"),
-           "estoy": ("e", None), "está": ("e", None), "están": ("e", None)},
+           "estoy": ("e", None), "está": ("e", None), "están": ("e", None),
+           "duermo": ("do", None), "duermes": ("do", None), "duerme": ("do", None), "duermen": ("do", None),
+           "pienso": ("pen", None), "piensas": ("pen", None), "piensa": ("pen", None), "piensan": ("pen", None),
+           "sé": ("sa", None), "sabes": ("sa", None), "sabe": ("sa", None), "saben": ("sa", None),
+           "miro": ("ve", None), "miras": ("ve", None), "mira": ("ve", None), "miran": ("ve", None),
+           "como": ("man", None), "comes": ("man", None), "come": ("man", None), "comen": ("man", None),
+           "bebo": ("bi", None), "bebes": ("bi", None), "bebe": ("bi", None), "beben": ("bi", None),
+           "ven": ("ven", None)},
     "en": {"went": ("go", "an-"), "gone": ("go", "an-"), "ate": ("man", "an-"), "eaten": ("man", "an-"),
            "saw": ("ve", "an-"), "seen": ("ve", "an-"), "said": ("di", "an-"), "made": ("fa", "an-"),
            "did": ("fa", "an-"), "had": ("ha", "an-"), "was": ("e", "an-"), "were": ("e", "an-"),
@@ -347,6 +358,12 @@ TERM_ES = {
 }
 TERM_EN = {None: ["", "s", "es"], "an-": ["ed"]}
 
+NUMERALES = {"es": {"cero": "nul", "un": "u", "una": "u", "uno": "u", "dos": "du", "tres": "san",
+                      "cuatro": "fu", "cinco": "sin", "seis": "sis", "siete": "sem", "ocho": "om",
+                      "nueve": "nu", "diez": "des", "cien": "sento", "ciento": "sento", "mil": "kilo"},
+             "en": {"zero": "nul", "one": "u", "two": "du", "three": "san", "four": "fu",
+                    "five": "sin", "six": "sis", "seven": "sem", "eight": "om", "nine": "nu",
+                    "ten": "des", "hundred": "sento", "thousand": "kilo"}}
 PLURALES = {"es": ["los", "las", "unos", "unas", "varios", "varias", "algunos", "algunas",
                    "muchos", "muchas", "ambos", "ambas", "dos", "tres", "cuatro", "cinco"],
             "en": ["many", "some", "several", "all", "both", "few", "two", "three", "four", "five"]}
@@ -361,6 +378,8 @@ def construye_indice(lengua):
     idx = dict(IRREGULARES[lengua])
     for inf, raiz in VERBOS.get(lengua, {}).items():
         idx.setdefault(inf, (raiz, None))
+        if inf in ("ser", "estar"):  # irregulares: no generar 'se', 'so', 'esta'...
+            continue
         if lengua == "es":
             stem, terminacion = inf, None
             for s in ("ar", "er", "ir"):
@@ -384,7 +403,7 @@ def construye_indice(lengua):
 INDICE_V = {lg: construye_indice(lg) for lg in ("es", "en")}
 
 
-def otro_a_korlin(texto, lex, idioma="es", evidencial="-sa", tiempo=None, glosa=False):
+def otro_a_korlin(texto, lex, idioma="es", evidencial="?", tiempo=None, glosa=False):
     lengua = idioma if idioma in ("es", "en") else "es"
     func, indice = FUNCIONALES[lengua], INDICE_V[lengua]
 
@@ -394,16 +413,34 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="-sa", tiempo=None, glosa=
     plural = any(n in [normaliza(x) for x in PLURALES[lengua]] for n in norm)
     negacion = any(n in ("no", "not") for n in norm)
     pregunta = "?" in texto or "¿" in texto
-    if tiempo is None:
-        for n in norm:
-            if n in indice and indice[n][1]:
-                tiempo = indice[n][1]
+    orden = "!" in texto and not re.match(r"^\s*(yo|tú|tu|él|ella|nosotros|ustedes|ellos)\b", texto, re.I)
+    # P1: en ORDEN, `ve` es ambiguo (2sg de ir Y de ver). Regla 13: `Go!` = ¡ve!,
+    # `Ve mi!` = ¡mírame!. Se resuelve por el objeto directo que sigue.
+    OBJ_DIR = {"mi", "tu", "li", "lis", "wi", "yu",          # pronombres objeto
+               "le", "el", "la", "los", "las", "lo", "un", "una", "uno",  # determinantes
+               "se", "te", "u", "este", "esta", "ese", "esa"}
+    verbo_ir = False
+    if orden:
+        for j, nm in enumerate(norm):
+            if nm == "ve":
+                sig = norm[j + 1] if j + 1 < len(norm) else None
+                if sig not in OBJ_DIR:      # sin objeto directo -> imperativo de IR
+                    verbo_ir = True
                 break
+    # C-26/C-19: cada clausula finita lleva SU tiempo, SU evidencial y UN verbo finito.
+    # Fronteras de clausula: la coma, el complementante `ki` y el conector `so`.
+    clausula = []
+    cid = 0
+    for nm in norm:
+        if nm in (",", "ki", "so", "que", "and", "then"):   # fronteras de clausula
+            cid += 1
+        clausula.append(cid)
 
     salida, glosas = [], []
-    verbo_puesto = False
-    for tok, n in zip(tokens, norm):
-        if n in ("¿", "?"):
+    verbo_puesto = set()          # por clausula, no global
+    for i_tok, (tok, n) in enumerate(zip(tokens, norm)):
+        k = tok.lower()  # los indices de verbos/funcionales llevan tildes
+        if n in ("¿", "?", "¡"):
             continue
         if n == "!":
             salida.append("!")
@@ -414,26 +451,42 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="-sa", tiempo=None, glosa=
         if n in ("no", "not") and negacion:
             continue  # se aplica junto al verbo
 
-        # 1) verbo conjugado
-        if n in indice and not verbo_puesto:
-            raiz, tp = indice[n]
-            t = tiempo if tiempo is not None else tp
-            # v0.2: la pregunta exime el evidencial en SU cláusula
-            ev_v = "" if (pregunta and "," not in salida) else evidencial
+        # 1) verbo conjugado (uno por clausula)
+        ci = clausula[i_tok] if i_tok < len(clausula) else cid
+        if k in indice and ci not in verbo_puesto:
+            raiz, tp = indice[k]
+            if verbo_ir and raiz == "ve" and ci == 0:
+                raiz = "go"      # P1: ¡Ve! = imperativo de ir
+            t = tiempo if tiempo is not None else tp   # el tiempo es el del PROPIO verbo
+            # regla 14: la subordinada finita lleva su evidencial; la raiz tambien.
+            # Exencion (a)/(b): pregunta u orden eximen SU clausula.
+            ev_v = evidencial
+            if ev_v == "?":
+                ev_v = "-[?fuente]"
+            if pregunta and ci == cid:        # el `mo` final afecta a la ultima clausula
+                ev_v = ""
+            if orden and ci == 0:
+                ev_v = ""
+            # regla 15: la PROTASIS ('si ... ,') va desnuda
+            if "si" in norm[:i_tok] and "," not in norm[:i_tok]:
+                ev_v = ""
             forma = (t or "") + raiz + ev_v
             if negacion:
                 forma = "na " + forma
             salida.append(forma)
             glosas.append(f"{tok}=[{t or ''}{raiz}{ev_v}]")
-            verbo_puesto = True
+            verbo_puesto.add(ci)
             continue
 
         # 2) palabra funcional
-        if n in func:
-            f = func[n]
+        if k in func:
+            f = func[k]
             # v0.2: la cópula `e` lleva evidencial en la declarativa
             if f == "e" and not pregunta:
-                f = "e" + evidencial
+                f = "e" + ("-[?fuente]" if evidencial == "?" else evidencial)
+            if f.split("-")[0] == "e" and negacion and not verbo_puesto:
+                f = "na " + f          # negar tambien la copula (regla 7a)
+                verbo_puesto = True
             salida.append(f)
             glosas.append(f"{tok}={f}")
             continue
@@ -445,13 +498,28 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="-sa", tiempo=None, glosa=
             glosas.append(f"{tok}=>{der}")
             continue
 
+        # 2b) numerales (C-06/C-17)
+        num = NUMERALES.get(lengua, {})
+        if n in num:
+            salida.append(num[n])
+            glosas.append(f"{tok}={num[n]}")
+            continue
+
+        # 3b) F2: 'conmigo/contigo' se derivan (kon + pronombre, regla 17)
+        cp = CON_PRONOMBRE.get(lengua, {})
+        if n in cp:
+            for w in cp[n].split():
+                salida.append(w)
+            glosas.append(f"{tok}=>{cp[n]}")
+            continue
+
         # 4) léxico directo (con plural)
         formas, era_plural = lex.con_plural(tok, lengua)
         if formas:
             f = formas[0]
             cat = lex.por_forma[f]["categoria"]
             if (plural or era_plural) and cat == "sustantivo" and not f.endswith("s"):
-                f += "s"
+                f += "es" if f[-1] in "mns" else "s"   # C-03
             salida.append(f)
             glosas.append(f"{tok}={f}")
             continue
@@ -466,6 +534,8 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="-sa", tiempo=None, glosa=
     def _cat(f):
         f = f.lstrip("-").split("-")[0]
         e = lex.por_forma.get(f)
+        if e is None and f.endswith("s"):   # plural pegado (regla 18)
+            e = lex.por_forma.get(f[:-1])
         return e.get("categoria") if e else None
     i = 0
     while i < len(salida) - 1:
@@ -496,7 +566,7 @@ def main():
         return
     modo = args[0]
     lex = Lexico()
-    evidencial, tiempo, glosa = "-sa", None, False
+    evidencial, tiempo, glosa = "?", None, False   # C-01: sin --ev no se asume -sa
     resto = []
     for a in args[1:]:
         if a.startswith("--ev="):

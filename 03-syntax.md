@@ -81,4 +81,5 @@ SVO order (subject before verb, object after). No case marking.
 11. Pro-drop applies also with `na` and `mo` (`na sa-ve.`, `go mo?`).
 12. Copula `e` carries the evidential (`le ti e-ve gu.`).
 13. Conditional `si … so …`: protasis exempt, apodosis carries the evidential.
-14. Subordinate clause introduced by `ki` is exempt; the main clause keeps its own.
+14. Every finite clause introduced by `ki` carries its own evidential (no exemption
+    for subordination); the protasis of the conditional is the exception (rule 13).

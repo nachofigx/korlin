@@ -5,3 +5,6 @@ __pycache__/
 
 # OS
 .DS_Store
+
+# Bundles de verificacion (se entregan aparte, no al arbol)
+*.bundle
