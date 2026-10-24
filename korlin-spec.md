@@ -174,13 +174,16 @@ manuales que deben seguir al spec, no al revés.
   original: `Mekiko` (México), `Faransa` (Francia), `Yapan` (Japón),
   `Barasila` (Brasil), `Alemania` (Alemania). Si violan `(C)V(C)`, se adaptan
   (`Frans` → `Faransa`, `Brasil` → `Barasila`).
-- **Excepción documentada (C-10):** los nombres propios y las marcas
-  (mayúscula inicial) pueden conservar una ortografía con coda ilegal
-  respecto a `(C)V{m,n,s}`. El autónimo y la marca del idioma es **Korlin**.
-  Misma familia que `Mekiko`, `Faransa`, `Yapan`, `Barasila` (PR-26).
-  No cambia la coda del léxico común.
-- **Acento en compuestos con guion:** cada segmento conserva el suyo; se cuenta
-  la penúltima **dentro de la palabra principal** (`do-lo` → /do.lo/).
+- **Excepción documentada (C-10):** los **nombres propios y las marcas**, con
+  mayúscula inicial, pueden conservar una ortografía que **viole la fonotáctica**
+  `(C)V{m,n,s}`: coda ilegal **o grupo consonántico**. Es la única excepción a
+  «una letra = un sonido» y afecta solo a nombres, nunca al léxico común. El
+  autónimo y la marca del idioma es **Korlin**: `-rl-` es un grupo consonántico
+  que el léxico común no admite (ninguna partición encaja en `(C)V(C)`), pero es
+  marca y se conserva. Misma familia que `Mekiko`, `Faransa`, `Yapan`, `Barasila`.
+- **Acento en compuestos con guion (regla 21):** el compuesto es UNA palabra
+  fonológica y lleva **un solo** acento, en su penúltima sílaba: `do-lo` →
+  /ˈdo.lo/, `ru-sui` → /ruˈsu.i/. Los segmentos **no** conservan acento propio.
 
 ---
 
