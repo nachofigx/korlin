@@ -414,6 +414,19 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="?", tiempo=None, glosa=Fa
     negacion = any(n in ("no", "not") for n in norm)
     pregunta = "?" in texto or "¿" in texto
     orden = "!" in texto and not re.match(r"^\s*(yo|tú|tu|él|ella|nosotros|ustedes|ellos)\b", texto, re.I)
+    # P1: en ORDEN, `ve` es ambiguo (2sg de ir Y de ver). Regla 13: `Go!` = ¡ve!,
+    # `Ve mi!` = ¡mírame!. Se resuelve por el objeto directo que sigue.
+    OBJ_DIR = {"mi", "tu", "li", "lis", "wi", "yu",          # pronombres objeto
+               "le", "el", "la", "los", "las", "lo", "un", "una", "uno",  # determinantes
+               "se", "te", "u", "este", "esta", "ese", "esa"}
+    verbo_ir = False
+    if orden:
+        for j, nm in enumerate(norm):
+            if nm == "ve":
+                sig = norm[j + 1] if j + 1 < len(norm) else None
+                if sig not in OBJ_DIR:      # sin objeto directo -> imperativo de IR
+                    verbo_ir = True
+                break
     # C-26/C-19: cada clausula finita lleva SU tiempo, SU evidencial y UN verbo finito.
     # Fronteras de clausula: la coma, el complementante `ki` y el conector `so`.
     clausula = []
@@ -442,6 +455,8 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="?", tiempo=None, glosa=Fa
         ci = clausula[i_tok] if i_tok < len(clausula) else cid
         if k in indice and ci not in verbo_puesto:
             raiz, tp = indice[k]
+            if verbo_ir and raiz == "ve" and ci == 0:
+                raiz = "go"      # P1: ¡Ve! = imperativo de ir
             t = tiempo if tiempo is not None else tp   # el tiempo es el del PROPIO verbo
             # regla 14: la subordinada finita lleva su evidencial; la raiz tambien.
             # Exencion (a)/(b): pregunta u orden eximen SU clausula.

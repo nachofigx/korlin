@@ -118,6 +118,12 @@
 | **hapu** | /hapu/ | abrir |
 | **kubi** | /kubi/ | correr |
 | **hudi** | /hudi/ | tocar |
+| **tapa** | /tapa/ | trabajar |
+| **ari** | /ari/ | oír |
+| **lama** | /lama/ | amar |
+| **reme** | /reme/ | recordar |
+| **resi** | /resi/ | escribir |
+| **nami** | /nami/ | nadar |
 
 ## Sustantivos
 
@@ -160,10 +166,15 @@
 | **husa** | /husa/ | olor |
 | **hesu** | /hesu/ | gusto |
 | **huko** | /huko/ | ciudad |
-| **halu** | /halu/ | mar |
+| **duka** | /duka/ | mar |
 | **hisu** | /hisu/ | río |
 | **hodu** | /hodu/ | montaña |
 | **hoki** | /hoki/ | dinero |
+| **mama** | /mama/ | madre |
+| **papa** | /papa/ | padre |
+| **poko** | /poko/ | comercio |
+| **peke** | /peke/ | pez |
+| **famo** | /famo/ | familia |
 | **Yapan** | /ˈjapan/ | Japón |
 
 ## Adjetivos
@@ -184,6 +195,8 @@
 | **tom** | /tom/ | caliente |
 | **ge** | /ge/ | frío |
 | **ko** | /ko/ | corto, breve |
+| **solo** | /solo/ | solo |
+| **duno** | /duno/ | oscuro |
 
 ## Colores
 

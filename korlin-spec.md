@@ -312,7 +312,7 @@ Van al **final** de la oración, después del verbo.
 
 ## 7. Léxico completo
 
-165 palabras. Formato: **korlin** · AFI · categoría · español · inglés.
+178 palabras. Formato: **korlin** · AFI · categoría · español · inglés.
 
 | Korlin | AFI | Categoría | Español | English |
 |---|---|---|---|---|
@@ -463,10 +463,23 @@ Van al **final** de la oración, después del verbo.
 | `hudi` | /hudi/ | verbo | tocar | touch |
 | `hesu` | /hesu/ | sustantivo | gusto | taste |
 | `huko` | /huko/ | sustantivo | ciudad | city |
-| `halu` | /halu/ | sustantivo | mar | sea |
+| `duka` | /duka/ | sustantivo | mar | sea |
 | `hisu` | /hisu/ | sustantivo | río | river |
 | `hodu` | /hodu/ | sustantivo | montaña | mountain |
 | `hoki` | /hoki/ | sustantivo | dinero | money |
+| `tapa` | /tapa/ | verbo | trabajar | work |
+| `ari` | /ari/ | verbo | oír | hear |
+| `lama` | /lama/ | verbo | amar | love |
+| `reme` | /reme/ | verbo | recordar | remember |
+| `resi` | /resi/ | verbo | escribir | write |
+| `nami` | /nami/ | verbo | nadar | swim |
+| `solo` | /solo/ | adjetivo | solo | alone |
+| `mama` | /mama/ | sustantivo | madre | mother |
+| `papa` | /papa/ | sustantivo | padre | father |
+| `poko` | /poko/ | sustantivo | comercio | trade |
+| `peke` | /peke/ | sustantivo | pez | fish |
+| `duno` | /duno/ | adjetivo | oscuro | dark |
+| `famo` | /famo/ | sustantivo | familia | family |
 | `sento` | /ˈsento/ | número | 100 | 100 |
 | `kilo` | /ˈkilo/ | prefijo SI | mil (×1000) | thousand (×1000) |
 | `mega` | /ˈmega/ | prefijo SI | millón (×10⁶) | million (×10⁶) |

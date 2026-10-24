@@ -7,6 +7,63 @@ la versión. **Documento que manda:** `korlin-spec.md` (generado desde
 
 ---
 
+## v0.6 — 2026-10-24
+
+**Council de Korlin** (58 objeciones: 9 críticas, 26 altas) + **verificación de la
+ronda v0.6** (B1-B4, F1-F8, P1-P4). Todo verificado contra el repo: real.
+
+### Reglas nuevas
+- **20** `ki`: al inicio de la oración raíz es interrogativo; en medio tras verbo de
+  decir/saber es complementante; en medio tras verbo de percepción o pregunta es
+  interrogativo indirecto **in situ**. Cada subordinada FINITA lleva su propio
+  evidencial (no hay exención por subordinación). La interrogativa indirecta
+  («sé quién va») queda como deuda **C-36**.
+- **21** Una sola regla de acento: una palabra fonológica (raíz + afijos, o raíz +
+  raíz) lleva **un** acento, en la penúltima sílaba; un monosílabo libre es tónico.
+  `me-ho` (1 acento) ≠ `me ho` (2).
+- **22** Origo (C-18): el punto de vista es el del hablante, salvo en **cita directa**.
+- **23** Modalidad no marcada (C-19): sin partícula vale `to` con evidencial fuerte,
+  y `be` con `-pen`. Tabla 4×4.
+- **24** Partículas finales (C-21): una sola cadena `[modalidad] [actitud] [mo]`;
+  no se encadenan dos actitudes ni dos modalidades.
+
+### Cambios de regla y léxico
+- **`-sa` = conocimiento GENERAL** (no «supuesto»). La conjetura va con `-pen` +
+  modalidad `os`/`ku`. El traductor **no** pone `-sa` por defecto: sin `--ev`
+  devuelve `-[?fuente]` (C-01).
+- **Tabla normativa §4.1** escenario → evidencial (11 filas), incluido el futuro
+  propio (`-ve`) frente al predicho (`-pen`) (C-02).
+- **Plural `-es` tras coda** (`nomes`, `kines`, `temes`); `-s` solo tras vocal (C-03).
+- **Exenciones del evidencial: lista cerrada de 5** — preguntas, órdenes, ironía
+  `fi`, prótasis, verbos no finitos de una cadena. Las **preguntas NO son
+  declarativas** (B1).
+- **`na-` nunca sobre un verbo**; `na-sa` eliminado (C-15).
+- **Numerales:** `nul` = 0 (era `wu`, par mínimo con `u`), `u` = 1, `sento` = 100.
+  **Regla de ligadura:** dígito pegado a base multiplica (`du-des` = 20); base tras
+  base suma (`des-u` = 11). `kilo` = 1.000 (P4/C-17).
+- **C-04 corregido** también en la cadena de máquinas (`generar_ia.py` →
+  `korlin.json`), no solo en `03-syntax.md` (P2).
+
+### Herramientas
+- `scripts/test-regresion-v06.py`: **32 casos con IGUALDAD EXACTA**, rutas desde
+  RAIZ; cubre C-05, C-06, C-26 y el marcador único (B4).
+- **Marcador único `-[?fuente]`** en la casilla del evidencial (F1).
+- Traductor: tiempo, evidencial y verbo finito **por cláusula**; `¡Ve!` → `go!` y
+  `¡Mira!` → `ve!` (P1); `conmigo`/`contigo` = `kon mi`/`kon tu`, no raíces (F2).
+- Versión leída de `data/*.yaml`: una sola fuente (C-29).
+
+### Léxico
+- 150 → **178 palabras**: 7 reemplazos del lote 1 rechazado, 8 del lote 2, 11
+  sobrevivientes del lote 1 y 2 sustitutos (`duka` por `halu`, `duno` por `dano`,
+  `famo` por `fama`, rechazadas por R6 verbo+objeto).
+
+### Deuda declarada (v0.7)
+C-14 (colores en `-i`, `kilo`, `somi`), C-17 (san/sin/sis/sem/sen), C-36
+(interrogativa indirecta), C-38 (hiato VV), C-46 (falsos amigos), C-05 (índice sin
+tilde), `u me hos`, C-24/C-27 (medir con hablantes).
+
+---
+
 ## v0.5 — 2026-10-22
 
 **Bloque 2 de Korlin** (mensajes `aa22aaa1` y `643575ca`, PR-17..PR-27). Casi todo

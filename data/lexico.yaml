@@ -763,8 +763,8 @@ palabras:
     categoria: sustantivo
     es: ciudad
     en: city
-  - forma: halu
-    afi: /halu/
+  - forma: duka
+    afi: /duka/
     categoria: sustantivo
     es: mar
     en: sea
@@ -783,6 +783,71 @@ palabras:
     categoria: sustantivo
     es: dinero
     en: money
+  - forma: tapa
+    afi: /tapa/
+    categoria: verbo
+    es: trabajar
+    en: work
+  - forma: ari
+    afi: /ari/
+    categoria: verbo
+    es: oír
+    en: hear
+  - forma: lama
+    afi: /lama/
+    categoria: verbo
+    es: amar
+    en: love
+  - forma: reme
+    afi: /reme/
+    categoria: verbo
+    es: recordar
+    en: remember
+  - forma: resi
+    afi: /resi/
+    categoria: verbo
+    es: escribir
+    en: write
+  - forma: nami
+    afi: /nami/
+    categoria: verbo
+    es: nadar
+    en: swim
+  - forma: solo
+    afi: /solo/
+    categoria: adjetivo
+    es: solo
+    en: alone
+  - forma: mama
+    afi: /mama/
+    categoria: sustantivo
+    es: madre
+    en: mother
+  - forma: papa
+    afi: /papa/
+    categoria: sustantivo
+    es: padre
+    en: father
+  - forma: poko
+    afi: /poko/
+    categoria: sustantivo
+    es: comercio
+    en: trade
+  - forma: peke
+    afi: /peke/
+    categoria: sustantivo
+    es: pez
+    en: fish
+  - forma: duno
+    afi: /duno/
+    categoria: adjetivo
+    es: oscuro
+    en: dark
+  - forma: famo
+    afi: /famo/
+    categoria: sustantivo
+    es: familia
+    en: family
   - forma: sento
     afi: /ˈsento/
     categoria: número

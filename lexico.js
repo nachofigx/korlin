@@ -1344,8 +1344,8 @@ window.KORLIN_LEXICO = [
     "en": "city"
   },
   {
-    "f": "halu",
-    "a": "/halu/",
+    "f": "duka",
+    "a": "/duka/",
     "c": "sustantivo",
     "es": "mar",
     "en": "sea"
@@ -1370,6 +1370,97 @@ window.KORLIN_LEXICO = [
     "c": "sustantivo",
     "es": "dinero",
     "en": "money"
+  },
+  {
+    "f": "tapa",
+    "a": "/tapa/",
+    "c": "verbo",
+    "es": "trabajar",
+    "en": "work"
+  },
+  {
+    "f": "ari",
+    "a": "/ari/",
+    "c": "verbo",
+    "es": "oír",
+    "en": "hear"
+  },
+  {
+    "f": "lama",
+    "a": "/lama/",
+    "c": "verbo",
+    "es": "amar",
+    "en": "love"
+  },
+  {
+    "f": "reme",
+    "a": "/reme/",
+    "c": "verbo",
+    "es": "recordar",
+    "en": "remember"
+  },
+  {
+    "f": "resi",
+    "a": "/resi/",
+    "c": "verbo",
+    "es": "escribir",
+    "en": "write"
+  },
+  {
+    "f": "nami",
+    "a": "/nami/",
+    "c": "verbo",
+    "es": "nadar",
+    "en": "swim"
+  },
+  {
+    "f": "solo",
+    "a": "/solo/",
+    "c": "adjetivo",
+    "es": "solo",
+    "en": "alone"
+  },
+  {
+    "f": "mama",
+    "a": "/mama/",
+    "c": "sustantivo",
+    "es": "madre",
+    "en": "mother"
+  },
+  {
+    "f": "papa",
+    "a": "/papa/",
+    "c": "sustantivo",
+    "es": "padre",
+    "en": "father"
+  },
+  {
+    "f": "poko",
+    "a": "/poko/",
+    "c": "sustantivo",
+    "es": "comercio",
+    "en": "trade"
+  },
+  {
+    "f": "peke",
+    "a": "/peke/",
+    "c": "sustantivo",
+    "es": "pez",
+    "en": "fish"
+  },
+  {
+    "f": "duno",
+    "a": "/duno/",
+    "c": "adjetivo",
+    "es": "oscuro",
+    "en": "dark"
+  },
+  {
+    "f": "famo",
+    "a": "/famo/",
+    "c": "sustantivo",
+    "es": "familia",
+    "en": "family"
   },
   {
     "f": "sento",

@@ -118,6 +118,12 @@
 | **hapu** | /hapu/ | open |
 | **kubi** | /kubi/ | run |
 | **hudi** | /hudi/ | touch |
+| **tapa** | /tapa/ | work |
+| **ari** | /ari/ | hear |
+| **lama** | /lama/ | love |
+| **reme** | /reme/ | remember |
+| **resi** | /resi/ | write |
+| **nami** | /nami/ | swim |
 
 ## Nouns
 
@@ -160,10 +166,15 @@
 | **husa** | /husa/ | smell |
 | **hesu** | /hesu/ | taste |
 | **huko** | /huko/ | city |
-| **halu** | /halu/ | sea |
+| **duka** | /duka/ | sea |
 | **hisu** | /hisu/ | river |
 | **hodu** | /hodu/ | mountain |
 | **hoki** | /hoki/ | money |
+| **mama** | /mama/ | mother |
+| **papa** | /papa/ | father |
+| **poko** | /poko/ | trade |
+| **peke** | /peke/ | fish |
+| **famo** | /famo/ | family |
 | **Yapan** | /ˈjapan/ | Japan |
 
 ## Adjectives
@@ -184,6 +195,8 @@
 | **tom** | /tom/ | hot |
 | **ge** | /ge/ | cold |
 | **ko** | /ko/ | short, brief |
+| **solo** | /solo/ | alone |
+| **duno** | /duno/ | dark |
 
 ## Colors
 

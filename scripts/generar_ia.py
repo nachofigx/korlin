@@ -95,7 +95,7 @@ REGLAS = {
         "ordenes": "raiz desnuda, sin evidencial ni sujeto (Go!)",
         "condicional": "si ... so ...: protasis exenta, apodosis con evidencial",
         "copula": "e lleva el evidencial en la declarativa (le ti e-ve gu)",
-        "subordinacion": "ki (la subordinada va exenta; cada clausula puede llevar el suyo)",
+        "subordinacion": "ki; cada clausula FINITA lleva su propio evidencial (no hay exencion por subordinacion; la protasis es la excepcion de la regla 15)",
         "posesion": "pronombre antepuesto (mi ho) normal; de = analitica/enfatica",
         "numerales": "nul=0, u=1; raices 2-10; ligadura: digito+base multiplica (du-des=20), base+base suma (des-u=11). sento=100, kilo=1000",
         "ortografia": "mayuscula solo inicial y nombres propios; . ! ? ; nombres propios adaptados (Mekiko, Faransa)",

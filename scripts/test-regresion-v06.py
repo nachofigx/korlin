@@ -34,7 +34,8 @@ CASOS = [
     ("Yo veo la casa.",             "sa",  "mi ve-sa le ho."),
     ("México es grande.",           "sa",  "Mekiko e-sa me."),
     # --- C-06: ordenes (raiz desnuda, regla 13) ---
-    ("¡Ve!",                        "sa",  "ve!"),
+    ("¡Ve!",                        "sa",  "go!"),   # P1: regla 13, Go! = ¡ve!
+    ("¡Ve mi!",                     "sa",  "ve mi!"),  # Ve mi! = ¡mírame!
     ("¡Mira!",                      "sa",  "ve!"),
     ("¡Come comida!",               "sa",  "man man-re!"),
     ("¡Ven conmigo!",               "sa",  "ven kon mi!"),

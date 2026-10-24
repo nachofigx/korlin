@@ -162,10 +162,23 @@ husa     | sustantivo   | olor | smell
 hudi     | verbo        | tocar | touch
 hesu     | sustantivo   | gusto | taste
 huko     | sustantivo   | ciudad | city
-halu     | sustantivo   | mar | sea
+duka     | sustantivo   | mar | sea
 hisu     | sustantivo   | río | river
 hodu     | sustantivo   | montaña | mountain
 hoki     | sustantivo   | dinero | money
+tapa     | verbo        | trabajar | work
+ari      | verbo        | oír | hear
+lama     | verbo        | amar | love
+reme     | verbo        | recordar | remember
+resi     | verbo        | escribir | write
+nami     | verbo        | nadar | swim
+solo     | adjetivo     | solo | alone
+mama     | sustantivo   | madre | mother
+papa     | sustantivo   | padre | father
+poko     | sustantivo   | comercio | trade
+peke     | sustantivo   | pez | fish
+duno     | adjetivo     | oscuro | dark
+famo     | sustantivo   | familia | family
 sento    | número       | 100 | 100
 kilo     | prefijo SI   | mil (×1000) | thousand (×1000)
 mega     | prefijo SI   | millón (×10⁶) | million (×10⁶)
