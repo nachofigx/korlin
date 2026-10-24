@@ -174,6 +174,11 @@ manuales que deben seguir al spec, no al revés.
   original: `Mekiko` (México), `Faransa` (Francia), `Yapan` (Japón),
   `Barasila` (Brasil), `Alemania` (Alemania). Si violan `(C)V(C)`, se adaptan
   (`Frans` → `Faransa`, `Brasil` → `Barasila`).
+- **Excepción documentada (C-10):** los nombres propios y las marcas
+  (mayúscula inicial) pueden conservar una ortografía con coda ilegal
+  respecto a `(C)V{m,n,s}`. El autónimo y la marca del idioma es **Korlin**.
+  Misma familia que `Mekiko`, `Faransa`, `Yapan`, `Barasila` (PR-26).
+  No cambia la coda del léxico común.
 - **Acento en compuestos con guion:** cada segmento conserva el suyo; se cuenta
   la penúltima **dentro de la palabra principal** (`do-lo` → /do.lo/).
 

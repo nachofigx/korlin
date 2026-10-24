@@ -52,6 +52,13 @@ ronda v0.6** (B1-B4, F1-F8, P1-P4). Todo verificado contra el repo: real.
   `¡Mira!` → `ve!` (P1); `conmigo`/`contigo` = `kon mi`/`kon tu`, no raíces (F2).
 - Versión leída de `data/*.yaml`: una sola fuente (C-29).
 
+### C-10 — Nombre
+- Se mantiene el autónimo y la marca **Korlin** (no Kolin, no Korolin). Los
+  nombres propios y las marcas (mayúscula inicial) pueden conservar una
+  ortografía con coda ilegal respecto a `(C)V{m,n,s}`: excepción documentada,
+  misma familia que PR-26 (`Mekiko`, `Faransa`, `Yapan`, `Barasila`). La coda
+  del léxico común no cambia.
+
 ### Léxico
 - 150 → **178 palabras**: 7 reemplazos del lote 1 rechazado, 8 del lote 2, 11
   sobrevivientes del lote 1 y los sustitutos que exige el R6 acotado:
