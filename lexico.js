@@ -40,8 +40,8 @@ window.KORLIN_LEXICO = [
     "ja": "または"
   },
   {
-    "f": "nul",
-    "a": "/nul/",
+    "f": "non",
+    "a": "/non/",
     "c": "número",
     "es": "0",
     "en": "0"
@@ -1461,6 +1461,426 @@ window.KORLIN_LEXICO = [
     "c": "sustantivo",
     "es": "familia",
     "en": "family"
+  },
+  {
+    "f": "famu",
+    "a": "/famu/",
+    "c": "sustantivo",
+    "es": "mujer",
+    "en": "woman"
+  },
+  {
+    "f": "manu",
+    "a": "/manu/",
+    "c": "sustantivo",
+    "es": "hombre",
+    "en": "man"
+  },
+  {
+    "f": "bebe",
+    "a": "/bebe/",
+    "c": "sustantivo",
+    "es": "niño",
+    "en": "child"
+  },
+  {
+    "f": "tomo",
+    "a": "/tomo/",
+    "c": "sustantivo",
+    "es": "esposo",
+    "en": "husband"
+  },
+  {
+    "f": "boku",
+    "a": "/boku/",
+    "c": "sustantivo",
+    "es": "árbol",
+    "en": "tree"
+  },
+  {
+    "f": "nupi",
+    "a": "/nupi/",
+    "c": "sustantivo",
+    "es": "semilla",
+    "en": "seed"
+  },
+  {
+    "f": "pala",
+    "a": "/pala/",
+    "c": "sustantivo",
+    "es": "hoja",
+    "en": "leaf"
+  },
+  {
+    "f": "tapi",
+    "a": "/tapi/",
+    "c": "sustantivo",
+    "es": "raíz",
+    "en": "root"
+  },
+  {
+    "f": "kopa",
+    "a": "/kopa/",
+    "c": "sustantivo",
+    "es": "corteza",
+    "en": "bark"
+  },
+  {
+    "f": "kuti",
+    "a": "/kuti/",
+    "c": "sustantivo",
+    "es": "piel",
+    "en": "skin"
+  },
+  {
+    "f": "misa",
+    "a": "/misa/",
+    "c": "sustantivo",
+    "es": "carne",
+    "en": "flesh"
+  },
+  {
+    "f": "kuru",
+    "a": "/kuru/",
+    "c": "sustantivo",
+    "es": "sangre",
+    "en": "blood"
+  },
+  {
+    "f": "boni",
+    "a": "/boni/",
+    "c": "sustantivo",
+    "es": "hueso",
+    "en": "bone"
+  },
+  {
+    "f": "tamo",
+    "a": "/tamo/",
+    "c": "sustantivo",
+    "es": "huevo",
+    "en": "egg"
+  },
+  {
+    "f": "ore",
+    "a": "/ore/",
+    "c": "sustantivo",
+    "es": "oreja",
+    "en": "ear"
+  },
+  {
+    "f": "nosi",
+    "a": "/nosi/",
+    "c": "sustantivo",
+    "es": "nariz",
+    "en": "nose"
+  },
+  {
+    "f": "moka",
+    "a": "/moka/",
+    "c": "sustantivo",
+    "es": "boca",
+    "en": "mouth"
+  },
+  {
+    "f": "tino",
+    "a": "/tino/",
+    "c": "sustantivo",
+    "es": "diente",
+    "en": "tooth"
+  },
+  {
+    "f": "pode",
+    "a": "/pode/",
+    "c": "sustantivo",
+    "es": "pie",
+    "en": "foot"
+  },
+  {
+    "f": "noki",
+    "a": "/noki/",
+    "c": "sustantivo",
+    "es": "rodilla",
+    "en": "knee"
+  },
+  {
+    "f": "tumi",
+    "a": "/tumi/",
+    "c": "sustantivo",
+    "es": "corazón",
+    "en": "heart"
+  },
+  {
+    "f": "tara",
+    "a": "/tara/",
+    "c": "sustantivo",
+    "es": "estrella",
+    "en": "star"
+  },
+  {
+    "f": "sumu",
+    "a": "/sumu/",
+    "c": "sustantivo",
+    "es": "lluvia",
+    "en": "rain"
+  },
+  {
+    "f": "toko",
+    "a": "/toko/",
+    "c": "sustantivo",
+    "es": "piedra",
+    "en": "stone"
+  },
+  {
+    "f": "nubu",
+    "a": "/nubu/",
+    "c": "sustantivo",
+    "es": "nube",
+    "en": "cloud"
+  },
+  {
+    "f": "sumo",
+    "a": "/sumo/",
+    "c": "sustantivo",
+    "es": "humo",
+    "en": "smoke"
+  },
+  {
+    "f": "sena",
+    "a": "/sena/",
+    "c": "sustantivo",
+    "es": "ceniza",
+    "en": "ashes"
+  },
+  {
+    "f": "pado",
+    "a": "/pado/",
+    "c": "sustantivo",
+    "es": "camino",
+    "en": "path"
+  },
+  {
+    "f": "poki",
+    "a": "/poki/",
+    "c": "sustantivo",
+    "es": "perro",
+    "en": "dog"
+  },
+  {
+    "f": "tani",
+    "a": "/tani/",
+    "c": "adjetivo",
+    "es": "largo",
+    "en": "long"
+  },
+  {
+    "f": "wida",
+    "a": "/wida/",
+    "c": "adjetivo",
+    "es": "ancho",
+    "en": "wide"
+  },
+  {
+    "f": "tika",
+    "a": "/tika/",
+    "c": "adjetivo",
+    "es": "grueso",
+    "en": "thick"
+  },
+  {
+    "f": "lusa",
+    "a": "/lusa/",
+    "c": "sustantivo",
+    "es": "piojo",
+    "en": "louse"
+  },
+  {
+    "f": "kumu",
+    "a": "/kumu/",
+    "c": "sustantivo",
+    "es": "grasa",
+    "en": "grease"
+  },
+  {
+    "f": "kuno",
+    "a": "/kuno/",
+    "c": "sustantivo",
+    "es": "cuerno",
+    "en": "horn"
+  },
+  {
+    "f": "kola",
+    "a": "/kola/",
+    "c": "sustantivo",
+    "es": "cola",
+    "en": "tail"
+  },
+  {
+    "f": "puma",
+    "a": "/puma/",
+    "c": "sustantivo",
+    "es": "pluma",
+    "en": "feather"
+  },
+  {
+    "f": "kabe",
+    "a": "/kabe/",
+    "c": "sustantivo",
+    "es": "pelo",
+    "en": "hair"
+  },
+  {
+    "f": "kara",
+    "a": "/kara/",
+    "c": "sustantivo",
+    "es": "garra",
+    "en": "claw"
+  },
+  {
+    "f": "bela",
+    "a": "/bela/",
+    "c": "sustantivo",
+    "es": "vientre",
+    "en": "belly"
+  },
+  {
+    "f": "peta",
+    "a": "/peta/",
+    "c": "sustantivo",
+    "es": "pecho",
+    "en": "chest"
+  },
+  {
+    "f": "liba",
+    "a": "/liba/",
+    "c": "sustantivo",
+    "es": "hígado",
+    "en": "liver"
+  },
+  {
+    "f": "bita",
+    "a": "/bita/",
+    "c": "verbo",
+    "es": "morder",
+    "en": "bite"
+  },
+  {
+    "f": "kida",
+    "a": "/kida/",
+    "c": "verbo",
+    "es": "matar",
+    "en": "kill"
+  },
+  {
+    "f": "tibu",
+    "a": "/tibu/",
+    "c": "verbo",
+    "es": "volar",
+    "en": "fly"
+  },
+  {
+    "f": "waka",
+    "a": "/waka/",
+    "c": "verbo",
+    "es": "caminar",
+    "en": "walk"
+  },
+  {
+    "f": "sona",
+    "a": "/sona/",
+    "c": "verbo",
+    "es": "acostarse",
+    "en": "lie"
+  },
+  {
+    "f": "sita",
+    "a": "/sita/",
+    "c": "verbo",
+    "es": "sentarse",
+    "en": "sit"
+  },
+  {
+    "f": "puka",
+    "a": "/puka/",
+    "c": "sustantivo",
+    "es": "arena",
+    "en": "sand"
+  },
+  {
+    "f": "buna",
+    "a": "/buna/",
+    "c": "verbo",
+    "es": "quemar",
+    "en": "burn"
+  },
+  {
+    "f": "fula",
+    "a": "/fula/",
+    "c": "adjetivo",
+    "es": "lleno",
+    "en": "full"
+  },
+  {
+    "f": "tima",
+    "a": "/tima/",
+    "c": "adjetivo",
+    "es": "redondo",
+    "en": "round"
+  },
+  {
+    "f": "tumu",
+    "a": "/tumu/",
+    "c": "adjetivo",
+    "es": "seco",
+    "en": "dry"
+  },
+  {
+    "f": "ki-pe",
+    "a": "/kipe/",
+    "c": "interrogativo",
+    "es": "quién",
+    "en": "who"
+  },
+  {
+    "f": "ki-lo",
+    "a": "/kilo/",
+    "c": "interrogativo",
+    "es": "dónde",
+    "en": "where"
+  },
+  {
+    "f": "ki-ti",
+    "a": "/kiti/",
+    "c": "interrogativo",
+    "es": "cuándo",
+    "en": "when"
+  },
+  {
+    "f": "ki-mo",
+    "a": "/kimo/",
+    "c": "interrogativo",
+    "es": "cómo",
+    "en": "how"
+  },
+  {
+    "f": "pamo",
+    "a": "/pamo/",
+    "c": "determinante",
+    "es": "todo",
+    "en": "all"
+  },
+  {
+    "f": "paki",
+    "a": "/paki/",
+    "c": "adjetivo",
+    "es": "mucho",
+    "en": "much"
+  },
+  {
+    "f": "tuki",
+    "a": "/tuki/",
+    "c": "adjetivo",
+    "es": "poco",
+    "en": "little"
   },
   {
     "f": "sento",

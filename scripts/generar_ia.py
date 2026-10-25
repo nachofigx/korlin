@@ -97,7 +97,7 @@ REGLAS = {
         "copula": "e lleva el evidencial en la declarativa (le ti e-ve gu)",
         "subordinacion": "ki; cada clausula FINITA lleva su propio evidencial (no hay exencion por subordinacion; la protasis es la excepcion de la regla 15)",
         "posesion": "pronombre antepuesto (mi ho) normal; de = analitica/enfatica",
-        "numerales": "nul=0, u=1; raices 2-10; ligadura: digito+base multiplica (du-des=20), base+base suma (des-u=11). sento=100, kilo=1000",
+        "numerales": "non=0, u=1; raices 2-10; ligadura: digito+base multiplica (du-des=20), base+base suma (des-u=11). sento=100, kilo=1000",
         "ortografia": "mayuscula solo inicial y nombres propios; . ! ? ; nombres propios adaptados (Mekiko, Faransa)",
         "ki": "al inicio = interrogativo; en medio tras verbo de decir/saber = complementante",
         "derivacion": {
@@ -261,7 +261,7 @@ def genera_spec(palabras, afijos):
     A("    son dos palabras: `vi-sa` (vivir+asumido) ≠ `vi sa` (vivir/saber).")
     A("19. **Posesión y numerales.** El pronombre antepuesto es la forma normal")
     A("    (`mi ho` = *mi casa*); `de` da la analítica o enfática (`le ho de mi`).")
-    A("    **Numerales:** `nul` = 0, `u` = 1; 2-10 son raíces (`du san fu sin sis sem om nu des`).")
+    A("    **Numerales:** `non` = 0, `u` = 1; 2-10 son raíces (`du san fu sin sis sem om nu des`).")
     A("    **Composición — regla de ligadura (corrige C-17):** un dígito pegado a una base")
     A("    la MULTIPLICA; una base tras otra base solo SUMA. Se escribe de mayor a menor.")
     A("    `du-des` = 20 · `des-u` = 11 · `du-des-u` = 21 · `sento` = 100 · `sento-u` = 101 ·")
@@ -305,6 +305,14 @@ def genera_spec(palabras, afijos):
     A("    | `-pen` (deduzco) | be | to | be | os | ku |")
     A("")
     A("    (`—` = combinación no usada: si me lo dijeron, la certeza explícita no aporta.)")
+    A("24b. **Homonimia derivado/frase (C-14, v0.7):** un derivado en `-i` (colores y")
+    A("    relativos: `wa`→`wai`, `su`→`sui`, `som`→`somi`) es **legítimo** por la regla 17,")
+    A("    aunque al escribir se lea también como dos palabras (`wai` = `wa i`). Se")
+    A("    distinguen por la **prosodia** (regla 21: 1 acento vs 2) y en la escritura por")
+    A("    el guion. **Casos con colisión canónica real** (la frase sí es una oración")
+    A("    posible), declarados: `somi` (gris) ≈ `so mi` (*entonces yo*), `kilo` (mil) ≈")
+    A("    `ki lo` (*qué lugar*). El contexto y el acento los separan; si resultan")
+    A("    confusos al probarlos con hablantes, se renombran (C-24).")
     A("24. **Partículas finales (nota C-21, mínima en v0.6):** la oración admite una sola")
     A("    cadena final en orden fijo `[modalidad] [actitud] [mo]`. **No se encadenan dos")
     A("    actitudes** ni dos modalidades: para dos matices, una va al final y la otra se")

@@ -24,8 +24,8 @@ palabras:
     categoria: conjunción
     es: o
     en: or
-  - forma: nul
-    afi: /nul/
+  - forma: non
+    afi: /non/
     categoria: número
     es: "0"
     en: "0"
@@ -848,6 +848,306 @@ palabras:
     categoria: sustantivo
     es: familia
     en: family
+  - forma: famu
+    afi: /famu/
+    categoria: sustantivo
+    es: mujer
+    en: woman
+  - forma: manu
+    afi: /manu/
+    categoria: sustantivo
+    es: hombre
+    en: man
+  - forma: bebe
+    afi: /bebe/
+    categoria: sustantivo
+    es: niño
+    en: child
+  - forma: tomo
+    afi: /tomo/
+    categoria: sustantivo
+    es: esposo
+    en: husband
+  - forma: boku
+    afi: /boku/
+    categoria: sustantivo
+    es: árbol
+    en: tree
+  - forma: nupi
+    afi: /nupi/
+    categoria: sustantivo
+    es: semilla
+    en: seed
+  - forma: pala
+    afi: /pala/
+    categoria: sustantivo
+    es: hoja
+    en: leaf
+  - forma: tapi
+    afi: /tapi/
+    categoria: sustantivo
+    es: raíz
+    en: root
+  - forma: kopa
+    afi: /kopa/
+    categoria: sustantivo
+    es: corteza
+    en: bark
+  - forma: kuti
+    afi: /kuti/
+    categoria: sustantivo
+    es: piel
+    en: skin
+  - forma: misa
+    afi: /misa/
+    categoria: sustantivo
+    es: carne
+    en: flesh
+  - forma: kuru
+    afi: /kuru/
+    categoria: sustantivo
+    es: sangre
+    en: blood
+  - forma: boni
+    afi: /boni/
+    categoria: sustantivo
+    es: hueso
+    en: bone
+  - forma: tamo
+    afi: /tamo/
+    categoria: sustantivo
+    es: huevo
+    en: egg
+  - forma: ore
+    afi: /ore/
+    categoria: sustantivo
+    es: oreja
+    en: ear
+  - forma: nosi
+    afi: /nosi/
+    categoria: sustantivo
+    es: nariz
+    en: nose
+  - forma: moka
+    afi: /moka/
+    categoria: sustantivo
+    es: boca
+    en: mouth
+  - forma: tino
+    afi: /tino/
+    categoria: sustantivo
+    es: diente
+    en: tooth
+  - forma: pode
+    afi: /pode/
+    categoria: sustantivo
+    es: pie
+    en: foot
+  - forma: noki
+    afi: /noki/
+    categoria: sustantivo
+    es: rodilla
+    en: knee
+  - forma: tumi
+    afi: /tumi/
+    categoria: sustantivo
+    es: corazón
+    en: heart
+  - forma: tara
+    afi: /tara/
+    categoria: sustantivo
+    es: estrella
+    en: star
+  - forma: sumu
+    afi: /sumu/
+    categoria: sustantivo
+    es: lluvia
+    en: rain
+  - forma: toko
+    afi: /toko/
+    categoria: sustantivo
+    es: piedra
+    en: stone
+  - forma: nubu
+    afi: /nubu/
+    categoria: sustantivo
+    es: nube
+    en: cloud
+  - forma: sumo
+    afi: /sumo/
+    categoria: sustantivo
+    es: humo
+    en: smoke
+  - forma: sena
+    afi: /sena/
+    categoria: sustantivo
+    es: ceniza
+    en: ashes
+  - forma: pado
+    afi: /pado/
+    categoria: sustantivo
+    es: camino
+    en: path
+  - forma: poki
+    afi: /poki/
+    categoria: sustantivo
+    es: perro
+    en: dog
+  - forma: tani
+    afi: /tani/
+    categoria: adjetivo
+    es: largo
+    en: long
+  - forma: wida
+    afi: /wida/
+    categoria: adjetivo
+    es: ancho
+    en: wide
+  - forma: tika
+    afi: /tika/
+    categoria: adjetivo
+    es: grueso
+    en: thick
+  - forma: lusa
+    afi: /lusa/
+    categoria: sustantivo
+    es: piojo
+    en: louse
+  - forma: kumu
+    afi: /kumu/
+    categoria: sustantivo
+    es: grasa
+    en: grease
+  - forma: kuno
+    afi: /kuno/
+    categoria: sustantivo
+    es: cuerno
+    en: horn
+  - forma: kola
+    afi: /kola/
+    categoria: sustantivo
+    es: cola
+    en: tail
+  - forma: puma
+    afi: /puma/
+    categoria: sustantivo
+    es: pluma
+    en: feather
+  - forma: kabe
+    afi: /kabe/
+    categoria: sustantivo
+    es: pelo
+    en: hair
+  - forma: kara
+    afi: /kara/
+    categoria: sustantivo
+    es: garra
+    en: claw
+  - forma: bela
+    afi: /bela/
+    categoria: sustantivo
+    es: vientre
+    en: belly
+  - forma: peta
+    afi: /peta/
+    categoria: sustantivo
+    es: pecho
+    en: chest
+  - forma: liba
+    afi: /liba/
+    categoria: sustantivo
+    es: hígado
+    en: liver
+  - forma: bita
+    afi: /bita/
+    categoria: verbo
+    es: morder
+    en: bite
+  - forma: kida
+    afi: /kida/
+    categoria: verbo
+    es: matar
+    en: kill
+  - forma: tibu
+    afi: /tibu/
+    categoria: verbo
+    es: volar
+    en: fly
+  - forma: waka
+    afi: /waka/
+    categoria: verbo
+    es: caminar
+    en: walk
+  - forma: sona
+    afi: /sona/
+    categoria: verbo
+    es: acostarse
+    en: lie
+  - forma: sita
+    afi: /sita/
+    categoria: verbo
+    es: sentarse
+    en: sit
+  - forma: puka
+    afi: /puka/
+    categoria: sustantivo
+    es: arena
+    en: sand
+  - forma: buna
+    afi: /buna/
+    categoria: verbo
+    es: quemar
+    en: burn
+  - forma: fula
+    afi: /fula/
+    categoria: adjetivo
+    es: lleno
+    en: full
+  - forma: tima
+    afi: /tima/
+    categoria: adjetivo
+    es: redondo
+    en: round
+  - forma: tumu
+    afi: /tumu/
+    categoria: adjetivo
+    es: seco
+    en: dry
+  - forma: ki-pe
+    afi: /kipe/
+    categoria: interrogativo
+    es: quién
+    en: who
+  - forma: ki-lo
+    afi: /kilo/
+    categoria: interrogativo
+    es: dónde
+    en: where
+  - forma: ki-ti
+    afi: /kiti/
+    categoria: interrogativo
+    es: cuándo
+    en: when
+  - forma: ki-mo
+    afi: /kimo/
+    categoria: interrogativo
+    es: cómo
+    en: how
+  - forma: pamo
+    afi: /pamo/
+    categoria: determinante
+    es: todo
+    en: all
+  - forma: paki
+    afi: /paki/
+    categoria: adjetivo
+    es: mucho
+    en: much
+  - forma: tuki
+    afi: /tuki/
+    categoria: adjetivo
+    es: poco
+    en: little
   - forma: sento
     afi: /ˈsento/
     categoria: número
