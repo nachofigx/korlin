@@ -80,7 +80,7 @@ manuales que deben seguir al spec, no al revés.
     son dos palabras: `vi-sa` (vivir+asumido) ≠ `vi sa` (vivir/saber).
 19. **Posesión y numerales.** El pronombre antepuesto es la forma normal
     (`mi ho` = *mi casa*); `de` da la analítica o enfática (`le ho de mi`).
-    **Numerales:** `nul` = 0, `u` = 1; 2-10 son raíces (`du san fu sin sis sem om nu des`).
+    **Numerales:** `non` = 0, `u` = 1; 2-10 son raíces (`du san fu sin sis sem om nu des`).
     **Composición — regla de ligadura (corrige C-17):** un dígito pegado a una base
     la MULTIPLICA; una base tras otra base solo SUMA. Se escribe de mayor a menor.
     `du-des` = 20 · `des-u` = 11 · `du-des-u` = 21 · `sento` = 100 · `sento-u` = 101 ·
@@ -124,6 +124,14 @@ manuales que deben seguir al spec, no al revés.
     | `-pen` (deduzco) | be | to | be | os | ku |
 
     (`—` = combinación no usada: si me lo dijeron, la certeza explícita no aporta.)
+24b. **Homonimia derivado/frase (C-14, v0.7):** un derivado en `-i` (colores y
+    relativos: `wa`→`wai`, `su`→`sui`, `som`→`somi`) es **legítimo** por la regla 17,
+    aunque al escribir se lea también como dos palabras (`wai` = `wa i`). Se
+    distinguen por la **prosodia** (regla 21: 1 acento vs 2) y en la escritura por
+    el guion. **Casos con colisión canónica real** (la frase sí es una oración
+    posible), declarados: `somi` (gris) ≈ `so mi` (*entonces yo*), `kilo` (mil) ≈
+    `ki lo` (*qué lugar*). El contexto y el acento los separan; si resultan
+    confusos al probarlos con hablantes, se renombran (C-24).
 24. **Partículas finales (nota C-21, mínima en v0.6):** la oración admite una sola
     cadena final en orden fijo `[modalidad] [actitud] [mo]`. **No se encadenan dos
     actitudes** ni dos modalidades: para dos matices, una va al final y la otra se
@@ -320,7 +328,7 @@ Van al **final** de la oración, después del verbo.
 
 ## 7. Léxico completo
 
-178 palabras. Formato: **korlin** · AFI · categoría · español · inglés.
+238 palabras. Formato: **korlin** · AFI · categoría · español · inglés.
 
 | Korlin | AFI | Categoría | Español | English |
 |---|---|---|---|---|
@@ -328,7 +336,7 @@ Van al **final** de la oración, después del verbo.
 | `a` | /a/ | preposición | a, hacia | to, toward |
 | `i` | /i/ | preposición | en, dentro | in, inside |
 | `o` | /o/ | conjunción | o | or |
-| `nul` | /nul/ | número | 0 | 0 |
+| `non` | /non/ | número | 0 | 0 |
 | `u` | /u/ | determinante, número | un, una, uno; 1 | a, an, one; 1 |
 | `ka` | /ka/ | conjunción | y | and |
 | `ba` | /ba/ | conjunción | pero | but |
@@ -488,6 +496,66 @@ Van al **final** de la oración, después del verbo.
 | `peke` | /peke/ | sustantivo | pez | fish |
 | `duno` | /duno/ | adjetivo | oscuro | dark |
 | `famo` | /famo/ | sustantivo | familia | family |
+| `famu` | /famu/ | sustantivo | mujer | woman |
+| `manu` | /manu/ | sustantivo | hombre | man |
+| `bebe` | /bebe/ | sustantivo | niño | child |
+| `tomo` | /tomo/ | sustantivo | esposo | husband |
+| `boku` | /boku/ | sustantivo | árbol | tree |
+| `nupi` | /nupi/ | sustantivo | semilla | seed |
+| `pala` | /pala/ | sustantivo | hoja | leaf |
+| `tapi` | /tapi/ | sustantivo | raíz | root |
+| `kopa` | /kopa/ | sustantivo | corteza | bark |
+| `kuti` | /kuti/ | sustantivo | piel | skin |
+| `misa` | /misa/ | sustantivo | carne | flesh |
+| `kuru` | /kuru/ | sustantivo | sangre | blood |
+| `boni` | /boni/ | sustantivo | hueso | bone |
+| `tamo` | /tamo/ | sustantivo | huevo | egg |
+| `ore` | /ore/ | sustantivo | oreja | ear |
+| `nosi` | /nosi/ | sustantivo | nariz | nose |
+| `moka` | /moka/ | sustantivo | boca | mouth |
+| `tino` | /tino/ | sustantivo | diente | tooth |
+| `pode` | /pode/ | sustantivo | pie | foot |
+| `noki` | /noki/ | sustantivo | rodilla | knee |
+| `tumi` | /tumi/ | sustantivo | corazón | heart |
+| `tara` | /tara/ | sustantivo | estrella | star |
+| `sumu` | /sumu/ | sustantivo | lluvia | rain |
+| `toko` | /toko/ | sustantivo | piedra | stone |
+| `nubu` | /nubu/ | sustantivo | nube | cloud |
+| `sumo` | /sumo/ | sustantivo | humo | smoke |
+| `sena` | /sena/ | sustantivo | ceniza | ashes |
+| `pado` | /pado/ | sustantivo | camino | path |
+| `poki` | /poki/ | sustantivo | perro | dog |
+| `tani` | /tani/ | adjetivo | largo | long |
+| `wida` | /wida/ | adjetivo | ancho | wide |
+| `tika` | /tika/ | adjetivo | grueso | thick |
+| `lusa` | /lusa/ | sustantivo | piojo | louse |
+| `kumu` | /kumu/ | sustantivo | grasa | grease |
+| `kuno` | /kuno/ | sustantivo | cuerno | horn |
+| `kola` | /kola/ | sustantivo | cola | tail |
+| `puma` | /puma/ | sustantivo | pluma | feather |
+| `kabe` | /kabe/ | sustantivo | pelo | hair |
+| `kara` | /kara/ | sustantivo | garra | claw |
+| `bela` | /bela/ | sustantivo | vientre | belly |
+| `peta` | /peta/ | sustantivo | pecho | chest |
+| `liba` | /liba/ | sustantivo | hígado | liver |
+| `bita` | /bita/ | verbo | morder | bite |
+| `kida` | /kida/ | verbo | matar | kill |
+| `tibu` | /tibu/ | verbo | volar | fly |
+| `waka` | /waka/ | verbo | caminar | walk |
+| `sona` | /sona/ | verbo | acostarse | lie |
+| `sita` | /sita/ | verbo | sentarse | sit |
+| `puka` | /puka/ | sustantivo | arena | sand |
+| `buna` | /buna/ | verbo | quemar | burn |
+| `fula` | /fula/ | adjetivo | lleno | full |
+| `tima` | /tima/ | adjetivo | redondo | round |
+| `tumu` | /tumu/ | adjetivo | seco | dry |
+| `ki-pe` | /kipe/ | interrogativo | quién | who |
+| `ki-lo` | /kilo/ | interrogativo | dónde | where |
+| `ki-ti` | /kiti/ | interrogativo | cuándo | when |
+| `ki-mo` | /kimo/ | interrogativo | cómo | how |
+| `pamo` | /pamo/ | determinante | todo | all |
+| `paki` | /paki/ | adjetivo | mucho | much |
+| `tuki` | /tuki/ | adjetivo | poco | little |
 | `sento` | /ˈsento/ | número | 100 | 100 |
 | `kilo` | /ˈkilo/ | prefijo SI | mil (×1000) | thousand (×1000) |
 | `mega` | /ˈmega/ | prefijo SI | millón (×10⁶) | million (×10⁶) |

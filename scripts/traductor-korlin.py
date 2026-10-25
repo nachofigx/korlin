@@ -358,10 +358,10 @@ TERM_ES = {
 }
 TERM_EN = {None: ["", "s", "es"], "an-": ["ed"]}
 
-NUMERALES = {"es": {"cero": "nul", "un": "u", "una": "u", "uno": "u", "dos": "du", "tres": "san",
+NUMERALES = {"es": {"cero": "non", "un": "u", "una": "u", "uno": "u", "dos": "du", "tres": "san",
                       "cuatro": "fu", "cinco": "sin", "seis": "sis", "siete": "sem", "ocho": "om",
                       "nueve": "nu", "diez": "des", "cien": "sento", "ciento": "sento", "mil": "kilo"},
-             "en": {"zero": "nul", "one": "u", "two": "du", "three": "san", "four": "fu",
+             "en": {"zero": "non", "one": "u", "two": "du", "three": "san", "four": "fu",
                     "five": "sin", "six": "sis", "seven": "sem", "eight": "om", "nine": "nu",
                     "ten": "des", "hundred": "sento", "thousand": "kilo"}}
 PLURALES = {"es": ["los", "las", "unos", "unas", "varios", "varias", "algunos", "algunas",

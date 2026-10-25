@@ -7,6 +7,46 @@ la versión. **Documento que manda:** `korlin-spec.md` (generado desde
 
 ---
 
+## v0.7 — 2026-10-24
+
+**Ronda abierta por Korlin** (v0.7: C-14, Swadesh, C-36, C-47).
+
+### Léxico: cobertura Swadesh 38 → 99/100
+- **+60 raíces nuevas** en tres lotes, todas pasadas por `scripts/validar-raices.py`
+  (R0 fonotáctica, R1 afijos, R3 derivable, R4 existente, R5 dos partículas, R6
+  construcción canónica acotada):
+  - Lote 1 (cuerpo y naturaleza, 29): `famu` `manu` `bebe` `tomo` `boku` `nupi`
+    `pala` `tapi` `kopa` `kuti` `misa` `kuru` `boni` `tamo` `ore` `nosi` `moka`
+    `tino` `pode` `noki` `tumi` `tara` `sumu` `toko` `nubu` `sumo` `sena` `pado` `poki`
+  - Lote 2 (propiedades y verbos, 24): `tani` `wida` `tika` `lusa` `kumu` `kuno`
+    `kola` `puma` `kabe` `kara` `bela` `peta` `liba` `bita` `kida` `tibu` `waka`
+    `sona` `sita` `puka` `buna` `fula` `tima` `tumu`
+  - Lote 3 (funcionales, 7): interrogativos por composición con `ki` (regla 17)
+    — `ki-pe` (quién), `ki-lo` (dónde), `ki-ti` (cuándo), `ki-mo` (cómo) — y los
+    cuantificadores `pamo` (todo), `paki` (mucho), `tuki` (poco).
+- El único concepto Swadesh sin raíz propia es *esto*, que ya cubre el
+  determinante `se` (este/esta).
+- Léxico total: **178 → 238 palabras.**
+
+### Herramienta nueva: `scripts/validar-raices.py`
+Valida lotes de raíces contra los seis criterios acordados con el revisor,
+**con R6 acotado a construcciones canónicas reales** (R6 literal rechaza todas
+las CVCV; ver v0.6). Salida con veredicto y motivo por raíz.
+
+### C-14 — homonimia derivado/frase, documentada
+Regla nueva (24b): un derivado en `-i` es legítimo por la regla 17 aunque se lea
+como dos palabras; se distinguen por la prosodia (regla 21) y el guion.
+**Casos con colisión canónica real**, declarados: `somi` (gris) ≈ `so mi`
+(*entonces yo*), `kilo` (mil) ≈ `ki lo` (*qué lugar*). Si al probarlos con
+hablantes resultan confusos, se renombran (C-24/C-27).
+
+### Deuda declarada
+C-36 (interrogativa indirecta), C-38 (hiato VV), C-46 (falsos amigos),
+C-47 (`halo`), C-05 (índice sin tilde), `u me hos`, C-24/C-27 (hablantes),
+cluster hV-, y el renombrado de `somi`/`kilo` si la prueba con hablantes lo pide.
+
+---
+
 ## v0.6 — 2026-10-24
 
 **Council de Korlin** (58 objeciones: 9 críticas, 26 altas) + **verificación de la

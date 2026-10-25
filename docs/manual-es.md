@@ -83,6 +83,7 @@
 | **se** | /se/ | este, esta |
 | **te** | /te/ | ese, esa |
 | **ke** | /ke/ | aquel, aquella |
+| **pamo** | /pamo/ | todo |
 
 ## Verbos
 
@@ -124,6 +125,13 @@
 | **reme** | /reme/ | recordar |
 | **resi** | /resi/ | escribir |
 | **semo** | /semo/ | nadar |
+| **bita** | /bita/ | morder |
+| **kida** | /kida/ | matar |
+| **tibu** | /tibu/ | volar |
+| **waka** | /waka/ | caminar |
+| **sona** | /sona/ | acostarse |
+| **sita** | /sita/ | sentarse |
+| **buna** | /buna/ | quemar |
 
 ## Sustantivos
 
@@ -175,6 +183,46 @@
 | **poko** | /poko/ | comercio |
 | **peke** | /peke/ | pez |
 | **famo** | /famo/ | familia |
+| **famu** | /famu/ | mujer |
+| **manu** | /manu/ | hombre |
+| **bebe** | /bebe/ | niño |
+| **tomo** | /tomo/ | esposo |
+| **boku** | /boku/ | árbol |
+| **nupi** | /nupi/ | semilla |
+| **pala** | /pala/ | hoja |
+| **tapi** | /tapi/ | raíz |
+| **kopa** | /kopa/ | corteza |
+| **kuti** | /kuti/ | piel |
+| **misa** | /misa/ | carne |
+| **kuru** | /kuru/ | sangre |
+| **boni** | /boni/ | hueso |
+| **tamo** | /tamo/ | huevo |
+| **ore** | /ore/ | oreja |
+| **nosi** | /nosi/ | nariz |
+| **moka** | /moka/ | boca |
+| **tino** | /tino/ | diente |
+| **pode** | /pode/ | pie |
+| **noki** | /noki/ | rodilla |
+| **tumi** | /tumi/ | corazón |
+| **tara** | /tara/ | estrella |
+| **sumu** | /sumu/ | lluvia |
+| **toko** | /toko/ | piedra |
+| **nubu** | /nubu/ | nube |
+| **sumo** | /sumo/ | humo |
+| **sena** | /sena/ | ceniza |
+| **pado** | /pado/ | camino |
+| **poki** | /poki/ | perro |
+| **lusa** | /lusa/ | piojo |
+| **kumu** | /kumu/ | grasa |
+| **kuno** | /kuno/ | cuerno |
+| **kola** | /kola/ | cola |
+| **puma** | /puma/ | pluma |
+| **kabe** | /kabe/ | pelo |
+| **kara** | /kara/ | garra |
+| **bela** | /bela/ | vientre |
+| **peta** | /peta/ | pecho |
+| **liba** | /liba/ | hígado |
+| **puka** | /puka/ | arena |
 | **Yapan** | /ˈjapan/ | Japón |
 
 ## Adjetivos
@@ -197,6 +245,14 @@
 | **ko** | /ko/ | corto, breve |
 | **nubi** | /nubi/ | solo |
 | **duno** | /duno/ | oscuro |
+| **tani** | /tani/ | largo |
+| **wida** | /wida/ | ancho |
+| **tika** | /tika/ | grueso |
+| **fula** | /fula/ | lleno |
+| **tima** | /tima/ | redondo |
+| **tumu** | /tumu/ | seco |
+| **paki** | /paki/ | mucho |
+| **tuki** | /tuki/ | poco |
 
 ## Colores
 
@@ -218,7 +274,7 @@
 
 | Korlin | AFI | Significado |
 |---|---|---|
-| **nul** | /nul/ | 0 |
+| **non** | /non/ | 0 |
 | **du** | /du/ | 2 |
 | **san** | /san/ | 3 |
 | **fu** | /fu/ | 4 |

@@ -19,7 +19,7 @@ e        | partícula    | ser, estar | to be
 a        | preposición  | a, hacia | to, toward
 i        | preposición  | en, dentro | in, inside
 o        | conjunción   | o | or
-nul      | número       | 0 | 0
+non      | número       | 0 | 0
 u        | determinante, número | un, una, uno; 1 | a, an, one; 1
 ka       | conjunción   | y | and
 ba       | conjunción   | pero | but
@@ -179,6 +179,66 @@ poko     | sustantivo   | comercio | trade
 peke     | sustantivo   | pez | fish
 duno     | adjetivo     | oscuro | dark
 famo     | sustantivo   | familia | family
+famu     | sustantivo   | mujer | woman
+manu     | sustantivo   | hombre | man
+bebe     | sustantivo   | niño | child
+tomo     | sustantivo   | esposo | husband
+boku     | sustantivo   | árbol | tree
+nupi     | sustantivo   | semilla | seed
+pala     | sustantivo   | hoja | leaf
+tapi     | sustantivo   | raíz | root
+kopa     | sustantivo   | corteza | bark
+kuti     | sustantivo   | piel | skin
+misa     | sustantivo   | carne | flesh
+kuru     | sustantivo   | sangre | blood
+boni     | sustantivo   | hueso | bone
+tamo     | sustantivo   | huevo | egg
+ore      | sustantivo   | oreja | ear
+nosi     | sustantivo   | nariz | nose
+moka     | sustantivo   | boca | mouth
+tino     | sustantivo   | diente | tooth
+pode     | sustantivo   | pie | foot
+noki     | sustantivo   | rodilla | knee
+tumi     | sustantivo   | corazón | heart
+tara     | sustantivo   | estrella | star
+sumu     | sustantivo   | lluvia | rain
+toko     | sustantivo   | piedra | stone
+nubu     | sustantivo   | nube | cloud
+sumo     | sustantivo   | humo | smoke
+sena     | sustantivo   | ceniza | ashes
+pado     | sustantivo   | camino | path
+poki     | sustantivo   | perro | dog
+tani     | adjetivo     | largo | long
+wida     | adjetivo     | ancho | wide
+tika     | adjetivo     | grueso | thick
+lusa     | sustantivo   | piojo | louse
+kumu     | sustantivo   | grasa | grease
+kuno     | sustantivo   | cuerno | horn
+kola     | sustantivo   | cola | tail
+puma     | sustantivo   | pluma | feather
+kabe     | sustantivo   | pelo | hair
+kara     | sustantivo   | garra | claw
+bela     | sustantivo   | vientre | belly
+peta     | sustantivo   | pecho | chest
+liba     | sustantivo   | hígado | liver
+bita     | verbo        | morder | bite
+kida     | verbo        | matar | kill
+tibu     | verbo        | volar | fly
+waka     | verbo        | caminar | walk
+sona     | verbo        | acostarse | lie
+sita     | verbo        | sentarse | sit
+puka     | sustantivo   | arena | sand
+buna     | verbo        | quemar | burn
+fula     | adjetivo     | lleno | full
+tima     | adjetivo     | redondo | round
+tumu     | adjetivo     | seco | dry
+ki-pe    | interrogativo | quién | who
+ki-lo    | interrogativo | dónde | where
+ki-ti    | interrogativo | cuándo | when
+ki-mo    | interrogativo | cómo | how
+pamo     | determinante | todo | all
+paki     | adjetivo     | mucho | much
+tuki     | adjetivo     | poco | little
 sento    | número       | 100 | 100
 kilo     | prefijo SI   | mil (×1000) | thousand (×1000)
 mega     | prefijo SI   | millón (×10⁶) | million (×10⁶)

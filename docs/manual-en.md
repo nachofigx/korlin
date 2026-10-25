@@ -83,6 +83,7 @@
 | **se** | /se/ | this |
 | **te** | /te/ | that |
 | **ke** | /ke/ | that (over there) |
+| **pamo** | /pamo/ | all |
 
 ## Verbs
 
@@ -124,6 +125,13 @@
 | **reme** | /reme/ | remember |
 | **resi** | /resi/ | write |
 | **semo** | /semo/ | swim |
+| **bita** | /bita/ | bite |
+| **kida** | /kida/ | kill |
+| **tibu** | /tibu/ | fly |
+| **waka** | /waka/ | walk |
+| **sona** | /sona/ | lie |
+| **sita** | /sita/ | sit |
+| **buna** | /buna/ | burn |
 
 ## Nouns
 
@@ -175,6 +183,46 @@
 | **poko** | /poko/ | trade |
 | **peke** | /peke/ | fish |
 | **famo** | /famo/ | family |
+| **famu** | /famu/ | woman |
+| **manu** | /manu/ | man |
+| **bebe** | /bebe/ | child |
+| **tomo** | /tomo/ | husband |
+| **boku** | /boku/ | tree |
+| **nupi** | /nupi/ | seed |
+| **pala** | /pala/ | leaf |
+| **tapi** | /tapi/ | root |
+| **kopa** | /kopa/ | bark |
+| **kuti** | /kuti/ | skin |
+| **misa** | /misa/ | flesh |
+| **kuru** | /kuru/ | blood |
+| **boni** | /boni/ | bone |
+| **tamo** | /tamo/ | egg |
+| **ore** | /ore/ | ear |
+| **nosi** | /nosi/ | nose |
+| **moka** | /moka/ | mouth |
+| **tino** | /tino/ | tooth |
+| **pode** | /pode/ | foot |
+| **noki** | /noki/ | knee |
+| **tumi** | /tumi/ | heart |
+| **tara** | /tara/ | star |
+| **sumu** | /sumu/ | rain |
+| **toko** | /toko/ | stone |
+| **nubu** | /nubu/ | cloud |
+| **sumo** | /sumo/ | smoke |
+| **sena** | /sena/ | ashes |
+| **pado** | /pado/ | path |
+| **poki** | /poki/ | dog |
+| **lusa** | /lusa/ | louse |
+| **kumu** | /kumu/ | grease |
+| **kuno** | /kuno/ | horn |
+| **kola** | /kola/ | tail |
+| **puma** | /puma/ | feather |
+| **kabe** | /kabe/ | hair |
+| **kara** | /kara/ | claw |
+| **bela** | /bela/ | belly |
+| **peta** | /peta/ | chest |
+| **liba** | /liba/ | liver |
+| **puka** | /puka/ | sand |
 | **Yapan** | /ˈjapan/ | Japan |
 
 ## Adjectives
@@ -197,6 +245,14 @@
 | **ko** | /ko/ | short, brief |
 | **nubi** | /nubi/ | alone |
 | **duno** | /duno/ | dark |
+| **tani** | /tani/ | long |
+| **wida** | /wida/ | wide |
+| **tika** | /tika/ | thick |
+| **fula** | /fula/ | full |
+| **tima** | /tima/ | round |
+| **tumu** | /tumu/ | dry |
+| **paki** | /paki/ | much |
+| **tuki** | /tuki/ | little |
 
 ## Colors
 
@@ -218,7 +274,7 @@
 
 | Korlin | AFI | Meaning |
 |---|---|---|
-| **nul** | /nul/ | 0 |
+| **non** | /non/ | 0 |
 | **du** | /du/ | 2 |
 | **san** | /san/ | 3 |
 | **fu** | /fu/ | 4 |
