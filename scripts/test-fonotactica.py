@@ -34,7 +34,7 @@ def carga():
                  "categoria": str(p.get("categoria", ""))} for p in d["palabras"]]
     except ImportError:
         d = json.loads((RAIZ / "korlin.json").read_text(encoding="utf-8"))
-        return d["palabras"]
+        return d["lexico"]          # korlin.json guarda el lexico en "lexico"
 
 
 def silabas_ok(w):
