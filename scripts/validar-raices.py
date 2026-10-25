@@ -62,7 +62,7 @@ def carga_lexico():
     except ImportError:
         import json
         d = json.loads((RAIZ / "korlin.json").read_text(encoding="utf-8"))
-        return {str(p["forma"]).lower(): str(p.get("categoria", "")) for p in d["palabras"]}
+        return {str(p["forma"]).lower(): str(p.get("categoria", "")) for p in d["lexico"]}
 
 
 def carga_afijos():
@@ -71,7 +71,9 @@ def carga_afijos():
         d = yaml.safe_load((RAIZ / "data" / "afijos.yaml").read_text(encoding="utf-8"))
         return {str(a["forma"]).strip("-").lower() for a in d["afijos"]}
     except ImportError:
-        return set()
+        import json
+        d = json.loads((RAIZ / "korlin.json").read_text(encoding="utf-8"))
+        return {str(a["forma"]).strip("-").lower() for a in d.get("afijos", [])}
 
 
 def silabas_ok(w):
