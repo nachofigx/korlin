@@ -11,3 +11,4 @@ __pycache__/
 
 # C-24: wav intermedios de la verificacion de audio
 docs/c24-audio/*.wav
+docs/c24-audio/
