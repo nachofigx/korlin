@@ -40,10 +40,52 @@ como dos palabras; se distinguen por la prosodia (regla 21) y el guion.
 (*entonces yo*), `kilo` (mil) ≈ `ki lo` (*qué lugar*). Si al probarlos con
 hablantes resultan confusos, se renombran (C-24/C-27).
 
+### C-36 — interrogativa indirecta (cerrada)
+**Bug real corregido en el traductor.** El interrogativo (`quién`, `dónde`, `cuándo`,
+`cómo`) no abría frontera de cláusula, así que el verbo de la subordinada no se
+conjugaba: `Yo sé quién va.` daba `mi sa-sa ki-pe [va?]`. Ahora las formas
+interrogativas son frontera de cláusula y la subordinada lleva su verbo finito y su
+evidencial (regla 14):
+
+| Español | Korlin |
+|---|---|
+| Yo sé quién va. | `mi sa-sa ki-pe go-sa.` |
+| Yo sé dónde está. | `mi sa-sa ki-lo e-sa.` |
+| Yo sé cómo va. | `mi sa-sa ki-mo go-sa.` |
+| Yo sé que él va. | `mi sa-sa ki li go-sa.` |
+| ¿A quién ves? | `a ki-pe ve mo?` |
+
+La distinción **`ki-pe`** (interrogativo, palabra) vs **`ki`** (complementante) queda
+operativa: no hace falta una forma nueva para «sé quién va». 5 casos nuevos en
+`test-traductor.py` + 3 anti-regresión.
+
+### C-38 — hiato (cerrada)
+No había nada que decidir: el spec ya lo fijaba (1.2.5, **sin diptongos**). Los AFI lo
+confirman (`noi` = /ˈno.i/, `sui` = /ˈsu.i/ — dos sílabas). Regla **23b** nueva:
+dos vocales seguidas son siempre dos sílabas plenas, dentro de la palabra y en
+frontera (`le wa e gu` = /le.wa.e.gu/), sin elisión; el acento cuenta el hiato como
+dos.
+
+### C-46 / C-47 — colisiones canónicas declaradas (cerradas como deuda documentada)
+Al auditar **todo** el léxico contra R6 aparece un problema mayor que `halo`: son
+**cinco** formas del léxico que se segmentan además como dos palabras en una
+construcción canónica real. Regla **24c** con la **lista cerrada**:
+
+| Forma | Lectura alterna | Caso |
+|---|---|---|
+| `halo` (hola) | `ha lo` (*tener lugar*) | C-47 |
+| `kilo` (mil, ×10³) | `ki lo` (*qué lugar*) | |
+| `mega` (millón, ×10⁶) | `me ga` (*tierra grande*) | |
+| `nano` (nano-, ×10⁻⁹) | `na no` (*no [es] noche*) | |
+| `somi` (gris) | `so mi` (*entonces yo*) | |
+
+**No son errores**: son homófonos declarados, separados por prosodia (regla 21) y
+contexto. Los prefijos SI se conservan (son internacionales y su valor numeral es
+inconfundible). Si la prueba con hablantes (C-24) muestra confusión real, se
+renombran uno a uno.
+
 ### Deuda declarada
-C-36 (interrogativa indirecta), C-38 (hiato VV), C-46 (falsos amigos),
-C-47 (`halo`), C-05 (índice sin tilde), `u me hos`, C-24/C-27 (hablantes),
-cluster hV-, y el renombrado de `somi`/`kilo` si la prueba con hablantes lo pide.
+C-05 (índice sin tilde), `u me hos`, C-24/C-27 (medir con hablantes), cluster hV-.
 
 ---
 
