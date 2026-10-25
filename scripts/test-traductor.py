@@ -169,6 +169,26 @@ def test_coherencia_v02():
     if "na " not in _n:
         fallos.append(f"negacion sin 'na' suelto: '{_n}'")
 
+    # ---- C-36: interrogativa indirecta (v0.7) ----
+    # El interrogativo abre clausula propia: el verbo de la subordinada se conjuga
+    # y lleva su evidencial. Distincion con el complementante `ki` desnudo.
+    _c36 = [
+        ("Yo sé quién va.",              "mi sa-sa ki-pe go-sa."),
+        ("Yo sé dónde está.",            "mi sa-sa ki-lo e-sa."),
+        ("Yo sé cómo va.",               "mi sa-sa ki-mo go-sa."),
+        ("Yo sé que él va.",             "mi sa-sa ki li go-sa."),
+        ("¿A quién ves?",                "a ki-pe ve mo?"),
+    ]
+    for _txt, _esp in _c36:
+        _got = tr(_txt, ev="sa")
+        if _got != _esp:
+            fallos.append(f"C-36 '{_txt}' -> '{_got}' (esperaba '{_esp}')")
+    # el bug original: el verbo de la subordinada quedaba sin conjugar como [va?]
+    for _txt in ("Yo sé quién va.", "Yo sé dónde está.", "Yo sé cómo va."):
+        _got = tr(_txt, ev="sa")
+        if "?" in _got and "[" in _got:
+            fallos.append(f"C-36 verbo sin conjugar en subordinada: '{_txt}' -> '{_got}'")
+
     return fallos
 
 

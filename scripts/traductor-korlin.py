@@ -432,7 +432,13 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="?", tiempo=None, glosa=Fa
     clausula = []
     cid = 0
     for nm in norm:
-        if nm in (",", "ki", "so", "que", "and", "then"):   # fronteras de clausula
+        # C-36: un interrogativo indirecto (quien/donde/cuando/como) ABRE clausula
+        # propia: sin eso el verbo de la subordinada no se conjuga ("sé quién va"
+        # -> "[va?]"). Los compuestos ki-pe/ki-lo/ki-ti/ki-mo son palabras, no
+        # fronteras; lo que abre clausula es la forma que los dispara.
+        if nm in (",", "ki", "so", "que", "and", "then",
+                  "quien", "donde", "cuando", "como",
+                  "who", "where", "when", "how"):   # fronteras de clausula
             cid += 1
         clausula.append(cid)
 

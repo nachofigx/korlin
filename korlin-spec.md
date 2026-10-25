@@ -124,6 +124,11 @@ manuales que deben seguir al spec, no al revés.
     | `-pen` (deduzco) | be | to | be | os | ku |
 
     (`—` = combinación no usada: si me lo dijeron, la certeza explícita no aporta.)
+23b. **Hiato (C-38, v0.7):** no hay diptongos (1.2.5): dos vocales seguidas son
+    SIEMPRE dos sílabas plenas, dentro de la palabra (`noi` = /ˈno.i/, `sui` = /ˈsu.i/)
+    y en frontera de palabra (`le wa e gu` = /le.wa.e.gu/). No hay elisión ni
+    coalescencia: el hiato se mantiene. El acento (regla 21) recae en la penúltima
+    sílaba, contando el hiato como dos.
 24b. **Homonimia derivado/frase (C-14, v0.7):** un derivado en `-i` (colores y
     relativos: `wa`→`wai`, `su`→`sui`, `som`→`somi`) es **legítimo** por la regla 17,
     aunque al escribir se lea también como dos palabras (`wai` = `wa i`). Se
@@ -132,6 +137,18 @@ manuales que deben seguir al spec, no al revés.
     posible), declarados: `somi` (gris) ≈ `so mi` (*entonces yo*), `kilo` (mil) ≈
     `ki lo` (*qué lugar*). El contexto y el acento los separan; si resultan
     confusos al probarlos con hablantes, se renombran (C-24).
+24c. **Colisiones canónicas declaradas (C-46/C-47, v0.7):** lista CERRADA de formas
+    del léxico que se segmentan además como dos palabras en una construcción
+    canónica. **No son errores**: son homófonos declarados, y los separan la
+    prosodia (regla 21) y el contexto. Son **cinco**:
+      · `halo` (hola) ≈ `ha lo` (*tener lugar*) — C-47, saludo de alta frecuencia
+      · `kilo` (mil, ×10³) ≈ `ki lo` (*qué lugar*)
+      · `mega` (millón, ×10⁶) ≈ `me ga` (*tierra grande*)
+      · `nano` (nano-, ×10⁻⁹) ≈ `na no` (*no [es] noche*)
+      · `somi` (gris) ≈ `so mi` (*entonces yo*)
+    Los prefijos SI (`kilo`, `mega`, `nano`) se conservan: son internacionales y
+    su valor numeral es inconfundible en contexto numérico. Si la prueba con
+    hablantes (C-24) muestra confusión real, se renombran uno a uno.
 24. **Partículas finales (nota C-21, mínima en v0.6):** la oración admite una sola
     cadena final en orden fijo `[modalidad] [actitud] [mo]`. **No se encadenan dos
     actitudes** ni dos modalidades: para dos matices, una va al final y la otra se
