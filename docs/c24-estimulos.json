@@ -1,0 +1,518 @@
+{
+  "prueba": "C-24 — medida con hablantes",
+  "version_lexico": "238 formas (v0.7, main c958683)",
+  "semilla": 20261024,
+  "bloques": {
+    "A_colisiones": {
+      "items": [
+        {
+          "id": "A1-1",
+          "par": "A1",
+          "estimulo_A": "halo",
+          "afi_A": "/ˈha.lo/",
+          "glosa_A": "hola (saludo)",
+          "estimulo_B": "ha lo",
+          "afi_B": "/ˈha ˈlo/",
+          "glosa_B": "tener lugar",
+          "X": "halo",
+          "respuesta_correcta": "A",
+          "oracion_A": "Halo, mi go.",
+          "oracion_B": "Mi ha lo a le ho."
+        },
+        {
+          "id": "A3-1",
+          "par": "A3",
+          "estimulo_A": "mega",
+          "afi_A": "/ˈme.ga/",
+          "glosa_A": "millon (×10^6)",
+          "estimulo_B": "me ga",
+          "afi_B": "/ˈme ˈga/",
+          "glosa_B": "tierra grande",
+          "X": "mega",
+          "respuesta_correcta": "A",
+          "oracion_A": "U mega hos.",
+          "oracion_B": "Le ga e me."
+        },
+        {
+          "id": "A1-2",
+          "par": "A1",
+          "estimulo_A": "halo",
+          "afi_A": "/ˈha.lo/",
+          "glosa_A": "hola (saludo)",
+          "estimulo_B": "ha lo",
+          "afi_B": "/ˈha ˈlo/",
+          "glosa_B": "tener lugar",
+          "X": "halo",
+          "respuesta_correcta": "A",
+          "oracion_A": "Halo, mi go.",
+          "oracion_B": "Mi ha lo a le ho."
+        },
+        {
+          "id": "A4-2",
+          "par": "A4",
+          "estimulo_A": "nano",
+          "afi_A": "/ˈna.no/",
+          "glosa_A": "nano- (×10^-9)",
+          "estimulo_B": "na no",
+          "afi_B": "/ˈna ˈno/",
+          "glosa_B": "no [es] noche",
+          "X": "na no",
+          "respuesta_correcta": "B",
+          "oracion_A": "U nano mita.",
+          "oracion_B": "Na no, e ti."
+        },
+        {
+          "id": "A3-2",
+          "par": "A3",
+          "estimulo_A": "mega",
+          "afi_A": "/ˈme.ga/",
+          "glosa_A": "millon (×10^6)",
+          "estimulo_B": "me ga",
+          "afi_B": "/ˈme ˈga/",
+          "glosa_B": "tierra grande",
+          "X": "mega",
+          "respuesta_correcta": "A",
+          "oracion_A": "U mega hos.",
+          "oracion_B": "Le ga e me."
+        },
+        {
+          "id": "A4-1",
+          "par": "A4",
+          "estimulo_A": "nano",
+          "afi_A": "/ˈna.no/",
+          "glosa_A": "nano- (×10^-9)",
+          "estimulo_B": "na no",
+          "afi_B": "/ˈna ˈno/",
+          "glosa_B": "no [es] noche",
+          "X": "nano",
+          "respuesta_correcta": "A",
+          "oracion_A": "U nano mita.",
+          "oracion_B": "Na no, e ti."
+        },
+        {
+          "id": "A2-2",
+          "par": "A2",
+          "estimulo_A": "kilo",
+          "afi_A": "/ˈki.lo/",
+          "glosa_A": "mil (×1000)",
+          "estimulo_B": "ki lo",
+          "afi_B": "/ˈki ˈlo/",
+          "glosa_B": "que lugar",
+          "X": "kilo",
+          "respuesta_correcta": "A",
+          "oracion_A": "Mi ha kilo hos.",
+          "oracion_B": "Ki lo tu go?"
+        },
+        {
+          "id": "A5-2",
+          "par": "A5",
+          "estimulo_A": "somi",
+          "afi_A": "/ˈso.mi/",
+          "glosa_A": "gris",
+          "estimulo_B": "so mi",
+          "afi_B": "/ˈso ˈmi/",
+          "glosa_B": "entonces yo",
+          "X": "so mi",
+          "respuesta_correcta": "B",
+          "oracion_A": "Le nubu e somi.",
+          "oracion_B": "So mi go."
+        },
+        {
+          "id": "A2-1",
+          "par": "A2",
+          "estimulo_A": "kilo",
+          "afi_A": "/ˈki.lo/",
+          "glosa_A": "mil (×1000)",
+          "estimulo_B": "ki lo",
+          "afi_B": "/ˈki ˈlo/",
+          "glosa_B": "que lugar",
+          "X": "ki lo",
+          "respuesta_correcta": "B",
+          "oracion_A": "Mi ha kilo hos.",
+          "oracion_B": "Ki lo tu go?"
+        },
+        {
+          "id": "A5-1",
+          "par": "A5",
+          "estimulo_A": "somi",
+          "afi_A": "/ˈso.mi/",
+          "glosa_A": "gris",
+          "estimulo_B": "so mi",
+          "afi_B": "/ˈso ˈmi/",
+          "glosa_B": "entonces yo",
+          "X": "so mi",
+          "respuesta_correcta": "B",
+          "oracion_A": "Le nubu e somi.",
+          "oracion_B": "So mi go."
+        }
+      ],
+      "n_items": 10,
+      "que_mide": "discriminación prosódica de pares mínimos"
+    },
+    "B_cluster_hV": {
+      "items": [
+        {
+          "id": "B14",
+          "estimulo": "halo",
+          "glosa": "hola",
+          "opciones": [
+            "hilo",
+            "holo",
+            "halo",
+            "helo"
+          ],
+          "respuesta_correcta": "halo"
+        },
+        {
+          "id": "B04",
+          "estimulo": "ho",
+          "glosa": "casa",
+          "opciones": [
+            "hili",
+            "ho",
+            "hulu",
+            "hele"
+          ],
+          "respuesta_correcta": "ho"
+        },
+        {
+          "id": "B06",
+          "estimulo": "hapu",
+          "glosa": "abrir",
+          "opciones": [
+            "hapu",
+            "hopu",
+            "hepu",
+            "hipu"
+          ],
+          "respuesta_correcta": "hapu"
+        },
+        {
+          "id": "B11",
+          "estimulo": "hudi",
+          "glosa": "tocar",
+          "opciones": [
+            "hedi",
+            "hudi",
+            "hodi",
+            "hadi"
+          ],
+          "respuesta_correcta": "hudi"
+        },
+        {
+          "id": "B02",
+          "estimulo": "he",
+          "glosa": "cabeza",
+          "opciones": [
+            "hili",
+            "holo",
+            "hala",
+            "he"
+          ],
+          "respuesta_correcta": "he"
+        },
+        {
+          "id": "B01",
+          "estimulo": "ha",
+          "glosa": "tener",
+          "opciones": [
+            "hili",
+            "ha",
+            "hala",
+            "hele"
+          ],
+          "respuesta_correcta": "ha"
+        },
+        {
+          "id": "B13",
+          "estimulo": "husa",
+          "glosa": "olor",
+          "opciones": [
+            "hesa",
+            "hasa",
+            "husa",
+            "hisa"
+          ],
+          "respuesta_correcta": "husa"
+        },
+        {
+          "id": "B07",
+          "estimulo": "hesu",
+          "glosa": "gusto",
+          "opciones": [
+            "hisu",
+            "hasu",
+            "hosu",
+            "hesu"
+          ],
+          "respuesta_correcta": "hesu"
+        },
+        {
+          "id": "B05",
+          "estimulo": "hu",
+          "glosa": "tristeza",
+          "opciones": [
+            "hala",
+            "hili",
+            "hu",
+            "hele"
+          ],
+          "respuesta_correcta": "hu"
+        },
+        {
+          "id": "B10",
+          "estimulo": "hoki",
+          "glosa": "dinero",
+          "opciones": [
+            "huki",
+            "haki",
+            "heki",
+            "hoki"
+          ],
+          "respuesta_correcta": "hoki"
+        },
+        {
+          "id": "B03",
+          "estimulo": "hi",
+          "glosa": "alto",
+          "opciones": [
+            "hele",
+            "hi",
+            "hulu",
+            "hala"
+          ],
+          "respuesta_correcta": "hi"
+        },
+        {
+          "id": "B09",
+          "estimulo": "hodu",
+          "glosa": "montana",
+          "opciones": [
+            "hadu",
+            "hodu",
+            "hedu",
+            "hudu"
+          ],
+          "respuesta_correcta": "hodu"
+        },
+        {
+          "id": "B12",
+          "estimulo": "huko",
+          "glosa": "ciudad",
+          "opciones": [
+            "hako",
+            "heko",
+            "hiko",
+            "huko"
+          ],
+          "respuesta_correcta": "huko"
+        },
+        {
+          "id": "B08",
+          "estimulo": "hobu",
+          "glosa": "animal",
+          "opciones": [
+            "hebu",
+            "hubu",
+            "hobu",
+            "habu"
+          ],
+          "respuesta_correcta": "hobu"
+        }
+      ],
+      "n_items": 14,
+      "que_mide": "identificación de vecinos mínimos con h-"
+    },
+    "C_naturalidad": {
+      "items": [
+        {
+          "id": "C01",
+          "forma": "kida",
+          "es": "matar",
+          "categoria": "verbo"
+        },
+        {
+          "id": "C02",
+          "forma": "misa",
+          "es": "carne",
+          "categoria": "sustantivo"
+        },
+        {
+          "id": "C03",
+          "forma": "len",
+          "es": "lento",
+          "categoria": "adjetivo"
+        },
+        {
+          "id": "C04",
+          "forma": "manu",
+          "es": "hombre",
+          "categoria": "sustantivo"
+        },
+        {
+          "id": "C05",
+          "forma": "go",
+          "es": "ir",
+          "categoria": "verbo"
+        },
+        {
+          "id": "C06",
+          "forma": "duka",
+          "es": "mar",
+          "categoria": "sustantivo"
+        },
+        {
+          "id": "C07",
+          "forma": "nano",
+          "es": "milmillonésima (nano-)",
+          "categoria": "prefijo SI"
+        },
+        {
+          "id": "C08",
+          "forma": "fan",
+          "es": "multiplicar (×)",
+          "categoria": "matemática"
+        },
+        {
+          "id": "C09",
+          "forma": "kuno",
+          "es": "cuerno",
+          "categoria": "sustantivo"
+        },
+        {
+          "id": "C10",
+          "forma": "papa",
+          "es": "padre",
+          "categoria": "sustantivo"
+        },
+        {
+          "id": "C11",
+          "forma": "fu",
+          "es": "4",
+          "categoria": "número"
+        },
+        {
+          "id": "C12",
+          "forma": "di",
+          "es": "decir",
+          "categoria": "verbo"
+        },
+        {
+          "id": "C13",
+          "forma": "Kina",
+          "es": "China",
+          "categoria": "país"
+        },
+        {
+          "id": "C14",
+          "forma": "wi",
+          "es": "nosotros",
+          "categoria": "pronombre"
+        },
+        {
+          "id": "C15",
+          "forma": "le",
+          "es": "el, la",
+          "categoria": "determinante"
+        },
+        {
+          "id": "C16",
+          "forma": "kubi",
+          "es": "correr",
+          "categoria": "verbo"
+        },
+        {
+          "id": "C17",
+          "forma": "sa",
+          "es": "saber",
+          "categoria": "verbo"
+        },
+        {
+          "id": "C18",
+          "forma": "ye",
+          "es": "ojo",
+          "categoria": "sustantivo"
+        },
+        {
+          "id": "C19",
+          "forma": "tuni",
+          "es": "brillo",
+          "categoria": "sustantivo"
+        },
+        {
+          "id": "C20",
+          "forma": "puka",
+          "es": "arena",
+          "categoria": "sustantivo"
+        },
+        {
+          "id": "C21",
+          "forma": "peke",
+          "es": "pez",
+          "categoria": "sustantivo"
+        },
+        {
+          "id": "C22",
+          "forma": "sen",
+          "es": "sentir",
+          "categoria": "verbo"
+        },
+        {
+          "id": "C23",
+          "forma": "la",
+          "es": "cariño 🥰",
+          "categoria": "actitud"
+        },
+        {
+          "id": "C24",
+          "forma": "reme",
+          "es": "recordar",
+          "categoria": "verbo"
+        },
+        {
+          "id": "C25",
+          "forma": "ore",
+          "es": "oreja",
+          "categoria": "sustantivo"
+        },
+        {
+          "id": "C26",
+          "forma": "gan",
+          "es": "proteger, guardar",
+          "categoria": "verbo"
+        },
+        {
+          "id": "C27",
+          "forma": "tani",
+          "es": "largo",
+          "categoria": "adjetivo"
+        },
+        {
+          "id": "C28",
+          "forma": "wa",
+          "es": "agua",
+          "categoria": "sustantivo"
+        },
+        {
+          "id": "C29",
+          "forma": "ko",
+          "es": "corto, breve",
+          "categoria": "adjetivo"
+        },
+        {
+          "id": "C30",
+          "forma": "hoki",
+          "es": "dinero",
+          "categoria": "sustantivo"
+        }
+      ],
+      "n_items": 30,
+      "que_mide": "juicio de naturalidad sobre el léxico"
+    }
+  },
+  "umbrales": {
+    "sin_problema": ">= 90% de acierto",
+    "vigilancia": "75-90%",
+    "renombrar": "< 75%"
+  }
+}
