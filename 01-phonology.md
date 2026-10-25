@@ -65,8 +65,12 @@ brand is **Korlin**. Same family as Mekiko, Faransa, Yapan, Barasila (PR-26).
 The coda rule for the common lexicon does not change.
 
 ## 3. Stress
-- Fixed on the **penultimate syllable** of the word.
-- Monosyllables carry no special stress.
+- One phonological word (root + affixes, or root + root in a compound) carries
+  **exactly one** accent, on its **penultimate syllable**.
+- A free monosyllable is always stressed.
+- `me-ho` (one word, one accent: /ˈme.ho/) ≠ `me ho` (two words, two accents:
+  /ˈme ˈho/); `do-lo` → /ˈdo.lo/, `ru-sui` → /ruˈsu.i/. Compound segments do
+  **not** keep an accent of their own.
 - Predictable → **never written** (no accent marks).
 
 ## 4. Orthography (official romanization)

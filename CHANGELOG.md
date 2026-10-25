@@ -55,9 +55,14 @@ ronda v0.6** (B1-B4, F1-F8, P1-P4). Todo verificado contra el repo: real.
 ### C-10 — Nombre
 - Se mantiene el autónimo y la marca **Korlin** (no Kolin, no Korolin). Los
   nombres propios y las marcas (mayúscula inicial) pueden conservar una
-  ortografía con coda ilegal respecto a `(C)V{m,n,s}`: excepción documentada,
-  misma familia que PR-26 (`Mekiko`, `Faransa`, `Yapan`, `Barasila`). La coda
-  del léxico común no cambia.
+  ortografía que **viole la fonotáctica** `(C)V{m,n,s}`: coda ilegal **o grupo
+  consonántico** (`Korlin` = `-rl-`, que el léxico común no admite). Excepción
+  documentada, misma familia que PR-26 (`Mekiko`, `Faransa`, `Yapan`, `Barasila`).
+  Afecta solo a nombres; la coda del léxico común no cambia.
+- **Acento en compuestos:** corregida la contradicción interna. El spec decía
+  «cada segmento conserva el suyo», contra la regla 21 («un solo acento por
+  palabra fonológica»). Ahora: el compuesto lleva **un** acento, en su penúltima
+  sílaba (`do-lo` → /ˈdo.lo/, `ru-sui` → /ruˈsu.i/).
 
 ### Léxico
 - 150 → **178 palabras**: 7 reemplazos del lote 1 rechazado, 8 del lote 2, 11
