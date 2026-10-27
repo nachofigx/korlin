@@ -596,7 +596,7 @@ scripts/generar.py      ← generador
 ### 12.4 Detalles técnicos de implementación
 
 - **Nombre:** Shortlang (exónimo) / **Korlin** (endónimo) /ˈkoɾlin/ = `ko` (corto) + `lin` (lengua). Se verificó que no colisionara con marcas relevantes (existe el lenguaje de programación *Kotlin*, riesgo bajo para un proyecto de distinta naturaleza).
-- **Síntesis de voz (TTS):** configurada con voz neutra `es-MX-DaliaNeural` (español neutro con seseo), compatible con la fonología Korlin (solo /s/, sin /θ/).
+- **Síntesis de voz (TTS):** voz `es-MX-DaliaNeural` (español neutro con seseo: solo /s/, sin /θ/). **No cubre /h/**: medido en C-24, esa voz deja muda la /h/ (`halo` y `alo` salen idénticos; `scripts/c24_audio.py`). La fonología no cambia.
 - **Publicación:** el repositorio se publicó en GitHub autenticando con token almacenado en `~/.git-credentials` (sin exponer credenciales en comandos).
 
 ---

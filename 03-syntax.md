@@ -84,7 +84,8 @@ do not chain (rule 24). For two nuances, one stays at the end and the other is
 expressed in the verb.
 
 Unmarked modality (rule 23) is `to` only with a strong evidential (`-ve`, `-di`,
-`-sa`). With `-pen`, unmarked modality is `be`. The explicit particle always wins.
+`-sa`). With `-pen`, unmarked modality is `be`; with `-pen` and incomplete data,
+`os`. The explicit particle always wins. Rule 12 points here.
 
 - `li go-di ku bu.` — "He left (I was told, doubtful) 😤." One modality, one attitude.
 

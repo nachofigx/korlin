@@ -1,4 +1,4 @@
-# Korlin — Especificación para modelos de lenguaje (v0.8.3)
+# Korlin — Especificación para modelos de lenguaje (v0.8.4)
 
 > **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer
 > mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para
@@ -8,7 +8,7 @@ Korlin (exónimo **Shortlang**) es una lengua construida, regular y sin ambigüe
 diseñada para hablar mucho en poco tiempo, con honestidad forzada por gramática
 (evidencialidad obligatoria) y pensada para uso humano y con agentes de IA.
 Autónimo: **korlin** = `ko` (corto) + `lin` (lengua) = *lengua corta*.
-**Versión de esta especificación: v0.8.3** (ver `CHANGELOG.md`). Este documento manda
+**Versión de esta especificación: v0.8.4** (ver `CHANGELOG.md`). Este documento manda
 sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
 
 **Fuente de verdad y qué es generado.** `data/lexico.yaml`, `data/afijos.yaml` y
@@ -53,8 +53,11 @@ manuales que deben seguir al spec, no al revés.
 10. **No hay artículos obligatorios**; `le` existe y es opcional.
 11. **El sujeto puede omitirse** si el contexto lo deja claro (pro-drop),
     también con `na` y con `mo`: `na sa-ve.` = *no sé*; `go mo?` = *¿vas?*
-12. **La modalidad epistémica no marcada equivale a `to`** (certeza),
-    pero la evidencialidad NUNCA se puede omitir en una declarativa.
+12. **La modalidad no marcada la fija la regla 23**, no esta línea.
+    No es `to` siempre: sin partícula, `to` solo con evidencial fuerte;
+    con `-pen`, `be` (o `os` si el dato es incompleto). La partícula
+    explícita manda. La evidencialidad, en cambio, NUNCA se puede omitir
+    en una declarativa.
 13. **ÓRDENES: la raíz desnuda del verbo, sin evidencial.**
     `Go!` = *¡ve!*; `Ve mi!` = *¡mírame!* No hay morfema nuevo: como el
     evidencial es obligatorio en la declaración, la forma desnuda queda libre
@@ -168,6 +171,10 @@ manuales que deben seguir al spec, no al revés.
     `kilo` solo en contexto numérico (numeral suelto o prefijo SI, `kilo-met`);
     no coocurren en la misma cláusula — si hace falta «mil» y «dónde», el numeral
     queda en su marco numérico y `ki-lo` abre la pregunta.
+    **Falsos amigos del español (C-46-FA, v0.8.4):** inventario, no regla
+    nueva, en `docs/c46-falsos-amigos.md` (`misa`, `lama`, `bebe`, `pala`,
+    `halo`, …). No se renombra ninguna forma. El umbral de renombre es solo
+    el dato de campo de C-24 (aún pendiente). No es la lista de la regla 24c.
 24. **Partículas finales (nota C-21, mínima en v0.6):** la oración admite una sola
     cadena final en orden fijo `[modalidad] [actitud] [mo]`. **No se encadenan dos
     actitudes** ni dos modalidades: para dos matices, una va al final y la otra se
@@ -306,6 +313,15 @@ desnudo. En una subordinada, cada cláusula finita lleva el suyo:
 | **Futuro** que uno mismo da por hecho | `-ve` | `mi ne-go-ve` = *iré (decidido)* |
 | **Futuro** planeado por otros, predicho o esperado | `-pen` | `li ne-go-pen` = *irá (lo deduzco)* |
 | Acción propia pasada sin percepción directa | `-di` | `mi an-go-di` = *fui (consta)* |
+| Identidad / cópula de autoidentificación | `-ve` | `mi e-ve manu` = *soy hombre (lo sé de mí)*. **Prohibido:** `-sa` (no es saber común) y `-di`, salvo que otro te diga quién eres. |
+| Acción propia en el presente | `-ve` | `mi go-ve` = *voy (lo hago ahora)*. **Prohibido:** `-di` y `-sa`. El pasado propio sin percepción sigue en `-di` (`mi an-go-di`). |
+| Hábito o presente genérico | `-sa` si es saber común; si no, la fuente real | `le pe man-sa` = *la persona come (es sabido)* · `li man-ve` = *él come (lo veo)*. **Prohibido:** el presente sin marca de tiempo no elige `-sa`. |
+| Saber por lectura frente a saber general | `-di` el documento; `-sa` el saber común; `-ve` el estado del hablante | `mi sa-di ki le ho e-di me` = *sé (lo leí) que la casa es grande*. **Prohibido:** `-sa` por haberlo leído. `-sa` no significa «lo leí». «Yo sé» como estado propio no es `sa-sa` (regla 20). |
+| Matices de `-di`: dicho, leído, herramienta | `-di` en los tres | `li go-di` = *él va (me lo dijeron)* · `le ho e-di me` = *la casa es grande (lo leí)* · `le kin di-di le nom` = *la máquina dijo el nombre (lo devolvió)*. **Prohibido:** un sufijo distinto por matiz, y `-ve` o `-sa` para estos tres. La confianza es la modalidad (regla 23). |
+
+Las once filas de arriba se conservan. Las cinco de abajo no añaden sufijo:
+cierran huecos de lectura (autoidentificación, presente propio, hábito,
+saber por lectura, matices de `-di`).
 
 **Hueco léxico:** no hay raíz «soñar». `mo` es la partícula de pregunta sí/no,
 no un verbo. El dormir que uno vivió lleva `-ve` (`do`); el contenido del sueño

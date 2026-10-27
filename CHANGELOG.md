@@ -7,6 +7,67 @@ la versión. **Documento que manda:** `korlin-spec.md` (generado desde
 
 ---
 
+## v0.8.4 — 2026-10-27
+
+Parche. No hay regla gramatical nueva ni raíz nueva. No se renombra nada.
+La marca sigue siendo **Korlin**.
+
+La fuente de las reglas es `scripts/generar_ia.py` (emite `korlin-spec.md` y
+el campo de `korlin.json`). `02-morphology.md` y `03-syntax.md` son manuales:
+siguen al spec.
+
+### A-03 — la regla 12 apunta a la 23
+
+La regla 12 decía que la modalidad no marcada equivale a `to` siempre. La
+regla 23 (C-19) dice que eso vale solo con evidencial fuerte (`-ve`, `-di`,
+`-sa`); con `-pen` la no marcada es `be`, y `os` si el dato es incompleto.
+La 12 pasa a ser un puntero a la 23. `korlin.json` (`modalidad_por_defecto`)
+deja de decir «to (certeza)» a secas.
+
+`02-morphology.md` ya estaba alineado en v0.8.3: no repetía la línea vieja.
+`03-syntax.md` nombra también el `os` de dato incompleto.
+
+### A-05 — §4.1, cinco filas (16 en total)
+
+Se conservan las once filas correctas. Entran, sin sufijo nuevo:
+
+- identidad / cópula de autoidentificación → `-ve` (`mi e-ve manu`).
+  Prohibido `-sa` y, salvo cita ajena, `-di`.
+- acción propia en el presente → `-ve` (`mi go-ve`). Prohibido `-di` y `-sa`.
+  El pasado propio sin percepción sigue en `-di`.
+- hábito o presente genérico → `-sa` solo si es saber común (`le pe man-sa`);
+  un hábito que se ve es `-ve` (`li man-ve`). El presente sin marca de tiempo
+  no elige `-sa`.
+- saber por lectura frente a saber general: documento → `-di`
+  (`mi sa-di ki le ho e-di me`); saber común → `-sa`; «yo sé» como estado
+  del hablante → `-ve` (regla 20). Leer no sube a `-sa`.
+- matices de `-di` (dicho, leído, herramienta): un solo sufijo
+  (`li go-di`, `le ho e-di me`, `le kin di-di le nom`). La confianza sigue
+  en la modalidad (regla 23).
+
+El traductor no elige evidencial. `--ev` sigue siendo un sello. Los casos
+nuevos de la batería son oraciones que ya sabía decir.
+
+### A-06 — C-46-FA
+
+Inventario de falsos amigos del español: [`docs/c46-falsos-amigos.md`](docs/c46-falsos-amigos.md)
+(`misa`, `lama`, `bebe`, `pala`, `halo`, …). No es la lista cerrada de la
+regla 24c. El spec solo apunta al archivo.
+
+**No se renombra ninguna forma.** El umbral de renombre es solo el dato de
+C-24, ya fijado en v0.8: ≥90 % no se toca; 75–90 % vigilancia; <75 % en un
+par concreto, con al menos 3 hablantes en ese par, se renombra ese par.
+La medición con hablantes sigue pendiente. Este parche no amplía los estímulos.
+
+### TTS
+
+Los white papers (`docs/investigacion.md`, `docs/research.md`) decían que la
+voz `es-MX-DaliaNeural` es compatible con la fonología. El dato medido de
+C-24 es otro: esa voz deja muda la /h/ (`halo` y `alo` salen idénticos).
+La fonología no cambia. El README no hacía esa afirmación.
+
+---
+
 ## v0.8.3 — 2026-10-27
 
 Parche. No hay regla gramatical nueva ni raíz nueva. La marca sigue siendo **Korlin**.
