@@ -7,6 +7,38 @@ la versión. **Documento que manda:** `korlin-spec.md` (generado desde
 
 ---
 
+## v0.8.2 — 2026-10-27
+
+Parche de documentación y de estímulos. No hay regla gramatical nueva ni raíz
+nueva. `kilo`, `mega` y `nano` no se renombran. La marca sigue siendo **Korlin**.
+v0.8.1 ya está etiquetada en el merge de PR #8 (`c367337`); esta aclaración va
+aparte.
+
+### C-05 — sexta colisión: `kilo` ≈ `ki-lo`
+
+La regla 24c listaba cinco colisiones que la prosodia separa (un acento frente
+a dos). Bajo la regla 21 el compuesto interrogativo `ki-lo` (*dónde*) es una
+palabra fonológica con un solo acento, igual que el numeral `kilo` (×10³):
+ambos son /ˈki.lo/. `kilo` ≈ `ki lo` (con espacio) sigue entre las cinco;
+`kilo` ≈ `ki-lo` (con guion) es la **sexta**, deuda documentada. C-05 (no hay
+tilde que marque el acento) sigue abierta: esta es su colisión concreta, no un
+cierre.
+
+Mitigación, escrita en la regla 24c:
+- el interrogativo se escribe siempre `ki-lo`;
+- `kilo` solo en contexto numérico (numeral suelto o `kilo-met`);
+- no coocurren en la misma cláusula: el numeral queda en su marco numérico y
+  `ki-lo` abre la pregunta.
+
+### C-24
+
+Par A6 en el bloque A: `kilo` frente a `ki-lo` (los dos /ˈki.lo/). Semilla
+`20261024` sin cambio. A1–A5, el bloque B y el bloque C conservan el orden; A6
+se añade al final del bloque A. En A6-1 la forma oída es `kilo`; en A6-2 es
+`ki-lo`. Ese par no consume la secuencia aleatoria de la semilla.
+
+---
+
 ## v0.8.1 — 2026-10-27
 
 Parche. No hay regla nueva ni raíz nueva. La marca sigue siendo **Korlin**.
