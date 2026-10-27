@@ -1,6 +1,7 @@
 # Hoja de registro — C-24 (prueba con hablantes)
 
-**Un formulario por hablante.** Rellena la cabecera y luego cada bloque.
+**Un formulario por hablante.** Lo llena quien aplica la prueba.
+**Todo es lectura:** se muestra la oración o la tarjeta escrita.
 
 ## Cabecera
 
@@ -13,43 +14,56 @@
 | fecha | |
 | minutos | |
 
-## Bloque A — discriminación (¿X es A o B?)
+## Bloque A — discriminación (lee la oración y elige A o B)
 
-| # | Se oye | A | B | Respuesta | Seg. |
+El hablante **lee** la oración y elige la paráfrasis. No ve la otra grafía del par.
+A = sentido de la forma del léxico. B = sentido de la lectura alterna.
+
+| # | Lees | A | B | Respuesta (A/B) | Seg. |
 |---|---|---|---|---|---|
-| A1-1 | halo / ha lo | halo | ha lo | | |
-| A3-1 | mega / me ga | mega | me ga | | |
-| A1-2 | halo / ha lo | halo | ha lo | | |
-| A4-2 | nano / na no | nano | na no | | |
-| A3-2 | mega / me ga | mega | me ga | | |
-| A4-1 | nano / na no | nano | na no | | |
-| A2-2 | kilo / ki lo | kilo | ki lo | | |
-| A5-2 | somi / so mi | somi | so mi | | |
-| A2-1 | kilo / ki lo | kilo | ki lo | | |
-| A5-1 | somi / so mi | somi | so mi | | |
-| A6-1 | kilo / ki-lo | kilo | ki-lo | | |
-| A6-2 | kilo / ki-lo | kilo | ki-lo | | |
+| A1-1 | Halo, mi go-ve. | hola (saludo) | tener lugar | | |
+| A3-1 | Mi ha-ve mega hos. | millon (×10^6) | tierra grande | | |
+| A1-2 | Ha-lo, mi go-ve. | hola (saludo) | tener lugar | | |
+| A4-2 | Na no, e-ve ti. | nano- (×10^-9) | no [es] noche | | |
+| A3-2 | Mi ha-ve me-ga hos. | millon (×10^6) | tierra grande | | |
+| A4-1 | Mi ha-ve u nano re. | nano- (×10^-9) | no [es] noche | | |
+| A2-2 | Mi ha-ve kilo hos. | mil (×1000) | que lugar | | |
+| A5-2 | So mi go-ve. | gris | entonces yo | | |
+| A2-1 | Ki lo tu go? | mil (×1000) | que lugar | | |
+| A5-1 | So mi go-ve. | gris | entonces yo | | |
+| A6-1 | Mi ha-ve kilo hos. | mil (×1000) | donde | | |
+| A6-2 | Ki-lo tu go? | mil (×1000) | donde | | |
+| A1-3 | Tu ha lo i le ho mo? | hola (saludo) | tener lugar | | |
+| A3-3 | Mi ve-ve le me ga. | millon (×10^6) | tierra grande | | |
+| A4-3 | Mi ha-ve u na-no re. | nano- (×10^-9) | no [es] noche | | |
+| A5-3 | Le nubu e-ve somi. | gris | entonces yo | | |
+| A5-4 | Le nubu e-ve so-mi. | gris | entonces yo | | |
 
-## Bloque B — identificación (¿cuál oíste?)
+## Bloque B — identificación (¿cuál leíste?)
 
-| # | Opciones | Respuesta | Seg. |
-|---|---|---|---|
-| B14 | hilo · holo · halo · helo | | |
-| B04 | hili · ho · hulu · hele | | |
-| B06 | hapu · hopu · hepu · hipu | | |
-| B11 | hedi · hudi · hodi · hadi | | |
-| B02 | hili · holo · hala · he | | |
-| B01 | hili · ha · hala · hele | | |
-| B13 | hesa · hasa · husa · hisa | | |
-| B07 | hisu · hasu · hosu · hesu | | |
-| B05 | hala · hili · hu · hele | | |
-| B10 | huki · haki · heki · hoki | | |
-| B03 | hele · hi · hulu · hala | | |
-| B09 | hadu · hodu · hedu · hudu | | |
-| B12 | hako · heko · hiko · huko | | |
-| B08 | hebu · hubu · hobu · habu | | |
+La columna «Forma» es la tarjeta: se muestra escrita, se tapa,
+y solo entonces el hablante mira las cuatro opciones y marca cuál leyó.
 
-## Bloque C — naturalidad (1 = raro, 5 = natural)
+| # | Forma (tarjeta; tapar) | Opciones | Leyó | Seg. |
+|---|---|---|---|---|
+| B14 | halo | hilo · holo · halo · helo | | |
+| B04 | ho | hili · ho · hulu · hele | | |
+| B06 | hapu | hapu · hopu · hepu · hipu | | |
+| B11 | hudi | hedi · hudi · hodi · hadi | | |
+| B02 | he | hili · holo · hala · he | | |
+| B01 | ha | hili · ha · hala · hele | | |
+| B13 | husa | hesa · hasa · husa · hisa | | |
+| B07 | hesu | hisu · hasu · hosu · hesu | | |
+| B05 | hu | hala · hili · hu · hele | | |
+| B10 | hoki | huki · haki · heki · hoki | | |
+| B03 | hi | hele · hi · hulu · hala | | |
+| B09 | hodu | hadu · hodu · hedu · hudu | | |
+| B12 | huko | hako · heko · hiko · huko | | |
+| B08 | hobu | hebu · hubu · hobu · habu | | |
+
+## Bloque C — naturalidad al leer (1 = raro, 5 = natural)
+
+Lee la forma. «¿Qué tan natural te parece, leída, como palabra de un idioma?»
 
 | # | Forma | Español | 1-5 |
 |---|---|---|---|
@@ -83,3 +97,11 @@
 | C28 | wa | agua | |
 | C29 | ko | corto, breve | |
 | C30 | hoki | dinero | |
+
+## Cierre del bloque A (sin volver a mostrar el material)
+
+¿Notaste alguna vez que una palabra pudiera leerse de dos maneras?
+
+| Respuesta | Si nombra alguna, ¿cuál? |
+|---|---|
+| | |

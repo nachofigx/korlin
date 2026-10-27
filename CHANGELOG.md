@@ -7,6 +7,34 @@ la versión. **Documento que manda:** `korlin-spec.md` (generado desde
 
 ---
 
+## Unreleased — instrumento C-24
+
+Sin cambio de gramática ni de versión. `data/lexico.yaml` y `data/afijos.yaml`
+siguen en **0.8.4**. No hay raíces nuevas y no se regenera el spec.
+La medición con hablantes sigue pendiente: esta entrada no trae datos.
+
+### C-24 — hoja de lectura, lista para el campo
+
+La hoja decía «Se oye» y «¿cuál oíste?», y el bloque A mostraba las dos grafías
+a la vez. El protocolo ya era escrito (el TTS de `es-MX` deja muda la /h/ y no
+marca el acento). La hoja, la plantilla y el JSON quedan alineados con eso.
+
+- Bloque A: el hablante **lee una oración** y elige entre dos paráfrasis.
+  No ve la otra grafía.
+- Bloque B: tarjeta escrita, se tapa, y elige cuál leyó. No hay audio.
+- Bloque C: naturalidad **al leer**.
+- Semilla `20261024` igual. El orden de A1–A5, B y C no se rebaraja.
+  A6 sigue justo detrás de ese bloque: A6-1 es `kilo`, A6-2 es `ki-lo`.
+- Polos que la semilla no sacó (espacio en A1 y A3, guion en A4, forma
+  pegada y guion en A5) van en complementos fijos **después de A6**.
+  El guion `ki-lo` queda solo en A6.
+- Declarativas con `-ve`. Preguntas sin evidencial. `ha lo` va en pregunta:
+  el guion de `-ve` separaría `ha` de `lo`. Se quita `mita` (no está en el
+  léxico); `nano` va en `u nano re`.
+- Los umbrales de v0.8 no se tocan. El desglose por condición es descriptivo.
+
+---
+
 ## v0.8.4 — 2026-10-27
 
 Parche. No hay regla gramatical nueva ni raíz nueva. No se renombra nada.

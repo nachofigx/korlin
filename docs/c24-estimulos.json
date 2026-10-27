@@ -1,8 +1,11 @@
 {
   "prueba": "C-24 — medida con hablantes",
-  "version_lexico": "238 formas (v0.7, main c958683)",
+  "modo": "escrito",
+  "version_lexico": "238 formas (lexico v0.8.4; sin raices nuevas)",
+  "version_instrumento": "2026-10-27",
   "semilla": 20261024,
-  "semilla_nota": "20261024 fija el orden de A1-A5, B y C. A6 (kilo ≈ ki-lo) se anade al final del bloque A y no reordena lo anterior. Su X no sale de la semilla: A6-1 apunta a kilo y A6-2 a ki-lo.",
+  "semilla_nota": "20261024 fija el orden y el polo X de A1-A5, y el orden de B y C. A6 (kilo ≈ ki-lo) va justo despues: A6-1 es kilo y A6-2 es ki-lo. Su X no sale de la semilla. Los complementos (origen complemento) tapan polos que la semilla no saco y se anaden detras de A6: no reordenan A1-A5, B ni C. A2 no usa el guion ki-lo.",
+  "nota_audio": "El TTS no es el instrumento. scripts/c24_audio.py solo documenta por que la /h/ y el acento no se miden con la voz es-MX.",
   "bloques": {
     "A_colisiones": {
       "items": [
@@ -17,8 +20,11 @@
           "glosa_B": "tener lugar",
           "X": "halo",
           "respuesta_correcta": "A",
-          "oracion_A": "Halo, mi go.",
-          "oracion_B": "Mi ha lo a le ho."
+          "oracion_A": "Halo, mi go-ve.",
+          "oracion_B": "Tu ha lo i le ho mo?",
+          "origen": "semilla",
+          "condicion": "sin_guion",
+          "lectura": "Halo, mi go-ve."
         },
         {
           "id": "A3-1",
@@ -31,8 +37,11 @@
           "glosa_B": "tierra grande",
           "X": "mega",
           "respuesta_correcta": "A",
-          "oracion_A": "U mega hos.",
-          "oracion_B": "Le ga e me."
+          "oracion_A": "Mi ha-ve mega hos.",
+          "oracion_B": "Mi ve-ve le me ga.",
+          "origen": "semilla",
+          "condicion": "sin_guion",
+          "lectura": "Mi ha-ve mega hos."
         },
         {
           "id": "A1-2",
@@ -45,8 +54,11 @@
           "glosa_B": "tener lugar",
           "X": "halo",
           "respuesta_correcta": "A",
-          "oracion_A": "Halo, mi go.",
-          "oracion_B": "Mi ha lo a le ho."
+          "oracion_A": "Halo, mi go-ve.",
+          "oracion_B": "Tu ha lo i le ho mo?",
+          "origen": "semilla",
+          "condicion": "con_guion",
+          "lectura": "Ha-lo, mi go-ve."
         },
         {
           "id": "A4-2",
@@ -59,8 +71,11 @@
           "glosa_B": "no [es] noche",
           "X": "na no",
           "respuesta_correcta": "B",
-          "oracion_A": "U nano mita.",
-          "oracion_B": "Na no, e ti."
+          "oracion_A": "Mi ha-ve u nano re.",
+          "oracion_B": "Na no, e-ve ti.",
+          "origen": "semilla",
+          "condicion": "espacio",
+          "lectura": "Na no, e-ve ti."
         },
         {
           "id": "A3-2",
@@ -73,8 +88,11 @@
           "glosa_B": "tierra grande",
           "X": "mega",
           "respuesta_correcta": "A",
-          "oracion_A": "U mega hos.",
-          "oracion_B": "Le ga e me."
+          "oracion_A": "Mi ha-ve mega hos.",
+          "oracion_B": "Mi ve-ve le me ga.",
+          "origen": "semilla",
+          "condicion": "con_guion",
+          "lectura": "Mi ha-ve me-ga hos."
         },
         {
           "id": "A4-1",
@@ -87,8 +105,11 @@
           "glosa_B": "no [es] noche",
           "X": "nano",
           "respuesta_correcta": "A",
-          "oracion_A": "U nano mita.",
-          "oracion_B": "Na no, e ti."
+          "oracion_A": "Mi ha-ve u nano re.",
+          "oracion_B": "Na no, e-ve ti.",
+          "origen": "semilla",
+          "condicion": "sin_guion",
+          "lectura": "Mi ha-ve u nano re."
         },
         {
           "id": "A2-2",
@@ -101,8 +122,11 @@
           "glosa_B": "que lugar",
           "X": "kilo",
           "respuesta_correcta": "A",
-          "oracion_A": "Mi ha kilo hos.",
-          "oracion_B": "Ki lo tu go?"
+          "oracion_A": "Mi ha-ve kilo hos.",
+          "oracion_B": "Ki lo tu go?",
+          "origen": "semilla",
+          "condicion": "sin_guion",
+          "lectura": "Mi ha-ve kilo hos."
         },
         {
           "id": "A5-2",
@@ -115,8 +139,11 @@
           "glosa_B": "entonces yo",
           "X": "so mi",
           "respuesta_correcta": "B",
-          "oracion_A": "Le nubu e somi.",
-          "oracion_B": "So mi go."
+          "oracion_A": "Le nubu e-ve somi.",
+          "oracion_B": "So mi go-ve.",
+          "origen": "semilla",
+          "condicion": "espacio",
+          "lectura": "So mi go-ve."
         },
         {
           "id": "A2-1",
@@ -129,8 +156,11 @@
           "glosa_B": "que lugar",
           "X": "ki lo",
           "respuesta_correcta": "B",
-          "oracion_A": "Mi ha kilo hos.",
-          "oracion_B": "Ki lo tu go?"
+          "oracion_A": "Mi ha-ve kilo hos.",
+          "oracion_B": "Ki lo tu go?",
+          "origen": "semilla",
+          "condicion": "espacio",
+          "lectura": "Ki lo tu go?"
         },
         {
           "id": "A5-1",
@@ -143,8 +173,11 @@
           "glosa_B": "entonces yo",
           "X": "so mi",
           "respuesta_correcta": "B",
-          "oracion_A": "Le nubu e somi.",
-          "oracion_B": "So mi go."
+          "oracion_A": "Le nubu e-ve somi.",
+          "oracion_B": "So mi go-ve.",
+          "origen": "semilla",
+          "condicion": "espacio",
+          "lectura": "So mi go-ve."
         },
         {
           "id": "A6-1",
@@ -157,8 +190,11 @@
           "glosa_B": "donde",
           "X": "kilo",
           "respuesta_correcta": "A",
-          "oracion_A": "Mi ha kilo hos.",
-          "oracion_B": "Ki-lo tu go?"
+          "oracion_A": "Mi ha-ve kilo hos.",
+          "oracion_B": "Ki-lo tu go?",
+          "origen": "a6",
+          "condicion": "sin_guion",
+          "lectura": "Mi ha-ve kilo hos."
         },
         {
           "id": "A6-2",
@@ -171,12 +207,100 @@
           "glosa_B": "donde",
           "X": "ki-lo",
           "respuesta_correcta": "B",
-          "oracion_A": "Mi ha kilo hos.",
-          "oracion_B": "Ki-lo tu go?"
+          "oracion_A": "Mi ha-ve kilo hos.",
+          "oracion_B": "Ki-lo tu go?",
+          "origen": "a6",
+          "condicion": "con_guion",
+          "lectura": "Ki-lo tu go?"
+        },
+        {
+          "id": "A1-3",
+          "par": "A1",
+          "estimulo_A": "halo",
+          "afi_A": "/ˈha.lo/",
+          "glosa_A": "hola (saludo)",
+          "estimulo_B": "ha lo",
+          "afi_B": "/ˈha ˈlo/",
+          "glosa_B": "tener lugar",
+          "X": "ha lo",
+          "respuesta_correcta": "B",
+          "oracion_A": "Halo, mi go-ve.",
+          "oracion_B": "Tu ha lo i le ho mo?",
+          "origen": "complemento",
+          "condicion": "espacio",
+          "lectura": "Tu ha lo i le ho mo?"
+        },
+        {
+          "id": "A3-3",
+          "par": "A3",
+          "estimulo_A": "mega",
+          "afi_A": "/ˈme.ga/",
+          "glosa_A": "millon (×10^6)",
+          "estimulo_B": "me ga",
+          "afi_B": "/ˈme ˈga/",
+          "glosa_B": "tierra grande",
+          "X": "me ga",
+          "respuesta_correcta": "B",
+          "oracion_A": "Mi ha-ve mega hos.",
+          "oracion_B": "Mi ve-ve le me ga.",
+          "origen": "complemento",
+          "condicion": "espacio",
+          "lectura": "Mi ve-ve le me ga."
+        },
+        {
+          "id": "A4-3",
+          "par": "A4",
+          "estimulo_A": "nano",
+          "afi_A": "/ˈna.no/",
+          "glosa_A": "nano- (×10^-9)",
+          "estimulo_B": "na no",
+          "afi_B": "/ˈna ˈno/",
+          "glosa_B": "no [es] noche",
+          "X": "na-no",
+          "respuesta_correcta": "A",
+          "oracion_A": "Mi ha-ve u nano re.",
+          "oracion_B": "Na no, e-ve ti.",
+          "origen": "complemento",
+          "condicion": "con_guion",
+          "lectura": "Mi ha-ve u na-no re."
+        },
+        {
+          "id": "A5-3",
+          "par": "A5",
+          "estimulo_A": "somi",
+          "afi_A": "/ˈso.mi/",
+          "glosa_A": "gris",
+          "estimulo_B": "so mi",
+          "afi_B": "/ˈso ˈmi/",
+          "glosa_B": "entonces yo",
+          "X": "somi",
+          "respuesta_correcta": "A",
+          "oracion_A": "Le nubu e-ve somi.",
+          "oracion_B": "So mi go-ve.",
+          "origen": "complemento",
+          "condicion": "sin_guion",
+          "lectura": "Le nubu e-ve somi."
+        },
+        {
+          "id": "A5-4",
+          "par": "A5",
+          "estimulo_A": "somi",
+          "afi_A": "/ˈso.mi/",
+          "glosa_A": "gris",
+          "estimulo_B": "so mi",
+          "afi_B": "/ˈso ˈmi/",
+          "glosa_B": "entonces yo",
+          "X": "so-mi",
+          "respuesta_correcta": "A",
+          "oracion_A": "Le nubu e-ve somi.",
+          "oracion_B": "So mi go-ve.",
+          "origen": "complemento",
+          "condicion": "con_guion",
+          "lectura": "Le nubu e-ve so-mi."
         }
       ],
-      "n_items": 12,
-      "que_mide": "discriminación prosódica de pares mínimos"
+      "n_items": 17,
+      "que_mide": "lectura: pares minimos con guion, espacio y el homofono kilo / ki-lo. Sin audio."
     },
     "B_cluster_hV": {
       "items": [
@@ -350,7 +474,7 @@
         }
       ],
       "n_items": 14,
-      "que_mide": "identificación de vecinos mínimos con h-"
+      "que_mide": "lectura tapada: identificacion de vecinos minimos con h-"
     },
     "C_naturalidad": {
       "items": [
@@ -536,7 +660,7 @@
         }
       ],
       "n_items": 30,
-      "que_mide": "juicio de naturalidad sobre el léxico"
+      "que_mide": "juicio de naturalidad al leer el lexico"
     }
   },
   "umbrales": {

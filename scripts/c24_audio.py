@@ -1,24 +1,25 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-c24_audio.py — Genera y VERIFICA los audios del Bloque A (pares minimos).
+c24_audio.py — Medicion que dejo el audio FUERA del instrumento C-24.
 
-Dos problemas del instrumento, medidos, no supuestos:
+No es la prueba de campo. La hoja y los estimulos son de lectura
+(`docs/c24-hoja-respuestas.md`). Este script solo reproduce por que el TTS
+no sirve para medir los pares:
 
 1. PISO DE SILENCIO. `edge-tts` rellena toda locucion corta hasta ~1.872 s:
-   `halo` y `ha lo` salian con duracion IDENTICA y el par minimo no se podia
-   distinguir en el archivo. Se resuelve con FRASE PORTADORA (el estimulo va
-   en medio); asi la duracion si varia.
+   `halo` y `ha lo` salian con duracion IDENTICA. Una frase portadora hace
+   variar la duracion del archivo; eso no marca el acento.
 
-2. LA /h/ ES MUDA EN ESPANOL. En `es-MX-DaliaNeural` el audio de `halo` y de
-   `alo` es identico (misma duracion de voz y mismo RMS): la h no se pronuncia.
-   Verificado que en en-US, de-DE, pt-BR e it-IT SI se pronuncia.
-   CONSECUENCIA: con la voz es-MX, el audio NO puede medir la oposicion
-   /h/ vs cero. Si puede medir (a) la PROSODIA de los pares del Bloque A y
-   (b) el esqueleto vocalico/consonantico del Bloque B. Se documenta y se
-   resuelve el bloque B tambien en ESCRITO.
+2. LA /h/ ES MUDA EN `es-MX-DaliaNeural`. El audio de `halo` y de `alo` es
+   identico (misma duracion de voz y mismo RMS). En en-US, de-DE, pt-BR e
+   it-IT la /h/ si se pronuncia, pero esas voces no respetan la fonologia
+   de Korlin.
 
-Uso:  python3 scripts/c24_audio.py            genera + verifica
+3. EL ACENTO NO QUEDA MARCADO. `halo` y `ha lo` salen como un solo grupo
+   prosodico. La oposicion 1 acento / 2 acentos no se puede grabar aqui.
+
+Uso:  python3 scripts/c24_audio.py            genera + verifica (no es el campo)
       python3 scripts/c24_audio.py --lista     solo lista
       python3 scripts/c24_audio.py --verifica  solo verifica lo ya generado
 """
@@ -124,8 +125,9 @@ def main():
         for f in fallos:
             print("   " + f)
         return 1
-    print("✅ los 5 pares son auditivamente distinguibles (prosodia)")
-    print("   NOTA: la /h/ es muda en esta voz; ver docstring del modulo.")
+    print("Duraciones distintas en el archivo. Eso no autoriza una prueba de oido:")
+    print("   en es-MX la /h/ es muda y el acento no queda marcado.")
+    print("   El instrumento de campo es la hoja escrita.")
     return 0
 
 

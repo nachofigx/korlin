@@ -82,6 +82,19 @@ def analiza(respuestas, diseno):
                     "bajos": sum(1 for x in v if x <= 2),
                     "pct_bajos": round(100.0 * sum(1 for x in v if x <= 2) / len(v), 1)}
                 for k, v in sorted(notas.items())}
+    # Desglose descriptivo. No cambia el veredicto, que sigue siendo por par.
+    mapa = {i["id"]: i for i in diseno["bloques"]["A_colisiones"]["items"]}
+    cond = defaultdict(lambda: [0, 0])
+    for r in respuestas:
+        if r["bloque"] != "A" or not r["dado"]:
+            continue
+        clave = mapa.get(r["item"], {}).get("condicion", "?")
+        cond[clave][1] += 1
+        if r["dado"] == r["correcta"]:
+            cond[clave][0] += 1
+    out["A_condicion"] = {k: {"aciertos": v[0], "total": v[1],
+                              "pct": round(100.0 * v[0] / v[1], 1) if v[1] else 0.0}
+                          for k, v in sorted(cond.items())}
     return out
 
 
@@ -116,8 +129,8 @@ def demo(diseño, n_hablantes=10):
     Se inyectan dos fallos conocidos para comprobar que el analizador los ve:
       - el par A3 va al 50% (debe disparar RENOMBRAR)
       - la forma C03 recibe <=2 de casi todos (debe salir como candidata)
-    El resto va bien: si el informe no los señala a ellos y solo a ellos,
-    el analizador no sirve.
+    El resto acierta siempre. Si el informe señala otra cosa, el analizador
+    no sirve. (Un 95% con N chico cae en vigilancia por azar; aqui no.)
     """
     import random
     random.seed(7)
@@ -127,7 +140,7 @@ def demo(diseño, n_hablantes=10):
                                   ("B", "B_cluster_hV", "respuesta_correcta")):
             for it in diseño["bloques"][key]["items"]:
                 malo = bloque == "A" and it["id"].startswith("A3")
-                p = 0.50 if malo else 0.95
+                p = 0.50 if malo else 1.0
                 alterna = "X"
                 if malo and "estimulo_B" in it:
                     alterna = it["estimulo_B"]
@@ -165,6 +178,10 @@ def main():
     print("\n== Bloque A — colisiones ==")
     for k, v in an["A"].items():
         print(f"  {k:7} {v['pct']:5.1f}%  ({v['aciertos']}/{v['total']})")
+    if an.get("A_condicion"):
+        print("\n== Bloque A — por condicion (descriptivo; el umbral sigue siendo el par) ==")
+        for k, v in an["A_condicion"].items():
+            print(f"  {k:10} {v['pct']:5.1f}%  ({v['aciertos']}/{v['total']})")
     print("\n== Bloque B — racimo hV- ==")
     for k, v in an["B"].items():
         print(f"  {k:7} {v['pct']:5.1f}%  ({v['aciertos']}/{v['total']})")
