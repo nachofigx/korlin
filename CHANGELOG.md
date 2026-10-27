@@ -7,6 +7,41 @@ la versión. **Documento que manda:** `korlin-spec.md` (generado desde
 
 ---
 
+## v0.8.3 — 2026-10-27
+
+Parche. No hay regla gramatical nueva ni raíz nueva. La marca sigue siendo **Korlin**.
+
+### 02 y 03 alineados con el spec
+
+`02-morphology.md` y `03-syntax.md` se quedaban atrás de `korlin-spec.md`:
+
+- Interrogativos con guion: `ki-pe`, `ki-lo`, `ki-ti`, `ki-mo`. `ki tem` y el
+  espacio (`ki pe`) no son la forma escrita.
+- Regla 23: sin partícula, la modalidad vale `to` solo con evidencial fuerte
+  (`-ve`, `-di`, `-sa`). Con `-pen` la no marcada vale `be`. La explícita manda.
+- Regla 24: una sola cadena `[modalidad] [actitud] [mo]`. No se encadenan dos
+  actitudes ni dos modalidades.
+- El futuro esperado no lleva `-sa`. Lo predicho va con `-pen` (§4.1). `-sa`
+  sigue siendo conocimiento general.
+- Plural nominal en el manual de morfología: `-s` tras vocal, `-es` tras coda.
+
+### Alomorfo `-es`
+
+`data/afijos.yaml` solo listaba `-s`. Entra `-es` (tras coda `m`/`n`/`s`:
+`nomes`, `kines`, `temes`). `scripts/generar_ia.py` lo vuelca al §3, al §8 y
+a `korlin.json`.
+
+`_cat` quitaba solo la `-s` final: `nomes` buscaba `nome` y perdía la categoría,
+así que el adjetivo no pasaba delante (`nomes me`). Ahora prueba `-es` cuando
+la coda es `m`/`n`/`s`.
+
+### C-10
+
+La excepción de nombres propios y marcas se dice «excepción a la fonotáctica».
+Ya no se llama «excepción a una letra = un sonido». La marca sigue siendo **Korlin**.
+
+---
+
 ## v0.8.2 — 2026-10-27
 
 Parche de documentación y de estímulos. No hay regla gramatical nueva ni raíz

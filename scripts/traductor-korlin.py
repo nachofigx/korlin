@@ -128,15 +128,15 @@ EV_SIG = {
     "es": {"-ve": "lo vi", "-pen": "lo deduzco", "-di": "me lo contaron", "-sa": "es sabido"},
     "en": {"-ve": "I saw it", "-pen": "I infer it", "-di": "I was told", "-sa": "it is known"},
 }
-DERIV_K = ["-pe", "-lo", "-re", "-ro", "-i", "-s"]
+DERIV_K = ["-pe", "-lo", "-re", "-ro", "-i", "-es", "-s"]
 PREFIJOS_K = ["an-", "ne-", "na-", "me-", "pi-"]
 SIGNIFICADO = {
     "es": {"an-": "pasado", "ne-": "futuro", "na-": "no-", "me-": "grande/muy",
            "pi-": "pequeño", "-pe": "agente", "-lo": "lugar", "-re": "cosa",
-           "-ro": "cualidad", "-i": "relativo", "-s": "plural"},
+           "-ro": "cualidad", "-i": "relativo", "-s": "plural", "-es": "plural"},
     "en": {"an-": "past", "ne-": "future", "na-": "not-", "me-": "big/very",
            "pi-": "little", "-pe": "agent", "-lo": "place", "-re": "thing",
-           "-ro": "quality", "-i": "relating", "-s": "plural"},
+           "-ro": "quality", "-i": "relating", "-s": "plural", "-es": "plural"},
 }
 
 # palabras cuya forma en korlin ya es "negada" (na- + raíz) pero el idioma
@@ -189,6 +189,9 @@ def analiza(palabra, lex=None):
             s = suf.lstrip("-")
             if p.endswith(s) and len(p) > len(s):
                 raiz_cand = p[: -len(s)]
+                # -es solo tras coda {m,n,s}. Si no, `pes` (pe+-s) se leería mal.
+                if suf == "-es" and (not raiz_cand or raiz_cand[-1] not in "mns"):
+                    continue
                 if lex is None or raiz_cand in lex.por_forma or raiz_cand in lex.derivados:
                     sufs.insert(0, suf)
                     p = raiz_cand
@@ -242,7 +245,8 @@ def korlin_a_otro(texto, lex, idioma="es", glosa=False):
 
         partes = [base[idioma].split(",")[0].strip()]
         for s in sufs:
-            if s == "-s":
+            if s in ("-s", "-es"):
+                # nombre+s = nombres; máquina+s = máquinas. -es es el alomorfo korlin.
                 partes[0] += "s"
             elif s in EV_SIG[idioma]:
                 partes.append(f"({EV_SIG[idioma][s]})")
@@ -553,7 +557,11 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="?", tiempo=None, glosa=Fa
     def _cat(f):
         f = f.lstrip("-").split("-")[0]
         e = lex.por_forma.get(f)
-        if e is None and f.endswith("s"):   # plural pegado (regla 18)
+        # Plural pegado (regla 18). Quitar solo la -s de `nomes` busca `nome`
+        # y pierde la categoría: -es va tras coda {m,n,s}.
+        if e is None and len(f) > 2 and f.endswith("es") and f[-3] in "mns":
+            e = lex.por_forma.get(f[:-2])
+        if e is None and f.endswith("s"):   # -s tras vocal
             e = lex.por_forma.get(f[:-1])
         return e.get("categoria") if e else None
     i = 0

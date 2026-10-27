@@ -35,7 +35,7 @@
 
 - **Order**: Subject-Verb-Object (SVO). `mi go a le ho` = "I go to the house".
 - **Modifier before head**: `me ho` = "big house".
-- **Plural**: suffix `-s`. `li` → `lis`.
+- **Plural**: `-s` after a vowel (`li` → `lis`); `-es` after a coda (`nom` → `nomes`).
 - **Tense**: `an-` (past), `ne-` (future); present unmarked.
 - **Evidentiality (mandatory)**: `-ve` (direct), `-pen` (inferred), `-di` (reported), `-sa` (general knowledge).
 - **Epistemic modality**: `to` (certain), `be` (probable), `os` (possible), `ku` (doubtful).

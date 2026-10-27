@@ -59,7 +59,7 @@ REGLAS = {
         "regla_oro": "una letra = un sonido, siempre",
     },
     "morfologia": {
-        "plural": "-s",
+        "plural": "-s tras vocal; -es tras coda m/n/s",
         "pasado": "an-",
         "futuro": "ne-",
         "presente": "sin marca",
@@ -401,8 +401,8 @@ def genera_spec(palabras, afijos):
     A("  (`Frans` → `Faransa`, `Brasil` → `Barasila`).")
     A("- **Excepción documentada (C-10):** los **nombres propios y las marcas**, con")
     A("  mayúscula inicial, pueden conservar una ortografía que **viole la fonotáctica**")
-    A("  `(C)V{m,n,s}`: coda ilegal **o grupo consonántico**. Es la única excepción a")
-    A("  «una letra = un sonido» y afecta solo a nombres, nunca al léxico común. El")
+    A("  `(C)V{m,n,s}`: coda ilegal **o grupo consonántico**. Es la única excepción a la fonotáctica")
+    A("  y afecta solo a nombres, nunca al léxico común. El")
     A("  autónimo y la marca del idioma es **Korlin**: `-rl-` es un grupo consonántico")
     A("  que el léxico común no admite (ninguna partición encaja en `(C)V(C)`), pero es")
     A("  marca y se conserva. Misma familia que `Mekiko`, `Faransa`, `Yapan`, `Barasila`.")
@@ -426,7 +426,7 @@ def genera_spec(palabras, afijos):
     A("| Pasado | `an-` | `an-go-ve` = *fui (lo vi)* |")
     A("| Presente | *(sin marca)* | `go-ve` = *voy (lo veo)* |")
     A("| Futuro | `ne-` | `ne-go-pen` = *irá (lo infiero)* |")
-    A("| Plural (sustantivo) | `-s` | `pe` → `pes` = *personas* |")
+    A("| Plural (sustantivo) | `-s` tras vocal; `-es` tras coda | `pe` → `pes`; `nom` → `nomes` |")
     A("")
     A("### Derivación")
     A("")

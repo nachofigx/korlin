@@ -1,6 +1,6 @@
 # Léxico de Korlin — Fuente de verdad única (bilingüe ES/EN)
 # Un cambio AQUÍ se refleja automáticamente en: manual ES, manual EN, manual IA, sitio web.
-version: "0.8.2"
+version: "0.8.3"
 
 palabras:
   # ===== Partículas y funcionales =====

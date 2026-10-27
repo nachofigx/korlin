@@ -4,7 +4,7 @@ Korlin (Shortlang) es una lengua construida regular y sin ambigüedad.
 Reglas de uso para un agente:
 
 1. **Orden**: SVO. Modificador antes del núcleo.
-2. **Plural**: sufijo `-s`.
+2. **Plural**: `-s` tras vocal (`lis`); `-es` tras coda (`nomes`).
 3. **Tiempo**: `an-` (pasado), `ne-` (futuro), presente sin marca.
 4. **Evidencialidad OBLIGATORIA**: `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (conocimiento general).
 5. **Modalidad epistémica** (opcional, al final): `to` cierto, `be` probable, `os` posible, `ku` dudoso.

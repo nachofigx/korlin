@@ -5,7 +5,8 @@
 ## 1. Attitude particles (attitudinals)
 
 **Optional** particles marking the speaker's emotion/attitude.
-Position: **at the end of the sentence** (like the question particle `mo`).
+Position: in the final chain, **after** epistemic modality and **before** `mo`
+(`[modality] [attitude] [mo]`, rules 23–24).
 Can also be used **alone** as an interjection.
 
 | Particle | IPA | Emotion / attitude | Emoji |
@@ -22,14 +23,16 @@ Can also be used **alone** as an interjection.
 
 ### Rules
 - **Optional** (unlike evidentiality, which is mandatory).
-- Placed at the **end** of the sentence.
-- **Combinable**: `yo la` = "I love it and it's tender".
+- **One attitude** per sentence. Two attitudes do not chain (rule 24). For two
+  nuances, one stays at the end and the other is expressed in the verb.
+- One attitude may follow one modality: `li go-di ku bu.`
 - **Usable alone**: `we!` = "wow!".
 
 ### Examples
-- `le ti e-ve gu yo!` — "The day is good, I love it!"
-- `we! le su e hi.` — "Wow! The sun is high."
-- `mi go a le ho fi.` — "I go to the house (irony)."
+- `le ti e-ve gu yo!` — "The day is good (I see it), I love it!"
+- `we! le su e-ve hi.` — "Wow! The sun is high (I see it)."
+- `mi go a le ho fi.` — "I go to the house (irony)." Irony marked with `fi` is
+  one of the five evidential exemptions (rule 4).
 
 ### Anti-lying note
 The particle `fi` (irony) explicitly marks the "playful lie" of sarcasm, separating
@@ -53,13 +56,21 @@ It is Korlin's "anti-lying" layer.
 1. **Mandatory**: every declarative sentence carries an evidential on its verb
    (or copula `e`). One cannot assert a fact without declaring its source.
 2. **Position**: suffix immediately after the verb.
-3. **Exemptions**: the evidential is omitted only in **questions** (`mo`),
-   **orders**, and **irony marked with `fi`**. It is NOT optional elsewhere.
-   In subordinate clauses, **each clause carries its own** evidential:
+3. **Exemptions** — closed list of five (rule 4). Questions are not declaratives.
+   The evidential is omitted only in:
+   (a) **questions** (`mo`, or an interrogative at the start);
+   (b) **orders** (bare root);
+   (c) **irony marked with `fi`**;
+   (d) the **protasis** of a conditional (`si …`);
+   (e) **non-finite verbs in a chain** (the auxiliary carries the evidential;
+   the supporting verb stays bare: `tu kan-ve ve mi` = "you can see me").
+   It is NOT optional elsewhere.
+   In subordinate clauses, **each finite clause carries its own** evidential:
    `mi sa-ve ki li an-go-di.` = "I know-DIR that he left-REP."
-4. **Hierarchy**: with several sources, mark the strongest
-   (direct > inferred > reported > general knowledge; cf. Barnes 1984, Faller 2002).
-   Korlin's `-sa` is general knowledge, not a conjecture.
+4. **No overlap.** Each suffix has one value. `-sa` is general knowledge, never
+   a conjecture. A guess uses **`-pen` + modality `os`/`ku`**:
+   `li ne-go-pen os` = "he may go (I infer it)". How sure the speaker is belongs
+   to modality (section 3), not to the evidential.
 
 ### Examples
 - `li go-ve.` — "He goes (I see it)."
@@ -88,10 +99,23 @@ modality says *how sure* you are (certainty).
 | `ku` | /ku/ | Doubtful (I don't trust it) | ⚠️ |
 
 ### Rules
-1. **Optional**, default = `to` (certain). If no particle, certainty is implied.
-2. **Position**: at the end of the sentence, after the verb with its evidential.
-3. **Combinable** with evidentiality and attitude particles.
-   Order: `[verb+evidential] … epistemic … attitude`.
+1. **Optional.** With no final particle, modality is `to` (certain) **only** if
+   the evidential is strong (`-ve`, `-di`, `-sa`). With `-pen`, the unmarked
+   value is `be` (probable); with `-pen` and incomplete data, `os`. The explicit
+   particle always wins (rule 23).
+2. **Position**: end of the sentence, in the fixed chain
+   `[verb+evidential] … [modality] [attitude] [mo]`.
+3. **One modality.** Two modalities do not chain (rule 24). One modality may
+   combine with one attitude, in that order.
+
+| evidential \ explicit | (none) | `to` | `be` | `os` | `ku` |
+|---|---|---|---|---|---|
+| `-ve` (I saw it) | to | to | be | os | os |
+| `-di` (I was told) | to | — | be | os | ku |
+| `-sa` (general knowledge) | to | to | be | os | ku |
+| `-pen` (I infer it) | be | to | be | os | ku |
+
+(`—` = unused: if you were told, explicit certainty adds nothing.)
 
 ### Combining source × certainty (the anti-lying power)
 - `li go-ve.` — "He left (I saw it)." — direct source, certainty by default
@@ -124,11 +148,13 @@ Present is unmarked.
 - `li an-go-ve.` — "He went (I saw it)."
 - `li ne-go-ve.` — "He will go (I'll see it)."
 - `li an-vi-di.` — "He lived (I was told)."
-- `wi ne-go a le ho.` — "We will go to the house."
+- `wi ne-go-ve a le ho.` — "We will go to the house (we've decided)."
 
 ### Note: evidentiality in the future
-In the future, the evidential marks the source of the *prediction*: `ne-go-ve` = "I'll
-go (by my plan/will)"; `ne-go-pen` = "I'll go (I infer)"; `ne-go-sa` = "I'll go (expected)".
+In the future, the evidential marks the source of the *prediction* (§4.1):
+`mi ne-go-ve` = "I'll go (I've decided)"; `li ne-go-pen` = "he'll go (I infer it,
+or it is expected)". `-sa` is not a future and not a guess: it only marks
+general knowledge.
 
 ## 5. Derivation (affixes)
 
@@ -150,7 +176,9 @@ without extra memorization. This is Dutton's conciseness key, done cleanly.
 ### Rules
 1. Suffixes attach to the root; prefixes precede it.
 2. One affix = one fixed meaning (no exceptions).
-3. Combinable: `na-sa-pe` → INCORRECTO: `na-` no va sobre verbos (regla 7b); "ignorante" = `na-sa-pe` no se usa, se dice `pe ki na sa-ve`.
+3. `na-` never attaches to a verb (rule 7b), inflected or bare. `na-sa-ve` and
+   `na-sa` are ungrammatical. Sentence negation is free `na`: `mi na sa-ve`.
+   "An ignorant person" is `pe ki na sa-ve`, not `na-sa-pe`.
 
 ### Examples (the power of derivation)
 - `sa` (know) → `sa-pe` sage · `sa-re` knowledge (na- NO va sobre verbos: regla 7b)
@@ -163,3 +191,14 @@ without extra memorization. This is Dutton's conciseness key, done cleanly.
 ### Note
 With ~100 roots and these 8 affixes, Korlin generates a vocabulary of several
 thousand words. Deriving is trivial and predictable.
+
+## 6. Nominal plural
+
+Number is a suffix **glued** to the noun, with no hyphen (rule 18).
+
+| Allomorph | When | Example |
+|---|---|---|
+| `-s` | after a vowel | `pe` → `pes`, `li` → `lis` |
+| `-es` | after a coda `m`, `n` or `s` | `nom` → `nomes`, `kin` → `kines`, `tem` → `temes` |
+
+Never two codas in a row. After a numeral, plural `-s` is optional.

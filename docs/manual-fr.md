@@ -35,7 +35,7 @@
 
 - **Ordre** : Sujet-Verbe-Objet (SVO). `mi go a le ho` = « je vais à la maison ».
 - **Modificateur avant le noyau** : `me ho` = « grande maison ».
-- **Pluriel** : suffixe `-s`. `li` → `lis`.
+- **Pluriel** : `-s` après une voyelle (`li` → `lis`) ; `-es` après une coda (`nom` → `nomes`).
 - **Temps** : `an-` (passé), `ne-` (futur) ; présent non marqué.
 - **Évidentialité (obligatoire)** : `-ve` (direct), `-pen` (inféré), `-di` (rapporté), `-sa` (connaissance générale).
 - **Modalité épistémique** : `to` (certain), `be` (probable), `os` (possible), `ku` (douteux).
