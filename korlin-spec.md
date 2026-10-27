@@ -1,4 +1,4 @@
-# Korlin — Especificación para modelos de lenguaje (v0.6)
+# Korlin — Especificación para modelos de lenguaje (v0.8)
 
 > **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer
 > mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para
@@ -8,7 +8,7 @@ Korlin (exónimo **Shortlang**) es una lengua construida, regular y sin ambigüe
 diseñada para hablar mucho en poco tiempo, con honestidad forzada por gramática
 (evidencialidad obligatoria) y pensada para uso humano y con agentes de IA.
 Autónimo: **korlin** = `ko` (corto) + `lin` (lengua) = *lengua corta*.
-**Versión de esta especificación: v0.6** (ver `CHANGELOG.md`). Este documento manda
+**Versión de esta especificación: v0.8** (ver `CHANGELOG.md`). Este documento manda
 sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
 
 **Fuente de verdad y qué es generado.** `data/lexico.yaml`, `data/afijos.yaml` y
@@ -95,7 +95,12 @@ manuales que deben seguir al spec, no al revés.
       lleva su propio evidencial, regla 14).
     - `ki` **en medio tras un verbo de percepción o pregunta** (`ve`, `ari`, `mo`) =
       interrogativo indirecto, **in situ**: `Tu ve ki pe?` = *¿a quién ves?*
-    **Interrogativa indirecta («sé quién va») = deuda C-36, no tiene forma aún.**
+    **Interrogativa indirecta («sé quién va») — C-36 cerrada en v0.7.** El
+    interrogativo (`ki-pe` quién, `ki-lo` dónde, `ki-ti` cuándo, `ki-mo` cómo)
+    es frontera de cláusula: la subordinada lleva su verbo finito y su
+    evidencial (regla 14). No hace falta una forma nueva. `ki-pe`
+    (interrogativo, palabra) ≠ `ki` (complementante): `Mi sa-sa ki-pe go-sa.`
+    = *Sé quién va.* · `Mi sa-sa ki li go-sa.` = *Sé que él va.*
     **Interrogativo con pro-drop:** el sujeto se omite solo si el interrogativo es
     el sujeto; si es el objeto, va **in situ**.
 21. **Acento: una palabra fonológica lleva UN solo acento, en la penúltima sílaba.**
