@@ -170,6 +170,50 @@ def test_coherencia_v02():
     if any(mal in bruto_json for mal in ("asumido", "se asume", "assumed")):
         fallos.append("korlin.json glosa -sa como asumido/assumed")
 
+    # v0.8.4: la regla 12 apunta a la 23. Ya no dice que lo no marcado es to siempre.
+    if "no marcada equivale a `to`" in spec:
+        fallos.append("regla 12 sigue igualando la modalidad no marcada a to")
+    if "la fija la regla 23" not in spec:
+        fallos.append("regla 12 no apunta a la regla 23")
+    mod = d.get("reglas", {}).get("sintaxis", {}).get("modalidad_por_defecto", "")
+    if mod == "to (certeza)":
+        fallos.append("korlin.json sigue diciendo modalidad por defecto = to siempre")
+    if "regla 23" not in mod:
+        fallos.append("korlin.json.modalidad_por_defecto no apunta a la regla 23")
+    for frag in (
+        "Identidad / cópula de autoidentificación",
+        "Acción propia en el presente",
+        "Hábito o presente genérico",
+        "Saber por lectura frente a saber general",
+        "Matices de `-di`",
+        "C-46-FA",
+        "Percibido con cualquier sentido",
+        "Estado interno",
+        "Acción propia pasada sin percepción directa",
+        "mi an-do-ve ki le ho e-pen",
+    ):
+        if frag not in spec:
+            fallos.append(f"spec no contiene: {frag}")
+    m02 = open("02-morphology.md", encoding="utf-8").read()
+    if "rule 23" not in m02 or "incomplete data" not in m02:
+        fallos.append("02 no conserva la regla 23 (to solo si el evidencial es fuerte; os con dato incompleto)")
+    m03 = open("03-syntax.md", encoding="utf-8").read()
+    if "incomplete data" not in m03 or "`os`" not in m03:
+        fallos.append("03 no nombra el os de dato incompleto (regla 23)")
+    fa = open("docs/c46-falsos-amigos.md", encoding="utf-8").read()
+    for frag in ("C-46-FA", "misa", "lama", "bebe", "pala", "halo", "C-24", "No se renombra"):
+        if frag not in fa:
+            fallos.append(f"inventario C-46-FA no contiene: {frag}")
+    for path, mal, bien in (
+        ("docs/investigacion.md", "compatible con la fonología Korlin", "deja muda la /h/"),
+        ("docs/research.md", "compatible with Korlin phonology", "drops /h/"),
+    ):
+        blanco = open(path, encoding="utf-8").read()
+        if mal in blanco:
+            fallos.append(f"{path} sigue diciendo que el TTS es compatible con la fonología")
+        if bien not in blanco:
+            fallos.append(f"{path} no recoge el dato de C-24 sobre /h/")
+
     # 5) el traductor respeta v0.2
     import sys as _s
     from subprocess import run

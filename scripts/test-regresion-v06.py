@@ -77,6 +77,18 @@ CASOS = [
     ("Él come y ella no bebe.",     "sa",  "li man-sa ka li na bi-sa."),
     ("Él come o ella bebe.",        "sa",  "li man-sa o li bi-sa."),
     ("Él come pero ella bebe.",     "sa",  "li man-sa ba li bi-sa."),
+    # v0.8.4 §4.1: filas nuevas. --ev es sello; el traductor no elige la fuente.
+    ("Yo soy hombre.",              "ve",  "mi e-ve manu."),
+    ("Yo voy.",                     "ve",  "mi go-ve."),
+    ("Yo como.",                    "ve",  "mi man-ve."),
+    ("La persona come.",            "sa",  "le pe man-sa."),
+    ("Él come.",                    "ve",  "li man-ve."),
+    ("El sol es grande.",           "sa",  "le su e-sa me."),
+    ("Yo sé que la casa es grande.", "di", "mi sa-di ki le ho e-di me."),
+    ("Él va.",                      "di",  "li go-di."),
+    ("La casa es grande.",          "di",  "le ho e-di me."),
+    ("La máquina dice el nombre.",  "di",  "le kin di-di le nom."),
+    ("Yo fui.",                     "di",  "mi an-go-di."),
 ]
 
 fallos = 0
