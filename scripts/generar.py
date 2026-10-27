@@ -189,7 +189,7 @@ GRAMATICA = {
 - **Modificador antes del núcleo**: `me ho` = "casa grande".
 - **Plural**: sufijo `-s`. `li` → `lis`.
 - **Tiempos**: `an-` (pasado), `ne-` (futuro); presente sin marca.
-- **Evidencialidad (obligatoria)**: `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (asumido).
+- **Evidencialidad (obligatoria)**: `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (conocimiento general).
 - **Modalidad epistémica**: `to` (cierto), `be` (probable), `os` (posible), `ku` (dudoso).
 - **Negación**: `na` antes del verbo.
 - **Pregunta sí/no**: `mo` al final.
@@ -200,7 +200,7 @@ GRAMATICA = {
 - **Modifier before head**: `me ho` = "big house".
 - **Plural**: suffix `-s`. `li` → `lis`.
 - **Tense**: `an-` (past), `ne-` (future); present unmarked.
-- **Evidentiality (mandatory)**: `-ve` (direct), `-pen` (inferred), `-di` (reported), `-sa` (assumed).
+- **Evidentiality (mandatory)**: `-ve` (direct), `-pen` (inferred), `-di` (reported), `-sa` (general knowledge).
 - **Epistemic modality**: `to` (certain), `be` (probable), `os` (possible), `ku` (doubtful).
 - **Negation**: `na` before the verb.
 - **Yes/no question**: `mo` at the end.
@@ -211,7 +211,7 @@ GRAMATICA = {
 - **Modificateur avant le noyau** : `me ho` = « grande maison ».
 - **Pluriel** : suffixe `-s`. `li` → `lis`.
 - **Temps** : `an-` (passé), `ne-` (futur) ; présent non marqué.
-- **Évidentialité (obligatoire)** : `-ve` (direct), `-pen` (inféré), `-di` (rapporté), `-sa` (supposé).
+- **Évidentialité (obligatoire)** : `-ve` (direct), `-pen` (inféré), `-di` (rapporté), `-sa` (connaissance générale).
 - **Modalité épistémique** : `to` (certain), `be` (probable), `os` (possible), `ku` (douteux).
 - **Négation** : `na` avant le verbe.
 - **Question oui/non** : `mo` à la fin.
@@ -222,7 +222,7 @@ GRAMATICA = {
 - **修饰语在核心词之前**：`me ho` =「大房子」。
 - **复数**：后缀 `-s`。`li` → `lis`。
 - **时态**：`an-`（过去）、`ne-`（将来）；现在时无标记。
-- **示证（强制）**：`-ve`（直接）、`-pen`（推断）、`-di`（转述）、`-sa`（假定）。
+- **示证（强制）**：`-ve`（直接）、`-pen`（推断）、`-di`（转述）、`-sa`（公知）。
 - **认识情态**：`to`（确定）、`be`（可能）、`os`（也许）、`ku`（存疑）。
 - **否定**：`na` 置于动词前。
 - **是非疑问句**：`mo` 置于句末。
@@ -233,7 +233,7 @@ GRAMATICA = {
 - **修飾語は主要部の前**：`me ho` =「大きな家」。
 - **複数**：接尾辞 `-s`。`li` → `lis`。
 - **時制**：`an-`（過去）、`ne-`（未来）；現在は無標。
-- **証拠性（必須）**：`-ve`（直接）、`-pen`（推論）、`-di`（伝聞）、`-sa`（想定）。
+- **証拠性（必須）**：`-ve`（直接）、`-pen`（推論）、`-di`（伝聞）、`-sa`（一般知識）。
 - **認識モダリティ**：`to`（確実）、`be`（多分）、`os`（可能）、`ku`（疑わしい）。
 - **否定**：`na` を動詞の前に。
 - **Yes/No 疑問**：`mo` を文末に。
@@ -302,7 +302,7 @@ def generar_manual_ia(lexico, afijos):
         "1. **Orden**: SVO. Modificador antes del núcleo.",
         "2. **Plural**: sufijo `-s`.",
         "3. **Tiempo**: `an-` (pasado), `ne-` (futuro), presente sin marca.",
-        "4. **Evidencialidad OBLIGATORIA**: `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (asumido).",
+        "4. **Evidencialidad OBLIGATORIA**: `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (conocimiento general).",
         "5. **Modalidad epistémica** (opcional, al final): `to` cierto, `be` probable, `os` posible, `ku` dudoso.",
         "6. **Negación**: `na` antes del verbo.",
         "7. **Pregunta sí/no**: `mo` al final. Interrogativos al inicio.",

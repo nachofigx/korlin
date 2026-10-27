@@ -30,7 +30,8 @@ CASOS = [
     ("Unas casas grandes.",         "sa",  "u me hos."),
     ("Él duerme en la casa.",       "sa",  "li do-sa i le ho."),
     ("Pienso que él irá a la casa.", "sa", "pen-sa ki li ne-go-sa a le ho."),
-    ("Yo sé.",                      "sa",  "mi sa-sa."),
+    # §4.1: «yo sé» es estado del hablante → -ve. No se enseña sa-sa.
+    ("Yo sé.",                      "ve",  "mi sa-ve."),
     ("Yo veo la casa.",             "sa",  "mi ve-sa le ho."),
     ("México es grande.",           "sa",  "Mekiko e-sa me."),
     # --- C-06: ordenes (raiz desnuda, regla 13) ---
@@ -60,6 +61,20 @@ CASOS = [
     ("Yo iré a la casa.",           None,  "mi ne-go-[?fuente] a le ho."),
     ("Yo sé.",                      None,  "mi sa-[?fuente]."),
     ("El agua no es buena.",        None,  "le wa na e-[?fuente] gu."),
+    # --- v0.8.1: negacion POR CLAUSULA (no un flag global) ---
+    ("Él dice que yo no como.",     "sa",  "li di-sa ki mi na man-sa."),
+    ("Yo sé que él no va.",         "ve",  "mi sa-ve ki li na go-ve."),
+    ("Yo no sé quién va.",          "ve",  "mi na sa-ve ki-pe go-ve."),
+    ("Pienso que el agua no es buena.", "sa", "pen-sa ki le wa na e-sa gu."),
+    ("Yo no como comida.",          "sa",  "mi na man-sa man-re."),
+    # --- v0.8.1: copula negada + otra clausula (verbo_puesto seguia siendo set) ---
+    ("El agua no es buena y él come.", "sa", "le wa na e-sa gu ka li man-sa."),
+    # --- v0.8.1: y / o / pero abren clausula; el segundo verbo se conjuga ---
+    ("Él come y ella bebe.",        "sa",  "li man-sa ka li bi-sa."),
+    ("Él no come y ella bebe.",     "sa",  "li na man-sa ka li bi-sa."),
+    ("Él come y ella no bebe.",     "sa",  "li man-sa ka li na bi-sa."),
+    ("Él come o ella bebe.",        "sa",  "li man-sa o li bi-sa."),
+    ("Él come pero ella bebe.",     "sa",  "li man-sa ba li bi-sa."),
 ]
 
 fallos = 0

@@ -183,7 +183,7 @@ Una de las aspiraciones originales del proyecto fue diseñar una lengua donde **
 
 **Lo que sí es alcanzable** es hacer la mentira **costosa, explícita y detectable**, mediante tres mecanismos combinados:
 
-1. **Evidencialidad obligatoria** (`-ve` directo, `-pen` inferido, `-di` reportado, `-sa` asumido): toda afirmación debe declarar su fuente.
+1. **Evidencialidad obligatoria** (`-ve` directo, `-pen` inferido, `-di` reportado, `-sa` conocimiento general): toda afirmación debe declarar su fuente.
 2. **Modalidad epistémica** (`to` cierto, `be` probable, `os` posible, `ku` dudoso): toda afirmación debe declarar su grado de certeza.
 3. **Actos de habla marcados** (partículas de actitud, incluida `fi` para la ironía): la intención comunicativa se hace explícita.
 
@@ -292,7 +292,7 @@ Korlin es una lengua de tipo **aglutinante-aislante**: las palabras raíz son co
 | `-ve` | directo (lo vi/lo viví) | `go-ve` = "va (lo veo)" |
 | `-pen` | inferido (lo deduzco) | `go-pen` = "va (lo infiero)" |
 | `-di` | reportado (me lo contaron) | `go-di` = "va (me lo dijeron)" |
-| `-sa` | asumido (se sabe por convención) | `go-sa` = "va (se asume)" |
+| `-sa` | conocimiento general (es sabido) | `go-sa` = "va (es sabido)" |
 
 La evidencialidad es **obligatoria** en toda oración declarativa: no se puede afirmar un hecho sin declarar su fuente.
 
@@ -866,7 +866,7 @@ scripts/generar.py      ← generador
 | -ve | sufijo | evidencial directo | `go-ve` = va (lo veo) |
 | -pen | sufijo | evidencial inferido | `go-pen` = va (lo infiero) |
 | -di | sufijo | evidencial reportado | `go-di` = va (me lo contaron) |
-| -sa | sufijo | evidencial asumido | `go-sa` = va (se asume) |
+| -sa | sufijo | evidencial de conocimiento general | `go-sa` = va (es sabido) |
 
 ### B.2 Derivacionales
 
@@ -894,10 +894,10 @@ Texto de presentación de Korlin, con glosado y traducción:
 | Segmento | Análisis |
 |---|---|
 | Halo | hola |
-| Mi e-sa Korlin | yo ser-ASUMIDO Korlin → "yo soy Korlin" |
-| Mi e-sa u ko lin | yo ser-ASUMIDO una corta lengua → "soy una lengua corta" |
-| Mi e-sa ra ka gu | yo ser-ASUMIDO rápida y buena → "soy rápida y buena" |
-| Na-toro na kan-sa vi i mi | mentira no-poder-ASUMIDO vivir en mí → "la mentira no puede vivir en mí" |
+| Mi e-sa Korlin | yo ser-GEN Korlin → "yo soy Korlin" |
+| Mi e-sa u ko lin | yo ser-GEN una corta lengua → "soy una lengua corta" |
+| Mi e-sa ra ka gu | yo ser-GEN rápida y buena → "soy rápida y buena" |
+| Na-toro na kan-sa vi i mi | mentira no-poder-GEN vivir en mí → "la mentira no puede vivir en mí" |
 | Mi pa-ve kon pe ka kon kin | yo hablar-DIRECTO con persona y con máquina → "hablo con personas y con máquinas" |
 | Tu kan-ve sa mi | tú poder-DIRECTO saber yo → "puedes aprenderme" |
 | Ven kon mi yo | ven con yo ALEGRÍA → "¡ven conmigo! ❤️" |

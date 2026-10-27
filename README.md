@@ -8,7 +8,7 @@ Dutton Speedwords and a better Esperanto.
 Korlin (/ˈkoɾlin/) is a constructed language ("conlang") designed to be:
 
 - **Short** — words of 1–2 syllables condense concepts (~40% shorter than Esperanto, ~44% shorter than Spanish).
-- **Honest** — mandatory *evidentiality*: every statement declares its source (I saw / I inferred / I was told / assumed). Lying becomes costly and detectable.
+- **Honest** — mandatory *evidentiality*: every statement declares its source (I saw / I inferred / I was told / general knowledge). Lying becomes costly and detectable.
 - **Modern** — digital-native (21 letters, zero diacritics), emoji-like attitude particles, and AI-ready (deterministic parsing, fewer tokens).
 
 ## Design principles

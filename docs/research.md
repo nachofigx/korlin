@@ -183,7 +183,7 @@ One of the project's original aspirations was to design a language where **lying
 
 **What is achievable** is making lying **costly, explicit and detectable**, through three combined mechanisms:
 
-1. **Mandatory evidentiality** (`-ve` direct, `-pen` inferred, `-di` reported, `-sa` assumed): every statement must declare its source.
+1. **Mandatory evidentiality** (`-ve` direct, `-pen` inferred, `-di` reported, `-sa` general knowledge): every statement must declare its source.
 2. **Epistemic modality** (`to` certain, `be` probable, `os` possible, `ku` doubtful): every statement must declare its degree of certainty.
 3. **Marked speech acts** (attitude particles, including `fi` for irony): communicative intention is made explicit.
 
@@ -292,7 +292,7 @@ Korlin is an **agglutinative-isolating** language: root words are short and inva
 | `-ve` | direct (I saw/lived it) | `go-ve` = "goes (I see it)" |
 | `-pen` | inferred (I deduce it) | `go-pen` = "goes (I infer it)" |
 | `-di` | reported (I was told) | `go-di` = "goes (I was told)" |
-| `-sa` | assumed (known by convention) | `go-sa` = "goes (it is assumed)" |
+| `-sa` | general knowledge (it is known) | `go-sa` = "goes (it is known)" |
 
 Evidentiality is **mandatory** in every declarative sentence: a fact cannot be asserted without declaring its source.
 
@@ -866,7 +866,7 @@ scripts/generar.py      ← generator
 | -ve | suffix | direct evidential | `go-ve` = goes (I see it) |
 | -pen | suffix | inferred evidential | `go-pen` = goes (I infer it) |
 | -di | suffix | reported evidential | `go-di` = goes (I was told) |
-| -sa | suffix | assumed evidential | `go-sa` = goes (assumed) |
+| -sa | suffix | general-knowledge evidential | `go-sa` = goes (it is known) |
 
 ### B.2 Derivational
 
@@ -894,10 +894,10 @@ Korlin's presentation text, with gloss and translation:
 | Segment | Analysis |
 |---|---|
 | Halo | hello |
-| Mi e-sa Korlin | I be-ASSUMED Korlin → "I am Korlin" |
-| Mi e-sa u ko lin | I be-ASSUMED a short language → "I am a short language" |
-| Mi e-sa ra ka gu | I be-ASSUMED fast and good → "I am fast and good" |
-| Na-toro na kan-sa vi i mi | lie not-can-ASSUMED live in me → "the lie cannot live in me" |
+| Mi e-sa Korlin | I be-GEN Korlin → "I am Korlin" |
+| Mi e-sa u ko lin | I be-GEN a short language → "I am a short language" |
+| Mi e-sa ra ka gu | I be-GEN fast and good → "I am fast and good" |
+| Na-toro na kan-sa vi i mi | lie not-can-GEN live in me → "the lie cannot live in me" |
 | Mi pa-ve kon pe ka kon kin | I speak-DIRECT with person and with machine → "I speak with people and with machines" |
 | Tu kan-ve sa mi | you can-DIRECT know me → "you can learn me" |
 | Ven kon mi yo | come with me JOY → "come with me! ❤️" |

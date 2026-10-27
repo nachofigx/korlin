@@ -37,7 +37,7 @@
 - **Modifier before head**: `me ho` = "big house".
 - **Plural**: suffix `-s`. `li` → `lis`.
 - **Tense**: `an-` (past), `ne-` (future); present unmarked.
-- **Evidentiality (mandatory)**: `-ve` (direct), `-pen` (inferred), `-di` (reported), `-sa` (assumed).
+- **Evidentiality (mandatory)**: `-ve` (direct), `-pen` (inferred), `-di` (reported), `-sa` (general knowledge).
 - **Epistemic modality**: `to` (certain), `be` (probable), `os` (possible), `ku` (doubtful).
 - **Negation**: `na` before the verb.
 - **Yes/no question**: `mo` at the end.

@@ -133,6 +133,31 @@ def test_coherencia_v02():
         if frag in spec:
             fallos.append(f"spec aun usa '{frag}' (na- sobre verbo)")
 
+    # 4b) v0.8.1: -sa es conocimiento general; el sueño no usa mo como verbo;
+    # C-36 sigue cerrada y no se enseña sa-sa para «sé quién».
+    if "an-mo-pen" in spec:
+        fallos.append("spec usa mo como verbo de soñar (an-mo-pen)")
+    if "sa-sa ki-pe" in spec or "Mi sa-sa" in spec:
+        fallos.append("spec enseña sa-sa para «sé quién»")
+    if "Mi sa-ve ki-pe go-pen" not in spec:
+        fallos.append("spec no trae el ejemplo normativo Mi sa-ve ki-pe go-pen")
+    if "deuda C-36" in spec:
+        fallos.append("C-36 vuelve a figurar como deuda")
+    if "C-36 cerrada" not in spec:
+        fallos.append("spec no dice que C-36 está cerrada")
+    if any(mal in spec for mal in ("asumido", "se asume", "assumed")):
+        fallos.append("spec glosa -sa como asumido/assumed")
+    if "conocimiento general" not in spec:
+        fallos.append("spec no glosa -sa como conocimiento general")
+    afijos_txt = open("data/afijos.yaml", encoding="utf-8").read()
+    if any(mal in afijos_txt for mal in ("asumido", "se asume", "assumed")):
+        fallos.append("afijos.yaml sigue glosando -sa como asumido")
+    if "conocimiento general" not in afijos_txt:
+        fallos.append("afijos.yaml no dice conocimiento general")
+    bruto_json = open("korlin.json", encoding="utf-8").read()
+    if any(mal in bruto_json for mal in ("asumido", "se asume", "assumed")):
+        fallos.append("korlin.json glosa -sa como asumido/assumed")
+
     # 5) el traductor respeta v0.2
     import sys as _s
     from subprocess import run
@@ -172,22 +197,33 @@ def test_coherencia_v02():
     # ---- C-36: interrogativa indirecta (v0.7) ----
     # El interrogativo abre clausula propia: el verbo de la subordinada se conjuga
     # y lleva su evidencial. Distincion con el complementante `ki` desnudo.
+    # §4.1: «saber» no es conocimiento general. El sello uniforme de estos casos
+    # es -ve (estado interno / directo), no -sa. --ev sigue siendo un sello, no
+    # elige fuente por clausula; la lectura mixta vive en el spec (regla 20).
     _c36 = [
-        ("Yo sé quién va.",              "mi sa-sa ki-pe go-sa."),
-        ("Yo sé dónde está.",            "mi sa-sa ki-lo e-sa."),
-        ("Yo sé cómo va.",               "mi sa-sa ki-mo go-sa."),
-        ("Yo sé que él va.",             "mi sa-sa ki li go-sa."),
+        ("Yo sé quién va.",              "mi sa-ve ki-pe go-ve."),
+        ("Yo sé dónde está.",            "mi sa-ve ki-lo e-ve."),
+        ("Yo sé cómo va.",               "mi sa-ve ki-mo go-ve."),
+        ("Yo sé que él va.",             "mi sa-ve ki li go-ve."),
         ("¿A quién ves?",                "a ki-pe ve mo?"),
     ]
     for _txt, _esp in _c36:
-        _got = tr(_txt, ev="sa")
+        _got = tr(_txt, ev="ve")
         if _got != _esp:
             fallos.append(f"C-36 '{_txt}' -> '{_got}' (esperaba '{_esp}')")
     # el bug original: el verbo de la subordinada quedaba sin conjugar como [va?]
     for _txt in ("Yo sé quién va.", "Yo sé dónde está.", "Yo sé cómo va."):
-        _got = tr(_txt, ev="sa")
+        _got = tr(_txt, ev="ve")
         if "?" in _got and "[" in _got:
             fallos.append(f"C-36 verbo sin conjugar en subordinada: '{_txt}' -> '{_got}'")
+    # v0.8.1: and ya abria clausula; or/but tienen que hacerlo igual
+    for _txt, _esp in (
+        ("He eats or she drinks.", "li man-sa o li bi-sa."),
+        ("He eats but she drinks.", "li man-sa ba li bi-sa."),
+    ):
+        _got = m.otro_a_korlin(_txt, LEX, "en", evidencial="-sa")
+        if _got != _esp:
+            fallos.append(f"coordinacion EN '{_txt}' -> '{_got}' (esperaba '{_esp}')")
 
     return fallos
 

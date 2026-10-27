@@ -56,7 +56,7 @@ Format: **word** /IPA/ · category · meaning.
 ## Grammar notes (v0.4)
 - **Plural** = suffix `-s`. E.g. `li` → `lis`.
 - **Yes/no question** = particle `mo` at the end.
-- **Mandatory evidentiality**: every statement carries a verb suffix: `-ve` (direct), `-pen` (inferred), `-di` (reported), `-sa` (assumed).
+- **Mandatory evidentiality**: every statement carries a verb suffix: `-ve` (direct), `-pen` (inferred), `-di` (reported), `-sa` (general knowledge).
 - **Tense**: prefixes `an-` (past, from "old") and `ne-` (future, from "new"); present unmarked.
 - **Derivation**: suffixes `-pe` (agent), `-lo` (place), `-re` (thing), `-i` (adjective), `-ro` (abstract); prefixes `na-` (opposite), `me-` (augmentative), `pi-` (diminutive).
 - **Interrogative composition**: `ki pe` = who ("what person?"), `ki lo` = where ("what place?"), `ki tem` = when ("what time?"); they go first in the sentence.

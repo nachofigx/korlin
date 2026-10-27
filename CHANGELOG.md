@@ -7,6 +7,66 @@ la versión. **Documento que manda:** `korlin-spec.md` (generado desde
 
 ---
 
+## v0.8.1 — 2026-10-27
+
+Parche. No hay regla nueva ni raíz nueva. La marca sigue siendo **Korlin**.
+
+### Traductor: negación, cópula y coordinación
+
+La negación era un flag de la oración entera, así que un `no` de la subordinada
+también negaba la matriz. La cópula negada hacía `verbo_puesto = True` y la
+cláusula siguiente lanzaba `TypeError: argument of type 'bool' is not iterable`.
+`y` / `o` / `pero` no abrían cláusula (en inglés `and` / `then` sí).
+
+`--ev` sigue siendo un sello uniforme: la misma fuente en cada cláusula finita.
+No elige el evidencial según §4.1. Los casos de «yo sé» de abajo usan `--ev=ve`
+porque §4.1 no permite `-sa` ahí.
+
+| Español | `--ev` | Korlin |
+|---|---|---|
+| Él dice que yo no como. | sa | `li di-sa ki mi na man-sa.` |
+| Yo sé que él no va. | ve | `mi sa-ve ki li na go-ve.` |
+| Yo no sé quién va. | ve | `mi na sa-ve ki-pe go-ve.` |
+| Pienso que el agua no es buena. | sa | `pen-sa ki le wa na e-sa gu.` |
+| El agua no es buena y él come. | sa | `le wa na e-sa gu ka li man-sa.` |
+| Él come y ella bebe. | sa | `li man-sa ka li bi-sa.` |
+| Él no come y ella bebe. | sa | `li na man-sa ka li bi-sa.` |
+| Él come y ella no bebe. | sa | `li man-sa ka li na bi-sa.` |
+| Él come o ella bebe. | sa | `li man-sa o li bi-sa.` |
+| Él come pero ella bebe. | sa | `li man-sa ba li bi-sa.` |
+
+Con `--ev=sa`, «Yo sé que él no va.» sale `mi sa-sa ki li na go-sa.` Eso es el
+sello pedido, no la lectura de §4.1. `cómo` (interrogativo) sigue abriendo
+cláusula; `como` (comer) ya no, para que «no como» no deje el `no` atrás.
+
+### `-sa` = conocimiento general
+
+`data/afijos.yaml`, el generador, el spec, `korlin.json` y los manuales decían
+«asumido». La tabla §4 ya decía conocimiento general. Queda una sola glosa:
+`go-sa` = va (es sabido).
+
+### Ejemplo de sueño y oráculos `sa-sa`
+
+La fila «sueño o ficción» usaba `mi an-mo-pen le ho`. `mo` es la partícula de
+pregunta sí/no y no hay raíz «soñar». El ejemplo legal es `mi an-do-ve ki le ho e-pen`
+(dormí, lo viví; la casa en el sueño estaba, lo infiero).
+
+Los oráculos de «yo sé» / C-36 que fijaban `sa-sa` pasan a `-ve`. La lectura
+normativa mixta, en la regla 20, es `Mi sa-ve ki-pe go-pen.`
+
+### CI
+
+`.github/workflows/test.yml` corre `test-fonotactica`, `test-regresion-v06` y
+`test-traductor` en push y pull request.
+
+### Ya cerrado en v0.8
+
+`generar_ia.py` ya no decía que C-36 fuera deuda. Sigue cerrado: `ki-pe` /
+`ki-lo` / `ki-ti` / `ki-mo` abren cláusula y la subordinada lleva verbo finito
+y evidencial.
+
+---
+
 ## v0.8 — 2026-10-27
 
 **PR #6** (merge `ca44f33`, 2026-10-25): protocolo de prueba con hablantes (C-24).

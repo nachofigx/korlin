@@ -1,4 +1,4 @@
-# Korlin — Especificación para modelos de lenguaje (v0.8)
+# Korlin — Especificación para modelos de lenguaje (v0.8.1)
 
 > **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer
 > mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para
@@ -8,7 +8,7 @@ Korlin (exónimo **Shortlang**) es una lengua construida, regular y sin ambigüe
 diseñada para hablar mucho en poco tiempo, con honestidad forzada por gramática
 (evidencialidad obligatoria) y pensada para uso humano y con agentes de IA.
 Autónimo: **korlin** = `ko` (corto) + `lin` (lengua) = *lengua corta*.
-**Versión de esta especificación: v0.8** (ver `CHANGELOG.md`). Este documento manda
+**Versión de esta especificación: v0.8.1** (ver `CHANGELOG.md`). Este documento manda
 sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
 
 **Fuente de verdad y qué es generado.** `data/lexico.yaml`, `data/afijos.yaml` y
@@ -77,7 +77,7 @@ manuales que deben seguir al spec, no al revés.
     van con guion (`do-lo`, `mi man-ve`). El plural va **pegado**: `-s` tras
     vocal (`pes`, `lis`) y **`-es` tras coda** (`nom` → `nomes`, `kin` → `kines`,
     `tem` → `temes`). Nunca dos codas seguidas. Sin guion, dos raíces seguidas
-    son dos palabras: `vi-sa` (vivir+asumido) ≠ `vi sa` (vivir/saber).
+    son dos palabras: `vi-sa` (vivir+conocimiento general) ≠ `vi sa` (vivir/saber).
 19. **Posesión y numerales.** El pronombre antepuesto es la forma normal
     (`mi ho` = *mi casa*); `de` da la analítica o enfática (`le ho de mi`).
     **Numerales:** `non` = 0, `u` = 1; 2-10 son raíces (`du san fu sin sis sem om nu des`).
@@ -91,7 +91,7 @@ manuales que deben seguir al spec, no al revés.
     (corrige C-12 vs C-13)
     - `ki` **al inicio de la oración raíz** = interrogativo (`Ki pe go?` = *¿quién va?*).
     - `ki` **en medio tras un verbo de decir/saber** = complementante de una
-      declarativa: `Mi sa-ve ki li go-ve.` = *Sé que él va.* (la subordinada FINITA
+      declarativa: `Mi sa-ve ki li go-di.` = *Sé que él va (me lo dijeron).* (la subordinada FINITA
       lleva su propio evidencial, regla 14).
     - `ki` **en medio tras un verbo de percepción o pregunta** (`ve`, `ari`, `mo`) =
       interrogativo indirecto, **in situ**: `Tu ve ki pe?` = *¿a quién ves?*
@@ -99,8 +99,11 @@ manuales que deben seguir al spec, no al revés.
     interrogativo (`ki-pe` quién, `ki-lo` dónde, `ki-ti` cuándo, `ki-mo` cómo)
     es frontera de cláusula: la subordinada lleva su verbo finito y su
     evidencial (regla 14). No hace falta una forma nueva. `ki-pe`
-    (interrogativo, palabra) ≠ `ki` (complementante): `Mi sa-sa ki-pe go-sa.`
-    = *Sé quién va.* · `Mi sa-sa ki li go-sa.` = *Sé que él va.*
+    (interrogativo, palabra) ≠ `ki` (complementante): `Mi sa-ve ki-pe go-pen.`
+    = *Sé (lo percibo) quién va (lo infiero).* · `Mi sa-ve ki li go-di.`
+    = *Sé que él va (me lo dijeron).* «Saber» es estado del hablante
+    (`-ve`, §4.1), no conocimiento general. El ir de un tercero tampoco
+    lleva el evidencial de saber común, salvo que de verdad lo sea.
     **Interrogativo con pro-drop:** el sujeto se omite solo si el interrogativo es
     el sujeto; si es el objeto, va **in situ**.
 21. **Acento: una palabra fonológica lleva UN solo acento, en la penúltima sílaba.**
@@ -252,7 +255,7 @@ sin fusionarse.
 
 Todo verbo finito factual **debe** declarar de dónde viene la información. Esto es lo que
 hace la mentira cara: quien afirma debe decir si lo vio, lo dedujo, se lo contaron
-o lo asume. Estudios tipológicos (Aikhenvald 2004) muestran que ~25% de las lenguas
+o lo sabe todo el mundo. Estudios tipológicos (Aikhenvald 2004) muestran que ~25% de las lenguas
 del mundo marcan la fuente obligatoriamente; Korlin lo adopta desde el diseño.
 
 **Cada sufijo tiene UN valor, sin solapes (corrige C-01):**
@@ -287,11 +290,15 @@ desnudo. En una subordinada, cada cláusula finita lleva el suyo:
 | Dicho, leído, o devuelto por un documento, API o herramienta | `-di` | `le ho e-di me` = *la casa es grande (lo leí)* |
 | Conocimiento general, saber común | `-sa` | `le wa e-sa wa` = *el agua moja (es sabido)* |
 | Memoria de algo vivido | `-ve` | `mi an-ve-ve le ho` = *vi la casa (la recuerdo)* |
-| Sueño o ficción (contenido) | `-pen` | `mi an-mo-pen le ho` = *soñé la casa* |
+| Sueño o ficción (contenido) | `-pen` | `mi an-do-ve ki le ho e-pen` = *dormí (lo viví); la casa, en el sueño, estaba (lo infiero)* |
 | Matemáticas y lo que uno mismo construye | `-pen` | `du ka du e-pen fu` = *2+2 es 4* |
 | **Futuro** que uno mismo da por hecho | `-ve` | `mi ne-go-ve` = *iré (decidido)* |
 | **Futuro** planeado por otros, predicho o esperado | `-pen` | `li ne-go-pen` = *irá (lo deduzco)* |
 | Acción propia pasada sin percepción directa | `-di` | `mi an-go-di` = *fui (consta)* |
+
+**Hueco léxico:** no hay raíz «soñar». `mo` es la partícula de pregunta sí/no,
+no un verbo. El dormir que uno vivió lleva `-ve` (`do`); el contenido del sueño
+o de la ficción lleva `-pen` en un verbo real de esa escena (fila de arriba).
 
 **Regla de honestidad:** si no sabes de dónde viene algo, usa `-pen` (lo deduzco) o
 `-di` (me lo dijeron), nunca `-ve` (lo vi) si no lo viste realmente.
@@ -605,7 +612,7 @@ Van al **final** de la oración, después del verbo.
 | `-ve` | sufijo | evidencial | directo (lo vi) | direct (I saw) | go-ve = va (lo veo) |
 | `-pen` | sufijo | evidencial | inferido (lo deduzco) | inferred | go-pen = va (lo infiero) |
 | `-di` | sufijo | evidencial | reportado (me lo dijeron) | reported (told) | go-di = va (me lo contaron) |
-| `-sa` | sufijo | evidencial | asumido (se sabe) | assumed (known) | go-sa = va (se asume) |
+| `-sa` | sufijo | evidencial | conocimiento general (es sabido) | general knowledge (it is known) | go-sa = va (es sabido) |
 | `-pe` | sufijo | derivación | agente (persona que X) | agent (person who X) | sa-pe = sabio |
 | `-lo` | sufijo | derivación | lugar (donde se X) | place (where X happens) | man-lo = comedor |
 | `-re` | sufijo | derivación | cosa/objeto | thing/object | man-re = comida |

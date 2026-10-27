@@ -3,7 +3,7 @@
   "exonimo": "Shortlang",
   "autonimo": "korlin",
   "significado": "ko (corto) + lin (lengua) = lengua corta",
-  "version": "0.8",
+  "version": "0.8.1",
   "licencia": "MIT",
   "sitio": "https://nachofigx.github.io/korlin/",
   "repo": "https://github.com/nachofigx/korlin",
@@ -68,7 +68,7 @@
           "-ve": "directo / lo vi",
           "-pen": "inferido / lo deduzco",
           "-di": "reportado / me lo dijeron",
-          "-sa": "asumido / se sabe"
+          "-sa": "conocimiento general / es sabido"
         }
       },
       "modalidad_epistemica": {
@@ -1846,9 +1846,9 @@
       "forma": "-sa",
       "tipo": "sufijo",
       "funcion": "evidencial",
-      "es": "asumido (se sabe)",
-      "en": "assumed (known)",
-      "ejemplo": "go-sa = va (se asume)"
+      "es": "conocimiento general (es sabido)",
+      "en": "general knowledge (it is known)",
+      "ejemplo": "go-sa = va (es sabido)"
     },
     {
       "forma": "-pe",
