@@ -28,6 +28,8 @@ CASOS = [
     ("Sí, yo quiero agua.",         "sa",  "ya, mi vo-sa wa."),
     ("Esta casa es grande.",        "sa",  "se ho e-sa me."),
     ("Unas casas grandes.",         "sa",  "u me hos."),
+    # v0.8.3: -es tras coda; _cat no puede perder `nomes` o el adjetivo queda detrás
+    ("Unos nombres grandes.",       "sa",  "u me nomes."),
     ("Él duerme en la casa.",       "sa",  "li do-sa i le ho."),
     ("Pienso que él irá a la casa.", "sa", "pen-sa ki li ne-go-sa a le ho."),
     # §4.1: «yo sé» es estado del hablante → -ve. No se enseña sa-sa.

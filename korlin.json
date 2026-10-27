@@ -3,7 +3,7 @@
   "exonimo": "Shortlang",
   "autonimo": "korlin",
   "significado": "ko (corto) + lin (lengua) = lengua corta",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "licencia": "MIT",
   "sitio": "https://nachofigx.github.io/korlin/",
   "repo": "https://github.com/nachofigx/korlin",
@@ -58,7 +58,7 @@
       "regla_oro": "una letra = un sonido, siempre"
     },
     "morfologia": {
-      "plural": "-s",
+      "plural": "-s tras vocal; -es tras coda m/n/s",
       "pasado": "an-",
       "futuro": "ne-",
       "presente": "sin marca",
@@ -1801,6 +1801,14 @@
       "es": "plural",
       "en": "plural",
       "ejemplo": "li → lis (él → ellos)"
+    },
+    {
+      "forma": "-es",
+      "tipo": "sufijo",
+      "funcion": "flexión",
+      "es": "plural tras coda (m, n, s)",
+      "en": "plural after a coda (m, n, s)",
+      "ejemplo": "nom → nomes; kin → kines; tem → temes"
     },
     {
       "forma": "an-",

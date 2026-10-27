@@ -187,7 +187,7 @@ GRAMATICA = {
 
 - **Orden**: Sujeto-Verbo-Objeto (SVO). `mi go a le ho` = "voy a la casa".
 - **Modificador antes del núcleo**: `me ho` = "casa grande".
-- **Plural**: sufijo `-s`. `li` → `lis`.
+- **Plural**: `-s` tras vocal (`li` → `lis`); `-es` tras coda (`nom` → `nomes`).
 - **Tiempos**: `an-` (pasado), `ne-` (futuro); presente sin marca.
 - **Evidencialidad (obligatoria)**: `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (conocimiento general).
 - **Modalidad epistémica**: `to` (cierto), `be` (probable), `os` (posible), `ku` (dudoso).
@@ -198,7 +198,7 @@ GRAMATICA = {
 
 - **Order**: Subject-Verb-Object (SVO). `mi go a le ho` = "I go to the house".
 - **Modifier before head**: `me ho` = "big house".
-- **Plural**: suffix `-s`. `li` → `lis`.
+- **Plural**: `-s` after a vowel (`li` → `lis`); `-es` after a coda (`nom` → `nomes`).
 - **Tense**: `an-` (past), `ne-` (future); present unmarked.
 - **Evidentiality (mandatory)**: `-ve` (direct), `-pen` (inferred), `-di` (reported), `-sa` (general knowledge).
 - **Epistemic modality**: `to` (certain), `be` (probable), `os` (possible), `ku` (doubtful).
@@ -209,7 +209,7 @@ GRAMATICA = {
 
 - **Ordre** : Sujet-Verbe-Objet (SVO). `mi go a le ho` = « je vais à la maison ».
 - **Modificateur avant le noyau** : `me ho` = « grande maison ».
-- **Pluriel** : suffixe `-s`. `li` → `lis`.
+- **Pluriel** : `-s` après une voyelle (`li` → `lis`) ; `-es` après une coda (`nom` → `nomes`).
 - **Temps** : `an-` (passé), `ne-` (futur) ; présent non marqué.
 - **Évidentialité (obligatoire)** : `-ve` (direct), `-pen` (inféré), `-di` (rapporté), `-sa` (connaissance générale).
 - **Modalité épistémique** : `to` (certain), `be` (probable), `os` (possible), `ku` (douteux).
@@ -220,7 +220,7 @@ GRAMATICA = {
 
 - **语序**：主-谓-宾（SVO）。`mi go a le ho` =「我去房子」。
 - **修饰语在核心词之前**：`me ho` =「大房子」。
-- **复数**：后缀 `-s`。`li` → `lis`。
+- **复数**：元音后 `-s`（`li` → `lis`）；韵尾后 `-es`（`nom` → `nomes`）。
 - **时态**：`an-`（过去）、`ne-`（将来）；现在时无标记。
 - **示证（强制）**：`-ve`（直接）、`-pen`（推断）、`-di`（转述）、`-sa`（公知）。
 - **认识情态**：`to`（确定）、`be`（可能）、`os`（也许）、`ku`（存疑）。
@@ -231,7 +231,7 @@ GRAMATICA = {
 
 - **語順**：主語-動詞-目的語（SVO）。`mi go a le ho` =「私は家に行く」。
 - **修飾語は主要部の前**：`me ho` =「大きな家」。
-- **複数**：接尾辞 `-s`。`li` → `lis`。
+- **複数**：母音の後は `-s`（`li` → `lis`）；末子音の後は `-es`（`nom` → `nomes`）。
 - **時制**：`an-`（過去）、`ne-`（未来）；現在は無標。
 - **証拠性（必須）**：`-ve`（直接）、`-pen`（推論）、`-di`（伝聞）、`-sa`（一般知識）。
 - **認識モダリティ**：`to`（確実）、`be`（多分）、`os`（可能）、`ku`（疑わしい）。
@@ -300,7 +300,7 @@ def generar_manual_ia(lexico, afijos):
         "Korlin (Shortlang) es una lengua construida regular y sin ambigüedad.",
         "Reglas de uso para un agente:", "",
         "1. **Orden**: SVO. Modificador antes del núcleo.",
-        "2. **Plural**: sufijo `-s`.",
+        "2. **Plural**: `-s` tras vocal (`lis`); `-es` tras coda (`nomes`).",
         "3. **Tiempo**: `an-` (pasado), `ne-` (futuro), presente sin marca.",
         "4. **Evidencialidad OBLIGATORIA**: `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (conocimiento general).",
         "5. **Modalidad epistémica** (opcional, al final): `to` cierto, `be` probable, `os` posible, `ku` dudoso.",

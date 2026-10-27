@@ -149,6 +149,18 @@ def test_coherencia_v02():
         fallos.append("spec glosa -sa como asumido/assumed")
     if "conocimiento general" not in spec:
         fallos.append("spec no glosa -sa como conocimiento general")
+    # v0.8.3: alomorfo -es en §3/§8 y C-10 como excepción a la fonotáctica
+    if "excepción a la fonotáctica" not in spec:
+        fallos.append("C-10 no dice excepción a la fonotáctica")
+    if "excepción a «una letra = un sonido»" in spec or "excepción a\n  «una letra = un sonido»" in spec:
+        fallos.append("C-10 sigue como excepción a una letra = un sonido")
+    if "`-es`" not in spec or "nomes" not in spec:
+        fallos.append("spec no lista el alomorfo -es (nomes)")
+    afijos_json = [a.get("forma") for a in d.get("afijos", [])]
+    if "-es" not in afijos_json:
+        fallos.append("korlin.json no lista el afijo -es")
+    if d.get("reglas", {}).get("morfologia", {}).get("plural") == "-s":
+        fallos.append("korlin.json.reglas.morfologia.plural sigue siendo solo -s")
     afijos_txt = open("data/afijos.yaml", encoding="utf-8").read()
     if any(mal in afijos_txt for mal in ("asumido", "se asume", "assumed")):
         fallos.append("afijos.yaml sigue glosando -sa como asumido")

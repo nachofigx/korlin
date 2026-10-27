@@ -1,4 +1,4 @@
-# Korlin — Especificación para modelos de lenguaje (v0.8.2)
+# Korlin — Especificación para modelos de lenguaje (v0.8.3)
 
 > **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer
 > mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para
@@ -8,7 +8,7 @@ Korlin (exónimo **Shortlang**) es una lengua construida, regular y sin ambigüe
 diseñada para hablar mucho en poco tiempo, con honestidad forzada por gramática
 (evidencialidad obligatoria) y pensada para uso humano y con agentes de IA.
 Autónimo: **korlin** = `ko` (corto) + `lin` (lengua) = *lengua corta*.
-**Versión de esta especificación: v0.8.2** (ver `CHANGELOG.md`). Este documento manda
+**Versión de esta especificación: v0.8.3** (ver `CHANGELOG.md`). Este documento manda
 sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
 
 **Fuente de verdad y qué es generado.** `data/lexico.yaml`, `data/afijos.yaml` y
@@ -220,8 +220,8 @@ manuales que deben seguir al spec, no al revés.
   (`Frans` → `Faransa`, `Brasil` → `Barasila`).
 - **Excepción documentada (C-10):** los **nombres propios y las marcas**, con
   mayúscula inicial, pueden conservar una ortografía que **viole la fonotáctica**
-  `(C)V{m,n,s}`: coda ilegal **o grupo consonántico**. Es la única excepción a
-  «una letra = un sonido» y afecta solo a nombres, nunca al léxico común. El
+  `(C)V{m,n,s}`: coda ilegal **o grupo consonántico**. Es la única excepción a la fonotáctica
+  y afecta solo a nombres, nunca al léxico común. El
   autónimo y la marca del idioma es **Korlin**: `-rl-` es un grupo consonántico
   que el léxico común no admite (ninguna partición encaja en `(C)V(C)`), pero es
   marca y se conserva. Misma familia que `Mekiko`, `Faransa`, `Yapan`, `Barasila`.
@@ -245,7 +245,7 @@ sin fusionarse.
 | Pasado | `an-` | `an-go-ve` = *fui (lo vi)* |
 | Presente | *(sin marca)* | `go-ve` = *voy (lo veo)* |
 | Futuro | `ne-` | `ne-go-pen` = *irá (lo infiero)* |
-| Plural (sustantivo) | `-s` | `pe` → `pes` = *personas* |
+| Plural (sustantivo) | `-s` tras vocal; `-es` tras coda | `pe` → `pes`; `nom` → `nomes` |
 
 ### Derivación
 
@@ -618,6 +618,7 @@ Van al **final** de la oración, después del verbo.
 | Afijo | Tipo | Función | Español | English | Ejemplo |
 |---|---|---|---|---|---|
 | `-s` | sufijo | flexión | plural | plural | li → lis (él → ellos) |
+| `-es` | sufijo | flexión | plural tras coda (m, n, s) | plural after a coda (m, n, s) | nom → nomes; kin → kines; tem → temes |
 | `an-` | prefijo | tiempo | pasado | past | an-go = fue |
 | `ne-` | prefijo | tiempo | futuro | future | ne-go = irá |
 | `-ve` | sufijo | evidencial | directo (lo vi) | direct (I saw) | go-ve = va (lo veo) |

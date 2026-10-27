@@ -1,5 +1,5 @@
 # Afijos de Korlin — Fuente de verdad única (bilingüe ES/EN)
-version: "0.8.2"
+version: "0.8.3"
 
 afijos:
   # ===== Flexivos (gramaticales) =====
@@ -9,6 +9,12 @@ afijos:
     es: plural
     en: plural
     ejemplo: "li → lis (él → ellos)"
+  - forma: "-es"
+    tipo: sufijo
+    funcion: flexión
+    es: plural tras coda (m, n, s)
+    en: plural after a coda (m, n, s)
+    ejemplo: "nom → nomes; kin → kines; tem → temes"
   - forma: "an-"
     tipo: prefijo
     funcion: tiempo

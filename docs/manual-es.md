@@ -35,7 +35,7 @@
 
 - **Orden**: Sujeto-Verbo-Objeto (SVO). `mi go a le ho` = "voy a la casa".
 - **Modificador antes del núcleo**: `me ho` = "casa grande".
-- **Plural**: sufijo `-s`. `li` → `lis`.
+- **Plural**: `-s` tras vocal (`li` → `lis`); `-es` tras coda (`nom` → `nomes`).
 - **Tiempos**: `an-` (pasado), `ne-` (futuro); presente sin marca.
 - **Evidencialidad (obligatoria)**: `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (conocimiento general).
 - **Modalidad epistémica**: `to` (cierto), `be` (probable), `os` (posible), `ku` (dudoso).
