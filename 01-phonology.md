@@ -60,9 +60,11 @@ Invalid: `stra` (cluster), `kri` (cluster), `ek` (coda /k/), `kast` (double coda
 **Possible syllables** = 17 onsets (16 consonants + empty) × 5 vowels × 4 codas = **340**.
 
 **Documented exception (C-10).** Proper names and brand names (initial capital) may
-keep orthography with an illegal coda vs `(C)V{m,n,s}`. The language autonym and
-brand is **Korlin**. Same family as Mekiko, Faransa, Yapan, Barasila (PR-26).
-The coda rule for the common lexicon does not change.
+keep orthography that violates `(C)V{m,n,s}`: an illegal coda **or a consonant
+cluster**. The language autonym and brand is **Korlin**: `-rl-` is a consonant
+cluster the common lexicon does not admit, and it is kept. Same family as
+Mekiko, Faransa, Yapan, Barasila (PR-26). The coda rule for the common lexicon
+does not change.
 
 ## 3. Stress
 - One phonological word (root + affixes, or root + root in a compound) carries

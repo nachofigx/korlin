@@ -7,6 +7,47 @@ la versión. **Documento que manda:** `korlin-spec.md` (generado desde
 
 ---
 
+## v0.8 — 2026-10-27
+
+**PR #6** (merge `ca44f33`, 2026-10-25): protocolo de prueba con hablantes (C-24).
+No hay regla gramatical nueva ni cambio de léxico. Esta entrada deja constancia
+del protocolo ya mergeado y alinea los encabezados de versión, que seguían en v0.6.
+
+### C-24 — protocolo listo; medición de campo pendiente
+- Protocolo: `docs/c24-protocolo.md` (listo para aplicar). Estímulos con orden
+  fijado (semilla `20261024`): `docs/c24-estimulos.json`, hoja
+  `docs/c24-hoja-respuestas.md`, plantilla `docs/c24-plantilla.csv`. Scripts:
+  `scripts/c24_protocolo.py`, `scripts/c24_estimulos.py`, `scripts/c24_analiza.py`.
+- Tres bloques, todos **escritos**: A colisiones canónicas (elección forzada),
+  B racimo `hV-` (14 vecinos), C naturalidad (escala 1-5). Umbrales fijados
+  antes de medir (≥90 % no se toca; 75-90 % vigilancia; <75 % en un par concreto
+  se renombra ese par; bloque C ≤2 en ≥60 % de hablantes es candidata; mínimo
+  3 hablantes coincidiendo en el mismo par).
+- **El audio TTS no es viable** (medido, no supuesto). `scripts/c24_audio.py`:
+  en la voz `es-MX` la /h/ es muda (`halo` y `alo` salen idénticos) y el
+  sintetizador no marca 1 acento frente a 2 (`halo` vs `ha lo`). Los mp3 se
+  sacaron del repo. El camino de la prueba es el **test escrito**. Medir la
+  prosodia en habla exige grabación humana.
+- La medición con hablantes **sigue pendiente**. Hasta ese resultado no se
+  renombra nada (colisiones C-46/C-47, racimo hV-, naturalidad).
+
+### Documentación alineada (sin cambio de diseño)
+- Versión de `data/lexico.yaml` y `data/afijos.yaml`: **0.8**. `korlin-spec.md`
+  y `korlin.json` regenerados con `scripts/generar_ia.py`.
+- Regla 20: quitado el puntero «deuda C-36, no tiene forma aún». C-36 está
+  cerrada desde v0.7: el interrogativo (`ki-pe`, `ki-lo`, `ki-ti`, `ki-mo`) es
+  frontera de cláusula y la subordinada lleva verbo finito y evidencial.
+- `01-phonology.md`: la excepción C-10 en inglés cubre coda ilegal **y** grupo
+  consonántico (`-rl-`). La marca sigue siendo **Korlin**.
+
+### Deuda declarada
+C-05 (índice sin tilde), `u me hos`, cluster hV- (el bloque B del protocolo lo
+mide; el racimo sigue abierto hasta el resultado). **C-24:** protocolo listo /
+medición con hablantes pendiente (no falta el protocolo; las decisiones de
+renombre esperan el campo). **C-27:** medir con hablantes, pendiente.
+
+---
+
 ## v0.7 — 2026-10-24
 
 **Ronda abierta por Korlin** (v0.7: C-14, Swadesh, C-36, C-47).
