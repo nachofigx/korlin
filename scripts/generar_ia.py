@@ -69,7 +69,7 @@ REGLAS = {
                 "-ve": "directo / lo vi",
                 "-pen": "inferido / lo deduzco",
                 "-di": "reportado / me lo dijeron",
-                "-sa": "asumido / se sabe",
+                "-sa": "conocimiento general / es sabido",
             },
         },
         "modalidad_epistemica": {
@@ -258,7 +258,7 @@ def genera_spec(palabras, afijos):
     A("    van con guion (`do-lo`, `mi man-ve`). El plural va **pegado**: `-s` tras")
     A("    vocal (`pes`, `lis`) y **`-es` tras coda** (`nom` → `nomes`, `kin` → `kines`,")
     A("    `tem` → `temes`). Nunca dos codas seguidas. Sin guion, dos raíces seguidas")
-    A("    son dos palabras: `vi-sa` (vivir+asumido) ≠ `vi sa` (vivir/saber).")
+    A("    son dos palabras: `vi-sa` (vivir+conocimiento general) ≠ `vi sa` (vivir/saber).")
     A("19. **Posesión y numerales.** El pronombre antepuesto es la forma normal")
     A("    (`mi ho` = *mi casa*); `de` da la analítica o enfática (`le ho de mi`).")
     A("    **Numerales:** `non` = 0, `u` = 1; 2-10 son raíces (`du san fu sin sis sem om nu des`).")
@@ -272,7 +272,7 @@ def genera_spec(palabras, afijos):
     A("    (corrige C-12 vs C-13)")
     A("    - `ki` **al inicio de la oración raíz** = interrogativo (`Ki pe go?` = *¿quién va?*).")
     A("    - `ki` **en medio tras un verbo de decir/saber** = complementante de una")
-    A("      declarativa: `Mi sa-ve ki li go-ve.` = *Sé que él va.* (la subordinada FINITA")
+    A("      declarativa: `Mi sa-ve ki li go-di.` = *Sé que él va (me lo dijeron).* (la subordinada FINITA")
     A("      lleva su propio evidencial, regla 14).")
     A("    - `ki` **en medio tras un verbo de percepción o pregunta** (`ve`, `ari`, `mo`) =")
     A("      interrogativo indirecto, **in situ**: `Tu ve ki pe?` = *¿a quién ves?*")
@@ -280,8 +280,11 @@ def genera_spec(palabras, afijos):
     A("    interrogativo (`ki-pe` quién, `ki-lo` dónde, `ki-ti` cuándo, `ki-mo` cómo)")
     A("    es frontera de cláusula: la subordinada lleva su verbo finito y su")
     A("    evidencial (regla 14). No hace falta una forma nueva. `ki-pe`")
-    A("    (interrogativo, palabra) ≠ `ki` (complementante): `Mi sa-sa ki-pe go-sa.`")
-    A("    = *Sé quién va.* · `Mi sa-sa ki li go-sa.` = *Sé que él va.*")
+    A("    (interrogativo, palabra) ≠ `ki` (complementante): `Mi sa-ve ki-pe go-pen.`")
+    A("    = *Sé (lo percibo) quién va (lo infiero).* · `Mi sa-ve ki li go-di.`")
+    A("    = *Sé que él va (me lo dijeron).* «Saber» es estado del hablante")
+    A("    (`-ve`, §4.1), no conocimiento general. El ir de un tercero tampoco")
+    A("    lleva el evidencial de saber común, salvo que de verdad lo sea.")
     A("    **Interrogativo con pro-drop:** el sujeto se omite solo si el interrogativo es")
     A("    el sujeto; si es el objeto, va **in situ**.")
     A("21. **Acento: una palabra fonológica lleva UN solo acento, en la penúltima sílaba.**")
@@ -433,7 +436,7 @@ def genera_spec(palabras, afijos):
     A("")
     A("Todo verbo finito factual **debe** declarar de dónde viene la información. Esto es lo que")
     A("hace la mentira cara: quien afirma debe decir si lo vio, lo dedujo, se lo contaron")
-    A("o lo asume. Estudios tipológicos (Aikhenvald 2004) muestran que ~25% de las lenguas")
+    A("o lo sabe todo el mundo. Estudios tipológicos (Aikhenvald 2004) muestran que ~25% de las lenguas")
     A("del mundo marcan la fuente obligatoriamente; Korlin lo adopta desde el diseño.")
     A("")
     A("**Cada sufijo tiene UN valor, sin solapes (corrige C-01):**")
@@ -468,11 +471,15 @@ def genera_spec(palabras, afijos):
     A("| Dicho, leído, o devuelto por un documento, API o herramienta | `-di` | `le ho e-di me` = *la casa es grande (lo leí)* |")
     A("| Conocimiento general, saber común | `-sa` | `le wa e-sa wa` = *el agua moja (es sabido)* |")
     A("| Memoria de algo vivido | `-ve` | `mi an-ve-ve le ho` = *vi la casa (la recuerdo)* |")
-    A("| Sueño o ficción (contenido) | `-pen` | `mi an-mo-pen le ho` = *soñé la casa* |")
+    A("| Sueño o ficción (contenido) | `-pen` | `mi an-do-ve ki le ho e-pen` = *dormí (lo viví); la casa, en el sueño, estaba (lo infiero)* |")
     A("| Matemáticas y lo que uno mismo construye | `-pen` | `du ka du e-pen fu` = *2+2 es 4* |")
     A("| **Futuro** que uno mismo da por hecho | `-ve` | `mi ne-go-ve` = *iré (decidido)* |")
     A("| **Futuro** planeado por otros, predicho o esperado | `-pen` | `li ne-go-pen` = *irá (lo deduzco)* |")
     A("| Acción propia pasada sin percepción directa | `-di` | `mi an-go-di` = *fui (consta)* |")
+    A("")
+    A("**Hueco léxico:** no hay raíz «soñar». `mo` es la partícula de pregunta sí/no,")
+    A("no un verbo. El dormir que uno vivió lleva `-ve` (`do`); el contenido del sueño")
+    A("o de la ficción lleva `-pen` en un verbo real de esa escena (fila de arriba).")
     A("")
     A("**Regla de honestidad:** si no sabes de dónde viene algo, usa `-pen` (lo deduzco) o")
     A("`-di` (me lo dijeron), nunca `-ve` (lo vi) si no lo viste realmente.")

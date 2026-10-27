@@ -47,7 +47,7 @@ It is Korlin's "anti-lying" layer.
 | `-ve` | /ve/ | Direct (DIR) | "I perceived it with my senses" | `ve` = see |
 | `-pen` | /pen/ | Inferred (INF) | "I deduce it from evidence" | `pen` = think |
 | `-di` | /di/ | Reported (REP) | "I was told" | `di` = say |
-| `-sa` | /sa/ | Assumed (ASU) | "known / assumed" | `sa` = know |
+| `-sa` | /sa/ | General (GEN) | "general knowledge" | `sa` = know |
 
 ### Rules
 1. **Mandatory**: every declarative sentence carries an evidential on its verb
@@ -58,13 +58,14 @@ It is Korlin's "anti-lying" layer.
    In subordinate clauses, **each clause carries its own** evidential:
    `mi sa-ve ki li an-go-di.` = "I know-DIR that he left-REP."
 4. **Hierarchy**: with several sources, mark the strongest
-   (direct > inferred > reported > assumed; cf. Barnes 1984, Faller 2002).
+   (direct > inferred > reported > general knowledge; cf. Barnes 1984, Faller 2002).
+   Korlin's `-sa` is general knowledge, not a conjecture.
 
 ### Examples
 - `li go-ve.` — "He goes (I see it)."
 - `li an-go-di.` — "He went (I was told)."
 - `li go-pen.` — "He goes (I infer it)."
-- `li go-sa.` — "He goes (it's assumed)."
+- `li go-sa.` — "He goes (it is general knowledge)."
 - `le lu e-ve i le no.` — "The moon is in the night (I see it)."
 
 ### Anti-lying effect

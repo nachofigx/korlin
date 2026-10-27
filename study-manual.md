@@ -85,7 +85,7 @@ ra re ri ro ru   la le li lo lu
 - `Mi nom e-sa Korlin.` — "My name is Korlin."
 
 > ⚠️ **What is `-sa`?** See Lesson 6. For now: every statement carries a mark
-> indicating *how you know* what you say. `-sa` = "it is known / it is a fact".
+> indicating *how you know* what you say. `-sa` = "general knowledge".
 
 ---
 
@@ -174,13 +174,13 @@ Every statement must declare its source: you cannot say "he left" without saying
 | **-ve** | direct | "I saw/perceived it" |
 | **-pen** | inferred | "I deduce it from evidence" |
 | **-di** | reported | "I was told" |
-| **-sa** | assumed | "it is known / assumed" |
+| **-sa** | general knowledge | "known to everyone" |
 
 **Examples (same sentence, 4 sources):**
 - `li go-ve.` — "He left (**I saw it**)."
 - `li go-pen.` — "He left (**I infer it**)."
 - `li go-di.` — "He left (**I was told**)."
-- `li go-sa.` — "He left (**it's assumed**)."
+- `li go-sa.` — "He left (**it is general knowledge**)."
 
 > 🧠 **Why**: it makes lying *costly and detectable*. Saying `li go-ve` commits you
 > to having witnessed it.

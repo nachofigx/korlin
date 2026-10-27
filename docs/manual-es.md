@@ -37,7 +37,7 @@
 - **Modificador antes del núcleo**: `me ho` = "casa grande".
 - **Plural**: sufijo `-s`. `li` → `lis`.
 - **Tiempos**: `an-` (pasado), `ne-` (futuro); presente sin marca.
-- **Evidencialidad (obligatoria)**: `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (asumido).
+- **Evidencialidad (obligatoria)**: `-ve` (directo), `-pen` (inferido), `-di` (reportado), `-sa` (conocimiento general).
 - **Modalidad epistémica**: `to` (cierto), `be` (probable), `os` (posible), `ku` (dudoso).
 - **Negación**: `na` antes del verbo.
 - **Pregunta sí/no**: `mo` al final.

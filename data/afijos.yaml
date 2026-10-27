@@ -1,5 +1,5 @@
 # Afijos de Korlin — Fuente de verdad única (bilingüe ES/EN)
-version: "0.8"
+version: "0.8.1"
 
 afijos:
   # ===== Flexivos (gramaticales) =====
@@ -42,9 +42,9 @@ afijos:
   - forma: "-sa"
     tipo: sufijo
     funcion: evidencial
-    es: asumido (se sabe)
-    en: assumed (known)
-    ejemplo: "go-sa = va (se asume)"
+    es: conocimiento general (es sabido)
+    en: general knowledge (it is known)
+    ejemplo: "go-sa = va (es sabido)"
 
   # ===== Derivacionales =====
   - forma: "-pe"

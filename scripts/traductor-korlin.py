@@ -411,7 +411,6 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="?", tiempo=None, glosa=Fa
     norm = [normaliza(t) for t in tokens]
 
     plural = any(n in [normaliza(x) for x in PLURALES[lengua]] for n in norm)
-    negacion = any(n in ("no", "not") for n in norm)
     pregunta = "?" in texto or "¿" in texto
     orden = "!" in texto and not re.match(r"^\s*(yo|tú|tu|él|ella|nosotros|ustedes|ellos)\b", texto, re.I)
     # P1: en ORDEN, `ve` es ambiguo (2sg de ir Y de ver). Regla 13: `Go!` = ¡ve!,
@@ -428,24 +427,36 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="?", tiempo=None, glosa=Fa
                     verbo_ir = True
                 break
     # C-26/C-19: cada clausula finita lleva SU tiempo, SU evidencial y UN verbo finito.
-    # Fronteras de clausula: la coma, el complementante `ki` y el conector `so`.
+    # Fronteras: coma, complementante, coordinacion (y/o/pero, and/or/but/then)
+    # e interrogativo indirecto. v0.8.1: la negacion es de ESA clausula, no de
+    # la oracion entera.
+    # «como» (comer) y «cómo» (ki-mo) se escriben igual sin tilde. Solo la forma
+    # acentuada abre clausula; si no, «no como» deja el «no» en la clausula previa.
+    FRONTERAS = {
+        ",", "ki", "so", "que", "and", "then", "or", "but",
+        "quien", "donde", "cuando",
+        "who", "where", "when", "how",
+        "y", "o", "pero",
+    }
+
+    def abre_clausula(nm, tok):
+        if tok.lower() == "cómo":
+            return True
+        return nm in FRONTERAS
+
     clausula = []
     cid = 0
-    for nm in norm:
-        # C-36: un interrogativo indirecto (quien/donde/cuando/como) ABRE clausula
-        # propia: sin eso el verbo de la subordinada no se conjuga ("sé quién va"
-        # -> "[va?]"). Los compuestos ki-pe/ki-lo/ki-ti/ki-mo son palabras, no
-        # fronteras; lo que abre clausula es la forma que los dispara.
-        if nm in (",", "ki", "so", "que", "and", "then",
-                  "quien", "donde", "cuando", "como",
-                  "who", "where", "when", "how"):   # fronteras de clausula
+    for tok, nm in zip(tokens, norm):
+        if abre_clausula(nm, tok):
             cid += 1
         clausula.append(cid)
+    neg_clausulas = {clausula[i] for i, n in enumerate(norm) if n in ("no", "not")}
 
     salida, glosas = [], []
     verbo_puesto = set()          # por clausula, no global
     for i_tok, (tok, n) in enumerate(zip(tokens, norm)):
         k = tok.lower()  # los indices de verbos/funcionales llevan tildes
+        ci = clausula[i_tok] if i_tok < len(clausula) else cid
         if n in ("¿", "?", "¡"):
             continue
         if n == "!":
@@ -454,11 +465,10 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="?", tiempo=None, glosa=Fa
         if n in (".", ","):
             salida.append(tok)
             continue
-        if n in ("no", "not") and negacion:
-            continue  # se aplica junto al verbo
+        if n in ("no", "not"):
+            continue  # na va en el verbo finito de ESTA clausula
 
         # 1) verbo conjugado (uno por clausula)
-        ci = clausula[i_tok] if i_tok < len(clausula) else cid
         if k in indice and ci not in verbo_puesto:
             raiz, tp = indice[k]
             if verbo_ir and raiz == "ve" and ci == 0:
@@ -477,7 +487,7 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="?", tiempo=None, glosa=Fa
             if "si" in norm[:i_tok] and "," not in norm[:i_tok]:
                 ev_v = ""
             forma = (t or "") + raiz + ev_v
-            if negacion:
+            if ci in neg_clausulas:
                 forma = "na " + forma
             salida.append(forma)
             glosas.append(f"{tok}=[{t or ''}{raiz}{ev_v}]")
@@ -490,9 +500,12 @@ def otro_a_korlin(texto, lex, idioma="es", evidencial="?", tiempo=None, glosa=Fa
             # v0.2: la cópula `e` lleva evidencial en la declarativa
             if f == "e" and not pregunta:
                 f = "e" + ("-[?fuente]" if evidencial == "?" else evidencial)
-            if f.split("-")[0] == "e" and negacion and not verbo_puesto:
+            # La cópula negada es el verbo finito de su cláusula. Hay que
+            # marcar el set con .add(ci): asignar True lo convierte en bool
+            # y la cláusula siguiente revienta («argument of type 'bool'»).
+            if (f == "e" or f.startswith("e-")) and ci in neg_clausulas and ci not in verbo_puesto:
                 f = "na " + f          # negar tambien la copula (regla 7a)
-                verbo_puesto = True
+                verbo_puesto.add(ci)
             salida.append(f)
             glosas.append(f"{tok}={f}")
             continue

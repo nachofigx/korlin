@@ -37,7 +37,7 @@
 - **Modificateur avant le noyau** : `me ho` = « grande maison ».
 - **Pluriel** : suffixe `-s`. `li` → `lis`.
 - **Temps** : `an-` (passé), `ne-` (futur) ; présent non marqué.
-- **Évidentialité (obligatoire)** : `-ve` (direct), `-pen` (inféré), `-di` (rapporté), `-sa` (supposé).
+- **Évidentialité (obligatoire)** : `-ve` (direct), `-pen` (inféré), `-di` (rapporté), `-sa` (connaissance générale).
 - **Modalité épistémique** : `to` (certain), `be` (probable), `os` (possible), `ku` (douteux).
 - **Négation** : `na` avant le verbe.
 - **Question oui/non** : `mo` à la fin.

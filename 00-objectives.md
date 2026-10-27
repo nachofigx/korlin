@@ -41,7 +41,7 @@ Request: make a structure where *lying is impossible*.
 form). **But achievable:** make lying *costly, explicit and detectable* via three
 mechanisms:
 1. **Mandatory evidentiality** — every statement marks its source
-   (direct / inferred / reported / assumed), like Quechua, Tariana and Tuyuca.
+   (direct / inferred / reported / general knowledge), like Quechua, Tariana and Tuyuca.
 2. **Epistemic modality** — degree of certainty (certain / probable / possible / doubtful).
 3. **Zero ambiguity** — each sentence has a single interpretation (cf. Lojban).
 
