@@ -27,6 +27,8 @@
 | A5-2 | somi / so mi | somi | so mi | | |
 | A2-1 | kilo / ki lo | kilo | ki lo | | |
 | A5-1 | somi / so mi | somi | so mi | | |
+| A6-1 | kilo / ki-lo | kilo | ki-lo | | |
+| A6-2 | kilo / ki-lo | kilo | ki-lo | | |
 
 ## Bloque B — identificación (¿cuál oíste?)
 

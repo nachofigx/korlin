@@ -1,4 +1,4 @@
-# Korlin — Especificación para modelos de lenguaje (v0.8.1)
+# Korlin — Especificación para modelos de lenguaje (v0.8.2)
 
 > **Cómo usar este archivo.** Pégalo completo en el *system prompt* (o en el primer
 > mensaje) de cualquier LLM. Es autocontenido: contiene todo lo necesario para
@@ -8,7 +8,7 @@ Korlin (exónimo **Shortlang**) es una lengua construida, regular y sin ambigüe
 diseñada para hablar mucho en poco tiempo, con honestidad forzada por gramática
 (evidencialidad obligatoria) y pensada para uso humano y con agentes de IA.
 Autónimo: **korlin** = `ko` (corto) + `lin` (lengua) = *lengua corta*.
-**Versión de esta especificación: v0.8.1** (ver `CHANGELOG.md`). Este documento manda
+**Versión de esta especificación: v0.8.2** (ver `CHANGELOG.md`). Este documento manda
 sobre cualquier otro; si algo no cuadra con `01/02/03`, gana este.
 
 **Fuente de verdad y qué es generado.** `data/lexico.yaml`, `data/afijos.yaml` y
@@ -143,20 +143,31 @@ manuales que deben seguir al spec, no al revés.
     distinguen por la **prosodia** (regla 21: 1 acento vs 2) y en la escritura por
     el guion. **Casos con colisión canónica real** (la frase sí es una oración
     posible), declarados: `somi` (gris) ≈ `so mi` (*entonces yo*), `kilo` (mil) ≈
-    `ki lo` (*qué lugar*). El contexto y el acento los separan; si resultan
-    confusos al probarlos con hablantes, se renombran (C-24).
+    `ki lo` (*qué lugar*, con espacio). El contexto y el acento los separan; si
+    resultan confusos al probarlos con hablantes, se renombran (C-24). Eso no
+    cubre el compuesto: `kilo` ≈ `ki-lo` es homófono verdadero (24c, deuda C-05).
 24c. **Colisiones canónicas declaradas (C-46/C-47, v0.7):** lista CERRADA de formas
     del léxico que se segmentan además como dos palabras en una construcción
     canónica. **No son errores**: son homófonos declarados, y los separan la
     prosodia (regla 21) y el contexto. Son **cinco**:
       · `halo` (hola) ≈ `ha lo` (*tener lugar*) — C-47, saludo de alta frecuencia
-      · `kilo` (mil, ×10³) ≈ `ki lo` (*qué lugar*)
+      · `kilo` (mil, ×10³) ≈ `ki lo` (*qué lugar*) — con espacio: dos acentos
       · `mega` (millón, ×10⁶) ≈ `me ga` (*tierra grande*)
       · `nano` (nano-, ×10⁻⁹) ≈ `na no` (*no [es] noche*)
       · `somi` (gris) ≈ `so mi` (*entonces yo*)
     Los prefijos SI (`kilo`, `mega`, `nano`) se conservan: son internacionales y
     su valor numeral es inconfundible en contexto numérico. Si la prueba con
-    hablantes (C-24) muestra confusión real, se renombran uno a uno.
+    hablantes (C-24) muestra confusión real, se renombran uno a uno. **No se
+    renombran** `kilo`, `mega` ni `nano`.
+    **Sexta colisión — homófono compuesto `kilo` ≈ `ki-lo` (deuda C-05):** la lista
+    de arriba solo declara `kilo` ≈ `ki lo` (espaciado). Bajo la regla 21 una
+    palabra fonológica lleva un solo acento, y un compuesto es una palabra:
+    `ki-lo` (*dónde*) y `kilo` (×10³) son el mismo /ˈki.lo/. La prosodia no los
+    separa. Es deuda documentada, no un error y no un renombre.
+    Mitigación: el interrogativo se escribe **siempre** con guion (`ki-lo`);
+    `kilo` solo en contexto numérico (numeral suelto o prefijo SI, `kilo-met`);
+    no coocurren en la misma cláusula — si hace falta «mil» y «dónde», el numeral
+    queda en su marco numérico y `ki-lo` abre la pregunta.
 24. **Partículas finales (nota C-21, mínima en v0.6):** la oración admite una sola
     cadena final en orden fijo `[modalidad] [actitud] [mo]`. **No se encadenan dos
     actitudes** ni dos modalidades: para dos matices, una va al final y la otra se

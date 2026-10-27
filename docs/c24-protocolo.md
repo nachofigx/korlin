@@ -3,8 +3,11 @@
 **Fecha:** 24-oct-2026 · **Autor:** linguista · **Estado:** listo para aplicar
 
 **Objetivo:** medir tres cosas que no se pueden decidir desde el escritorio:
-si las cinco colisiones canónicas estorban, si el racimo `hV-` cuesta reconocer,
+si las colisiones canónicas estorban (las cinco prosódicas y el homófono
+`kilo` ≈ `ki-lo`), si el racimo `hV-` cuesta reconocer,
 y si el léxico suena natural. **El resultado decide si se renombran formas.**
+`kilo`, `mega` y `nano` no se renombran: si A6 falla, se refuerza la escritura
+(guion en `ki-lo`, contexto numérico en `kilo`), no el nombre.
 
 ---
 
@@ -12,7 +15,7 @@ y si el léxico suena natural. **El resultado decide si se renombran formas.**
 
 | Bloque | Mide | Cómo | Coste por hablante |
 |---|---|---|---|
-| A — colisiones | discriminación de 10 pares | **escrito**, elección forzada | 4 min |
+| A — colisiones | discriminación de 12 pares | **escrito**, elección forzada | 4 min |
 | B — racimo hV- | identificación de 14 vecinos | **escrito**, elección múltiple | 5 min |
 | C — naturalidad | juicio del léxico (30 formas) | **escrito**, escala 1-5 | 6 min |
 
@@ -72,6 +75,7 @@ qué quiso decir entre dos paráfrasis en español. **Sin contexto previo.**
 | A3 | `mega` | `me ga` | U mega hos. | millon (×10^6) | tierra grande |
 | A4 | `nano` | `na no` | U nano mita. | nano- (×10^-9) | no [es] noche |
 | A5 | `somi` | `so mi` | Le nubu e somi. | gris | entonces yo |
+| A6 | `kilo` | `ki-lo` | Mi ha kilo hos. | mil (×1000) | donde |
 
 ### Las dos condiciones
 
@@ -82,6 +86,16 @@ Cada par se prueba **dos veces**:
 
 La comparación entre las dos condiciones es el dato: si con guion sube el acierto,
 el guion funciona y **no hay que renombrar nada**.
+
+### Par A6 — homófono verdadero `kilo` ≈ `ki-lo`
+
+A1–A5 oponen un acento a dos (`kilo` ≈ `ki lo`, con espacio). A6 es la sexta
+colisión (deuda C-05, regla 21): `kilo` (×10³) y `ki-lo` (*dónde*) son los dos
+una palabra y el mismo /ˈki.lo/. El guion no cambia el acento; es la mitigación
+escrita, junto con el contexto numérico de `kilo` y la prohibición de
+coocurrir en la misma cláusula. A6-1 presenta `kilo`; A6-2 presenta `ki-lo`.
+Los ítems A1–A5, B y C conservan el orden de la semilla `20261024`; A6 se
+añade al final del bloque A y no los reordena.
 
 ### Pregunta de cierre (la más importante)
 
@@ -169,6 +183,7 @@ justifica tocar el léxico: puede ser idiosincrasia.
 
 **El orden está fijado con semilla** (`20261024`): varias sesiones usan el mismo
 orden y los resultados son comparables. Si se cambia la semilla, hay que anotarlo.
+La semilla no cambió al añadir A6: ese par no rebaraja A1–A5, B ni C.
 
 Una vez vaciados los datos, el análisis se hace con `scripts/c24_analiza.py`.
 

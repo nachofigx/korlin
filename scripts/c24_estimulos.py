@@ -9,11 +9,13 @@ Produce:
   hoja-respuestas.md — la misma hoja, legible
 
 Diseno:
-  Bloque A (colisiones, 5 pares minimos): discriminacion ABX por prosodia.
+  Bloque A (colisiones): 5 pares minimos por prosodia, mas el homofono
+  compuesto A6 (`kilo` ≈ `ki-lo`, un acento en los dos).
   Bloque B (cluster hV-, 14 raices): identificacion entre vecinos minimos.
   Bloque C (aceptabilidad): juicio de pronunciabilidad sobre muestra del lexico.
 
 Semilla fija: la prueba se puede repartir en varias sesiones sin repetir orden.
+A6 se anade DESPUES del sorteo de A1-A5/B/C y no reordena esos items.
 """
 import csv
 import json
@@ -46,6 +48,14 @@ COLISIONES = [
      "oracion": "Le nubu e somi.", "oracion_alt": "So mi go."},
 ]
 
+# Homofono compuesto (deuda C-05 / regla 21). NO entra en el sorteo de arriba:
+# un Random aparte decide X, y los items se appenden al bloque A.
+COLISIONES_EXTRA = [
+    {"id": "A6", "forma": "kilo", "afi": "/ˈki.lo/", "glosa": "mil (×1000)",
+     "alterna": "ki-lo", "afi_alt": "/ˈki.lo/", "glosa_alt": "donde",
+     "oracion": "Mi ha kilo hos.", "oracion_alt": "Ki-lo tu go?"},
+]
+
 # ---------------------------------------------------------------- Bloque B
 # Cluster hV-: vecinos minimos (misma estructura, distinta vocal o consonante).
 HV = [
@@ -66,22 +76,53 @@ HV = [
 ]
 
 
+def _items_par(c, rng):
+    items = []
+    for rep in (1, 2):
+        x_es_alt = rng.choice([False, True])
+        items.append({
+            "id": f"{c['id']}-{rep}",
+            "par": c["id"],
+            "estimulo_A": c["forma"],   "afi_A": c["afi"],   "glosa_A": c["glosa"],
+            "estimulo_B": c["alterna"], "afi_B": c["afi_alt"], "glosa_B": c["glosa_alt"],
+            "X": c["alterna"] if x_es_alt else c["forma"],
+            "respuesta_correcta": "B" if x_es_alt else "A",
+            "oracion_A": c["oracion"], "oracion_B": c["oracion_alt"],
+        })
+    return items
+
+
 def bloque_a():
-    """Discriminacion ABX: se oyen tres; ¿X = A o B? Orden aleatorizado."""
+    """Discriminacion ABX: se oyen tres; ¿X = A o B? Orden aleatorizado.
+
+    Solo A1-A5 consumen el RNG global (semilla 20261024). A6 va despues.
+    """
     items = []
     for c in COLISIONES:
-        for rep in (1, 2):
-            x_es_alt = random.choice([False, True])
-            items.append({
-                "id": f"{c['id']}-{rep}",
-                "par": c["id"],
-                "estimulo_A": c["forma"],   "afi_A": c["afi"],   "glosa_A": c["glosa"],
-                "estimulo_B": c["alterna"], "afi_B": c["afi_alt"], "glosa_B": c["glosa_alt"],
-                "X": c["alterna"] if x_es_alt else c["forma"],
-                "respuesta_correcta": "B" if x_es_alt else "A",
-                "oracion_A": c["oracion"], "oracion_B": c["oracion_alt"],
-            })
+        items.extend(_items_par(c, random))
     random.shuffle(items)
+    return items
+
+
+class _XFijo:
+    """choice() devuelve la secuencia dada. No toca el RNG global."""
+
+    def __init__(self, flags):
+        self._flags = iter(flags)
+
+    def choice(self, seq):
+        return next(self._flags)
+
+
+def bloque_a_extra():
+    """Pares anadidos sin tocar el orden ya fijado por la semilla global.
+
+    X no se sortea, para no consumir ningun RNG. La repeticion 1 tiene X = la
+    forma del lexico; la 2, X = la alterna con guion.
+    """
+    items = []
+    for c in COLISIONES_EXTRA:
+        items.extend(_items_par(c, _XFijo([False, True])))
     return items
 
 
@@ -164,11 +205,21 @@ def hoja_md(ruta, a, b, c):
 
 
 def main():
-    a, b, c = bloque_a(), bloque_b(), bloque_c()
+    # Orden de llamada: A (RNG global), B, C, y solo entonces el extra.
+    # El extra usa Random(SEMILLA) propio: no adelanta la secuencia global.
+    a_base, b, c = bloque_a(), bloque_b(), bloque_c()
+    extra = bloque_a_extra()
+    a = a_base + extra
     datos = {
         "prueba": "C-24 — medida con hablantes",
         "version_lexico": "238 formas (v0.7, main c958683)",
         "semilla": SEMILLA,
+        "semilla_nota": (
+            "20261024 fija el orden de A1-A5, B y C. "
+            "A6 (kilo ≈ ki-lo) se anade al final del bloque A y no reordena "
+            "lo anterior. Su X no sale de la semilla: A6-1 apunta a kilo y "
+            "A6-2 a ki-lo."
+        ),
         "bloques": {
             "A_colisiones": {"items": a, "n_items": len(a),
                              "que_mide": "discriminación prosódica de pares mínimos"},
